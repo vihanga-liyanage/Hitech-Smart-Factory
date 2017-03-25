@@ -1,0 +1,457 @@
+<mxEditor defaultGroup="group" defaultEdge="connector">
+	<include name="config/editor-commons.xml"/>
+	<add as="onInit"><![CDATA[
+		function ()
+		{
+			onInit(this);
+		}
+	]]></add>
+	<ui>
+		<add as="graph" element="graph"/>
+		<add as="status" element="status"/>
+		<add as="toolbar" element="toolbar"/>
+	</ui>
+	<Array as="templates">
+		<add as="group">
+			<Group label="" href="">
+				<mxCell vertex="1" style="group" connectable="0"/>
+			</Group>
+		</add>
+		<add as="connector">
+			<Connector label="" href="">
+				<mxCell edge="1">
+					<mxGeometry as="geometry" relative="1"/>
+				</mxCell>
+			</Connector>
+		</add>
+		<add as="container">
+			<Container label="Container" href="">
+				<mxCell vertex="1" style="swimlane" connectable="0">
+					<mxGeometry as="geometry" width="500" height="500"/>
+				</mxCell>
+			</Container>
+		</add>
+		<add as="text">
+			<Text label="Text Here" href="">
+				<mxCell vertex="1" style="text">	
+					<mxGeometry as="geometry" width="80" height="20"/>
+				</mxCell>
+			</Text>
+		</add>
+
+		//custom templates
+		<add as="Dashboard">
+			<Image label="" href="">
+				<mxCell vertex="1" style="dashboard">
+					<mxGeometry as="geometry" width="80" height="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="Data_Stream">
+			<Image label="" href="">
+				<mxCell vertex="1" style="data_stream">
+					<mxGeometry as="geometry" width="80" height="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="Database">
+			<Image label="" href="">
+				<mxCell vertex="1" style="database">
+					<mxGeometry as="geometry" width="80" height="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="Mobile_Phone">
+			<Image label="" href="">
+				<mxCell vertex="1" style="mobile_phone">
+					<mxGeometry as="geometry" width="80" height="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="User">
+			<Image label="" href="">
+				<mxCell vertex="1" style="user">
+					<mxGeometry as="geometry" width="80" height="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="Web_Page">
+			<Image label="" href="">
+				<mxCell vertex="1" style="web_page">
+					<mxGeometry as="geometry" width="80" height="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="WSO2_API_Manager_2.0.0">
+			<Image label="" href="">
+				<mxCell vertex="1" style="wso2am-2.0.0">
+					<mxGeometry as="geometry" width="80" height="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="WSO2_API_Manager_2.1.0">
+			<Image label="" href="">
+				<mxCell vertex="1" style="wso2am-2.1.0">
+					<mxGeometry as="geometry" width="80" height="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="WSO2_Complex_Event_Processor">
+			<Image label="" href="">
+				<mxCell vertex="1" style="wso2-complex-event-processor">
+					<mxGeometry as="geometry" width="80" height="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="WSO2_Enterprise_Service_Bus">
+			<Image label="" href="">
+				<mxCell vertex="1" style="wso2esb">
+					<mxGeometry as="geometry" width="80" height="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="WSO2_Identity_Server">
+			<Image label="" href="">
+				<mxCell vertex="1" style="wso2-identity-server">
+					<mxGeometry as="geometry" width="80" height="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="WSO2_Machine_Learner">
+			<Image label="" href="">
+				<mxCell vertex="1" style="wso2-machine-learner">
+					<mxGeometry as="geometry" width="80" height="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="ML_Model">
+			<Image label="" href="">
+				<mxCell vertex="1" style="ml_model">
+					<mxGeometry as="geometry" width="80" height="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="Publisher">
+			<Image label="" href="">
+				<mxCell vertex="1" style="publisher">
+					<mxGeometry as="geometry" width="80" height="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="WSO2_DAS">
+			<Image label="" href="">
+				<mxCell vertex="1" style="wso2am-analytics-2.0.0">
+					<mxGeometry as="geometry" width="80" height="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="WSO2_IoT_Server">
+			<Image label="" href="">
+				<mxCell vertex="1" style="wso2-iot-server">
+					<mxGeometry as="geometry" width="80" height="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="Load_Balancer">
+			<Image label="" href="">
+				<mxCell vertex="1" style="load-balancer">
+					<mxGeometry as="geometry" width="80" height="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="SVN">
+			<Image label="" href="">
+				<mxCell vertex="1" style="svnrepo">
+					<mxGeometry as="geometry" width="80" height="80"/>
+				</mxCell>
+			</Image>
+		</add>
+
+
+	</Array>
+	<mxGraph as="graph" alternateEdgeStyle="verticalConnector" allowLoops="1" dropEnabled="1">
+		<add as="isAutoSizeCell"><![CDATA[
+			function(cell)
+			{
+				return mxUtils.isNode(this.model.getValue(cell), 'text');
+			}
+		]]></add>
+		<add as="isSwimlane"><![CDATA[
+			function (cell)
+			{
+				return mxUtils.isNode(this.model.getValue(cell), 'container');
+			}
+		]]></add>
+		<add as="getTooltipForCell"><![CDATA[
+			function(cell)
+			{
+				var label = cell.getAttribute('label');
+				var style = cell.getStyle();
+			
+				return '';
+			}
+		]]></add>
+		<add as="convertValueToString"><![CDATA[
+			function(cell)
+			{
+				return cell.getAttribute('label');
+			}
+		]]></add>
+		<mxStylesheet as="stylesheet">
+			<add as="text">
+				<add as="shape" value="rectangle"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="fontSize" value="25"/>
+				<add as="shadow" value="0"/>
+				<add as="strokeColor" value="none"/>
+				<add as="fillColor" value="white"/>
+				<add as="gradientColor" value="none"/>
+			</add>
+			<add as="defaultVertex" extend="text">
+				<add as="shape" value="rectangle"/>
+				<add as="align" value="center"/>
+				<add as="verticalAlign" value="middle"/>
+				<add as="fontSize" value="25"/>
+				<add as="labelBackgroundColor" value="white"/>
+				<add as="shadow" value="1"/>
+				<add as="strokeColor" value="#C3D9FF"/>
+				<add as="fillColor" value="#C3D9FF"/>
+				<add as="gradientColor" value="white"/>
+			</add>
+			<add as="group">
+				<add as="shape" value="rectangle"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="fontSize" value="25"/>
+				<add as="align" value="center"/>
+				<add as="verticalAlign" value="middle"/>
+				<add as="strokeColor" value="gray"/>
+				<add as="dashed" value="0"/>
+			</add>
+			<add as="defaultEdge">
+				<add as="shape" value="connector"/>
+				<add as="fontSize" value="25"/>
+				<add as="align" value="center"/>
+				<add as="verticalAlign" value="middle"/>
+				<add as="rounded" value="1"/>
+				<add as="labelBackgroundColor" value="white"/>
+				<add as="strokeColor" value="#4580e8"/>
+				<add as="strokeWidth" value="3"/>
+				<!--<add as="edgeStyle" value="orthogonalEdgeStyle"/>-->
+				<add as="endArrow" value="classic"/>
+				<!--<add as="startArrow" value="classic"/>-->
+				<!--<add as="dashed" value="1"/>-->
+			</add>
+			<add as="verticalConnector">
+				<add as="elbow" value="vertical"/>
+			</add>
+			<add as="straightConnector">
+				<add as="shape" value="connector"/>
+				<add as="endArrow" value="classic"/>
+				<add as="edgeStyle">null</add>
+			</add>
+			<add as="arrowConnector">
+				<add as="shape" value="arrow"/>
+				<add as="fillColor" value="#e89a66"/>
+				<add as="endSize" value="20"/>
+                                <add as="fontSize" value="25"/>
+				<add as="startArrow" value="classic"/>
+				<remove as="edgeStyle"/>
+			</add>
+			<add as="swimlane">
+				<add as="shape" value="swimlane"/>
+				<add as="shadow" value="0"/>
+				<add as="startSize" value="23"/>
+				<add as="align" value="center"/>
+				<add as="verticalAlign" value="top"/>
+				<add as="strokeColor" value="#EEEEEE"/>
+				<add as="fillColor" value="#D4D4D4"/>
+			</add>
+
+			//custom styles
+			<add as="dashboard">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/wso2/dashboard.png"/>
+			</add>
+			<add as="data_stream">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/wso2/data_stream.png"/>
+			</add>
+			<add as="database">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/wso2/database.png"/>
+			</add>
+			<add as="mobile_phone">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/wso2/mobile_phone.png"/>
+			</add>
+			<add as="user">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/wso2/user.png"/>
+			</add>
+			<add as="web_page">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/wso2/web_page.png"/>
+			</add>
+			<add as="wso2am-2.0.0">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/wso2/wso2-am-2.0.0.png"/>
+			</add>
+			<add as="wso2am-2.1.0">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/wso2/wso2-am-2.1.0.png"/>
+			</add>
+			<add as="wso2-complex-event-processor">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/wso2/wso2_complex_event_processor.png"/>
+			</add>
+			<add as="wso2esb">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/wso2/wso2-esb.png"/>
+			</add>
+			<add as="wso2-identity-server">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/wso2/wso2-is.png"/>
+			</add>
+			<add as="wso2-machine-learner">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/wso2/wso2_machine_learner.png"/>
+			</add>
+			<add as="ml_model">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/wso2/ml_model.png"/>
+			</add>
+			<add as="publisher">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/wso2/publisher.png"/>
+			</add>
+			<add as="wso2am-analytics-2.0.0">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/wso2/wso2_das.png"/>
+			</add>
+			<add as="wso2-iot-server">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/wso2/wso2_iot_server.png"/>
+			</add>
+			<add as="load-balancer">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="ellipsePerimeter"/>
+				<add as="image" value="images/wso2/load-balancer.png"/>
+			</add>
+			<add as="svnrepo">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="ellipsePerimeter"/>
+				<add as="image" value="images/wso2/svnrepo.png"/>
+			</add>
+			<add as="two_way_arrow">
+				<add as="shape" value="arrow"/>
+				<add as="startArrow" value="classic"/>
+				<remove as="edgeStyle"/>
+			</add>
+
+		</mxStylesheet>
+		<mxGraphModel as="model">
+			<add as="valueForCellChanged"><![CDATA[
+				function(cell, value)
+				{
+					var previous = null;
+					
+					if (value == null || isNaN(value.nodeType))
+					{
+						previous = cell.value.getAttribute('label');
+
+						if (value == null)
+						{
+							cell.value.removeAttribute('label');
+						}
+						else
+						{
+							cell.setAttribute('label', value);
+						}
+					}
+					else
+					{
+						previous = cell.value;
+						cell.value = value;
+					}
+					
+					return previous;
+				}
+			]]></add>
+			<root>
+				<Diagram label="My Diagram" href="http://www.jgraph.com/" id="0">
+					<mxCell/>
+				</Diagram>
+				<Layer label="Default Layer" id="1">
+					<mxCell parent="0"/>
+				</Layer>
+			</root>
+		</mxGraphModel>
+	</mxGraph>
+	<mxDefaultToolbar as="toolbar">
+		<!--<add as="connect" mode="connect" icon="images/connect.gif"><![CDATA[-->
+			<!--function (editor)-->
+			<!--{-->
+				<!--if (editor.defaultEdge != null)-->
+				<!--{-->
+					<!--editor.defaultEdge.style = null;-->
+				<!--}-->
+			<!--}-->
+		<!--]]></add>-->
+		<!--<add as="connect" mode="connect" icon="images/straight.gif"><![CDATA[-->
+			<!--function (editor)-->
+			<!--{-->
+				<!--if (editor.defaultEdge != null)-->
+				<!--{-->
+					<!--editor.defaultEdge.style = 'straightConnector';-->
+				<!--}-->
+			<!--}-->
+		<!--]]></add>-->
+		<br/>
+		<!--<add as="connect" mode="connect" icon="images/wso2/arrow.png">-->
+			<!--<![CDATA[-->
+				<!--function (editor)-->
+				<!--{-->
+					<!--if (editor.defaultEdge != null)-->
+					<!--{-->
+						<!--editor.defaultEdge.style = 'arrowConnector';-->
+					<!--}-->
+				<!--}-->
+			<!--]]>-->
+		<!--</add>-->
+
+		<add as="Connector" template="connector" icon="images/wso2/arrow.png"/>
+		<add as="Data Stream" template="Data_Stream" icon="images/wso2/data_stream.png"/>
+		<add as="Load Balancer" template="Load_Balancer" icon="images/wso2/load-balancer.png"/>
+		<add as="Database" template="Database" icon="images/wso2/database.png"/>
+		<add as="SVN" template="SVN" icon="images/wso2/svnrepo.png"/>
+		<add as="Mobile Phone" template="Mobile_Phone" icon="images/wso2/mobile_phone.png"/>
+		<add as="User" template="User" icon="images/wso2/user.png"/>
+		<add as="Web Page" template="Web_Page" icon="images/wso2/web_page.png"/>
+		<add as="WSO2 API Manager 2.0.0" template="WSO2_API_Manager_2.0.0" icon="images/wso2/wso2-am-2.0.0.png"/>
+		<add as="WSO2 API Manager 2.1.0" template="WSO2_API_Manager_2.1.0" icon="images/wso2/wso2-am-2.1.0.png"/>
+		<add as="WSO2 Complex Event Processor" template="WSO2_Complex_Event_Processor" icon="images/wso2/wso2_complex_event_processor.png"/>
+		<add as="WSO2 Enterprise Service Bus" template="WSO2_Enterprise_Service_Bus" icon="images/wso2/wso2-esb.png"/>
+		<add as="WSO2 Identity Server" template="WSO2_Identity_Server" icon="images/wso2/wso2-is.png"/>
+		<add as="WSO2 Machine Learner" template="WSO2_Machine_Learner" icon="images/wso2/wso2_machine_learner.png"/>
+		<add as="ML Model" template="ML_Model" icon="images/wso2/ml_model.png"/>
+		<add as="Publisher" template="Publisher" icon="images/wso2/publisher.png"/>
+		<add as="WSO2 Data Analytics Server" template="WSO2_DAS" icon="images/wso2/wso2_das.png"/>
+		<add as="WSO2 IoT Server" template="WSO2_IoT_Server" icon="images/wso2/wso2_iot_server.png"/>
+	</mxDefaultToolbar>
+</mxEditor>
