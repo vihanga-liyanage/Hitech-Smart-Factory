@@ -2,10 +2,10 @@
 <testng-results skipped="0" failed="0" total="0" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="org.wso2.support.GenerateTest" duration-ms="3" started-at="2017-03-19T05:35:57Z" finished-at="2017-03-19T05:35:57Z">
+  <suite name="org.wso2.support.GenerateTest" duration-ms="530" started-at="2017-04-29T05:41:27Z" finished-at="2017-04-29T05:41:27Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="3" started-at="2017-03-19T05:35:57Z" finished-at="2017-03-19T05:35:57Z">
+    <test name="Command line test" duration-ms="530" started-at="2017-04-29T05:41:27Z" finished-at="2017-04-29T05:41:27Z">
     </test> <!-- Command line test -->
   </suite> <!-- org.wso2.support.GenerateTest -->
 </testng-results>

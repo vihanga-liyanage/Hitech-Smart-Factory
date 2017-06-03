@@ -1,0 +1,55 @@
+
+lsquid:S3008"WRename this field "IS_INIT_DONE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†Å—
+lsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 39 to the 15 allowed.(ğ¨å£ıÿÿÿÿ
+gsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(æ¹¤·
+6squid:S1643"Use a StringBuilder instead.(èé‚Ñûÿÿÿÿ
+{squid:S3008"aRename this field "CLEAN_PRODUCT_LOCATION" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³ßçÿÿÿÿÿ
+0squid:S1643"Use a StringBuilder instead.(‡ÏÖ$
+gsquid:S1871"MThis branch's code block is the same as the block for the branch on line 725.(¯ô°çşÿÿÿÿ
+6squid:S1643"Use a StringBuilder instead.(Û¢‹…ıÿÿÿÿ
+dsquid:S3008"ORename this field "DIFF" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›ã¥ş
+Lsquid:S2629"7Use the built-in formatting to construct this argument.(­û¥¯
+Osquid:S1118":Add a private constructor to hide the implicit public one.(•†Ğ
+6squid:S1643"Use a StringBuilder instead.(¸«ÜÚşÿÿÿÿ
+1squid:S1643"Use a StringBuilder instead.(œã±•
+1squid:S1643"Use a StringBuilder instead.(â˜Ÿø
+asquid:S1192"GDefine a constant instead of duplicating this literal "target" 6 times.(ÄßÉ­ûÿÿÿÿ
+4squid:S2131"Use "Integer.toString" instead.(Á» õ
+:squid:S1166"%Either log or rethrow this exception.(óûìœ
+0squid:S1643"Use a StringBuilder instead.(îÍÕ~
+hsquid:S1192"NDefine a constant instead of duplicating this literal "load-balancer" 3 times.(Ù‚­÷úÿÿÿÿ
+1squid:S1643"Use a StringBuilder instead.(Â¨â
+1squid:S1643"Use a StringBuilder instead.(¶ìƒ‡
+Lsquid:S2629"7Use the built-in formatting to construct this argument.(´‰ÌÊ
+qsquid:S3008"WRename this field "MAX_NEXT_OUT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ı¼¨ëøÿÿÿÿ
+[squid:S1192"FDefine a constant instead of duplicating this literal "links" 3 times.(Üá×Ì
+osquid:S3008"ZRename this field "TARGET_LOCATION" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·’ºÑ
+Tsquid:S3725"?Replace this with a call to the "toFile().isDirectory()" method(ÍÇ¼É
+Osquid:S3725":Replace this with a call to the "toFile().isFile()" method(Ó›ßş
+=squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+0squid:S1643"Use a StringBuilder instead.(ŒÜã	
+Isquid:S1066"/Merge this if statement with the enclosing one.(ÁË´»ıÿÿÿÿ
+Osquid:S1141"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+_squid:S1192"JDefine a constant instead of duplicating this literal "Connector" 4 times.(èÕ¼
+1squid:S1643"Use a StringBuilder instead.(ŠÕ˜…
+^squid:S1192"IDefine a constant instead of duplicating this literal "profiles" 5 times.(šÑè
+1squid:S1643"Use a StringBuilder instead.(‚ßµ
+Tsquid:S3725":Replace this with a call to the "toFile().exists()" method(È¾¨şÿÿÿÿ
+1squid:S1643"Use a StringBuilder instead.(¨†ºˆ
+?squid:S1659"%Declare "product" on a separate line.(¥ôÁçøÿÿÿÿ
+csquid:S1192"IDefine a constant instead of duplicating this literal "services" 5 times.(Ü™Íûÿÿÿÿ
+bsquid:S1192"HDefine a constant instead of duplicating this literal "svnrepo" 3 times.(ÇÉİÂÿÿÿÿÿ
+6squid:S1643"Use a StringBuilder instead.(¯úÄ‘üÿÿÿÿ
+[squid:S1192"GDefine a constant instead of duplicating this literal "source" 6 times.(ğ‡Æ]
+gsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 43 to the 15 allowed.(ËìÇ
+?squid:S1166"%Either log or rethrow this exception.(êïó©üÿÿÿÿ
+`squid:S1192"FDefine a constant instead of duplicating this literal "Image" 3 times.(şÄª„ıÿÿÿÿ
+Csquid:S1066"/Merge this if statement with the enclosing one.(±‘ê
+6squid:S1643"Use a StringBuilder instead.(† Ê‡ÿÿÿÿÿ
+Ksquid:S2629"7Use the built-in formatting to construct this argument.(ÍÍ
+fsquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(š©‚7
+fsquid:S1132"LMove the "carbon" string literal on the left side of this string comparison.(ùêıóûÿÿÿÿ
+ysquid:S1149"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(åûÒ¸ûÿÿÿÿ
+0squid:S1643"Use a StringBuilder instead.(‡ÏÖ$
+wsquid:S3008"bRename this field "KNOWLEDGE_BASE_LOCATION" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß³ûã
+6squid:S1643"Use a StringBuilder instead.(¿¾Øúÿÿÿÿ

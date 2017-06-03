@@ -24,6 +24,8 @@ import org.json.XML;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.*;
@@ -119,7 +121,7 @@ public class Generate {
         Logger.getLogger(Generate.class.getName()).log(Level.INFO, "All file names received successefully...");
 
         //Creating docker compose yaml file
-        Path composeFile = Paths.get(targetLocation + "/docker-compose.yml");
+        Path composeFile = Paths.get(getResourceFile(targetLocation + "/docker-compose.yml"));
         String line = "version: '2'\nservices:\n";
         Files.createDirectories(Paths.get(targetLocation));
         Files.createFile(composeFile);
@@ -138,7 +140,7 @@ public class Generate {
                 }
             }
         }
-        Logger.getLogger(Generate.class.getName()).log(Level.INFO, "docker-compose yaml file created successefully...");
+        Logger.getLogger(Generate.class.getName()).log(Level.INFO, "docker-compose yaml file created successfully...");
 
         //process all file names
         for (int i=0; i<fileNames.size(); i++) {
@@ -155,7 +157,8 @@ public class Generate {
                 } else {
                     //Append details to compose file 
                     try {
-                        addToComposeFile(Paths.get(diffDir + "/dockerfilePart.yml"), fileName, composeFile);
+                        addToComposeFile(Paths.get(getResourceFile(diffDir + "/dockerfilePart.yml")), fileName, composeFile);
+
                     } catch (UnsupportedOperationException e) {
                         //Return error if unsupported component found
                         if (errorMsg == "")
@@ -176,15 +179,15 @@ public class Generate {
                 //Setup cleanDir
                 String cleanDir = CLEAN_PRODUCT_LOCATION + product;
 
-                if (Files.exists(Paths.get(diffDir))) {
-                    initApplyDiff(0, Paths.get(diffDir), Paths.get(cleanDir), Paths.get(targetDir));
+                if (Files.exists(Paths.get(getResourceFile(diffDir)))) {
+                    initApplyDiff(0, Paths.get(getResourceFile(diffDir)), Paths.get(getResourceFile(cleanDir)), Paths.get(getResourceFile(targetDir)));
                 }
             }
         }
 
         //Coping artifacts folder
-        Path sourcePath = Paths.get(KNOWLEDGE_BASE_LOCATION + "/artifacts");
-        Path targetPath = Paths.get(targetLocation + "/artifacts/");
+        Path sourcePath = Paths.get(getResourceFile(KNOWLEDGE_BASE_LOCATION + "/artifacts"));
+        Path targetPath = Paths.get(getResourceFile(targetLocation + "/artifacts/"));
         Files.createDirectory(targetPath);
         try {
             Files.walkFileTree(sourcePath, new SimpleFileVisitor<Path>() {
@@ -216,14 +219,9 @@ public class Generate {
     public static boolean initSystem() {
         Logger.getLogger(Generate.class.getName()).log(Level.INFO, "Initializing variables");
 
-//        Path currentRelativePath = Paths.get("");
-//        String sss = currentRelativePath.toAbsolutePath().toString();
-//        Logger.getLogger(Generate.class.getName()).log(Level.INFO, sss);
-
-//        Path path = Paths.get("webapps/DeploymentVisualizationTool-1.0-SNAPSHOT/resources/metadata/config.json");
-        Path path = Paths.get("/resources/metadata/config.json");
-        Logger.getLogger(Generate.class.getName()).log(Level.INFO, path.toAbsolutePath().toString());
         try {
+            Path path = Paths.get(getResourceFile("metadata/config.json"));
+
             //Reading file and creating JSON object
             List<String> contents = Files.readAllLines(path);
             String configString = "";
@@ -237,7 +235,7 @@ public class Generate {
             KNOWLEDGE_BASE_LOCATION = config.get("KNOWLEDGE_BASE_LOCATION").toString();
             TARGET_LOCATION = config.get("TARGET_LOCATION").toString();
             MAX_NEXT_OUT = Integer.parseInt(config.get("MAX_NEXT_OUT").toString());
-            
+
             //Clear any left over folders in target
             deleteDir(TARGET_LOCATION);
             
@@ -248,7 +246,7 @@ public class Generate {
             Logger.getLogger(Generate.class.getName()).log(Level.SEVERE, null, ex);
             IS_INIT_DONE = false;
             return false;
-        }   
+        }
     }
     
     /**
@@ -264,6 +262,7 @@ public class Generate {
         return status;
 //        nextOut = 1;
     }
+
     /**
      * Delete a given directory recursively 
      * @param targetLocation Directory location to delete
@@ -651,7 +650,21 @@ public class Generate {
 
         return new JSONObject(modelStr);
     }
-    
+
+    /**
+     * Return a URI of the absolute path to a resource file
+     * @param path path to the file starting inside src.main.resources
+     * @return created URI path
+     */
+    private static URI getResourceFile(String path) {
+        try {
+            return Generate.class.getClassLoader().getResource(path).toURI();
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     /*
     * Reverse engineering code
     */
