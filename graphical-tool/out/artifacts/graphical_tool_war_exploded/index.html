@@ -661,10 +661,13 @@
                 <table>
                     <tbody>
                         <tr>
-                            <td id="toolbar" valign="top" class="col-md-2">
-                                <!-- Toolbar Here -->
+                            <td id="toolbar_container" valign="top" class="col-md-3">
+                                <div id="toolbar" >
+                                    <!-- Toolbar Here -->
+                                </div>
+
                             </td>
-                            <td id="graph_container" valign="top" class="col-md-10">
+                            <td id="graph_container" valign="top" class="col-md-9">
                                 <div id="graph"  tabindex="-1">
                                     <!-- Graph Here -->
                                     <center id="splash" style="padding-top:530px;">
@@ -672,14 +675,15 @@
                                     </center>
                                 </div>
                                 <textarea id="xml"></textarea>
-                                <input id="source" type="checkbox"/>
-                                View Source
-                                <button id="getModelButton" style="display: none">Get JSON Model</button>
-                                <button id="getConfigurationButton" style="display: none">Download Configs</button>
-                                <button id="loadDiagramButton">Load Predefine Diagram</button>
-                                <button id="getConfigurationAutoGenLinksButton">Download Configurations</button>
-                                <button id="genLinksButton">Generate Links</button>
-                                <button id="clearLinksButton">Clear Links</button>
+                                <input id="source" type="checkbox"/> View source
+                                <div id="action-panel" style="display: none">
+                                    <button id="getModelButton" style="display: none">Get JSON Model</button>
+                                    <button id="getConfigurationButton" style="display: none">Download Configs</button>
+                                    <button id="loadDiagramButton">Load Predefine Diagram</button>
+                                    <button id="getConfigurationAutoGenLinksButton">Download Configurations</button>
+                                    <button id="genLinksButton">Generate Links</button>
+                                    <button id="clearLinksButton">Clear Links</button>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
@@ -690,23 +694,25 @@
 
     <script type="text/javascript">
 
-        // set graph area height
-        function autoResizeGraph()
+        // set toolbar and graph area height
+        function autoResizeToolbarAndGraph()
         {
-            document.getElementById('graph').style.height = 'auto';
-            document.getElementById('xml').style.height = 'auto';
-            var graphContainerH = document.getElementById('graph_container').offsetHeight;
+//            document.getElementById('graph').style.height = 'auto';
+//            document.getElementById('xml').style.height = 'auto';
+//            document.getElementById('toolbar').style.height = 'auto';
+//            var graphContainerH = document.getElementById('graph_container').offsetHeight;
             var windowH = window.innerHeight;
-            if (windowH >= graphContainerH) {
+//            if (windowH >= graphContainerH) {
                 document.getElementById('graph').style.height = (windowH - 137) + "px";
                 document.getElementById('xml').style.height = (windowH - 139) + "px";
-            } else {
-                document.getElementById('graph').style.height = (graphContainerH - 44) + "px"; //405-361=64
-                document.getElementById('xml').style.height = (graphContainerH - 46) + "px";
-            }
+                document.getElementById('toolbar').style.height = (windowH - 100) + "px";
+//            } else {
+//                document.getElementById('graph').style.height = (graphContainerH - 44) + "px"; //405-361=64
+//                document.getElementById('xml').style.height = (graphContainerH - 46) + "px";
+//            }
         }
-        window.onresize = autoResizeGraph;
-        autoResizeGraph();
+        window.onresize = autoResizeToolbarAndGraph;
+        autoResizeToolbarAndGraph();
 
     </script>
 </html>

@@ -20,38 +20,96 @@
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="10" lean-forward="true" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+              <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="704" column="83" lean-forward="false" selection-start-line="704" selection-start-column="83" selection-end-line="704" selection-end-column="83" />
+            <state relative-caret-position="3780">
+              <caret line="646" column="26" lean-forward="true" selection-start-line="646" selection-start-column="26" selection-end-line="646" selection-end-column="26" />
+              <folding>
+                <element signature="e#8607#8682#0" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mxApplication.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/mxApplication.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="43" column="34" lean-forward="true" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/style.css">
+      <file leaf-file-name="mxEditor.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/lib/js/editor/mxEditor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="71" column="1" lean-forward="true" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
+            <state relative-caret-position="508">
+              <caret line="370" column="18" lean-forward="true" selection-start-line="370" selection-start-column="18" selection-end-line="370" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wordpress.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/wordpress.css">
+      <file leaf-file-name="diagrameditor.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/config/diagrameditor.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="-785">
+              <caret line="70" column="28" lean-forward="false" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
+              <folding>
+                <element signature="n#add#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#ui#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#0;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#1;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#2;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#3;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#4;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#5;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#6;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#7;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#8;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#9;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#10;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#11;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#12;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#13;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#14;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#15;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#1;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#2;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#3;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#0;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#1;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#2;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#3;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#4;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#5;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#6;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#7;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#8;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#9;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#10;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#11;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#12;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#20;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#mxGraphModel#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <element signature="n#add#0;n#mxGraphModel#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+                <marker date="1496578599217" expanded="false" signature="7788:7975" ph="..." />
+                <marker date="1496578599217" expanded="false" signature="7995:8181" ph="..." />
+                <marker date="1496578599217" expanded="false" signature="8203:8391" ph="..." />
+                <marker date="1496578599217" expanded="false" signature="8414:8603" ph="..." />
+                <marker date="1496578599217" expanded="false" signature="8655:8829" ph="..." />
+                <marker date="1496578599217" expanded="false" signature="8851:9025" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,7 +117,7 @@
       <file leaf-file-name="custom.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/custom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1387">
+            <state relative-caret-position="-2610">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -78,6 +136,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="362">
+              <caret line="53" column="18" lean-forward="false" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -92,6 +160,9 @@
       <find>too</find>
       <find>&quot;80&quot;</find>
       <find>xml</find>
+      <find>user</find>
+      <find>data_stream</find>
+      <find>conveyor-belt</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;60&quot;</replace>
@@ -108,9 +179,9 @@
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$USER_HOME$/.IntelliJIdea2016.3/idea64.vmoptions" />
         <option value="$PROJECT_DIR$/web/ts.html" />
-        <option value="$PROJECT_DIR$/web/config/diagrameditor.xml" />
         <option value="$PROJECT_DIR$/web/css/style.css" />
         <option value="$PROJECT_DIR$/web/index.html" />
+        <option value="$PROJECT_DIR$/web/config/diagrameditor.xml" />
       </list>
     </option>
   </component>
@@ -191,6 +262,102 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphical-tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphical-tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphical-tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphical-tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hitech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ultrasonic-sensors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphical-tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphical-tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hitech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="temperature-and-humidity-sensors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphical-tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphical-tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hitech" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="production-line-items" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -704,16 +871,17 @@
       <option name="presentableId" value="Default" />
       <updated>1496483695971</updated>
       <workItem from="1496483704540" duration="1284000" />
-      <workItem from="1496485144971" duration="7128000" />
+      <workItem from="1496485144971" duration="7999000" />
+      <workItem from="1496567584730" duration="10265000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8412000" />
+    <option name="totallyTimeSpent" value="19548000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="24" width="1311" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -734,7 +902,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="PsiViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20882584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -763,39 +931,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.java" />
-    <entry file="file://$USER_HOME$/.IntelliJIdea2016.3/idea64.vmoptions">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -804,25 +939,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/ts.html">
+    <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/wordpress.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="10350">
+          <caret line="690" column="34" lean-forward="false" selection-start-line="690" selection-start-column="34" selection-end-line="690" selection-end-column="34" />
+          <folding>
+            <element signature="e#8607#8682#0" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1387">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -840,27 +970,151 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/config/diagrameditor.xml">
+    <entry file="file://$PROJECT_DIR$/web/index.jsp" />
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2178">
-          <caret line="164" column="68" lean-forward="false" selection-start-line="164" selection-start-column="68" selection-end-line="164" selection-end-column="68" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.java" />
+    <entry file="file://$USER_HOME$/.IntelliJIdea2016.3/idea64.vmoptions">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp" />
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ts.html" />
+    <entry file="file://$PROJECT_DIR$/web/css/wordpress.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/images/actor.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="71" column="1" lean-forward="true" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
+        <state relative-caret-position="362">
+          <caret line="53" column="18" lean-forward="false" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/mxApplication.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="43" column="34" lean-forward="true" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/lib/js/editor/mxEditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="370" column="18" lean-forward="true" selection-start-line="370" selection-start-column="18" selection-end-line="370" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2610">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#1602#3435#0" expanded="false" />
+            <element signature="e#3688#4637#0" expanded="false" />
+            <element signature="e#4947#5265#0" expanded="false" />
+            <marker date="1489900591000" expanded="true" signature="1853:1910" ph="..." />
+            <marker date="1489900591000" expanded="true" signature="2366:2384" ph="..." />
+            <marker date="1489900591000" expanded="true" signature="2719:2755" ph="..." />
+            <marker date="1489900591000" expanded="true" signature="13771:13828" ph="..." />
+            <marker date="1489900591000" expanded="true" signature="13877:13889" ph="..." />
+            <marker date="1489900591000" expanded="true" signature="13957:13970" ph="..." />
+            <marker date="1489900591000" expanded="true" signature="14078:14114" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="704" column="83" lean-forward="false" selection-start-line="704" selection-start-column="83" selection-end-line="704" selection-end-column="83" />
-          <folding />
+        <state relative-caret-position="3780">
+          <caret line="646" column="26" lean-forward="true" selection-start-line="646" selection-start-column="26" selection-end-line="646" selection-end-column="26" />
+          <folding>
+            <element signature="e#8607#8682#0" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/config/diagrameditor.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-785">
+          <caret line="70" column="28" lean-forward="false" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
+          <folding>
+            <element signature="n#add#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#ui#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#0;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#1;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#2;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#3;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#4;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#5;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#6;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#7;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#8;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#9;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#10;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#11;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#12;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#13;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#14;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#15;n#Array#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#1;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#2;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#3;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#0;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#1;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#2;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#3;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#4;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#5;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#6;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#7;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#8;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#9;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#10;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#11;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#12;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#20;n#mxStylesheet#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#mxGraphModel#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <element signature="n#add#0;n#mxGraphModel#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+            <marker date="1496578599217" expanded="false" signature="7788:7975" ph="..." />
+            <marker date="1496578599217" expanded="false" signature="7995:8181" ph="..." />
+            <marker date="1496578599217" expanded="false" signature="8203:8391" ph="..." />
+            <marker date="1496578599217" expanded="false" signature="8414:8603" ph="..." />
+            <marker date="1496578599217" expanded="false" signature="8655:8829" ph="..." />
+            <marker date="1496578599217" expanded="false" signature="8851:9025" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

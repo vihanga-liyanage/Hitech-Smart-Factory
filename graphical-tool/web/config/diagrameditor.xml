@@ -39,134 +39,95 @@
 			</Text>
 		</add>
 
-		//custom templates
-		<add as="Dashboard">
+		<!-- production line items -->
+		<add as="ConveyorBelt">
 			<Image label="" href="">
-				<mxCell vertex="1" style="dashboard">
-					<mxGeometry as="geometry" width="60" height="60"/>
+				<mxCell vertex="1" style="conveyor-belt">
+					<mxGeometry as="geometry" width="150" height="150" type="component"/>
 				</mxCell>
 			</Image>
 		</add>
-		<add as="Data_Stream">
+		<add as="Delivery">
 			<Image label="" href="">
-				<mxCell vertex="1" style="data_stream">
-					<mxGeometry as="geometry" width="60" height="60"/>
+				<mxCell vertex="1" style="delivery">
+					<mxGeometry as="geometry" width="150" height="150" type="component"/>
 				</mxCell>
 			</Image>
 		</add>
-		<add as="Database">
+		<add as="FillingArm">
 			<Image label="" href="">
-				<mxCell vertex="1" style="database">
-					<mxGeometry as="geometry" width="60" height="60"/>
+				<mxCell vertex="1" style="filling-arm">
+					<mxGeometry as="geometry" width="150" height="150" type="component"/>
 				</mxCell>
 			</Image>
 		</add>
-		<add as="Mobile_Phone">
+		<add as="RoboticArm">
 			<Image label="" href="">
-				<mxCell vertex="1" style="mobile_phone">
-					<mxGeometry as="geometry" width="60" height="60"/>
+				<mxCell vertex="1" style="robotic-arm">
+					<mxGeometry as="geometry" width="150" height="150" type="component"/>
 				</mxCell>
 			</Image>
 		</add>
-		<add as="User">
+		<add as="WorkingMan">
 			<Image label="" href="">
-				<mxCell vertex="1" style="user">
-					<mxGeometry as="geometry" width="60" height="60"/>
-				</mxCell>
-			</Image>
-		</add>
-		<add as="Web_Page">
-			<Image label="" href="">
-				<mxCell vertex="1" style="web_page">
-					<mxGeometry as="geometry" width="60" height="60"/>
-				</mxCell>
-			</Image>
-		</add>
-		<add as="WSO2_API_Manager_2.0.0">
-			<Image label="" href="">
-				<mxCell vertex="1" style="wso2am-2.0.0">
-					<mxGeometry as="geometry" width="60" height="60"/>
-				</mxCell>
-			</Image>
-		</add>
-		<add as="WSO2_API_Manager_2.1.0">
-			<Image label="" href="">
-				<mxCell vertex="1" style="wso2am-2.1.0">
-					<mxGeometry as="geometry" width="60" height="60"/>
-				</mxCell>
-			</Image>
-		</add>
-		<add as="WSO2_Complex_Event_Processor">
-			<Image label="" href="">
-				<mxCell vertex="1" style="wso2-complex-event-processor">
-					<mxGeometry as="geometry" width="60" height="60"/>
-				</mxCell>
-			</Image>
-		</add>
-		<add as="WSO2_Enterprise_Service_Bus">
-			<Image label="" href="">
-				<mxCell vertex="1" style="wso2esb">
-					<mxGeometry as="geometry" width="60" height="60"/>
-				</mxCell>
-			</Image>
-		</add>
-		<add as="WSO2_Identity_Server">
-			<Image label="" href="">
-				<mxCell vertex="1" style="wso2-identity-server">
-					<mxGeometry as="geometry" width="60" height="60"/>
-				</mxCell>
-			</Image>
-		</add>
-		<add as="WSO2_Machine_Learner">
-			<Image label="" href="">
-				<mxCell vertex="1" style="wso2-machine-learner">
-					<mxGeometry as="geometry" width="60" height="60"/>
-				</mxCell>
-			</Image>
-		</add>
-		<add as="ML_Model">
-			<Image label="" href="">
-				<mxCell vertex="1" style="ml_model">
-					<mxGeometry as="geometry" width="60" height="60"/>
-				</mxCell>
-			</Image>
-		</add>
-		<add as="Publisher">
-			<Image label="" href="">
-				<mxCell vertex="1" style="publisher">
-					<mxGeometry as="geometry" width="60" height="60"/>
-				</mxCell>
-			</Image>
-		</add>
-		<add as="WSO2_DAS">
-			<Image label="" href="">
-				<mxCell vertex="1" style="wso2am-analytics-2.0.0">
-					<mxGeometry as="geometry" width="60" height="60"/>
-				</mxCell>
-			</Image>
-		</add>
-		<add as="WSO2_IoT_Server">
-			<Image label="" href="">
-				<mxCell vertex="1" style="wso2-iot-server">
-					<mxGeometry as="geometry" width="60" height="60"/>
-				</mxCell>
-			</Image>
-		</add>
-		<add as="Load_Balancer">
-			<Image label="" href="">
-				<mxCell vertex="1" style="load-balancer">
-					<mxGeometry as="geometry" width="60" height="60"/>
-				</mxCell>
-			</Image>
-		</add>
-		<add as="SVN">
-			<Image label="" href="">
-				<mxCell vertex="1" style="svnrepo">
-					<mxGeometry as="geometry" width="60" height="60"/>
+				<mxCell vertex="1" style="working-man">
+					<mxGeometry as="geometry" width="150" height="150" type="component"/>
 				</mxCell>
 			</Image>
 		</add>
 
+		<!--temperature-and-humidity-sensors-->
+		<add as="BME280">
+			<Image label="" href="">
+				<mxCell vertex="1" style="BME280">
+					<mxGeometry as="geometry" width="80" height="80" type="sensor"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="DHT11">
+			<Image label="" href="">
+				<mxCell vertex="1" style="DHT11">
+					<mxGeometry as="geometry" width="80" height="80" type="sensor"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="DS18B20">
+			<Image label="" href="">
+				<mxCell vertex="1" style="DS18B20">
+					<mxGeometry as="geometry" width="80" height="80" type="sensor"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="MLX90614">
+			<Image label="" href="">
+				<mxCell vertex="1" style="MLX90614">
+					<mxGeometry as="geometry" width="80" height="80" type="sensor"/>
+				</mxCell>
+			</Image>
+		</add>
+
+		<!--ultrasonic-sensors-->
+		<add as="MLX90614">
+			<Image label="" href="">
+				<mxCell vertex="1" style="MLX90614">
+					<mxGeometry as="geometry" width="80" height="80" type="sensor"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="QTR-3RC">
+			<Image label="" href="">
+				<mxCell vertex="1" style="QTR-3RC">
+					<mxGeometry as="geometry" width="80" height="80" type="sensor"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="SRF02">
+			<Image label="" href="">
+				<mxCell vertex="1" style="SRF02">
+					<mxGeometry as="geometry" width="80" height="80" type="sensor"/>
+				</mxCell>
+			</Image>
+		</add>
 
 	</Array>
 	<mxGraph as="graph" alternateEdgeStyle="verticalConnector" allowLoops="1" dropEnabled="1">
@@ -267,97 +228,72 @@
 				<add as="fillColor" value="#D4D4D4"/>
 			</add>
 
-			//custom styles
-			<add as="dashboard">
+			<!-- production line items -->
+			<add as="conveyor-belt">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/wso2/dashboard.png"/>
+				<add as="image" value="images/hitech/production-line-items/conveyor-belt.png"/>
 			</add>
-			<add as="data_stream">
+			<add as="delivery">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/wso2/data_stream.png"/>
+				<add as="image" value="images/hitech/production-line-items/delivery.png"/>
 			</add>
-			<add as="database">
+			<add as="filling-arm">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/wso2/database.png"/>
+				<add as="image" value="images/hitech/production-line-items/filling-arm.png"/>
 			</add>
-			<add as="mobile_phone">
+			<add as="robotic-arm">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/wso2/mobile_phone.png"/>
+				<add as="image" value="images/hitech/production-line-items/robotic-arm.png"/>
 			</add>
-			<add as="user">
+			<add as="working-man">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/wso2/user.png"/>
+				<add as="image" value="images/hitech/production-line-items/working-man.png"/>
 			</add>
-			<add as="web_page">
+
+			<!--temperature-and-humidity-sensors-->
+			<add as="BME280">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/wso2/web_page.png"/>
+				<add as="image" value="images/hitech/temperature-and-humidity-sensors/BME280.jpg"/>
 			</add>
-			<add as="wso2am-2.0.0">
+			<add as="DHT11">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/wso2/wso2-am-2.0.0.png"/>
+				<add as="image" value="images/hitech/temperature-and-humidity-sensors/DHT11.jpg"/>
 			</add>
-			<add as="wso2am-2.1.0">
+			<add as="DS18B20">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/wso2/wso2-am-2.1.0.png"/>
+				<add as="image" value="images/hitech/temperature-and-humidity-sensors/DS18B20.jpg"/>
 			</add>
-			<add as="wso2-complex-event-processor">
+			<add as="MLX90614">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/wso2/wso2_complex_event_processor.png"/>
+				<add as="image" value="images/hitech/temperature-and-humidity-sensors/MLX90614.jpg"/>
 			</add>
-			<add as="wso2esb">
+
+			<!--ultrasonic-sensors-->
+			<add as="HC-SR04">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/wso2/wso2-esb.png"/>
+				<add as="image" value="images/hitech/ultrasonic-sensors/HC-SR04.jpg"/>
 			</add>
-			<add as="wso2-identity-server">
+			<add as="QTR-3RC">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/wso2/wso2-is.png"/>
+				<add as="image" value="images/hitech/ultrasonic-sensors/QTR-3RC.jpg"/>
 			</add>
-			<add as="wso2-machine-learner">
+			<add as="SRF02">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/wso2/wso2_machine_learner.png"/>
+				<add as="image" value="images/hitech/ultrasonic-sensors/SRF02.jpg"/>
 			</add>
-			<add as="ml_model">
-				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/wso2/ml_model.png"/>
-			</add>
-			<add as="publisher">
-				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/wso2/publisher.png"/>
-			</add>
-			<add as="wso2am-analytics-2.0.0">
-				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/wso2/wso2_das.png"/>
-			</add>
-			<add as="wso2-iot-server">
-				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/wso2/wso2_iot_server.png"/>
-			</add>
-			<add as="load-balancer">
-				<add as="shape" value="image"/>
-				<add as="perimeter" value="ellipsePerimeter"/>
-				<add as="image" value="images/wso2/load-balancer.png"/>
-			</add>
-			<add as="svnrepo">
-				<add as="shape" value="image"/>
-				<add as="perimeter" value="ellipsePerimeter"/>
-				<add as="image" value="images/wso2/svnrepo.png"/>
-			</add>
+
 			<add as="two_way_arrow">
 				<add as="shape" value="arrow"/>
 				<add as="startArrow" value="classic"/>
@@ -404,54 +340,29 @@
 		</mxGraphModel>
 	</mxGraph>
 	<mxDefaultToolbar as="toolbar">
-		<!--<add as="connect" mode="connect" icon="images/connect.gif"><![CDATA[-->
-			<!--function (editor)-->
-			<!--{-->
-				<!--if (editor.defaultEdge != null)-->
-				<!--{-->
-					<!--editor.defaultEdge.style = null;-->
-				<!--}-->
-			<!--}-->
-		<!--]]></add>-->
-		<!--<add as="connect" mode="connect" icon="images/straight.gif"><![CDATA[-->
-			<!--function (editor)-->
-			<!--{-->
-				<!--if (editor.defaultEdge != null)-->
-				<!--{-->
-					<!--editor.defaultEdge.style = 'straightConnector';-->
-				<!--}-->
-			<!--}-->
-		<!--]]></add>-->
-		<br/>
-		<!--<add as="connect" mode="connect" icon="images/wso2/arrow.png">-->
-			<!--<![CDATA[-->
-				<!--function (editor)-->
-				<!--{-->
-					<!--if (editor.defaultEdge != null)-->
-					<!--{-->
-						<!--editor.defaultEdge.style = 'arrowConnector';-->
-					<!--}-->
-				<!--}-->
-			<!--]]>-->
-		<!--</add>-->
 
 		<add as="Connector" template="connector" icon="images/wso2/arrow.png"/>
-		<add as="Data Stream" template="Data_Stream" icon="images/wso2/data_stream.png"/>
-		<add as="Load Balancer" template="Load_Balancer" icon="images/wso2/load-balancer.png"/>
-		<add as="Database" template="Database" icon="images/wso2/database.png"/>
-		<add as="SVN" template="SVN" icon="images/wso2/svnrepo.png"/>
-		<add as="Mobile Phone" template="Mobile_Phone" icon="images/wso2/mobile_phone.png"/>
-		<add as="User" template="User" icon="images/wso2/user.png"/>
-		<add as="Web Page" template="Web_Page" icon="images/wso2/web_page.png"/>
-		<add as="WSO2 API Manager 2.0.0" template="WSO2_API_Manager_2.0.0" icon="images/wso2/wso2-am-2.0.0.png"/>
-		<add as="WSO2 API Manager 2.1.0" template="WSO2_API_Manager_2.1.0" icon="images/wso2/wso2-am-2.1.0.png"/>
-		<add as="WSO2 Complex Event Processor" template="WSO2_Complex_Event_Processor" icon="images/wso2/wso2_complex_event_processor.png"/>
-		<add as="WSO2 Enterprise Service Bus" template="WSO2_Enterprise_Service_Bus" icon="images/wso2/wso2-esb.png"/>
-		<add as="WSO2 Identity Server" template="WSO2_Identity_Server" icon="images/wso2/wso2-is.png"/>
-		<add as="WSO2 Machine Learner" template="WSO2_Machine_Learner" icon="images/wso2/wso2_machine_learner.png"/>
-		<add as="ML Model" template="ML_Model" icon="images/wso2/ml_model.png"/>
-		<add as="Publisher" template="Publisher" icon="images/wso2/publisher.png"/>
-		<add as="WSO2 Data Analytics Server" template="WSO2_DAS" icon="images/wso2/wso2_das.png"/>
-		<add as="WSO2 IoT Server" template="WSO2_IoT_Server" icon="images/wso2/wso2_iot_server.png"/>
+
+		<!-- production line items -->
+		<add as="Conveyor Belt" template="ConveyorBelt" icon="images/hitech/production-line-items/conveyor-belt.png"/>
+		<add as="Delivery" template="Delivery" icon="images/hitech/production-line-items/delivery.png"/>
+		<add as="Filling Arm" template="FillingArm" icon="images/hitech/production-line-items/filling-arm.png"/>
+		<add as="Robotic Arm" template="RoboticArm" icon="images/hitech/production-line-items/robotic-arm.png"/>
+		<add as="Working Man" template="WorkingMan" icon="images/hitech/production-line-items/working-man.png"/>
+		<hr></hr>
+
+		<!--temperature-and-humidity-sensors-->
+		<add as="BME280" template="BME280" icon="images/hitech/temperature-and-humidity-sensors/BME280.jpg"/>
+		<add as="DHT11" template="DHT11" icon="images/hitech/temperature-and-humidity-sensors/DHT11.jpg"/>
+		<add as="DS18B20" template="DS18B20" icon="images/hitech/temperature-and-humidity-sensors/DS18B20.jpg"/>
+		<add as="MLX90614" template="MLX90614" icon="images/hitech/temperature-and-humidity-sensors/MLX90614.jpg"/>
+		<hr></hr>
+
+		<!--ultrasonic-sensors-->
+		<add as="HC-SR04" template="HC-SR04" icon="images/hitech/ultrasonic-sensors/HC-SR04.jpg"/>
+		<add as="QTR-3RC" template="QTR-3RC" icon="images/hitech/ultrasonic-sensors/QTR-3RC.jpg"/>
+		<add as="SRF02" template="SRF02" icon="images/hitech/ultrasonic-sensors/SRF02.jpg"/>
+		<hr></hr>
+
 	</mxDefaultToolbar>
 </mxEditor>

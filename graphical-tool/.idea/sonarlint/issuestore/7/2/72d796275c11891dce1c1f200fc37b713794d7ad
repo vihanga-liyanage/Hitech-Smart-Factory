@@ -1,0 +1,61 @@
+
+Xjavascript:ForIn"9Restrict what this loop acts on by testing each property.(á™Ö˜ÿÿÿÿÿ
+€(javascript:VariableDeclarationAfterUsage"IMove the declaration of "initValidateProfileSelection" before this usage.(ğşÕúûÿÿÿÿ
+njavascript:S3776"TRefactor this function to reduce its Cognitive Complexity from 42 to the 15 allowed.(·âÎÊ
+]javascript:S2814"CRename "i" as this name is already used in declaration at line 194.(‚şÍû
+p(javascript:VariableDeclarationAfterUsage"9Move the declaration of "sortProfiles" before this usage.(ì¬–øÿÿÿÿ
+njavascript:S3776"TRefactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.(Ÿ˜Á
+bjavascript:S2814"CRename "i" as this name is already used in declaration at line 737.(…ƒÃ³ÿÿÿÿÿ
+=javascript:S2228"Remove this logging statement.(ó¢ª®ûÿÿÿÿ
+]!javascript:UnusedFunctionArgument"-Remove the unused function parameter "event".(±”®ìøÿÿÿÿ
+\!javascript:UnusedFunctionArgument",Remove the unused function parameter "data".(âáéùÿÿÿÿ
+j(javascript:VariableDeclarationAfterUsage"8Move the declaration of "isConnected" before this usage.(ÉÓ‘ö
+Ejavascript:BitwiseOperators" Remove the use of "|=" operator.(ÊöèË
+Sjavascript:ForIn"9Restrict what this loop acts on by testing each property.(‚şÍû
+]"javascript:CollapsibleIfStatements",Merge this if statement with the nested one.(È»ß–üÿÿÿÿ
+Xjavascript:ForIn"9Restrict what this loop acts on by testing each property.(ÊŞüšÿÿÿÿÿ
+Sjavascript:ForIn"9Restrict what this loop acts on by testing each property.(ÉØ‹´
+Fjavascript:CommentedCode"Remove this commented out code.(ûŒ–ùÿÿÿÿ
+|(javascript:VariableDeclarationAfterUsage"EMove the declaration of "validateProfileSelection" before this usage.(äˆ¿„ıÿÿÿÿ
+=javascript:S2310"Remove this assignment of "i".(…ƒÃ³ÿÿÿÿÿ
+pjavascript:NestedIfDepth"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(‘àÂè
+vjavascript:S2703"WAdd the "let", "const" or "var" keyword to this declaration of "i" to make it explicit.(á™Ö˜ÿÿÿÿÿ
+ujavascript:NestedIfDepth"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(…ƒÃ³ÿÿÿÿÿ
+7javascript:S2228"Remove this logging statement.(½ÓJ
+=javascript:S2310"Remove this assignment of "i".(…ƒÃ³ÿÿÿÿÿ
+Sjavascript:ForIn"9Restrict what this loop acts on by testing each property.(‚şÍû
+Z!javascript:UnusedFunctionArgument"*Remove the unused function parameter "ui".(±”®ìøÿÿÿÿ
+8javascript:S2228"Remove this logging statement.(ä´¥
+‰javascript:S3827"p"mxClient" does not exist. Change its name or declare it so that its usage doesn't result in a "ReferenceError".(ŒŸ`
+W"javascript:CollapsibleIfStatements",Merge this if statement with the nested one.(¿û¨!
+:javascript:S1442" Remove this usage of alert(...).(÷ğÂº
+t(javascript:VariableDeclarationAfterUsage"BMove the declaration of "showLoadDiagramDialog" before this usage.(ü›§ê
+t(javascript:VariableDeclarationAfterUsage"=Move the declaration of "resetVersionData" before this usage.(öñ‡ôøÿÿÿÿ
+njavascript:S3776"TRefactor this function to reduce its Cognitive Complexity from 17 to the 15 allowed.(©ƒø”
+?javascript:S1442" Remove this usage of alert(...).(¿“˜üÿÿÿÿ
+ujavascript:NestedIfDepth"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(È»ß–üÿÿÿÿ
+m(javascript:VariableDeclarationAfterUsage";Move the declaration of "processService" before this usage.(ñÃ³¥
+Z!javascript:UnusedFunctionArgument"*Remove the unused function parameter "ui".(±”®ìøÿÿÿÿ
+bjavascript:S2814"CRename "i" as this name is already used in declaration at line 346.(˜æıÚÿÿÿÿÿ
+Sjavascript:ForIn"9Restrict what this loop acts on by testing each property.(í”ó’
+ujavascript:NestedIfDepth"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(ÌÔ•ìıÿÿÿÿ
+]"javascript:CollapsibleIfStatements",Merge this if statement with the nested one.(¬Õàøùÿÿÿÿ
+bjavascript:S2814"CRename "i" as this name is already used in declaration at line 701.(ÊŞüšÿÿÿÿÿ
+]!javascript:UnusedFunctionArgument"-Remove the unused function parameter "event".(±”®ìøÿÿÿÿ
+g(javascript:VariableDeclarationAfterUsage"5Move the declaration of "readFile" before this usage.(ãƒÙŠ
+qjavascript:S2703"WAdd the "let", "const" or "var" keyword to this declaration of "p" to make it explicit.(í”ó’
+Xjavascript:ForIn"9Restrict what this loop acts on by testing each property.(—Ø²ûÿÿÿÿ
+‰javascript:S3827"o"mxCodec" does not exist. Change its name or declare it so that its usage doesn't result in a "ReferenceError".(ØõÜ›
+{javascript:S2703"\Add the "let", "const" or "var" keyword to this declaration of "source" to make it explicit.(å¢€‹ùÿÿÿÿ
+Ajavascript:CommentedCode"Remove this commented out code.(“ı±Ÿ
+X"javascript:CollapsibleIfStatements",Merge this if statement with the nested one.(º ²˜
+j(javascript:VariableDeclarationAfterUsage"8Move the declaration of "loadDiagram" before this usage.(ìÏ“Ì
+k(javascript:VariableDeclarationAfterUsage"4Move the declaration of "getName" before this usage.(ßöîÓüÿÿÿÿ
+h(javascript:VariableDeclarationAfterUsage"6Move the declaration of "isNumeric" before this usage.(Ä¾¹ê
+q(javascript:VariableDeclarationAfterUsage"@Move the declaration of "addProfileToService" before this usage.(¸Óûl
+‡javascript:S3827"n"jsyaml" does not exist. Change its name or declare it so that its usage doesn't result in a "ReferenceError".(Ë½­
+ujavascript:NestedIfDepth"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(ŸĞ¬ıÿÿÿÿ
+pjavascript:NestedIfDepth"NRefactor this code to not nest more than 3 if/for/while/switch/try statements.(ÔÚü„
+]"javascript:CollapsibleIfStatements",Merge this if statement with the nested one.(Ç€øÿÿÿÿ
+]javascript:S2814"CRename "i" as this name is already used in declaration at line 194.(‚şÍû
+‰javascript:S3827"o"mxUtils" does not exist. Change its name or declare it so that its usage doesn't result in a "ReferenceError".(š¢…ñ
