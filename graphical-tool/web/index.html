@@ -39,10 +39,22 @@
 
             <div id="Actions" class="tabcontent">
                 <h3>Actions</h3>
-                <p>Create New Company</p>
-                <p>Create New Branch</p>
-                <p>Create New Section</p>
-                <p>Create New Production Line</p>
+                <button class="action-btn">
+                    <img src="images/hitech/icons/factory.png" alt="" width="20px" style="margin: 5px;">
+                    Create New Factory
+                </button>
+                <button class="action-btn">
+                    <img src="images/hitech/icons/factory.png" alt="" width="20px" style="margin: 5px;">
+                    Create New Branch
+                </button>
+                <button class="action-btn">
+                    <img src="images/hitech/icons/factory.png" alt="" width="20px" style="margin: 5px;">
+                    Create New Section
+                </button>
+                <button class="action-btn">
+                    <img src="images/hitech/icons/factory.png" alt="" width="20px" style="margin: 5px;">
+                    Create New Production Line
+                </button>
             </div>
 
             <div id="Structure" class="tabcontent" style="display: none;">
@@ -52,7 +64,25 @@
 
         </div>
         <div id="main-panel" class="col-md-9">
-            main panel
+            <p>Existing Factories</p>
+            <button class="box-btn factory active-box-btn">ABC factory</button>
+            <button class="box-btn factory">asfsdfg factory</button>
+            <button class="box-btn factory">ABCdfgdg rgr factory</button>
+            <hr class="dashed-hr">
+            <p>Branches of ABC factory</p>
+            <button class="box-btn branch">Branch 0001</button>
+            <button class="box-btn branch active-box-btn">Colombo Branch</button>
+            <hr class="dashed-hr">
+            <p>Sections of Colombo Branch</p>
+            <button class="box-btn section">wxyz Section</button>
+            <button class="box-btn section active-box-btn">Filling Section</button>
+            <button class="box-btn section">Drilling Section</button>
+            <button class="box-btn section">sdvsge Section</button>
+            <hr class="dashed-hr">
+            <p>Production Lines of Filling Section</p>
+            <button class="box-btn production-line">Left Production Line</button>
+            <button class="box-btn production-line">Right Production Line</button>
+            <p></p>
         </div>
     </div>
 </body>

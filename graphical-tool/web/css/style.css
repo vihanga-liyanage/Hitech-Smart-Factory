@@ -192,7 +192,8 @@ h4 {
     display: none;
 }
 
-/*Index page CSS*/
+/*Index page styles*/
+
 #wrapper {
     min-height: 100%;
     height: auto !important;
@@ -211,6 +212,49 @@ h4 {
 #main-panel {
     border: 1px solid black;
     left: 25%;
+    text-align: left;
+    padding: 10px;
+    overflow: scroll;
+}
+
+.action-btn {
+    width: 100%;
+    height: 40px;
+    background: #899fff;
+    border: 3px solid #9e9d9d;
+    border-radius: 3px;
+    margin: 10px 0px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+}
+
+.box-btn {
+    border: 3px dashed #9e9d9d;
+    width: 100px;
+    height: 100px;
+    color: #000000;
+    margin: 0px 5px;
+}
+.active-box-btn {
+    box-shadow: 1px 1px 12px black;
+}
+
+.factory {
+    background: #8bd88f;
+}
+.branch {
+    background: #ffcc51;
+}
+.section {
+    background: #596dff;
+}
+.production-line {
+    background: #d74f4f;
+}
+
+.dashed-hr {
+    border-top: 3px dashed #eee;
 }
 
 /* Style the tab */
