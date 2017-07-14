@@ -29,7 +29,7 @@
       <file leaf-file-name="ClearGarbage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/support/ClearGarbage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="62">
               <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
               <folding>
                 <element signature="e#0#2894#0" expanded="true" />
@@ -44,7 +44,6 @@
             <state relative-caret-position="1515">
               <caret line="129" column="45" lean-forward="false" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
               <folding>
-                <element signature="e#0#29569#0" expanded="false" />
                 <element signature="method#clearGarbage#0;class#Generate#0" expanded="false" />
                 <element signature="method#deleteDir#0;class#Generate#0" expanded="false" />
                 <element signature="method#getJSONFromXML#0;class#Generate#0" expanded="false" />
@@ -138,9 +137,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -235,6 +231,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -920,11 +919,12 @@
       <workItem from="1493715149242" duration="5070000" />
       <workItem from="1496483142812" duration="1837000" />
       <workItem from="1496485140379" duration="1459000" />
+      <workItem from="1499746902193" duration="34000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20807000" />
+    <option name="totallyTimeSpent" value="20841000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -937,7 +937,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="24" width="1311" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -959,7 +959,7 @@
       <window_info id="PsiViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980299" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980299" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1000,12 +1000,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/support/ClearGarbage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#2894#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/support/Generate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1935">
+          <caret line="129" column="45" lean-forward="false" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
+          <folding>
+            <element signature="method#clearGarbage#0;class#Generate#0" expanded="false" />
+            <element signature="method#deleteDir#0;class#Generate#0" expanded="false" />
+            <element signature="method#getJSONFromXML#0;class#Generate#0" expanded="false" />
+            <element signature="method#processService#0;class#Generate#0" expanded="false" />
+            <element signature="method#processLink#0;class#Generate#0" expanded="false" />
+            <element signature="method#getKnowledgeBaseNames#0;class#Generate#0" expanded="false" />
+            <element signature="method#initApplyDiff#0;class#Generate#0" expanded="false" />
+            <element signature="method#applyDiff#0;class#Generate#0" expanded="false" />
+            <element signature="method#zip#0;class#Generate#0" expanded="false" />
+            <element signature="method#getAllKnowledgeBaseNames#0;class#Generate#0" expanded="false" />
+            <element signature="method#getXMLFromJSON#0;class#Generate#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/metadata/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="47" lean-forward="false" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/support/Generate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1935">
           <caret line="129" column="45" lean-forward="true" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
           <folding>
-            <element signature="e#0#29569#0" expanded="false" />
             <element signature="method#clearGarbage#0;class#Generate#0" expanded="false" />
             <element signature="method#deleteDir#0;class#Generate#0" expanded="false" />
             <element signature="method#getJSONFromXML#0;class#Generate#0" expanded="false" />
@@ -1049,7 +1094,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#29569#0" expanded="false" />
             <element signature="method#clearGarbage#0;class#Generate#0" expanded="false" />
             <element signature="method#deleteDir#0;class#Generate#0" expanded="false" />
             <element signature="method#getJSONFromXML#0;class#Generate#0" expanded="false" />
@@ -1093,7 +1137,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#29569#0" expanded="false" />
             <element signature="method#clearGarbage#0;class#Generate#0" expanded="false" />
             <element signature="method#deleteDir#0;class#Generate#0" expanded="false" />
             <element signature="method#getJSONFromXML#0;class#Generate#0" expanded="false" />
@@ -1158,7 +1201,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#29569#0" expanded="false" />
             <element signature="method#clearGarbage#0;class#Generate#0" expanded="false" />
             <element signature="method#deleteDir#0;class#Generate#0" expanded="false" />
             <element signature="method#getJSONFromXML#0;class#Generate#0" expanded="false" />
@@ -1223,7 +1265,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#29569#0" expanded="false" />
             <element signature="method#clearGarbage#0;class#Generate#0" expanded="false" />
             <element signature="method#deleteDir#0;class#Generate#0" expanded="false" />
             <element signature="method#getJSONFromXML#0;class#Generate#0" expanded="false" />
@@ -1323,7 +1364,6 @@
         <state relative-caret-position="1515">
           <caret line="129" column="45" lean-forward="false" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
           <folding>
-            <element signature="e#0#29569#0" expanded="false" />
             <element signature="method#clearGarbage#0;class#Generate#0" expanded="false" />
             <element signature="method#deleteDir#0;class#Generate#0" expanded="false" />
             <element signature="method#getJSONFromXML#0;class#Generate#0" expanded="false" />
@@ -1358,21 +1398,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="28" lean-forward="false" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/test.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/java/org/wso2/support/ClearGarbage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="62">
           <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding>
             <element signature="e#0#2894#0" expanded="true" />

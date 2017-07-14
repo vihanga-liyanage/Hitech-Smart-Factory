@@ -1,10 +1,14 @@
 body {
     margin: 0;
     background: #f5f5f5b3;
-    height: auto;
+    height: 100%;
+}
+html{
+    height: 100%;
 }
 #header {
     height: auto;
+    margin: 0;
 }
 
 #headerimg {
@@ -46,7 +50,7 @@ body {
 
 #toolbar{
     overflow: scroll;
-    padding-left: 22px;
+    padding-left: 10px;
     padding-top: 10px;
 }
 
@@ -77,14 +81,14 @@ body {
 }
 
 .mxToolbarMode {
-    width: 45px;
-    margin: 10px !important;
+    width: 60px;
+    margin: 6px !important;
 }
 
 .mxToolbarModeSelected
 {
-    margin: 10px !important;
-    width: 45px;
+    margin: 6px !important;
+    width: 60px;
     border:2px #fdff00 solid !important;
     background-color: white !important;
 
@@ -156,4 +160,90 @@ h4 {
     border:2px #3e1494 solid !important;
     margin: 30px;
     overflow:scroll;
+}
+
+/*Message boxes*/
+.alert-box {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-align: center
+}
+
+.success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    display: none;
+}
+
+.failure {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    display: none;
+}
+
+.warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    display: none;
+}
+
+/*Index page CSS*/
+#wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 0 -50px 0; /* the bottom margin is the negative value of the footer's height */
+    position: relative;
+}
+
+#side-bar, #main-panel {
+    position: absolute;
+    bottom: 0px;
+    top: 60px;
+    padding:0;
+}
+
+#main-panel {
+    border: 1px solid black;
+    left: 25%;
+}
+
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    padding: 6px 12px;
+    border-top: none;
+    text-align: left;
 }

@@ -1,23 +1,5 @@
-/*
-*  Copyright (c) 2017, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
-*
-*  WSO2 Inc. licenses this file to you under the Apache License,
-*  Version 2.0 (the "License"); you may not use this file except
-*  in compliance with the License.
-*  You may obtain a copy of the License at
-*
-*    http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing,
-* software distributed under the License is distributed on an
-* "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-* KIND, either express or implied.  See the License for the
-* specific language governing permissions and limitations
-* under the License.
-*/
-
 /**
- * @author Vihanga Liyanage <vihanga@wso2.com>
+ * @author Vihanga Liyanage <vihangaliyanage007@gmail.com>
  */
 
 /**
@@ -47,6 +29,140 @@ var mergeData = null;
  * Used to store each version of the products dropped to the graph
  */
 var versionData = {};
+
+/**
+ * Function: addProfileToService
+ *
+ * Modify the label of the cell according to selected profiles
+ *
+ * Parameters:
+ *
+ * state - mxCellState - used to retrieve the relevant cell and the graph view
+ */
+var addProfileToService = function (state)
+{
+    //Get the checked profiles
+    var str = "";
+    if (document.getElementById("check0").checked) {
+        str += '/' + document.getElementById("check0").value;
+    }
+    if (document.getElementById("check1").checked) {
+        str += '/' + document.getElementById("check1").value;
+    }
+    if (document.getElementById("check2").checked) {
+        str += '/' + document.getElementById("check2").value;
+    }
+    if (document.getElementById("check3").checked) {
+        str += '/' + document.getElementById("check3").value;
+    }
+    if (document.getElementById("check4").checked) {
+        str += '/' + document.getElementById("check4").value;
+    }
+    if (document.getElementById("check5").checked) {
+        str += '/' + document.getElementById("check5").value;
+    }
+
+    //Add profiles to the label of the vertex and refresh
+    var value = state.cell.value;
+    value.setAttribute("label", str.substring(1));
+    state.view.refresh();
+
+};
+
+/**
+ * Function: readFile
+ *
+ * Read a file and send data as text
+ *
+ * Parameters:
+ *
+ * file - file location
+ */
+var readFile = function (file)
+{
+    var allText = "Error";
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                allText = rawFile.responseText;
+            }
+        }
+    };
+    rawFile.send(null);
+    return allText;
+};
+
+/**
+ * Function: validateProfileSelection
+ *
+ * Enable or disable profiles based on selected profiles
+ *
+ * Parameters:
+ *
+ * product - Product name of the cell. ex: wso2am-2.0.0
+ * id - id of the profile to consider, in the profiles array
+ * profiles - Array of profiles of the product
+ */
+var validateProfileSelection = function (product, id, profiles)
+{
+    profiles = profiles.split(",");
+    var status = false;
+
+    //If all checkboxes are unchecked, all should be enabled (unchecked action)
+    for (var i=0; i<profiles.length; i++) {
+        status |= document.getElementById("check" + i).checked;
+    }
+    if (!status) {
+        for (var i in profiles) {
+            document.getElementById("check" + i).disabled = false;
+        }
+        //Checked action - disable un-mergeable profiles
+    } else {
+
+        //Read merge meta data if not already done
+        if (mergeData == null)
+            mergeData = JSON.parse(readFile(mergeDocPath));
+
+        var profile = profiles[id];
+
+        if (typeof mergeData[product][profile] != 'undefined') {
+            var mergeableProfiles = mergeData[product][profile];
+            for (var i in profiles) {
+                if ((i != id) && (!mergeableProfiles.includes(profiles[i]))) {
+                    document.getElementById("check" + i).disabled = true;
+                }
+            }
+        }
+    }
+};
+
+/**
+ * Function: initValidateProfileSelection
+ *
+ * Validate profiles if one or more profiles are already selected
+ *
+ * Parameters:
+ *
+ * product - Product name of the cell. ex: wso2am-2.0.0
+ * profiles - Array of profiles of the product
+ */
+var initValidateProfileSelection = function (product, profiles)
+{
+    //Read merge meta data if not already done
+    if (mergeData == null)
+        mergeData = JSON.parse(readFile(mergeDocPath));
+
+    for (var i=0; i<profiles.length; i++) {
+        if (document.getElementById("check" + i).checked) {
+            validateProfileSelection(product, i, "" + profiles)
+        }
+    }
+};
 
 /**
  * Function: showAddProfile
@@ -110,140 +226,6 @@ var showAddProfile = function (state, evt, product)
             },
             open: initValidateProfileSelection(product, profiles)
         });
-};
-
-/**
- * Function: addProfileToService
- *
- * Modify the label of the cell according to selected profiles
- *
- * Parameters:
- *
- * state - mxCellState - used to retrieve the relevant cell and the graph view
- */
-var addProfileToService = function (state)
-{
-    //Get the checked profiles
-    var str = "";
-    if (document.getElementById("check0").checked) {
-        str += '/' + document.getElementById("check0").value;
-    }
-    if (document.getElementById("check1").checked) {
-        str += '/' + document.getElementById("check1").value;
-    }
-    if (document.getElementById("check2").checked) {
-        str += '/' + document.getElementById("check2").value;
-    }
-    if (document.getElementById("check3").checked) {
-        str += '/' + document.getElementById("check3").value;
-    }
-    if (document.getElementById("check4").checked) {
-        str += '/' + document.getElementById("check4").value;
-    }
-    if (document.getElementById("check5").checked) {
-        str += '/' + document.getElementById("check5").value;
-    }
-
-    //Add profiles to the label of the vertex and refresh
-    var value = state.cell.value;
-    value.setAttribute("label", str.substring(1));
-    state.view.refresh();
-
-};
-
-/**
- * Function: initValidateProfileSelection
- *
- * Validate profiles if one or more profiles are already selected
- *
- * Parameters:
- *
- * product - Product name of the cell. ex: wso2am-2.0.0
- * profiles - Array of profiles of the product
- */
-var initValidateProfileSelection = function (product, profiles)
-{
-    //Read merge meta data if not already done
-    if (mergeData == null)
-        mergeData = JSON.parse(readFile(mergeDocPath));
-
-    for (var i=0; i<profiles.length; i++) {
-        if (document.getElementById("check" + i).checked) {
-            validateProfileSelection(product, i, "" + profiles)
-        }
-    }
-};
-
-/**
- * Function: validateProfileSelection
- *
- * Enable or disable profiles based on selected profiles
- *
- * Parameters:
- *
- * product - Product name of the cell. ex: wso2am-2.0.0
- * id - id of the profile to consider, in the profiles array
- * profiles - Array of profiles of the product
- */
-var validateProfileSelection = function (product, id, profiles)
-{
-    profiles = profiles.split(",");
-    var status = false;
-
-    //If all checkboxes are unchecked, all should be enabled (unchecked action)
-    for (var i=0; i<profiles.length; i++) {
-        status |= document.getElementById("check" + i).checked;
-    }
-    if (!status) {
-        for (var i in profiles) {
-            document.getElementById("check" + i).disabled = false;
-        }
-    //Checked action - disable un-mergeable profiles
-    } else {
-
-        //Read merge meta data if not already done
-        if (mergeData == null)
-            mergeData = JSON.parse(readFile(mergeDocPath));
-
-        var profile = profiles[id];
-
-        if (typeof mergeData[product][profile] != 'undefined') {
-            var mergeableProfiles = mergeData[product][profile];
-            for (var i in profiles) {
-                if ((i != id) && (!mergeableProfiles.includes(profiles[i]))) {
-                    document.getElementById("check" + i).disabled = true;
-                }
-            }
-        }
-    }
-};
-
-/**
- * Function: readFile
- *
- * Read a file and send data as text
- *
- * Parameters:
- *
- * file - file location
- */
-var readFile = function (file)
-{
-    var allText = "Error";
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                allText = rawFile.responseText;
-            }
-        }
-    };
-    rawFile.send(null);
-    return allText;
 };
 
 /**
@@ -467,7 +449,8 @@ var clearLinks = function (editor)
  *
  * editor - mxEditor object to get the graph
  */
-var confirmShowLoadDiagramDialog = function (editor) {
+var confirmShowLoadDiagramDialog = function (editor)
+{
     if (editor.graph.model.cells[2] == null) {
         showLoadDiagramDialog(editor);
     } else {
@@ -573,34 +556,20 @@ var initCellMerge = function(currentCell, highlighter, me, editor, cellMerge)
     {
         //Apply only if target cell is not the dragging cell
         if (tmp.cell.id != currentCell.id) {
+
             //Apply only if the target is not already highlighted
             if (highlighter.state == null) {
 
-                //Read merge meta data if not already done
-                if (mergeData == null)
-                    mergeData = JSON.parse(readFile(mergeDocPath));
+                var sourceType = currentCell.geometry.type;
+                var targetType = tmp.cell.geometry.type;
 
-                var sourceProduct = currentCell.style;
-                var targetProduct = tmp.cell.style;
-
-                //To merge, both cells should be of same product, and merge meta data should exist.
-                if ((sourceProduct == targetProduct) && (mergeData[sourceProduct])) {
-
-                    var sourceProfile = currentCell.value.getAttribute("label").split("/")[0];
-                    var targetProfile = tmp.cell.value.getAttribute("label").split("/")[0];
-                    var mergeableProfiles = mergeData[sourceProduct][sourceProfile];
-
-                    //Highlight target and set isMergeable true if two cells are mergeable.
-                    if ((mergeableProfiles) && (mergeableProfiles.includes(targetProfile))) {
-                        highlighter.highlight(editor.graph.view.getState(tmp.cell));
-                        if (!cellMerge.isMergeable) {
-                            cellMerge.isMergeable = true;
-                            cellMerge.source = currentCell;
-                            cellMerge.target = tmp.cell;
-                        }
-                    } else {
-                        if (cellMerge.isMergeable)
-                            cellMerge.isMergeable = false;
+                //check mergeability
+                if (sourceType == "sensor" && targetType == "component") {
+                    highlighter.highlight(editor.graph.view.getState(tmp.cell));
+                    if (!cellMerge.isMergeable) {
+                        cellMerge.isMergeable = true;
+                        cellMerge.source = currentCell;
+                        cellMerge.target = tmp.cell;
                     }
                 } else {
                     if (cellMerge.isMergeable)
@@ -759,7 +728,8 @@ var resetVersionData = function (editor)
  * These folder IDs are stored in browser storage when each download request.
  * Reset the local storage when done.
  */
-var clearGarbage = function () {
+var clearGarbage = function ()
+{
     // Check browser support
     if (typeof(Storage) !== "undefined") {
         if (localStorage.getItem("oldFolderIds")) {
@@ -772,11 +742,33 @@ var clearGarbage = function () {
     }
 };
 
+var showErrorMsg = function (msg) {
+    document.getElementById("errorMsg").innerHTML = msg;
+    $( "div.failure" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+};
 
+function changeTab(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
 
-/**
-* Reverse Engineering code - Need to review
-*/
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// <editor-fold defaultstate="collapsed" desc=" Reverse Engineering code - Need to review">
 var modelStr = '{"services":[';
 
 var serviceNode = function ()
@@ -899,3 +891,5 @@ var loadJSON = function (path, callback)
     };
     xobj.send(null);
 };
+
+// </editor-fold>
