@@ -219,7 +219,6 @@ h4 {
 
 .action-btn {
     width: 100%;
-    height: 40px;
     background: #899fff;
     border: 3px solid #9e9d9d;
     border-radius: 3px;
@@ -228,13 +227,32 @@ h4 {
     color: white;
     text-align: left;
 }
+.action-btn:hover {
+    box-shadow: 1px 1px 8px #5492a7;
+}
 
+.box-btn-row {
+    height: 140px;
+    border-bottom: 3px dashed #eee;
+    margin-bottom: 14px;
+}
+
+.box-btn-wrapper {
+    width: 90px;
+    height: 90px;
+    margin: 0px 5px;
+    float: left;
+}
+.box-btn-wrapper:hover {
+    box-shadow: 1px 1px 8px #5492a7;
+}
 .box-btn {
     border: 3px dashed #9e9d9d;
-    width: 100px;
-    height: 100px;
     color: #000000;
-    margin: 0px 5px;
+    height:100%;
+    width: 100%;
+    word-wrap: break-word;
+    font-size: smaller;
 }
 .active-box-btn {
     box-shadow: 1px 1px 12px black;
@@ -249,14 +267,47 @@ h4 {
 .section {
     background: #596dff;
 }
-.production-line {
+.prod-line {
     background: #d74f4f;
 }
 
-.dashed-hr {
-    border-top: 3px dashed #eee;
+#branches, #sections, #prod-lines {
+    display: none;
 }
 
+/*Action forms*/
+#action-form-background {
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    position: absolute;
+    background-color: #cccccc;
+    color: #aaaaaa;
+    opacity: .5;
+    filter: alpha(opacity = 50);
+}
+
+.action-form {
+    border: 2px solid #8fb4b4;
+    position: fixed;
+    /*position in the middle of the page*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: whitesmoke;
+    padding: 0 20px 20px 20px;
+    display: none;
+    z-index: 999;
+    filter: alpha(opacity = 50);
+}
+.submit-btn {
+    float: right;
+    margin-top: 10px;
+    margin-left: 5px;
+}
 /* Style the tab */
 div.tab {
     overflow: hidden;
