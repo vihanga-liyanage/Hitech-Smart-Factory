@@ -209,6 +209,49 @@ h4 {
     padding:0;
 }
 
+/* Side bar structure panel */
+#structure-container p{
+    margin-top: 10px;
+}
+.structure-branch, .structure-section, .structure-prod-line {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px dashed black;
+}
+.structure-factory p:hover, .structure-branch p:hover, .structure-section p:hover, .structure-prod-line p:hover {
+    cursor: pointer;
+    color: #03a5dc;;
+}
+.structure-hide {
+    overflow: hidden;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    -moz-transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+.structure-collapse {
+    -moz-transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -moz-transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    -o-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+    max-height: 1000px;
+    overflow: hidden;
+}
+
+/* Main Panel */
 #main-panel {
     border: 1px solid black;
     left: 25%;
@@ -289,7 +332,6 @@ h4 {
     opacity: .5;
     filter: alpha(opacity = 50);
 }
-
 .action-form {
     border: 2px solid #8fb4b4;
     position: fixed;
@@ -297,17 +339,22 @@ h4 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: whitesmoke;
-    padding: 0 20px 20px 20px;
+    background: white;
+    padding: 0 16px 16px 16px;
     display: none;
     z-index: 999;
     filter: alpha(opacity = 50);
+}
+.input-box {
+    border: 1px solid #adadad;
+    padding: 3px 5px;
 }
 .submit-btn {
     float: right;
     margin-top: 10px;
     margin-left: 5px;
 }
+
 /* Style the tab */
 div.tab {
     overflow: hidden;

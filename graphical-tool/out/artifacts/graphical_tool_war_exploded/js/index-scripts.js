@@ -156,3 +156,14 @@ function selectSection(name, element) {
         document.getElementById("prod-lines").style.display = "block";
     }
 }
+
+function collapseOrHide(element, name) {
+    var children = element.parentElement.children;
+    for (i in children) {
+        // Filter out branches
+        if (children[i].className && children[i].className.includes("structure-" + name)) {
+            // Change classes to collapse or hide
+            $(children[i]).toggleClass('structure-hide').toggleClass('structure-collapse');
+        }
+    }
+}

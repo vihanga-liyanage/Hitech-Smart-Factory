@@ -33,11 +33,11 @@
 
         <div id="side-bar" class="col-md-3">
             <div class="tab">
-                <button class="tablinks active" onclick="changeTab(event, 'Actions')">Actions</button>
-                <button class="tablinks" onclick="changeTab(event, 'Structure')">Structure</button>
+                <button class="tablinks" onclick="changeTab(event, 'Actions')">Actions</button>
+                <button class="tablinks active" onclick="changeTab(event, 'Structure')">Structure</button>
             </div>
 
-            <div id="Actions" class="tabcontent">
+            <div id="Actions" class="tabcontent" style="display: none;">
                 <h3>Actions</h3>
                 <button class="action-btn" onclick="displayActionForm('create-new-factory')">
                     <img src="images/hitech/icons/factory.png" alt="" width="20px" style="margin: 5px;">
@@ -57,9 +57,34 @@
                 </button>
             </div>
 
-            <div id="Structure" class="tabcontent" style="display: none;">
+            <div id="Structure" class="tabcontent">
                 <h3>Structure</h3>
-                <p>Structure of the factory will be here</p>
+                <div id="structure-container">
+                    <div class="structure-factory ">
+                        <p onclick="collapseOrHide(this, 'branch')">ABC Factory</p>
+                        <div class="structure-branch structure-hide">
+                            <p onclick="collapseOrHide(this, 'section')">Colombo Branch</p>
+                            <div class="structure-section structure-hide">
+                                <p onclick="collapseOrHide(this, 'prod-line')">Filling Section</p>
+                                <div class="structure-prod-line structure-hide">Production Line 1</div>
+                                <div class="structure-prod-line structure-hide">Production Line 2</div>
+                            </div>
+                            <div class="structure-section structure-hide">
+                                <p onclick="collapseOrHide(this, 'prod-line')">Sawing Section</p>
+                                <div class="structure-prod-line structure-hide">Production Line 1</div>
+                            </div>
+                        </div>
+                        <div class="structure-branch structure-hide">
+                            <p onclick="collapseOrHide(this, 'section')">Negombo Branch</p>
+                            <div class="structure-section structure-hide">
+                                <p onclick="collapseOrHide(this, 'prod-line')">Delivery Section</p>
+                                <div class="structure-prod-line structure-hide">Production Line 1</div>
+                                <div class="structure-prod-line structure-hide">Production Line 2</div>
+                                <div class="structure-prod-line structure-hide">Production Line 3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -117,7 +142,7 @@
     <div id="create-new-factory" class="action-form">
         <h4>Create New Factory</h4>
         Factory Name:
-        <input type="text" id="factory-name">
+        <input type="text" class="input-box" id="factory-name">
         <br>
         <input type="submit" class="submit-btn" value="Create">
         <input type="submit" class="submit-btn" value="Cancel" onclick="hideActionForm('create-new-factory')">
@@ -126,7 +151,7 @@
         <h4>Create New Branch</h4>
         <p id="branch-parent-details">ABC Factory</p>
         Branch Name:
-        <input type="text" id="branch-name">
+        <input type="text" class="input-box" id="branch-name">
         <br>
         <input type="submit" class="submit-btn" value="Create">
         <input type="submit" class="submit-btn" value="Cancel" onclick="hideActionForm('create-new-branch')">
@@ -135,7 +160,7 @@
         <h4>Create New Section</h4>
         <p id="section-parent-details">ABC Factory, Colombo Branch</p>
         Section Name:
-        <input type="text" id="section-name">
+        <input type="text" class="input-box" id="section-name">
         <br>
         <input type="submit" class="submit-btn" value="Create">
         <input type="submit" class="submit-btn" value="Cancel" onclick="hideActionForm('create-new-section')">
@@ -144,7 +169,7 @@
         <h4>Create New Production Line</h4>
         <p id="prod-line-parent-details">ABC Factory, Colombo Branch, Filling Section</p>
         Production Line Name:
-        <input type="text" id="prod-line-name">
+        <input type="text" class="input-box" id="prod-line-name">
         <br>
         <input type="submit" class="submit-btn" value="Create">
         <input type="submit" class="submit-btn" value="Cancel" onclick="hideActionForm('create-new-prod-line')">
