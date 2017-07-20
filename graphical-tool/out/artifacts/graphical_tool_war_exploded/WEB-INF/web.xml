@@ -12,8 +12,39 @@
         <servlet-name>FactoryController</servlet-name>
         <servlet-class>com.hitech.smartfactory.controller.FactoryController</servlet-class>
     </servlet>
+    <servlet>
+        <description></description>
+        <display-name>BranchController</display-name>
+        <servlet-name>BranchController</servlet-name>
+        <servlet-class>com.hitech.smartfactory.controller.BranchController</servlet-class>
+    </servlet>
+    <servlet>
+        <description></description>
+        <display-name>SectionController</display-name>
+        <servlet-name>SectionController</servlet-name>
+        <servlet-class>com.hitech.smartfactory.controller.SectionController</servlet-class>
+    </servlet>
+    <servlet>
+        <description></description>
+        <display-name>ProdLineController</display-name>
+        <servlet-name>ProdLineController</servlet-name>
+        <servlet-class>com.hitech.smartfactory.controller.ProdLineController</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>FactoryController</servlet-name>
         <url-pattern>/FactoryController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BranchController</servlet-name>
+        <url-pattern>/BranchController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SectionController</servlet-name>
+        <url-pattern>/SectionController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProdLineController</servlet-name>
+        <url-pattern>/ProdLineController</url-pattern>
     </servlet-mapping>
 </web-app>

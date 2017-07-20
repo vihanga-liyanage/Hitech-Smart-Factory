@@ -38,6 +38,7 @@ public class FactoryDAO {
             ResultSet rs = statement.executeQuery("select * from factory");
             while (rs.next()) {
                 Factory factory = new Factory();
+                factory.setFid(rs.getInt("fid"));
                 factory.setName(rs.getString("name"));
                 factories.add(factory);
             }

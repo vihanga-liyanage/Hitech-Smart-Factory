@@ -348,6 +348,7 @@ h4 {
 .input-box {
     border: 1px solid #adadad;
     padding: 3px 5px;
+    float: right;
 }
 .submit-btn {
     float: right;

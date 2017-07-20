@@ -90,6 +90,7 @@
         </div>
 
     </div>
+
     <div id="main-panel" class="col-md-9">
 
         <div id="factories" class="box-btn-row">
@@ -97,10 +98,9 @@
             <div id="dynamic-factories">
                 <c:forEach items="${factories}" var="factory">
                     <div class="box-btn-wrapper">
-                        <button class="box-btn factory" onclick="selectFactory('<c:out value="${factory.getName()}" />',
-                                this)"><c:out value="${factory.getName()}" /></button>
+                        <button class="box-btn factory" onclick="selectFactory('<c:out value="${factory.getFid()}" />',
+                                '<c:out value="${factory.getName()}" />', this)"><c:out value="${factory.getName()}" /></button>
                     </div>
-
                 </c:forEach>
             </div>
             <div class="box-btn-wrapper"><button class="box-btn factory" onclick="displayActionForm('create-new-factory')">
@@ -139,41 +139,46 @@
 <div id="action-form-background">
     <!--This is used to disable the background-->
 </div>
+
+<%-- Forms --%>
 <form id="create-new-factory" class="action-form" method="post" action="FactoryController">
     <h4>Create New Factory</h4>
     Factory Name:
     <input type="text" class="input-box" name="factory-name">
-    <br>
+    <br><br>
     <input type="submit" class="submit-btn" value="Create">
     <input type="button" class="submit-btn" value="Cancel" onclick="hideActionForm('create-new-factory')">
 </form>
-<form id="create-new-branch" class="action-form" method="post">
+<div id="create-new-branch" class="action-form">
     <h4>Create New Branch</h4>
-    <p id="branch-parent-details">ABC Factory</p>
+    <p id="branch-parent-details"></p>
     Branch Name:
     <input type="text" class="input-box" id="branch-name">
-    <br>
-    <input type="submit" class="submit-btn" value="Create">
+    <br><br>
+    Location:
+    <input type="text" class="input-box" id="branch-location">
+    <br><br>
+    <input type="submit" class="submit-btn" value="Create" onclick="createNewBranch()">
     <input type="button" class="submit-btn" value="Cancel" onclick="hideActionForm('create-new-branch')">
-</form>
-<form id="create-new-section" class="action-form" method="post">
+</div>
+<div id="create-new-section" class="action-form">
     <h4>Create New Section</h4>
-    <p id="section-parent-details">ABC Factory, Colombo Branch</p>
+    <p id="section-parent-details"></p>
     Section Name:
     <input type="text" class="input-box" id="section-name">
-    <br>
-    <input type="submit" class="submit-btn" value="Create">
+    <br><br>
+    <input type="submit" class="submit-btn" value="Create" onclick="createNewSection()">
     <input type="button" class="submit-btn" value="Cancel" onclick="hideActionForm('create-new-section')">
-</form>
-<form id="create-new-prod-line" class="action-form" method="post">
+</div>
+<div id="create-new-prod-line" class="action-form">
     <h4>Create New Production Line</h4>
-    <p id="prod-line-parent-details">ABC Factory, Colombo Branch, Filling Section</p>
+    <p id="prod-line-parent-details"></p>
     Production Line Name:
     <input type="text" class="input-box" id="prod-line-name">
-    <br>
-    <input type="submit" class="submit-btn" value="Create">
+    <br><br>
+    <input type="submit" class="submit-btn" value="Create" onclick="createNewProdLine()">
     <input type="button" class="submit-btn" value="Cancel" onclick="hideActionForm('create-new-prod-line')">
-</form>
+</div>
 
 </body>
 </html>

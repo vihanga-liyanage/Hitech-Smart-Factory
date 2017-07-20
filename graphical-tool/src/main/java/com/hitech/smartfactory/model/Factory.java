@@ -5,6 +5,7 @@ package com.hitech.smartfactory.model;
  */
 public class Factory {
     private String name;
+    private int fid;
 
     public void setName(String name) {
         this.name = name;
@@ -12,5 +13,13 @@ public class Factory {
 
     public String getName() {
         return name;
+    }
+
+    public int getFid() {
+        return fid;
+    }
+
+    public void setFid(int fid) {
+        this.fid = fid;
     }
 }
