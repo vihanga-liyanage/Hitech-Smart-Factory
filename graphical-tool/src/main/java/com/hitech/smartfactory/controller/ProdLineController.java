@@ -43,15 +43,28 @@ public class ProdLineController extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // add new prodLine
-        int sid = Integer.parseInt(request.getParameter("section"));
         ProdLine prodLine = new ProdLine();
         prodLine.setName(request.getParameter("name"));
-        prodLine.setSection(sid);
 
-        dao.addProdLine(prodLine);
-
-        response.setContentType("text/plain");
-        response.getWriter().write("Success");
+        String action = request.getParameter("action");
+        if (action.equalsIgnoreCase("addProdLine")) {
+            // add new prodLine
+            prodLine.setSection(Integer.parseInt(request.getParameter("section")));
+            dao.addProdLine(prodLine);
+            response.setContentType("text/plain");
+            response.getWriter().write("Success");
+        } else if (action.equalsIgnoreCase("updateProdLine")){
+            // update prodLine
+            prodLine.setPid(Integer.parseInt(request.getParameter("id")));
+            dao.updateProdLine(prodLine);
+            response.setContentType("text/plain");
+            response.getWriter().write("Success");
+        } else if (action.equalsIgnoreCase("deleteProdLine")){
+            // delete prodLine
+            prodLine.setPid(Integer.parseInt(request.getParameter("id")));
+            dao.deleteProdLine(prodLine);
+            response.setContentType("text/plain");
+            response.getWriter().write("Success");
+        }
     }
 }

@@ -31,12 +31,25 @@ public class FactoryController extends HttpServlet {
         Factory factory = new Factory();
         factory.setName(request.getParameter("factory-name"));
 
-        dao.addFactory(factory);
-
-        RequestDispatcher view = request.getRequestDispatcher("/main.jsp");
-        request.setAttribute("factories", dao.getAllFactories());
-        view.forward(request, response);
+        String action = request.getParameter("action");
+        if (action == null) {
+            // add new factory
+            dao.addFactory(factory);
+            RequestDispatcher view = request.getRequestDispatcher("/main.jsp");
+            request.setAttribute("factories", dao.getAllFactories());
+            view.forward(request, response);
+        } else if (action.equalsIgnoreCase("updateFactory")){
+            // update factory
+            factory.setFid(Integer.parseInt(request.getParameter("id")));
+            dao.updateFactory(factory);
+            response.setContentType("text/plain");
+            response.getWriter().write("Success");
+        } else if (action.equalsIgnoreCase("deleteFactory")){
+            // delete factory
+            factory.setFid(Integer.parseInt(request.getParameter("id")));
+            dao.deleteFactory(factory);
+            response.setContentType("text/plain");
+            response.getWriter().write("Success");
+        }
     }
-
-
 }

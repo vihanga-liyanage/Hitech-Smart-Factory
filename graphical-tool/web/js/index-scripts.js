@@ -38,8 +38,9 @@ function collapseOrHide(element, name) {
     }
 }
 
-function displayActionForm(id) {
+function displayAddForm(id) {
     document.getElementById(id).style.display = "block";
+
     document.getElementById("action-form-background").style.display = "block";
 
     // set parent information
@@ -55,7 +56,7 @@ function displayActionForm(id) {
     }
 }
 
-function hideActionForm(id) {
+function hideAddForm(id) {
     document.getElementById(id).style.display = "none";
     // Erase data in input fields
     var inputFields = $("#" + id + " :input[type='text']");
@@ -65,10 +66,43 @@ function hideActionForm(id) {
     document.getElementById("action-form-background").style.display = "none";
 }
 
+function displayEditForm(type, id, name, location) {
+    var formId = "update-" + type;
+    var form = document.getElementById(formId);
+    form.style.display = "block";
+
+    document.getElementById("action-form-background").style.display = "block";
+
+    //set item name
+    var searchTag = "update-" + type + "-name";
+    document.getElementById(searchTag).value = name;
+
+    //set location
+    if (location != undefined) {
+        document.getElementById("update-branch-location").value = location;
+    }
+
+    //set update function with id
+    var methodName = "";
+    if (type == "factory") {
+        methodName = 'updateFactory(\'' + id + '\', \'' + name + '\')';
+    } else if (type == "branch") {
+        methodName = 'updateBranch(\'' + id + '\', \'' + name + '\', \'' + location + '\')';
+    } else if (type == "section") {
+        methodName = 'updateSection(\'' + id + '\', \'' + name + '\')';
+    } else if (type == "prod-line") {
+        methodName = 'updateProdLine(\'' + id + '\', \'' + name + '\')';
+    }
+    $(form).children('input[type=submit]').attr('onclick', methodName);
+}
+
 // Triggers when click on a factory box
 function selectFactory(id, name, element) {
     var currentFactory = document.getElementById("selected-factory-name").innerText;
     if (currentFactory != name) {
+        // change cursor
+        $("body").css("cursor", "progress");
+
         // Set active the clicked button
         $('.factory').removeClass('active-box-btn');
         $(element).addClass('active-box-btn') ;
@@ -100,11 +134,19 @@ function setBranches(factoryId) {
                 for (var i in branches) {
                     branchesRow.innerHTML +=
                         '<div class="box-btn-wrapper">' +
-                        '<button class="box-btn branch" onclick="selectBranch(\'' + branches[i].bid +
-                        '\', \'' + branches[i].name + '\',this)">' + branches[i].name + '</button>' +
+                            '<button class="box-btn branch" onclick="selectBranch(\'' + branches[i].bid +
+                            '\', \'' + branches[i].name + '\',this)">' + branches[i].name +
+                            '</button>' +
+                            '<div class="edit-delete-container">' +
+                                '<img src="images/hitech/icons/edit-icon.png" alt="Edit" class="edit-delete-img"' +
+                                'onclick="displayEditForm(\'branch\', \'' + branches[i].bid + '\', \'' + branches[i].name
+                                    + '\', \'' + branches[i].location + '\')">' +
+                                '<img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img">' +
+                            '</div>' +
                         '</div>';
                 }
             }
+            $("body").css("cursor", "default");
             document.getElementById("branches").style.display = "block";
         });
 }
@@ -143,8 +185,14 @@ function setSections(branchId) {
                 for (var i in sections) {
                     sectionsRow.innerHTML +=
                         '<div class="box-btn-wrapper">' +
-                        '<button class="box-btn section" onclick="selectSection(\'' + sections[i].sid +
-                        '\', \'' + sections[i].name + '\',this)">' + sections[i].name + '</button>' +
+                            '<button class="box-btn section" onclick="selectSection(\'' + sections[i].sid +
+                            '\', \'' + sections[i].name + '\',this)">' + sections[i].name +
+                            '</button>' +
+                            '<div class="edit-delete-container">' +
+                                '<img src="images/hitech/icons/edit-icon.png" alt="Edit" class="edit-delete-img"' +
+                                'onclick="displayEditForm(\'section\', \'' + sections[i].sid + '\', \'' + sections[i].name + '\')">' +
+                                '<img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img">' +
+                            '</div>' +
                         '</div>';
                 }
             }
@@ -183,7 +231,12 @@ function setProdLines(sectionId) {
                 for (var i in prodLines) {
                     prodLinesRow.innerHTML +=
                         '<div class="box-btn-wrapper">' +
-                        '<button class="box-btn prod-line">' + prodLines[i].name + '</button>' +
+                            '<button class="box-btn prod-line">' + prodLines[i].name + '</button>' +
+                            '<div class="edit-delete-container">' +
+                                '<img src="images/hitech/icons/edit-icon.png" alt="Edit" class="edit-delete-img"' +
+                                'onclick="displayEditForm(\'prod-line\', \'' + prodLines[i].pid + '\', \'' + prodLines[i].name + '\')">' +
+                                '<img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img">' +
+                            '</div>' +
                         '</div>';
                 }
             }
@@ -194,11 +247,12 @@ function setProdLines(sectionId) {
 function createNewBranch() {
     var branchName = document.getElementById("branch-name").value;
     var branchLocation = document.getElementById("branch-location").value;
+    console.log("Creating new branch " + branchName + " " + branchLocation);
     $.post('BranchController', {action: "addBranch", name: branchName, location: branchLocation, factory: selectedFactoryId},
         function (data) {
             if (data == "Success") {
                 // Hide action form and regenerate branches
-                hideActionForm("create-new-branch");
+                hideAddForm("create-new-branch");
                 setBranches(selectedFactoryId);
             }
         });
@@ -209,8 +263,8 @@ function createNewSection() {
     $.post('SectionController', {action: "addSection", name: sectionName, branch: selectedBranchId},
         function (data) {
             if (data == "Success") {
-                // Hide action form and regenerate branches
-                hideActionForm("create-new-section");
+                // Hide action form and regenerate sections
+                hideAddForm("create-new-section");
                 setSections(selectedBranchId);
             }
         });
@@ -221,9 +275,85 @@ function createNewProdLine() {
     $.post('ProdLineController', {action: "addProdLine", name: prodLineName, section: selectedSectionId},
         function (data) {
             if (data == "Success") {
-                // Hide action form and regenerate branches
-                hideActionForm("create-new-prod-line");
+                // Hide action form and regenerate prod lines
+                hideAddForm("create-new-prod-line");
                 setProdLines(selectedSectionId);
             }
         });
+}
+
+// Appear update and delete icons for box buttons
+// $(document).on("mouseenter mouseleave", ".box-btn-wrapper", function() {
+//     var element = $(this)["0"].children["1"];
+//     if (element) {
+//         if (element.style.display == "block") {
+//             element.style.display = "none";
+//         } else {
+//             element.style.display = "block";
+//         }
+//     }
+// });
+
+function updateFactory(id, name) {
+    var newName = document.getElementById("update-factory-name").value;
+    if (name == newName) {
+        alert("Please change the factory name to update!");
+    } else {
+        $.post('FactoryController', {action: "updateFactory", id:id, 'factory-name': newName},
+            function (data) {
+                if (data == "Success") {
+                    // Refresh page
+                    location.reload();
+                }
+            });
+    }
+}
+
+function updateBranch(id, name, location) {
+    var newName = document.getElementById("update-branch-name").value;
+    var newLocation = document.getElementById("update-branch-location").value;
+    if (name == newName && location == newLocation) {
+        alert("Please change the branch name or location to update!");
+    } else {
+        $.post('BranchController', {action: "updateBranch", id:id, name: newName, location: newLocation},
+            function (data) {
+                if (data == "Success") {
+                    // Hide action form and regenerate branches
+                    hideAddForm('update-branch');
+                    setBranches(selectedFactoryId);
+                }
+            });
+    }
+}
+
+function updateSection(id, name) {
+    var newName = document.getElementById("update-section-name").value;
+    if (name == newName) {
+        alert("Please change the section name to update!");
+    } else {
+        $.post('SectionController', {action: "updateSection", id:id, name: newName},
+            function (data) {
+                if (data == "Success") {
+                    // Hide action form and regenerate sections
+                    hideAddForm("update-section");
+                    setSections(selectedBranchId);
+                }
+            });
+    }
+}
+
+function updateProdLine(id, name) {
+    var newName = document.getElementById("update-prod-line-name").value;
+    if (name == newName) {
+        alert("Please change the production line name to update!");
+    } else {
+        $.post('ProdLineController', {action: "updateProdLine", id:id, name: newName},
+            function (data) {
+                if (data == "Success") {
+                    // Hide action form and regenerate prod lines
+                    hideAddForm("update-prod-line");
+                    setProdLines(selectedSectionId);
+                }
+            });
+    }
 }

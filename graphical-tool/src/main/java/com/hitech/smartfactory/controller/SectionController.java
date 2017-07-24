@@ -41,15 +41,28 @@ public class SectionController extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // add new Section
-        int bid = Integer.parseInt(request.getParameter("branch"));
         Section section = new Section();
         section.setName(request.getParameter("name"));
-        section.setBranch(bid);
 
-        dao.addSection(section);
-
-        response.setContentType("text/plain");
-        response.getWriter().write("Success");
+        String action = request.getParameter("action");
+        if (action.equalsIgnoreCase("addSection")) {
+            // add new Section
+            section.setBranch(Integer.parseInt(request.getParameter("branch")));
+            dao.addSection(section);
+            response.setContentType("text/plain");
+            response.getWriter().write("Success");
+        } else if (action.equalsIgnoreCase("updateSection")){
+            // update section
+            section.setSid(Integer.parseInt(request.getParameter("id")));
+            dao.updateSection(section);
+            response.setContentType("text/plain");
+            response.getWriter().write("Success");
+        } else if (action.equalsIgnoreCase("deleteSection")){
+            // delete section
+            section.setSid(Integer.parseInt(request.getParameter("id")));
+            dao.deleteSection(section);
+            response.setContentType("text/plain");
+            response.getWriter().write("Success");
+        }
     }
 }

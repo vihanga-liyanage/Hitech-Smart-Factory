@@ -46,4 +46,27 @@ public class SectionDAO {
         }
         return sections;
     }
+
+    public void updateSection(Section section) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE section SET name=? WHERE sid=?");
+            preparedStatement.setString(1, section.getName());
+            preparedStatement.setString(2, Integer.toString(section.getSid()));
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteSection(Section section) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM section WHERE sid=?");
+            preparedStatement.setString(1, Integer.toString(section.getSid()));
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

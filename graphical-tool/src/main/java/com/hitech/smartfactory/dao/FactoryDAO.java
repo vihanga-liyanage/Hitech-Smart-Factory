@@ -48,4 +48,31 @@ public class FactoryDAO {
 
         return factories;
     }
+
+    public void updateFactory(Factory factory) {
+        try {
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement("UPDATE factory SET name=? WHERE fid=?");
+            // Parameters start with 1
+            preparedStatement.setString(1, factory.getName());
+            preparedStatement.setString(2, Integer.toString(factory.getFid()));
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteFactory(Factory factory) {
+        try {
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement("DELETE FROM factory WHERE fid=?");
+            // Parameters start with 1
+            preparedStatement.setString(1, Integer.toString(factory.getFid()));
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

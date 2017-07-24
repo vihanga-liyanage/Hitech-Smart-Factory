@@ -46,4 +46,27 @@ public class ProdLineDAO {
         }
         return prodLines;
     }
+
+    public void updateProdLine(ProdLine prodLine) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE prodline SET name=? WHERE pid=?");
+            preparedStatement.setString(1, prodLine.getName());
+            preparedStatement.setString(2, Integer.toString(prodLine.getPid()));
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteProdLine(ProdLine prodLine) {
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM prodline WHERE pid=?");
+            preparedStatement.setString(1, Integer.toString(prodLine.getPid()));
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

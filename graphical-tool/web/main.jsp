@@ -41,7 +41,7 @@
 
         <div id="Actions" class="tabcontent" style="display: none;">
             <h3>Actions</h3>
-            <button class="action-btn" onclick="displayActionForm('create-new-factory')">
+            <button class="action-btn" onclick="displayAddForm('create-new-factory')">
                 <img src="images/hitech/icons/factory.png" alt="" width="20px" style="margin: 5px;">
                 Create New Factory
             </button>
@@ -98,12 +98,19 @@
             <div id="dynamic-factories">
                 <c:forEach items="${factories}" var="factory">
                     <div class="box-btn-wrapper">
-                        <button class="box-btn factory" onclick="selectFactory('<c:out value="${factory.getFid()}" />',
-                                '<c:out value="${factory.getName()}" />', this)"><c:out value="${factory.getName()}" /></button>
+                        <button class="box-btn factory" name="<c:out value="${factory.getFid()}" />"
+                                onclick="selectFactory('<c:out value="${factory.getFid()}" />', '<c:out value="${factory.getName()}" />', this)">
+                            <c:out value="${factory.getName()}" />
+                        </button>
+                        <div class="edit-delete-container">
+                            <img src="images/hitech/icons/edit-icon.png" alt="Edit" class="edit-delete-img"
+                                 onclick="displayEditForm('factory', '<c:out value="${factory.getFid()}" />', '<c:out value="${factory.getName()}" />')">
+                            <img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img">
+                        </div>
                     </div>
                 </c:forEach>
             </div>
-            <div class="box-btn-wrapper"><button class="box-btn factory" onclick="displayActionForm('create-new-factory')">
+            <div class="box-btn-wrapper"><button class="box-btn factory" onclick="displayAddForm('create-new-factory')">
                 <img src="images/hitech/icons/plus-50x50.png" style="opacity: 0.7;height: 70px;"/>
             </button></div>
         </div>
@@ -111,7 +118,7 @@
         <div id="branches" class="box-btn-row">
             <p>Branches of <text id="selected-factory-name"></text></p>
             <div id="dynamic-branches"></div>
-            <div class="box-btn-wrapper"><button class="box-btn branch" onclick="displayActionForm('create-new-branch')">
+            <div class="box-btn-wrapper"><button class="box-btn branch" onclick="displayAddForm('create-new-branch')">
                 <img src="images/hitech/icons/plus-50x50.png" style="opacity: 0.7;height: 70px;"/>
             </button></div>
         </div>
@@ -119,7 +126,7 @@
         <div id="sections" class="box-btn-row">
             <p>Sections of <text id="selected-branch-name"></text></p>
             <div id="dynamic-sections"></div>
-            <div class="box-btn-wrapper"><button class="box-btn section" onclick="displayActionForm('create-new-section')">
+            <div class="box-btn-wrapper"><button class="box-btn section" onclick="displayAddForm('create-new-section')">
                 <img src="images/hitech/icons/plus-50x50.png" style="opacity: 0.7;height: 70px;"/>
             </button></div>
         </div>
@@ -127,7 +134,7 @@
         <div id="prod-lines" class="box-btn-row">
             <p>Production Lines of <text id="selected-section-name"></text></p>
             <div id="dynamic-prod-lines"></div>
-            <div class="box-btn-wrapper"><button class="box-btn prod-line" onclick="displayActionForm('create-new-prod-line')">
+            <div class="box-btn-wrapper"><button class="box-btn prod-line" onclick="displayAddForm('create-new-prod-line')">
                 <img src="images/hitech/icons/plus-50x50.png" style="opacity: 0.7;height: 70px;"/>
             </button></div>
         </div>
@@ -135,19 +142,19 @@
     </div>
 </div>
 
-<!--Create forms-->
+<!--Action forms-->
 <div id="action-form-background">
     <!--This is used to disable the background-->
 </div>
 
-<%-- Forms --%>
+<%-- Create Forms --%>
 <form id="create-new-factory" class="action-form" method="post" action="FactoryController">
     <h4>Create New Factory</h4>
     Factory Name:
     <input type="text" class="input-box" name="factory-name">
     <br><br>
     <input type="submit" class="submit-btn" value="Create">
-    <input type="button" class="submit-btn" value="Cancel" onclick="hideActionForm('create-new-factory')">
+    <input type="button" class="submit-btn" value="Cancel" onclick="hideAddForm('create-new-factory')">
 </form>
 <div id="create-new-branch" class="action-form">
     <h4>Create New Branch</h4>
@@ -159,7 +166,7 @@
     <input type="text" class="input-box" id="branch-location">
     <br><br>
     <input type="submit" class="submit-btn" value="Create" onclick="createNewBranch()">
-    <input type="button" class="submit-btn" value="Cancel" onclick="hideActionForm('create-new-branch')">
+    <input type="button" class="submit-btn" value="Cancel" onclick="hideAddForm('create-new-branch')">
 </div>
 <div id="create-new-section" class="action-form">
     <h4>Create New Section</h4>
@@ -168,7 +175,7 @@
     <input type="text" class="input-box" id="section-name">
     <br><br>
     <input type="submit" class="submit-btn" value="Create" onclick="createNewSection()">
-    <input type="button" class="submit-btn" value="Cancel" onclick="hideActionForm('create-new-section')">
+    <input type="button" class="submit-btn" value="Cancel" onclick="hideAddForm('create-new-section')">
 </div>
 <div id="create-new-prod-line" class="action-form">
     <h4>Create New Production Line</h4>
@@ -177,7 +184,47 @@
     <input type="text" class="input-box" id="prod-line-name">
     <br><br>
     <input type="submit" class="submit-btn" value="Create" onclick="createNewProdLine()">
-    <input type="button" class="submit-btn" value="Cancel" onclick="hideActionForm('create-new-prod-line')">
+    <input type="button" class="submit-btn" value="Cancel" onclick="hideAddForm('create-new-prod-line')">
+</div>
+
+<%-- Update Forms --%>
+<div id="update-factory" class="action-form">
+    <h4>Update Factory</h4>
+    Factory Name:
+    <input type="text" class="input-box" id="update-factory-name">
+    <br><br>
+    <input type="submit" class="submit-btn" value="Update">
+    <input type="button" class="submit-btn" value="Cancel" onclick="hideAddForm('update-factory')">
+</div>
+<div id="update-branch" class="action-form">
+    <h4>Update Branch</h4>
+    <p id="update-branch-parent-details"></p>
+    Branch Name:
+    <input type="text" class="input-box" id="update-branch-name">
+    <br><br>
+    Location:
+    <input type="text" class="input-box" id="update-branch-location">
+    <br><br>
+    <input type="submit" class="submit-btn" value="Update">
+    <input type="button" class="submit-btn" value="Cancel" onclick="hideAddForm('update-branch')">
+</div>
+<div id="update-section" class="action-form">
+    <h4>Update Section</h4>
+    <p id="update-section-parent-details"></p>
+    Section Name:
+    <input type="text" class="input-box" id="update-section-name">
+    <br><br>
+    <input type="submit" class="submit-btn" value="Update">
+    <input type="button" class="submit-btn" value="Cancel" onclick="hideAddForm('update-section')">
+</div>
+<div id="update-prod-line" class="action-form">
+    <h4>Update Production Line</h4>
+    <p id="update-prod-line-parent-details"></p>
+    Production Line Name:
+    <input type="text" class="input-box" id="update-prod-line-name">
+    <br><br>
+    <input type="submit" class="submit-btn" value="Update">
+    <input type="button" class="submit-btn" value="Cancel" onclick="hideAddForm('update-prod-line')">
 </div>
 
 </body>

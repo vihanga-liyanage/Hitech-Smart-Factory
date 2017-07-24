@@ -41,16 +41,29 @@ public class BranchController extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // add new branch
-        int fid = Integer.parseInt(request.getParameter("factory"));
         Branch branch = new Branch();
         branch.setName(request.getParameter("name"));
-        branch.setFactory(fid);
         branch.setLocation(request.getParameter("location"));
 
-        dao.addBranch(branch);
-
-        response.setContentType("text/plain");
-        response.getWriter().write("Success");
+        String action = request.getParameter("action");
+        if (action.equalsIgnoreCase("addBranch")) {
+            // add new branch
+            branch.setFactory(Integer.parseInt(request.getParameter("factory")));
+            dao.addBranch(branch);
+            response.setContentType("text/plain");
+            response.getWriter().write("Success");
+        } else if (action.equalsIgnoreCase("updateBranch")){
+            // update branch
+            branch.setBid(Integer.parseInt(request.getParameter("id")));
+            dao.updateBranch(branch);
+            response.setContentType("text/plain");
+            response.getWriter().write("Success");
+        } else if (action.equalsIgnoreCase("deleteBranch")){
+            // delete branch
+            branch.setBid(Integer.parseInt(request.getParameter("id")));
+            dao.deleteBranch(branch);
+            response.setContentType("text/plain");
+            response.getWriter().write("Success");
+        }
     }
 }

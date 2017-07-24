@@ -51,4 +51,32 @@ public class BranchDAO {
 
         return branches;
     }
+
+    public void updateBranch(Branch branch) {
+        try {
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement("UPDATE branch SET name=?, location=? WHERE bid=?");
+            // Parameters start with 1
+            preparedStatement.setString(1, branch.getName());
+            preparedStatement.setString(2, branch.getLocation());
+            preparedStatement.setString(3, Integer.toString(branch.getBid()));
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteBranch(Branch branch) {
+        try {
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement("DELETE FROM branch WHERE bid=?");
+            // Parameters start with 1
+            preparedStatement.setString(1, Integer.toString(branch.getBid()));
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
