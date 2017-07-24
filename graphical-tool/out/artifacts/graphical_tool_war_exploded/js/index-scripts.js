@@ -139,9 +139,10 @@ function setBranches(factoryId) {
                             '</button>' +
                             '<div class="edit-delete-container">' +
                                 '<img src="images/hitech/icons/edit-icon.png" alt="Edit" class="edit-delete-img"' +
-                                'onclick="displayEditForm(\'branch\', \'' + branches[i].bid + '\', \'' + branches[i].name
+                                    'onclick="displayEditForm(\'branch\', \'' + branches[i].bid + '\', \'' + branches[i].name
                                     + '\', \'' + branches[i].location + '\')">' +
-                                '<img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img">' +
+                                '<img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img"' +
+                                    'onclick="deleteBranch(\'' + branches[i].bid + '\')">' +
                             '</div>' +
                         '</div>';
                 }
@@ -190,8 +191,9 @@ function setSections(branchId) {
                             '</button>' +
                             '<div class="edit-delete-container">' +
                                 '<img src="images/hitech/icons/edit-icon.png" alt="Edit" class="edit-delete-img"' +
-                                'onclick="displayEditForm(\'section\', \'' + sections[i].sid + '\', \'' + sections[i].name + '\')">' +
-                                '<img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img">' +
+                                    'onclick="displayEditForm(\'section\', \'' + sections[i].sid + '\', \'' + sections[i].name + '\')">' +
+                                '<img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img"' +
+                                    'onclick="deleteSection(\'' + sections[i].sid + '\')">' +
                             '</div>' +
                         '</div>';
                 }
@@ -234,8 +236,9 @@ function setProdLines(sectionId) {
                             '<button class="box-btn prod-line">' + prodLines[i].name + '</button>' +
                             '<div class="edit-delete-container">' +
                                 '<img src="images/hitech/icons/edit-icon.png" alt="Edit" class="edit-delete-img"' +
-                                'onclick="displayEditForm(\'prod-line\', \'' + prodLines[i].pid + '\', \'' + prodLines[i].name + '\')">' +
-                                '<img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img">' +
+                                    'onclick="displayEditForm(\'prod-line\', \'' + prodLines[i].pid + '\', \'' + prodLines[i].name + '\')">' +
+                                '<img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img"' +
+                                    'onclick="deleteProdLine(\'' + prodLines[i].pid + '\')">' +
                             '</div>' +
                         '</div>';
                 }
@@ -352,6 +355,66 @@ function updateProdLine(id, name) {
                 if (data == "Success") {
                     // Hide action form and regenerate prod lines
                     hideAddForm("update-prod-line");
+                    setProdLines(selectedSectionId);
+                }
+            });
+    }
+}
+
+function deleteFactory(id, name) {
+    var r = confirm("Please confirm factory deletion.\n" +
+        "All existing branches, sections and production lines of this factory will be deleted.");
+    if (r == true) {
+        $.post('FactoryController', {action: "deleteFactory", id:id},
+            function (data) {
+                if (data == "Success") {
+                    // Refresh page
+                    location.reload();
+                }
+            });
+    }
+}
+
+function deleteBranch(id) {
+    var r = confirm("Please confirm branch deletion.\n" +
+        "All existing sections and production lines of this branch will be deleted.");
+    if (r == true) {
+        $.post('BranchController', {action: "deleteBranch", id:id},
+            function (data) {
+                if (data == "Success") {
+                    // Hide below rows
+                    document.getElementById("sections").style.display = "none";
+                    document.getElementById("prod-lines").style.display = "none";
+                    // Regenerate branches
+                    setBranches(selectedFactoryId);
+                }
+            });
+    }
+}
+
+function deleteSection(id) {
+    var r = confirm("Please confirm section deletion.\n" +
+        "All existing production lines of this section will be deleted.");
+    if (r == true) {
+        $.post('SectionController', {action: "deleteSection", id:id},
+            function (data) {
+                if (data == "Success") {
+                    // Hide below rows
+                    document.getElementById("prod-lines").style.display = "none";
+                    // Regenerate sections
+                    setSections(selectedBranchId);
+                }
+            });
+    }
+}
+
+function deleteProdLine(id) {
+    var r = confirm("Please confirm production line deletion.");
+    if (r == true) {
+        $.post('ProdLineController', {action: "deleteProdLine", id:id},
+            function (data) {
+                if (data == "Success") {
+                    // Regenerate prod lines
                     setProdLines(selectedSectionId);
                 }
             });

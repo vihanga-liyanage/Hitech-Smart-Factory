@@ -105,7 +105,8 @@
                         <div class="edit-delete-container">
                             <img src="images/hitech/icons/edit-icon.png" alt="Edit" class="edit-delete-img"
                                  onclick="displayEditForm('factory', '<c:out value="${factory.getFid()}" />', '<c:out value="${factory.getName()}" />')">
-                            <img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img">
+                            <img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img"
+                                onclick="deleteFactory('<c:out value="${factory.getFid()}" />', '<c:out value="${factory.getName()}" />')">
                         </div>
                     </div>
                 </c:forEach>
