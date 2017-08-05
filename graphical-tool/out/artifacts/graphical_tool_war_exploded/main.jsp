@@ -19,7 +19,7 @@
     <!--Bootstrap-->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="screen" />
 
-    <link rel="stylesheet" href="css/wordpress.css" type="text/css" media="screen" />
+    <%--<link rel="stylesheet" href="css/wordpress.css" type="text/css" media="screen" />--%>
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 
     <script type="text/javascript" src="js/index-scripts.js"></script>
@@ -31,8 +31,10 @@
         <div id="headerimg">
             Hitech Smart Factory
         </div>
+        <div id="button-panel"></div>
     </div>
 
+    <%--
     <div id="side-bar" class="col-md-3">
         <div class="tab">
             <button class="tablinks" onclick="changeTab(event, 'Actions')">Actions</button>
@@ -90,8 +92,11 @@
         </div>
 
     </div>
+    --%>
 
-    <div id="main-panel" class="col-md-9">
+    <div id="main-panel" class="col-md-12">
+
+        <div id="green-panel"></div>
 
         <div id="factories" class="box-btn-row">
             <p>Existing Factories</p>
@@ -139,8 +144,9 @@
                 <img src="images/hitech/icons/plus-50x50.png" style="opacity: 0.7;height: 70px;"/>
             </button></div>
         </div>
-        <p></p>
+
     </div>
+
 </div>
 
 <!--Action forms-->

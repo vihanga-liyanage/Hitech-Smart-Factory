@@ -5,6 +5,7 @@
 var selectedFactoryId;
 var selectedBranchId;
 var selectedSectionId;
+var boxBtnRowHeight = 147;
 
 function changeTab(evt, cityName) {
     // Declare all variables
@@ -98,22 +99,16 @@ function displayEditForm(type, id, name, location) {
 
 // Triggers when click on a factory box
 function selectFactory(id, name, element) {
-    var currentFactory = document.getElementById("selected-factory-name").innerText;
-    if (currentFactory != name) {
+    if (selectedFactoryId != id) {
         // change cursor
         $("body").css("cursor", "progress");
 
         // Set active the clicked button
-        $('.factory').removeClass('active-box-btn');
-        $(element).addClass('active-box-btn') ;
+        setActiveState('.factory', element);
 
         // Set selected factory name and id
         document.getElementById("selected-factory-name").innerText = name;
         selectedFactoryId = id;
-
-        // Hide below rows
-        document.getElementById("sections").style.display = "none";
-        document.getElementById("prod-lines").style.display = "none";
 
         setBranches(id);
     }
@@ -149,23 +144,24 @@ function setBranches(factoryId) {
             }
             $("body").css("cursor", "default");
             document.getElementById("branches").style.display = "block";
+
+            // Hide below rows
+            document.getElementById("sections").style.display = "none";
+            document.getElementById("prod-lines").style.display = "none";
+            removeActiveState('.branch');
+            moveGreenPanel(boxBtnRowHeight);
         });
 }
 
 // Triggers when click on a branch box
 function selectBranch(id, name, element) {
-    var currentBranch = document.getElementById("selected-branch-name").innerText;
-    if (currentBranch != name) {
+    if (selectedBranchId != id) {
         // Set active the clicked button
-        $('.branch').removeClass('active-box-btn');
-        $(element).addClass('active-box-btn') ;
+        setActiveState('.branch', element);
 
         // Add factory name to branches row
         document.getElementById("selected-branch-name").innerText = name;
         selectedBranchId = id;
-
-        // Hide below rows
-        document.getElementById("prod-lines").style.display = "none";
 
         setSections(id);
     }
@@ -199,16 +195,19 @@ function setSections(branchId) {
                 }
             }
             document.getElementById("sections").style.display = "block";
+
+            // Hide below rows
+            document.getElementById("prod-lines").style.display = "none";
+            removeActiveState('.section');
+            moveGreenPanel(boxBtnRowHeight * 2);
         });
 }
 
 // Triggers when click on a section box
 function selectSection(id, name, element) {
-    var currentSection = document.getElementById("selected-section-name").innerText;
-    if (currentSection != name) {
+    if (selectedSectionId != id) {
         // Set active the clicked button
-        $('.section').removeClass('active-box-btn');
-        $(element).addClass('active-box-btn') ;
+        setActiveState('.section', element);
 
         // Add factory name to branches row
         document.getElementById("selected-section-name").innerText = name;
@@ -233,7 +232,9 @@ function setProdLines(sectionId) {
                 for (var i in prodLines) {
                     prodLinesRow.innerHTML +=
                         '<div class="box-btn-wrapper">' +
-                            '<button class="box-btn prod-line">' + prodLines[i].name + '</button>' +
+                            '<button class="box-btn prod-line" onclick="selectProdLine(\'' + prodLines[i].pid +
+                            '\', \'' + prodLines[i].name + '\',this)">' + prodLines[i].name +
+                            '</button>' +
                             '<div class="edit-delete-container">' +
                                 '<img src="images/hitech/icons/edit-icon.png" alt="Edit" class="edit-delete-img"' +
                                     'onclick="displayEditForm(\'prod-line\', \'' + prodLines[i].pid + '\', \'' + prodLines[i].name + '\')">' +
@@ -244,7 +245,17 @@ function setProdLines(sectionId) {
                 }
             }
             document.getElementById("prod-lines").style.display = "block";
+
+            moveGreenPanel(boxBtnRowHeight * 3);
         });
+}
+
+function selectProdLine(id, name) {
+    var factory = document.getElementById("selected-factory-name").innerText;
+    var branch = document.getElementById("selected-branch-name").innerText;
+    var section = document.getElementById("selected-section-name").innerText;
+    var params = "?id=" + id + "&name=" + name + "&factory=" + factory + "&branch=" + branch + "&section=" + section;
+    window.open("production-line-editor.html" + params, "_blank");
 }
 
 function createNewBranch() {
@@ -286,16 +297,16 @@ function createNewProdLine() {
 }
 
 // Appear update and delete icons for box buttons
-// $(document).on("mouseenter mouseleave", ".box-btn-wrapper", function() {
-//     var element = $(this)["0"].children["1"];
-//     if (element) {
-//         if (element.style.display == "block") {
-//             element.style.display = "none";
-//         } else {
-//             element.style.display = "block";
-//         }
-//     }
-// });
+$(document).on("mouseenter mouseleave", ".box-btn-wrapper", function() {
+    var element = $(this)["0"].children["1"];
+    if (element) {
+        if (element.style.display == "block") {
+            element.style.display = "none";
+        } else {
+            element.style.display = "block";
+        }
+    }
+});
 
 function updateFactory(id, name) {
     var newName = document.getElementById("update-factory-name").value;
@@ -419,4 +430,21 @@ function deleteProdLine(id) {
                 }
             });
     }
+}
+
+function setActiveState(type, element) {
+    $(type).removeClass('active-up');
+    $(type).addClass('active-down');
+    $(element).addClass('active-up');
+    $(element).removeClass('active-down');
+}
+
+function moveGreenPanel(top) {
+    // move green panel up or down
+    document.getElementById("green-panel").style.transform = "translateY(" + top + "px)";
+}
+
+function removeActiveState(type) {
+    $(type).removeClass('active-up');
+    $(type).removeClass('active-down');
 }

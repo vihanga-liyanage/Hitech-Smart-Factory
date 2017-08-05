@@ -652,6 +652,7 @@
                 <div id="headerimg">
                     Hitech Smart Factory
                 </div>
+                <div id="prod-line-title"></div>
                 <div id="selectActions">
                 </div>
                 <div id="mainActions">
@@ -704,13 +705,20 @@
     </body>
 
     <script type="text/javascript">
+        // set production line title
+        function getURLParameter(name) {
+            return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+        }
+        var title = getURLParameter("factory") + "/" + getURLParameter("branch") + "/" +
+            getURLParameter("section") + "/" + getURLParameter("name");
+        document.getElementById("prod-line-title").innerText = title;
 
         // set toolbar and graph area height
         function autoResizeToolbarAndGraph() {
             var windowH = window.innerHeight;
-            document.getElementById('graph').style.height = (windowH - 137) + "px";
-            document.getElementById('xml').style.height = (windowH - 139) + "px";
-            document.getElementById('toolbar').style.height = (windowH - 100) + "px";
+            document.getElementById('graph').style.height = (windowH - 118) + "px";
+            document.getElementById('xml').style.height = (windowH - 119) + "px";
+            document.getElementById('toolbar').style.height = (windowH - 81) + "px";
         }
         window.onresize = autoResizeToolbarAndGraph;
         autoResizeToolbarAndGraph();

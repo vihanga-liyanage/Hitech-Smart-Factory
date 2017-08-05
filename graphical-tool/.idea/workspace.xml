@@ -19,78 +19,18 @@
       <file leaf-file-name="main.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/main.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="108" column="54" lean-forward="false" selection-start-line="108" selection-start-column="41" selection-end-line="108" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index-scripts.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/js/index-scripts.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="753">
-              <caret line="399" column="29" lean-forward="true" selection-start-line="399" selection-start-column="29" selection-end-line="399" selection-end-column="29" />
+            <state relative-caret-position="731">
+              <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
               <folding>
-                <element signature="n#!!block;n#changeTab#0" expanded="false" />
-                <element signature="n#!!block;n#collapseOrHide#0" expanded="false" />
-                <element signature="n#!!block;n#displayAddForm#0" expanded="false" />
-                <element signature="n#!!block;n#hideAddForm#0" expanded="false" />
-                <element signature="n#!!block;n#displayEditForm#0" expanded="false" />
-                <element signature="n#!!block;n#selectBranch#0" expanded="false" />
-                <element signature="n#!!block;n#setSections#0" expanded="false" />
-                <element signature="n#!!block;n#selectSection#0" expanded="false" />
-                <element signature="n#!!block;n#setProdLines#0" expanded="false" />
-                <element signature="n#!!block;n#createNewBranch#0" expanded="false" />
-                <element signature="n#!!block;n#createNewSection#0" expanded="false" />
-                <element signature="n#!!block;n#createNewProdLine#0" expanded="false" />
-                <element signature="e#11885#11934#0" expanded="false" />
-                <element signature="n#!!block;n#updateFactory#0" expanded="false" />
-                <element signature="n#!!block;n#updateBranch#0" expanded="false" />
-                <element signature="n#!!block;n#updateSection#0" expanded="false" />
-                <element signature="n#!!block;n#updateProdLine#0" expanded="false" />
-                <element signature="n#!!block;n#deleteFactory#0" expanded="false" />
+                <marker date="1501765178626" expanded="false" signature="1195:4265" ph="..." />
+                <marker date="1501765178626" expanded="false" signature="1486:1500" ph="..." />
+                <marker date="1501765178626" expanded="false" signature="1501:2391" ph="..." />
+                <marker date="1501765178626" expanded="false" signature="1705:1717" ph="..." />
+                <marker date="1501765178626" expanded="false" signature="1903:1915" ph="..." />
+                <marker date="1501765178626" expanded="false" signature="2100:2112" ph="..." />
+                <marker date="1501765178626" expanded="false" signature="2298:2310" ph="..." />
+                <marker date="1501765178626" expanded="false" signature="2440:4253" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FactoryController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/FactoryController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="31" column="49" lean-forward="true" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BranchController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/BranchController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="48" column="40" lean-forward="false" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SectionController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/SectionController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="47" column="47" lean-forward="false" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProdLineController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/ProdLineController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="49" column="48" lean-forward="false" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -98,8 +38,110 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="307" column="0" lean-forward="true" selection-start-line="307" selection-start-column="0" selection-end-line="307" selection-end-column="0" />
+            <state relative-caret-position="4658">
+              <caret line="274" column="24" lean-forward="false" selection-start-line="274" selection-start-column="24" selection-end-line="274" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="production-line-editor.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/production-line-editor.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1768">
+              <caret line="714" column="0" lean-forward="false" selection-start-line="714" selection-start-column="0" selection-end-line="714" selection-end-column="0" />
+              <folding>
+                <element signature="n#script#3;n#head#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#7;n#head#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProdLineController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/ProdLineController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="27" column="50" lean-forward="false" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProdLineDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/dao/ProdLineDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="28" column="9" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#342#343#0" expanded="false" />
+                <element signature="e#398#399#0" expanded="false" />
+                <element signature="e#988#998#0" expanded="false" />
+                <marker date="1500891906698" expanded="true" signature="543:592" ph="INSERT INTO prodline... " />
+                <marker date="1500891906698" expanded="true" signature="1131:1168" ph="SELECT * FRO... prodline" />
+                <marker date="1500891906698" expanded="true" signature="1739:1777" ph="UPDATE prodl... " />
+                <marker date="1500891906698" expanded="true" signature="2204:2236" ph="DELETE FROM " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="diagrameditor.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/config/diagrameditor.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5899">
+              <caret line="383" column="17" lean-forward="false" selection-start-line="383" selection-start-column="17" selection-end-line="383" selection-end-column="17" />
+              <folding>
+                <element signature="n#mxGraphModel#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index-scripts.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/js/index-scripts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="285" column="0" lean-forward="true" selection-start-line="285" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!block;n#changeTab#0" expanded="false" />
+                <element signature="n#!!block;n#collapseOrHide#0" expanded="false" />
+                <element signature="n#!!block;n#displayAddForm#0" expanded="false" />
+                <element signature="n#!!block;n#hideAddForm#0" expanded="false" />
+                <element signature="n#!!block;n#displayEditForm#0" expanded="false" />
+                <element signature="n#!!block;n#selectFactory#0" expanded="false" />
+                <element signature="n#!!block;n#setBranches#0" expanded="false" />
+                <element signature="n#!!block;n#selectBranch#0" expanded="false" />
+                <element signature="n#!!block;n#setSections#0" expanded="false" />
+                <element signature="n#!!block;n#selectSection#0" expanded="false" />
+                <element signature="n#!!block;n#setProdLines#0" expanded="false" />
+                <element signature="n#!!block;n#selectProdLine#0" expanded="false" />
+                <element signature="n#!!block;n#createNewBranch#0" expanded="false" />
+                <element signature="n#!!block;n#createNewSection#0" expanded="false" />
+                <element signature="n#!!block;n#createNewProdLine#0" expanded="false" />
+                <element signature="e#12467#12705#0" expanded="false" />
+                <element signature="n#!!block;n#updateFactory#0" expanded="false" />
+                <element signature="n#!!block;n#updateBranch#0" expanded="false" />
+                <element signature="n#!!block;n#updateSection#0" expanded="false" />
+                <element signature="n#!!block;n#updateProdLine#0" expanded="false" />
+                <element signature="n#!!block;n#deleteFactory#0" expanded="false" />
+                <element signature="n#!!block;n#deleteBranch#0" expanded="false" />
+                <element signature="n#!!block;n#deleteSection#0" expanded="false" />
+                <element signature="n#!!block;n#deleteProdLine#0" expanded="false" />
+                <element signature="n#!!block;n#removeActiveState#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="15" lean-forward="true" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -112,19 +154,13 @@
       <list>
         <option value="HTML File" />
         <option value="JavaScript File" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>too</find>
-      <find>&quot;80&quot;</find>
-      <find>xml</find>
-      <find>user</find>
-      <find>data_stream</find>
-      <find>conveyor-belt</find>
       <find>dotter</find>
       <find>dot</find>
       <find>&quot;150&quot;</find>
@@ -144,6 +180,17 @@
       <find>prod-line-action-form</find>
       <find>create-new</find>
       <find>create-new-prod-line</find>
+      <find>main</find>
+      <find>box-b</find>
+      <find>toolbar</find>
+      <find>scal</find>
+      <find>scale-</find>
+      <find>main-pa</find>
+      <find>box-bt</find>
+      <find>active</find>
+      <find>scale</find>
+      <find>gree</find>
+      <find>setActiveState</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;60&quot;</replace>
@@ -153,6 +200,7 @@
       <replace>create-new-prod-line</replace>
       <replace>update</replace>
       <replace>factory-action-form</replace>
+      <replace>active-</replace>
     </replaceStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -165,8 +213,6 @@
       <list>
         <option value="$USER_HOME$/.IntelliJIdea2016.3/idea64.vmoptions" />
         <option value="$PROJECT_DIR$/web/ts.html" />
-        <option value="$PROJECT_DIR$/web/config/diagrameditor.xml" />
-        <option value="$PROJECT_DIR$/web/production-line-editor.html" />
         <option value="$PROJECT_DIR$/web/js/custom.js" />
         <option value="$PROJECT_DIR$/web/test.html" />
         <option value="$PROJECT_DIR$/web/index.html" />
@@ -181,7 +227,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/model/ProdLine.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/dao/FactoryDAO.java" />
-        <option value="$PROJECT_DIR$/web/css/style.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/dao/BranchDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/dao/SectionDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/dao/ProdLineDAO.java" />
@@ -189,7 +234,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/BranchController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/SectionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/ProdLineController.java" />
+        <option value="$PROJECT_DIR$/web/config/diagrameditor.xml" />
+        <option value="$PROJECT_DIR$/web/production-line-editor.html" />
         <option value="$PROJECT_DIR$/web/main.jsp" />
+        <option value="$PROJECT_DIR$/web/css/style.css" />
+        <option value="$PROJECT_DIR$/web/dbtest.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
         <option value="$PROJECT_DIR$/web/js/index-scripts.js" />
       </list>
     </option>
@@ -210,7 +260,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1378" />
+    <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectView">
@@ -277,108 +327,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphical-tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphical-tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphical-tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphical-tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphical-tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphical-tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hitech" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphical-tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphical-tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hitech" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="icons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphical-tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphical-tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -408,18 +356,6 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="smartfactory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -431,79 +367,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="smartfactory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphical-tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphical-tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="smartfactory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphical-tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphical-tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="smartfactory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
+              <option name="myItemId" value="out" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -522,7 +386,7 @@
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="Downloaded.Files.Path.Enabled" value="true" />
@@ -538,17 +402,17 @@
     <option name="AUTOSCROLL_FROM_SOURCE" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Developer\My Projects\Hitech-Smart-Factory\graphical-tool\src\main\resources" />
-      <recent name="$PROJECT_DIR$/web/images/hitech/icons" />
-      <recent name="$PROJECT_DIR$/src/main" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Developer\My Projects\Hitech-Smart-Factory\graphical-tool\lib" />
       <recent name="D:\Developer\My Projects\Hitech-Smart-Factory\graphical-tool\web\WEB-INF\lib" />
       <recent name="D:\Developer\My Projects\Hitech-Smart-Factory\graphical-tool\src\main\java\com\hitech\smartfactory" />
       <recent name="$PROJECT_DIR$/web/js" />
       <recent name="$PROJECT_DIR$/web" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Developer\My Projects\Hitech-Smart-Factory\graphical-tool\src\main\resources" />
+      <recent name="$PROJECT_DIR$/web/images/hitech/icons" />
+      <recent name="$PROJECT_DIR$/src/main" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.0.M18">
@@ -1051,20 +915,28 @@
       <workItem from="1500642417497" duration="6490000" />
       <workItem from="1500787213225" duration="10332000" />
       <workItem from="1500884853293" duration="10950000" />
+      <workItem from="1501000028777" duration="5657000" />
+      <workItem from="1501036221401" duration="2453000" />
+      <workItem from="1501301233270" duration="2636000" />
+      <workItem from="1501386389917" duration="3392000" />
+      <workItem from="1501475863590" duration="1220000" />
+      <workItem from="1501736735723" duration="12710000" />
+      <workItem from="1501763329875" duration="8821000" />
+      <workItem from="1501833046323" duration="4818000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151887000" />
+    <option name="totallyTimeSpent" value="193594000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.63993454" sideWeight="0.5332829" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47790506" sideWeight="0.53933436" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1084,9 +956,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="PsiViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.63502455" sideWeight="0.4667171" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47790506" sideWeight="0.46066564" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2215478" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2193646" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1109,7 +981,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1123,20 +995,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/config/diagrameditor.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4200">
-          <caret line="280" column="0" lean-forward="false" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9840">
-          <caret line="656" column="86" lean-forward="false" selection-start-line="656" selection-start-column="83" selection-end-line="656" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
@@ -1208,14 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="3" column="7669" lean-forward="false" selection-start-line="3" selection-start-column="7669" selection-end-line="3" selection-end-column="7669" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/config/diagrameditor.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="312" column="18" lean-forward="true" selection-start-line="312" selection-start-column="18" selection-end-line="312" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1229,20 +1079,6 @@
     <entry file="file://$PROJECT_DIR$/web/images/hitech/icons/factory.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="40" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="15" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/production-line-editor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="57" column="8" lean-forward="false" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="67" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index1.html" />
@@ -1302,30 +1138,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/class.uml">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement />
-          <nodes>
-            <node x="" y="">com.hitech.smartfactory.model.Factory</node>
-            <node x="" y="">com.hitech.smartfactory.controller.BranchController</node>
-            <node x="" y="">com.hitech.smartfactory.dao.BranchDAO</node>
-            <node x="" y="">com.hitech.smartfactory.util.DbUtil</node>
-            <node x="" y="">com.hitech.smartfactory.controller.FactoryController</node>
-            <node x="" y="">com.hitech.smartfactory.model.Branch</node>
-            <node x="" y="">com.hitech.smartfactory.dao.FactoryDAO</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="0.0" y="-20.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/model/Branch.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -1359,14 +1171,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-          <folding>
-            <element signature="e#200#201#0" expanded="false" />
-            <element signature="e#232#233#0" expanded="false" />
-            <element signature="e#263#264#0" expanded="false" />
-            <element signature="e#290#291#0" expanded="false" />
-            <element signature="e#317#318#0" expanded="false" />
-            <element signature="e#343#344#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1381,30 +1185,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="20" column="39" lean-forward="false" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/images/hitech/icons/delete-icon.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="307" column="0" lean-forward="true" selection-start-line="307" selection-start-column="0" selection-end-line="307" selection-end-column="0" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/dao/BranchDAO.java">
@@ -1446,11 +1232,103 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/FactoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="31" column="49" lean-forward="false" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/BranchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="48" column="40" lean-forward="false" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/SectionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="47" column="47" lean-forward="false" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/diagram.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/class.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="" y="">com.hitech.smartfactory.model.ProdLine</node>
+            <node x="" y="">com.hitech.smartfactory.dao.SectionDAO</node>
+            <node x="" y="">com.hitech.smartfactory.model.Factory</node>
+            <node x="" y="">com.hitech.smartfactory.controller.SectionController</node>
+            <node x="" y="">com.hitech.smartfactory.controller.BranchController</node>
+            <node x="" y="">com.hitech.smartfactory.model.Section</node>
+            <node x="" y="">com.hitech.smartfactory.dao.BranchDAO</node>
+            <node x="" y="">com.hitech.smartfactory.dao.ProdLineDAO</node>
+            <node x="" y="">com.hitech.smartfactory.controller.ProdLineController</node>
+            <node x="" y="">com.hitech.smartfactory.controller.FactoryController</node>
+            <node x="" y="">com.hitech.smartfactory.model.Branch</node>
+            <node x="" y="">com.hitech.smartfactory.dao.FactoryDAO</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.4809822361546499" x="243.0" y="338.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Properties</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/config/diagrameditor.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5899">
+          <caret line="383" column="17" lean-forward="false" selection-start-line="383" selection-start-column="17" selection-end-line="383" selection-end-column="17" />
+          <folding>
+            <element signature="n#mxGraphModel#0;n#mxGraph#0;n#mxEditor#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/ProdLineController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="27" column="50" lean-forward="false" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/dao/ProdLineDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+        <state relative-caret-position="357">
+          <caret line="28" column="9" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
           <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#342#343#0" expanded="false" />
+            <element signature="e#398#399#0" expanded="false" />
+            <element signature="e#988#998#0" expanded="false" />
             <marker date="1500891906698" expanded="true" signature="543:592" ph="INSERT INTO prodline... " />
             <marker date="1500891906698" expanded="true" signature="1131:1168" ph="SELECT * FRO... prodline" />
             <marker date="1500891906698" expanded="true" signature="1739:1777" ph="UPDATE prodl... " />
@@ -1459,69 +1337,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/FactoryController.java">
+    <entry file="file://$PROJECT_DIR$/web/production-line-editor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="31" column="49" lean-forward="true" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/BranchController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="48" column="40" lean-forward="false" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/SectionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="47" column="47" lean-forward="false" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/ProdLineController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="49" column="48" lean-forward="false" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
-          <folding />
+        <state relative-caret-position="1768">
+          <caret line="714" column="0" lean-forward="false" selection-start-line="714" selection-start-column="0" selection-end-line="714" selection-end-column="0" />
+          <folding>
+            <element signature="n#script#3;n#head#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#7;n#head#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/main.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="108" column="54" lean-forward="false" selection-start-line="108" selection-start-column="41" selection-end-line="108" selection-end-column="54" />
+        <state relative-caret-position="731">
+          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <folding>
+            <marker date="1501765178626" expanded="false" signature="1195:4265" ph="..." />
+            <marker date="1501765178626" expanded="false" signature="1486:1500" ph="..." />
+            <marker date="1501765178626" expanded="false" signature="1501:2391" ph="..." />
+            <marker date="1501765178626" expanded="false" signature="1705:1717" ph="..." />
+            <marker date="1501765178626" expanded="false" signature="1903:1915" ph="..." />
+            <marker date="1501765178626" expanded="false" signature="2100:2112" ph="..." />
+            <marker date="1501765178626" expanded="false" signature="2298:2310" ph="..." />
+            <marker date="1501765178626" expanded="false" signature="2440:4253" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4658">
+          <caret line="274" column="24" lean-forward="false" selection-start-line="274" selection-start-column="24" selection-end-line="274" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/test.html" />
+    <entry file="file://$PROJECT_DIR$/web/dbtest.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <marker date="1501833574857" expanded="true" signature="1617:1659" ph="CREATE TABLE... Beanstalk" />
+            <marker date="1501833574857" expanded="true" signature="1692:1748" ph="INSERT INTO Beanstalk... " />
+            <marker date="1501833574857" expanded="true" signature="1781:1837" ph="INSERT INTO Beanstalk... " />
+            <marker date="1501833574857" expanded="true" signature="2618:2648" ph="SELECT Resou... Beanstalk" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="15" lean-forward="true" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/index-scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="753">
-          <caret line="399" column="29" lean-forward="true" selection-start-line="399" selection-start-column="29" selection-end-line="399" selection-end-column="29" />
+        <state relative-caret-position="170">
+          <caret line="285" column="0" lean-forward="true" selection-start-line="285" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#changeTab#0" expanded="false" />
             <element signature="n#!!block;n#collapseOrHide#0" expanded="false" />
             <element signature="n#!!block;n#displayAddForm#0" expanded="false" />
             <element signature="n#!!block;n#hideAddForm#0" expanded="false" />
             <element signature="n#!!block;n#displayEditForm#0" expanded="false" />
+            <element signature="n#!!block;n#selectFactory#0" expanded="false" />
+            <element signature="n#!!block;n#setBranches#0" expanded="false" />
             <element signature="n#!!block;n#selectBranch#0" expanded="false" />
             <element signature="n#!!block;n#setSections#0" expanded="false" />
             <element signature="n#!!block;n#selectSection#0" expanded="false" />
             <element signature="n#!!block;n#setProdLines#0" expanded="false" />
+            <element signature="n#!!block;n#selectProdLine#0" expanded="false" />
             <element signature="n#!!block;n#createNewBranch#0" expanded="false" />
             <element signature="n#!!block;n#createNewSection#0" expanded="false" />
             <element signature="n#!!block;n#createNewProdLine#0" expanded="false" />
-            <element signature="e#11885#11934#0" expanded="false" />
+            <element signature="e#12467#12705#0" expanded="false" />
             <element signature="n#!!block;n#updateFactory#0" expanded="false" />
             <element signature="n#!!block;n#updateBranch#0" expanded="false" />
             <element signature="n#!!block;n#updateSection#0" expanded="false" />
             <element signature="n#!!block;n#updateProdLine#0" expanded="false" />
             <element signature="n#!!block;n#deleteFactory#0" expanded="false" />
+            <element signature="n#!!block;n#deleteBranch#0" expanded="false" />
+            <element signature="n#!!block;n#deleteSection#0" expanded="false" />
+            <element signature="n#!!block;n#deleteProdLine#0" expanded="false" />
+            <element signature="n#!!block;n#removeActiveState#0" expanded="false" />
           </folding>
         </state>
       </provider>

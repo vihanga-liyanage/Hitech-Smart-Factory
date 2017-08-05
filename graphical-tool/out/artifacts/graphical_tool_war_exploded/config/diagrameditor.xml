@@ -377,5 +377,11 @@
 		<add as="SRF02" template="SRF02" icon="images/hitech/ultrasonic-sensors/SRF02.jpg"/>
 		<hr></hr>
 
+		<!--ultrasonic-sensors-->
+		<add as="HC-SR04" template="HC-SR04" icon="images/hitech/ultrasonic-sensors/HC-SR04.jpg"/>
+		<add as="QTR-3RC" template="QTR-3RC" icon="images/hitech/ultrasonic-sensors/QTR-3RC.jpg"/>
+		<add as="SRF02" template="SRF02" icon="images/hitech/ultrasonic-sensors/SRF02.jpg"/>
+		<hr></hr>
+
 	</mxDefaultToolbar>
 </mxEditor>
