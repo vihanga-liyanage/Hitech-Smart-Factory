@@ -30,6 +30,12 @@
         <servlet-name>ProdLineController</servlet-name>
         <servlet-class>com.hitech.smartfactory.controller.ProdLineController</servlet-class>
     </servlet>
+    <servlet>
+        <description></description>
+        <display-name>FileController</display-name>
+        <servlet-name>FileController</servlet-name>
+        <servlet-class>com.hitech.smartfactory.controller.FileController</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>FactoryController</servlet-name>
@@ -46,5 +52,9 @@
     <servlet-mapping>
         <servlet-name>ProdLineController</servlet-name>
         <url-pattern>/ProdLineController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FileController</servlet-name>
+        <url-pattern>/FileController</url-pattern>
     </servlet-mapping>
 </web-app>

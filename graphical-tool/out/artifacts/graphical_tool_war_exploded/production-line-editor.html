@@ -427,6 +427,15 @@
                 {
                     editor.execute('switchView');
                 });
+
+                // Trigger save production line action on button click
+                $("#save-prod-line-btn").click(function () {
+                    var enc = new mxCodec();
+                    var node = enc.encode(editor.graph.getModel());
+                    var xml = mxUtils.getPrettyXml(node);
+                    saveProdLine(xml);
+                });
+
                 // </editor-fold>
 
                 // <editor-fold defaultstate="collapsed" desc="Image and SVG export">
@@ -679,6 +688,8 @@
                                 </div>
                                 <textarea id="xml"></textarea>
                                 <input id="source" type="checkbox"/> View source
+
+                                <button id="save-prod-line-btn">Save Production Line</button>
 
                                 <div style="position: fixed; top: 100px; left: 900px; ">
                                     <div class="alert-box success">Successful Alert !!!</div>

@@ -747,7 +747,19 @@ var showErrorMsg = function (msg) {
     $( "div.failure" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
 };
 
-
+// save production line configuration as a file
+function saveProdLine(xml) {
+    var name = document.getElementById("prod-line-title").innerText;
+    name += ".xml";
+    $.post('FileController', {action: "saveFile", name: name, xml: xml},
+        function (data) {
+            if (data == "Success") {
+                alert("Production Line saved successfully!")
+            } else {
+                alert("Oops! Something went wrong.")
+            }
+        });
+}
 
 // <editor-fold defaultstate="collapsed" desc=" Reverse Engineering code - Need to review">
 var modelStr = '{"services":[';

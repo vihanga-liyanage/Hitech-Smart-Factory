@@ -80,6 +80,8 @@ html{
     /*min-height: 760px;*/
     width: 100%;
     display: none;
+    font-size: 12px;
+    font-family: monospace;
     /*border: 1px solid black;*/
 }
 
