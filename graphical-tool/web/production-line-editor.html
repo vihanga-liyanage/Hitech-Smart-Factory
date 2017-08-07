@@ -50,9 +50,6 @@
 
             var mxLanguage = urlParams['lang'];
 
-            function addToolbarSeparators() {
-                console.log("data:" + document.getElementById('toolbar').innerHTML);
-            }
         </script>
 
         <script type="text/javascript" src="js/custom.js"></script>
@@ -327,14 +324,15 @@
                 //add listener for drag and drop cell event to avoid version-mixes
                 editor.graph.addListener(mxEvent.ADD_CELLS, function (sender, me)
                 {
-                    validateProductVersion(editor, me);
+                    //
                 });
 
                 //add listener for delete cell event to update versionData
                 editor.graph.addListener(mxEvent.REMOVE_CELLS, function (sender, me)
                 {
-                    if (me.properties.cells.length > 0)
-                        updateVersionData(sender, me);
+                    if (me.properties.cells.length > 0){
+                        //
+                    }
                 });
 
                 //Listener for connections - change edge color according to source or target
@@ -577,73 +575,8 @@
                 mxUtils.write(node, ', ');
                 mxUtils.linkAction(node, 'Fit', editor, 'fit');
 
-                //"Get JSON Model" button click action
-                function initGetModel() {
-                    console.log("initGetModel");
-                    getModel(editor);
-                }
-                editor.addAction('getModel', initGetModel);
-                var getModelButton = document.getElementById('getModelButton');
-                mxEvent.addListener(getModelButton, 'click', function ()
-                {
-                    editor.execute('getModel');
-                });
-
-                //"Download Configs" button click action
-                function initGetConfiguration() {
-                    getConfigurations(editor);
-                }
-                editor.addAction('getConfigurations', initGetConfiguration);
-                var getConfigurationButton = document.getElementById('getConfigurationButton');
-                mxEvent.addListener(getConfigurationButton, 'click', function ()
-                {
-                    editor.execute('getConfigurations');
-                });
-
-                //"Download Configs" button click action
-                function initLoadDiagram() {
-                    confirmShowLoadDiagramDialog(editor);
-                }
-                editor.addAction('showLoadDiagramDialog', initLoadDiagram);
-                var loadDiagramButton = document.getElementById('loadDiagramButton');
-                mxEvent.addListener(loadDiagramButton, 'click', function ()
-                {
-                    editor.execute('showLoadDiagramDialog');
-                });
-
-                //"Download Configs (autogen links)" button click action
-                function initGenConnections() {
-                    getConfigurationsAutoGenLinks(editor);
-                }
-                editor.addAction('getConfigurationsAutoGenLinks', initGenConnections);
-                var getConfigurationAutoGenLinksButton = document.getElementById('getConfigurationAutoGenLinksButton');
-                mxEvent.addListener(getConfigurationAutoGenLinksButton, 'click', function ()
-                {
-                    editor.execute('getConfigurationsAutoGenLinks');
-                });
-                
-                //"Generate Links" button click action
-                function initGenLinks() {
-                    genLinks(editor);
-                }
-                editor.addAction('genLinks', initGenLinks);
-                var genLinksButton = document.getElementById('genLinksButton');
-                mxEvent.addListener(genLinksButton, 'click', function ()
-                {
-                    editor.execute('genLinks');
-                });
-
-                //"clearLinksButton" button click action
-                function initClearLinksButton() {
-                    clearLinks(editor);
-                }
-                editor.addAction('clearLinks', initClearLinksButton);
-                var clearLinksButton = document.getElementById('clearLinksButton');
-                mxEvent.addListener(clearLinksButton, 'click', function ()
-                {
-                    editor.execute('clearLinks');
-                });
-                
+                // Load production line from file
+                loadProdLine(editor);
             }
 
             window.onbeforeunload = function () {
@@ -691,22 +624,11 @@
 
                                 <button id="save-prod-line-btn">Save Production Line</button>
 
-                                <div style="position: fixed; top: 100px; left: 900px; ">
-                                    <div class="alert-box success">Successful Alert !!!</div>
+                                <div style="position: fixed; top: 82px; right: 15px; ">
+                                    <div id="successMsg" class="alert-box success">Successful Alert !!!</div>
                                     <div id="errorMsg" class="alert-box failure">Failure Alert !!!</div>
                                     <div class="alert-box warning">Warning Alert !!!</div>
                                 </div>
-
-                                <div id="action-panel" style="display: none">
-                                    <button id="getModelButton" style="display: none">Get JSON Model</button>
-                                    <button id="getConfigurationButton" style="display: none">Download Configs</button>
-                                    <button id="loadDiagramButton">Load Predefine Diagram</button>
-                                    <button id="getConfigurationAutoGenLinksButton">Download Configurations</button>
-                                    <button id="genLinksButton">Generate Links</button>
-                                    <button id="clearLinksButton">Clear Links</button>
-                                </div>
-
-
                             </td>
                         </tr>
                     </tbody>
@@ -728,7 +650,7 @@
         function autoResizeToolbarAndGraph() {
             var windowH = window.innerHeight;
             document.getElementById('graph').style.height = (windowH - 118) + "px";
-            document.getElementById('xml').style.height = (windowH - 119) + "px";
+            document.getElementById('xml').style.height = (windowH - 123) + "px";
             document.getElementById('toolbar').style.height = (windowH - 81) + "px";
         }
         window.onresize = autoResizeToolbarAndGraph;
@@ -739,10 +661,10 @@
             return document.getElementById('toolbar').innerHTML;
         }
         document.onload = function () {
-            console.log("onload " + addToolbarSeparators());
+//            console.log("onload " + addToolbarSeparators());
         }
         $(document).ready(function () {
-            console.log("ready " + addToolbarSeparators());
+//            console.log("ready " + addToolbarSeparators());
         });
 
     </script>

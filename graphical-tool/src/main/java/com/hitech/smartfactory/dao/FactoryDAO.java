@@ -1,7 +1,6 @@
 package com.hitech.smartfactory.dao;
 
 import com.hitech.smartfactory.model.Factory;
-import com.hitech.smartfactory.model.User;
 import com.hitech.smartfactory.util.DbUtil;
 
 import java.sql.*;

@@ -15,28 +15,32 @@ CREATE TABLE IF NOT EXISTS `branch` (
   `location` varchar(250) NOT NULL,
   PRIMARY KEY (`bid`),
   KEY `branch_ibfk_1` (`factory`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 INSERT INTO `branch` (`bid`, `name`, `factory`, `location`) VALUES
 (1, 'Colombo Branch', 1, 'Colombo'),
-(2, 'Branch 001', 1, 'Kaluthara'),
+(2, 'Negombo Branch', 1, 'Negombo'),
 (4, 'Negombo Branch', 2, 'Negombo'),
 (6, 'Puththalam Branch', 2, 'Puththalama'),
 (8, 'Main Branch', 3, 'Rathmalana'),
-(9, 'Head Office ', 4, 'Rathmalana');
+(9, 'Head Office ', 4, 'Rathmalana'),
+(15, 'ert', 5, 'dfgfg'),
+(16, 'b001', 2, 'temp'),
+(17, 'b002', 2, 'temp');
 
 DROP TABLE IF EXISTS `factory`;
 CREATE TABLE IF NOT EXISTS `factory` (
   `fid` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   PRIMARY KEY (`fid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 INSERT INTO `factory` (`fid`, `name`) VALUES
-(1, 'ABC Factory'),
+(1, 'ABC Factory '),
 (2, 'Cocacola Factory'),
 (3, 'Bata Shoe Factory'),
-(4, 'Maliban Biscuits Factory');
+(4, 'Maliban Biscuits Factory'),
+(5, 'test 1');
 
 DROP TABLE IF EXISTS `prodline`;
 CREATE TABLE IF NOT EXISTS `prodline` (
@@ -45,14 +49,17 @@ CREATE TABLE IF NOT EXISTS `prodline` (
   `section` int(11) NOT NULL,
   PRIMARY KEY (`pid`),
   KEY `section` (`section`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 INSERT INTO `prodline` (`pid`, `name`, `section`) VALUES
 (1, 'Left Production Line', 1),
 (2, 'Right Production Line', 1),
-(3, 'Packing Line', 2),
+(3, 'Production Line 1', 2),
 (4, 'Production Line 1', 3),
-(5, 'Production Line 2', 3);
+(5, 'Production Line 2', 3),
+(6, 'Production Line 2', 2),
+(7, 'Production Line 3', 2),
+(8, 'Test', 6);
 
 DROP TABLE IF EXISTS `section`;
 CREATE TABLE IF NOT EXISTS `section` (
@@ -65,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `section` (
 
 INSERT INTO `section` (`sid`, `name`, `branch`) VALUES
 (1, 'Filling Section', 1),
-(2, 'Packing Section', 2),
+(2, 'Delivery Section', 2),
 (3, 'Cleaning Section', 6),
 (4, 'Capping Section', 4),
 (5, 'Labeling Section', 4),

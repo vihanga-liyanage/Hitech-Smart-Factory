@@ -17,7 +17,7 @@ public class DbUtil {
         else {
             try {
             	Properties prop = new Properties();
-                InputStream inputStream = DbUtil.class.getClassLoader().getResourceAsStream("db.properties");
+                InputStream inputStream = DbUtil.class.getClassLoader().getResourceAsStream("system.properties");
                 prop.load(inputStream);
                 String driver = prop.getProperty("driver");
                 String url = prop.getProperty("url");
