@@ -271,39 +271,39 @@
 			<add as="BME280">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/hitech/temperature-and-humidity-sensors/BME280.jpg"/>
+				<add as="image" value="images/hitech/temperature-and-humidity-sensors/BME280.png"/>
 			</add>
 			<add as="DHT11">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/hitech/temperature-and-humidity-sensors/DHT11.jpg"/>
+				<add as="image" value="images/hitech/temperature-and-humidity-sensors/DHT11.png"/>
 			</add>
 			<add as="DS18B20">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/hitech/temperature-and-humidity-sensors/DS18B20.jpg"/>
+				<add as="image" value="images/hitech/temperature-and-humidity-sensors/DS18B20.png"/>
 			</add>
 			<add as="MLX90614">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/hitech/temperature-and-humidity-sensors/MLX90614.jpg"/>
+				<add as="image" value="images/hitech/temperature-and-humidity-sensors/MLX90614.png"/>
 			</add>
 
 			<!--ultrasonic-sensors-->
 			<add as="HC-SR04">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/hitech/ultrasonic-sensors/HC-SR04.jpg"/>
+				<add as="image" value="images/hitech/ultrasonic-sensors/HC-SR04.png"/>
 			</add>
 			<add as="QTR-3RC">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/hitech/ultrasonic-sensors/QTR-3RC.jpg"/>
+				<add as="image" value="images/hitech/ultrasonic-sensors/QTR-3RC.png"/>
 			</add>
 			<add as="SRF02">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
-				<add as="image" value="images/hitech/ultrasonic-sensors/SRF02.jpg"/>
+				<add as="image" value="images/hitech/ultrasonic-sensors/SRF02.png"/>
 			</add>
 
 			<add as="two_way_arrow">

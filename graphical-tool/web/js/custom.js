@@ -107,8 +107,11 @@ var clearLinks = function (editor)
 var loadProdLine = function (editor)
 {
     var name = document.getElementById("prod-line-title").innerText + ".xml";
-    var urlBase = "http://localhost:81/hitech-smart-factory/";
+    name = name.split(" ").join("-");
+    // var urlBase = "http://localhost:81/hitech-smart-factory/";
+    var urlBase = "http://ec2-52-38-15-248.us-west-2.compute.amazonaws.com/hitech-smart-factory/";
     var url = urlBase + name;
+    console.log(url);
 
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {

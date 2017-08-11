@@ -14,14 +14,15 @@
     String password = System.getProperty("RDS_PASSWORD");
     String hostname = System.getProperty("RDS_HOSTNAME");
     String port = System.getProperty("RDS_PORT");
-    String jdbcUrl = "jdbc:mysql://" + hostname + ":" + port + "/" + dbName + "?user=" + userName + "&password=" + password;
-            //"jdbc:mysql://aa1q7lsanw3l39k.czn5f45wk6xo.us-west-2.rds.amazonaws.com:3306/ebdb?user=root&password=hitechadmin123";
+    // String jdbcUrl = "jdbc:mysql://" + hostname + ":" + port + "/" + dbName + "?user=" + userName + "&password=" + password;
+    String jdbcUrl = "jdbc:mysql://ec2-52-38-15-248.us-west-2.compute.amazonaws.com:3306/hitech-smart-factory?user=hitech&password=hitech";
 
+    String results = "";
     // Load the JDBC driver
     try {
-        System.out.println("Loading driver...");
+        results += "<br><br>" + "Loading driver...";
         Class.forName("com.mysql.jdbc.Driver");
-        System.out.println("Driver loaded!");
+        results += "<br><br>" + "Driver loaded!";
     } catch (ClassNotFoundException e) {
         throw new RuntimeException("Cannot find the driver in the classpath!", e);
     }
@@ -30,7 +31,6 @@
     Statement setupStatement = null;
     Statement readStatement = null;
     ResultSet resultSet = null;
-    String results = "";
     int numresults = 0;
     String statement = null;
 
@@ -52,11 +52,11 @@
 
     } catch (SQLException ex) {
         // Handle any errors
-        System.out.println("SQLException: " + ex.getMessage());
-        System.out.println("SQLState: " + ex.getSQLState());
-        System.out.println("VendorError: " + ex.getErrorCode());
+        results += "<br><br>" + "SQLException: " + ex.getMessage();
+        results += "<br><br>" + "SQLState: " + ex.getSQLState();
+        results += "<br><br>" + "VendorError: " + ex.getErrorCode();
     } finally {
-        System.out.println("Closing the connection.");
+        results += "<br><br>" + "Closing the connection.";
         if (conn != null) try { conn.close(); } catch (SQLException ignore) {}
     }
 
@@ -77,11 +77,11 @@
 
     } catch (SQLException ex) {
         // Handle any errors
-        System.out.println("SQLException: " + ex.getMessage());
-        System.out.println("SQLState: " + ex.getSQLState());
-        System.out.println("VendorError: " + ex.getErrorCode());
+        results += "<br><br>" + "SQLException: " + ex.getMessage();
+        results += "<br><br>" + "SQLState: " + ex.getSQLState();
+        results += "<br><br>" + "VendorError: " + ex.getErrorCode();
     } finally {
-        System.out.println("Closing the connection.");
+        results += "<br><br>" + "Closing the connection.";
         if (conn != null) try { conn.close(); } catch (SQLException ignore) {}
     }
 %>

@@ -19,8 +19,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="181" column="26" lean-forward="false" selection-start-line="181" selection-start-column="26" selection-end-line="181" selection-end-column="26" />
+            <state relative-caret-position="3162">
+              <caret line="186" column="19" lean-forward="false" selection-start-line="186" selection-start-column="19" selection-end-line="186" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -29,36 +29,20 @@
       <file leaf-file-name="production-line-editor.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/production-line-editor.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="333" column="26" lean-forward="false" selection-start-line="333" selection-start-column="26" selection-end-line="333" selection-end-column="26" />
+            <state relative-caret-position="2856">
+              <caret line="643" column="9" lean-forward="false" selection-start-line="643" selection-start-column="9" selection-end-line="643" selection-end-column="9" />
               <folding>
-                <element signature="n#style#0;n#div#1;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#8607#8682#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="custom.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/custom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="124" column="50" lean-forward="false" selection-start-line="124" selection-start-column="50" selection-end-line="124" selection-end-column="50" />
-              <folding>
-                <element signature="e#388#793#0" expanded="false" />
-                <element signature="e#958#1010#0" expanded="false" />
-                <element signature="e#1219#1521#0" expanded="false" />
-                <element signature="e#1333#1501#0" expanded="false" />
-                <element signature="e#1692#1829#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mxClient.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/mxClient.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="30990" column="12" lean-forward="false" selection-start-line="30990" selection-start-column="12" selection-end-line="30990" selection-end-column="12" />
+            <state relative-caret-position="1870">
+              <caret line="112" column="27" lean-forward="false" selection-start-line="112" selection-start-column="27" selection-end-line="112" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -67,56 +51,108 @@
       <file leaf-file-name="index-scripts.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/index-scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="310" column="33" lean-forward="false" selection-start-line="310" selection-start-column="33" selection-end-line="310" selection-end-column="33" />
+            <state relative-caret-position="153">
+              <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
               <folding>
+                <element signature="e#0#52#0" expanded="false" />
                 <element signature="n#!!block;n#changeTab#0" expanded="false" />
+                <element signature="e#419#472#0" expanded="false" />
+                <element signature="e#652#737#0" expanded="false" />
                 <element signature="n#!!block;n#collapseOrHide#0" expanded="false" />
-                <element signature="n#!!block;n#displayAddForm#0" expanded="false" />
+                <element signature="e#1056#1338#0" expanded="false" />
+                <element signature="e#1179#1332#0" expanded="false" />
+                <element signature="e#1819#1908#0" expanded="false" />
+                <element signature="e#1946#2056#0" expanded="false" />
+                <element signature="e#2096#2229#0" expanded="false" />
                 <element signature="n#!!block;n#hideAddForm#0" expanded="false" />
+                <element signature="e#2441#2483#0" expanded="false" />
                 <element signature="n#!!block;n#displayEditForm#0" expanded="false" />
+                <element signature="e#2988#3071#0" expanded="false" />
+                <element signature="e#3159#3238#0" expanded="false" />
+                <element signature="e#3266#3366#0" expanded="false" />
+                <element signature="e#3395#3474#0" expanded="false" />
+                <element signature="e#3505#3585#0" expanded="false" />
                 <element signature="n#!!block;n#selectFactory#0" expanded="false" />
                 <element signature="n#!!block;n#setBranches#0" expanded="false" />
+                <element signature="e#4704#5818#0" expanded="false" />
                 <element signature="n#!!block;n#selectBranch#0" expanded="false" />
                 <element signature="n#!!block;n#setSections#0" expanded="false" />
+                <element signature="e#7149#8520#0" expanded="false" />
                 <element signature="n#!!block;n#selectSection#0" expanded="false" />
                 <element signature="n#!!block;n#setProdLines#0" expanded="false" />
+                <element signature="e#9482#10557#0" expanded="false" />
+                <element signature="e#9616#10543#0" expanded="false" />
                 <element signature="n#!!block;n#selectProdLine#0" expanded="false" />
                 <element signature="n#!!block;n#createNewBranch#0" expanded="false" />
+                <element signature="e#11614#11834#0" expanded="false" />
+                <element signature="e#11651#11824#0" expanded="false" />
                 <element signature="n#!!block;n#createNewSection#0" expanded="false" />
+                <element signature="e#12064#12284#0" expanded="false" />
+                <element signature="e#12101#12274#0" expanded="false" />
                 <element signature="n#!!block;n#createNewProdLine#0" expanded="false" />
-                <element signature="e#12467#12705#0" expanded="false" />
+                <element signature="e#12523#12749#0" expanded="false" />
+                <element signature="e#12560#12739#0" expanded="false" />
+                <element signature="e#12876#13114#0" expanded="false" />
+                <element signature="e#12941#13112#0" expanded="false" />
+                <element signature="e#12989#13044#0" expanded="false" />
+                <element signature="e#13050#13106#0" expanded="false" />
                 <element signature="n#!!block;n#updateFactory#0" expanded="false" />
+                <element signature="e#13250#13317#0" expanded="false" />
+                <element signature="e#13323#13605#0" expanded="false" />
+                <element signature="e#13448#13597#0" expanded="false" />
+                <element signature="e#13489#13583#0" expanded="false" />
+                <element signature="n#!!block;n#updateBranch#0" expanded="false" />
+                <element signature="e#13855#13933#0" expanded="false" />
+                <element signature="e#13939#14323#0" expanded="false" />
+                <element signature="e#14075#14315#0" expanded="false" />
+                <element signature="e#14116#14301#0" expanded="false" />
                 <element signature="n#!!block;n#updateSection#0" expanded="false" />
+                <element signature="e#14459#14526#0" expanded="false" />
+                <element signature="e#14532#14895#0" expanded="false" />
+                <element signature="e#14647#14887#0" expanded="false" />
+                <element signature="e#14688#14873#0" expanded="false" />
                 <element signature="n#!!block;n#updateProdLine#0" expanded="false" />
+                <element signature="e#15034#15109#0" expanded="false" />
+                <element signature="e#15115#15486#0" expanded="false" />
+                <element signature="e#15232#15478#0" expanded="false" />
+                <element signature="e#15273#15464#0" expanded="false" />
                 <element signature="n#!!block;n#deleteFactory#0" expanded="false" />
                 <element signature="n#!!block;n#deleteBranch#0" expanded="false" />
+                <element signature="e#16184#16660#0" expanded="false" />
+                <element signature="e#16282#16652#0" expanded="false" />
+                <element signature="e#16323#16638#0" expanded="false" />
                 <element signature="n#!!block;n#deleteSection#0" expanded="false" />
+                <element signature="e#16846#17243#0" expanded="false" />
+                <element signature="e#16946#17235#0" expanded="false" />
+                <element signature="e#16987#17221#0" expanded="false" />
                 <element signature="n#!!block;n#deleteProdLine#0" expanded="false" />
+                <element signature="e#17361#17643#0" expanded="false" />
+                <element signature="e#17463#17635#0" expanded="false" />
+                <element signature="e#17504#17621#0" expanded="false" />
+                <element signature="n#!!block;n#setActiveState#0" expanded="false" />
+                <element signature="n#!!block;n#moveGreenPanel#0" expanded="false" />
                 <element signature="n#!!block;n#removeActiveState#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/util/FileUtil.java">
+      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/main.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+            <state relative-caret-position="153">
+              <caret line="55" column="4" lean-forward="false" selection-start-line="55" selection-start-column="4" selection-end-line="94" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/FileController.java">
+      <file leaf-file-name="system.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/system.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="29" column="51" lean-forward="false" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state relative-caret-position="289">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -135,8 +171,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>init</find>
-      <find>mxcell.prototype.re</find>
       <find>mxCell.prototype.re</find>
       <find>document.</find>
       <find>header</find>
@@ -165,6 +199,8 @@
       <find>xml</find>
       <find>source</find>
       <find>success</find>
+      <find>select</find>
+      <find>console.log(</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;60&quot;</replace>
@@ -175,6 +211,7 @@
       <replace>update</replace>
       <replace>factory-action-form</replace>
       <replace>active-</replace>
+      <replace>//console.log(</replace>
     </replaceStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -205,20 +242,20 @@
         <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/BranchController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/SectionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/ProdLineController.java" />
-        <option value="$PROJECT_DIR$/web/config/diagrameditor.xml" />
         <option value="$PROJECT_DIR$/web/main.jsp" />
-        <option value="$PROJECT_DIR$/web/dbtest.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
-        <option value="$PROJECT_DIR$/web/js/index-scripts.js" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/FileController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/dao/FactoryDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/system.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/util/FileUtil.java" />
         <option value="$PROJECT_DIR$/web/js/mxClient.js" />
-        <option value="$PROJECT_DIR$/web/js/custom.js" />
-        <option value="$PROJECT_DIR$/web/production-line-editor.html" />
         <option value="$PROJECT_DIR$/web/css/style.css" />
+        <option value="$PROJECT_DIR$/web/dbtest.jsp" />
+        <option value="$PROJECT_DIR$/web/production-line-editor.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/util/FileUtil.java" />
+        <option value="$PROJECT_DIR$/web/config/diagrameditor.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/dao/FactoryDAO.java" />
+        <option value="$PROJECT_DIR$/web/js/index-scripts.js" />
+        <option value="$PROJECT_DIR$/web/js/custom.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/system.properties" />
       </list>
     </option>
   </component>
@@ -236,10 +273,9 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-7" />
+    <option name="width" value="1370" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -257,6 +293,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -307,7 +344,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -354,75 +391,10 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="smartfactory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphical-tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphical-tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="smartfactory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphical-tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="graphical-tool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="smartfactory" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -430,7 +402,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SONARLINT_ANALYSIS_RESULTS_SCOPE" value="VCS changed files" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
@@ -857,12 +829,12 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="false" name="Tomcat 9.0.0.M18" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.45" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration default="false" name="Tomcat 9.0.0.M18" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.16" ALTERNATIVE_JRE_ENABLED="false">
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
-        <artifact name="graphical-tool:war exploded">
+        <artifact name="hitech-smart-factory">
           <settings>
             <option name="CONTEXT_PATH" value="/hitech-smart-factory" />
           </settings>
@@ -928,7 +900,7 @@
       </ConfigurationWrapper>
       <method>
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="graphical-tool:war exploded" />
+          <artifact name="hitech-smart-factory" />
         </option>
       </method>
     </configuration>
@@ -975,16 +947,23 @@
       <workItem from="1501833046323" duration="4818000" />
       <workItem from="1501952222049" duration="5281000" />
       <workItem from="1502008430882" duration="7069000" />
-      <workItem from="1502090558344" duration="6759000" />
+      <workItem from="1502090558344" duration="8686000" />
+      <workItem from="1502131550683" duration="5634000" />
+      <workItem from="1502168749036" duration="5098000" />
+      <workItem from="1502248419396" duration="2857000" />
+      <workItem from="1502252665894" duration="1431000" />
+      <workItem from="1502255974240" duration="3112000" />
+      <workItem from="1502292294428" duration="4214000" />
+      <workItem from="1502427121184" duration="1195000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212703000" />
+    <option name="totallyTimeSpent" value="238171000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-7" y="0" width="1370" height="735" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1002,19 +981,17 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="PsiViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47790506" sideWeight="0.46066564" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.47508305" sideWeight="0.46066564" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2193646" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21832061" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1022,8 +999,10 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="SonarQube" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5797546" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="SonarLint" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1034,7 +1013,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1048,19 +1027,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/js/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/main.jsp" />
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1107,328 +1078,233 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index1.html" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/model/User.java" />
-    <entry file="jar://C:/xampp/tomcat/lib/servlet-api.jar!/javax/servlet/http/HttpServlet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="35" column="11" lean-forward="false" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Properties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="433" column="0" lean-forward="false" selection-start-line="433" selection-start-column="0" selection-end-line="433" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/xampp/tomcat/lib/servlet-api.jar!/javax/servlet/http/HttpServlet.class" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Properties.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/dao/UserDao.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/UserController.java" />
-    <entry file="file://$USER_HOME$/Downloads/Compressed/jQuery-AJAX-Web-Application/src/main/java/com/journaldev/servlets/GetUserServlet.java">
+    <entry file="file://$USER_HOME$/Downloads/Compressed/jQuery-AJAX-Web-Application/src/main/java/com/journaldev/servlets/GetUserServlet.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/String.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/model/Branch.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/model/Section.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/model/ProdLine.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/model/Factory.java" />
+    <entry file="file://$PROJECT_DIR$/web/images/hitech/icons/delete-icon.png" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/dao/BranchDAO.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/dao/SectionDAO.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/diagram.png" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/class.uml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/ProdLineController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/dao/ProdLineDAO.java" />
+    <entry file="file://$PROJECT_DIR$/web/test.html" />
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="642">
+          <caret line="57" column="36" lean-forward="false" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/BranchController.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/util/DbUtil.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/FileController.java" />
+    <entry file="file://$PROJECT_DIR$/web/js/mxClient.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526830">
+          <caret line="30990" column="12" lean-forward="false" selection-start-line="30990" selection-start-column="12" selection-end-line="30990" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3162">
+          <caret line="186" column="19" lean-forward="false" selection-start-line="186" selection-start-column="19" selection-end-line="186" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/dbtest.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="23" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="1924" column="18" lean-forward="false" selection-start-line="1924" selection-start-column="18" selection-end-line="1924" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/model/Branch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="46" column="21" lean-forward="false" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/model/Section.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="23" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/model/ProdLine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="44" lean-forward="false" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/model/Factory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/images/hitech/icons/delete-icon.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/dao/BranchDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="72" column="69" lean-forward="false" selection-start-line="72" selection-start-column="69" selection-end-line="72" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/dao/SectionDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="64" column="76" lean-forward="false" selection-start-line="64" selection-start-column="76" selection-end-line="64" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/FactoryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="31" column="49" lean-forward="false" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <caret line="17" column="83" lean-forward="false" selection-start-line="17" selection-start-column="83" selection-end-line="17" selection-end-column="83" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/SectionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="47" column="47" lean-forward="false" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/diagram.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/class.uml">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement />
-          <nodes>
-            <node x="" y="">com.hitech.smartfactory.model.ProdLine</node>
-            <node x="" y="">com.hitech.smartfactory.dao.SectionDAO</node>
-            <node x="" y="">com.hitech.smartfactory.model.Factory</node>
-            <node x="" y="">com.hitech.smartfactory.controller.SectionController</node>
-            <node x="" y="">com.hitech.smartfactory.controller.BranchController</node>
-            <node x="" y="">com.hitech.smartfactory.model.Section</node>
-            <node x="" y="">com.hitech.smartfactory.dao.BranchDAO</node>
-            <node x="" y="">com.hitech.smartfactory.dao.ProdLineDAO</node>
-            <node x="" y="">com.hitech.smartfactory.controller.ProdLineController</node>
-            <node x="" y="">com.hitech.smartfactory.controller.FactoryController</node>
-            <node x="" y="">com.hitech.smartfactory.model.Branch</node>
-            <node x="" y="">com.hitech.smartfactory.dao.FactoryDAO</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.4809822361546499" x="243.0" y="338.0" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Properties</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/config/diagrameditor.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5899">
-          <caret line="383" column="17" lean-forward="false" selection-start-line="383" selection-start-column="17" selection-end-line="383" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/ProdLineController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="27" column="50" lean-forward="false" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/dao/ProdLineDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="28" column="9" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding>
-            <marker date="1501765178626" expanded="false" signature="1195:4265" ph="..." />
-            <marker date="1501765178626" expanded="false" signature="1486:1500" ph="..." />
-            <marker date="1501765178626" expanded="false" signature="1501:2391" ph="..." />
-            <marker date="1501765178626" expanded="false" signature="1705:1717" ph="..." />
-            <marker date="1501765178626" expanded="false" signature="1903:1915" ph="..." />
-            <marker date="1501765178626" expanded="false" signature="2100:2112" ph="..." />
-            <marker date="1501765178626" expanded="false" signature="2298:2310" ph="..." />
-            <marker date="1501765178626" expanded="false" signature="2440:4253" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/test.html" />
-    <entry file="file://$PROJECT_DIR$/web/dbtest.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <marker date="1501833574857" expanded="true" signature="1617:1659" ph="CREATE TABLE... Beanstalk" />
-            <marker date="1501833574857" expanded="true" signature="1692:1748" ph="INSERT INTO Beanstalk... " />
-            <marker date="1501833574857" expanded="true" signature="1781:1837" ph="INSERT INTO Beanstalk... " />
-            <marker date="1501833574857" expanded="true" signature="2618:2648" ph="SELECT Resou... Beanstalk" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="57" column="36" lean-forward="false" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/BranchController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="52" column="12" lean-forward="false" selection-start-line="52" selection-start-column="12" selection-end-line="53" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/dao/FactoryDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/system.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/util/DbUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="59" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="21" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/FileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="29" column="51" lean-forward="false" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/util/FileUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/index-scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="310" column="33" lean-forward="false" selection-start-line="310" selection-start-column="33" selection-end-line="310" selection-end-column="33" />
-          <folding>
-            <element signature="n#!!block;n#changeTab#0" expanded="false" />
-            <element signature="n#!!block;n#collapseOrHide#0" expanded="false" />
-            <element signature="n#!!block;n#displayAddForm#0" expanded="false" />
-            <element signature="n#!!block;n#hideAddForm#0" expanded="false" />
-            <element signature="n#!!block;n#displayEditForm#0" expanded="false" />
-            <element signature="n#!!block;n#selectFactory#0" expanded="false" />
-            <element signature="n#!!block;n#setBranches#0" expanded="false" />
-            <element signature="n#!!block;n#selectBranch#0" expanded="false" />
-            <element signature="n#!!block;n#setSections#0" expanded="false" />
-            <element signature="n#!!block;n#selectSection#0" expanded="false" />
-            <element signature="n#!!block;n#setProdLines#0" expanded="false" />
-            <element signature="n#!!block;n#selectProdLine#0" expanded="false" />
-            <element signature="n#!!block;n#createNewBranch#0" expanded="false" />
-            <element signature="n#!!block;n#createNewSection#0" expanded="false" />
-            <element signature="n#!!block;n#createNewProdLine#0" expanded="false" />
-            <element signature="e#12467#12705#0" expanded="false" />
-            <element signature="n#!!block;n#updateFactory#0" expanded="false" />
-            <element signature="n#!!block;n#updateSection#0" expanded="false" />
-            <element signature="n#!!block;n#updateProdLine#0" expanded="false" />
-            <element signature="n#!!block;n#deleteFactory#0" expanded="false" />
-            <element signature="n#!!block;n#deleteBranch#0" expanded="false" />
-            <element signature="n#!!block;n#deleteSection#0" expanded="false" />
-            <element signature="n#!!block;n#deleteProdLine#0" expanded="false" />
-            <element signature="n#!!block;n#removeActiveState#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/mxClient.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="30990" column="12" lean-forward="false" selection-start-line="30990" selection-start-column="12" selection-end-line="30990" selection-end-column="12" />
+        <state relative-caret-position="85">
+          <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/production-line-editor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="333" column="26" lean-forward="false" selection-start-line="333" selection-start-column="26" selection-end-line="333" selection-end-column="26" />
+        <state relative-caret-position="2856">
+          <caret line="643" column="9" lean-forward="false" selection-start-line="643" selection-start-column="9" selection-end-line="643" selection-end-column="9" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#8607#8682#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/style.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/util/FileUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="181" column="26" lean-forward="false" selection-start-line="181" selection-start-column="26" selection-end-line="181" selection-end-column="26" />
+        <state relative-caret-position="421">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/sql/PreparedStatement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="94" column="17" lean-forward="false" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/dao/FactoryDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="57" column="39" lean-forward="false" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
+          <folding>
+            <marker date="1502263211195" expanded="true" signature="558:594" ph="insert into factory... " />
+            <marker date="1502263211195" expanded="true" signature="1067:1088" ph="select * fro... factory" />
+            <marker date="1502263211195" expanded="true" signature="1607:1644" ph="UPDATE facto... " />
+            <marker date="1502263211195" expanded="true" signature="2126:2157" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/FactoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/system.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/config/diagrameditor.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4437">
+          <caret line="261" column="42" lean-forward="false" selection-start-line="261" selection-start-column="42" selection-end-line="261" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="124" column="50" lean-forward="false" selection-start-line="124" selection-start-column="50" selection-end-line="124" selection-end-column="50" />
+        <state relative-caret-position="1870">
+          <caret line="112" column="27" lean-forward="false" selection-start-line="112" selection-start-column="27" selection-end-line="112" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/index-scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
           <folding>
-            <element signature="e#388#793#0" expanded="false" />
-            <element signature="e#958#1010#0" expanded="false" />
-            <element signature="e#1219#1521#0" expanded="false" />
-            <element signature="e#1333#1501#0" expanded="false" />
-            <element signature="e#1692#1829#0" expanded="false" />
+            <element signature="e#0#52#0" expanded="false" />
+            <element signature="n#!!block;n#changeTab#0" expanded="false" />
+            <element signature="e#419#472#0" expanded="false" />
+            <element signature="e#652#737#0" expanded="false" />
+            <element signature="n#!!block;n#collapseOrHide#0" expanded="false" />
+            <element signature="e#1056#1338#0" expanded="false" />
+            <element signature="e#1179#1332#0" expanded="false" />
+            <element signature="e#1819#1908#0" expanded="false" />
+            <element signature="e#1946#2056#0" expanded="false" />
+            <element signature="e#2096#2229#0" expanded="false" />
+            <element signature="n#!!block;n#hideAddForm#0" expanded="false" />
+            <element signature="e#2441#2483#0" expanded="false" />
+            <element signature="n#!!block;n#displayEditForm#0" expanded="false" />
+            <element signature="e#2988#3071#0" expanded="false" />
+            <element signature="e#3159#3238#0" expanded="false" />
+            <element signature="e#3266#3366#0" expanded="false" />
+            <element signature="e#3395#3474#0" expanded="false" />
+            <element signature="e#3505#3585#0" expanded="false" />
+            <element signature="n#!!block;n#selectFactory#0" expanded="false" />
+            <element signature="n#!!block;n#setBranches#0" expanded="false" />
+            <element signature="e#4704#5818#0" expanded="false" />
+            <element signature="n#!!block;n#selectBranch#0" expanded="false" />
+            <element signature="n#!!block;n#setSections#0" expanded="false" />
+            <element signature="e#7149#8520#0" expanded="false" />
+            <element signature="n#!!block;n#selectSection#0" expanded="false" />
+            <element signature="n#!!block;n#setProdLines#0" expanded="false" />
+            <element signature="e#9482#10557#0" expanded="false" />
+            <element signature="e#9616#10543#0" expanded="false" />
+            <element signature="n#!!block;n#selectProdLine#0" expanded="false" />
+            <element signature="n#!!block;n#createNewBranch#0" expanded="false" />
+            <element signature="e#11614#11834#0" expanded="false" />
+            <element signature="e#11651#11824#0" expanded="false" />
+            <element signature="n#!!block;n#createNewSection#0" expanded="false" />
+            <element signature="e#12064#12284#0" expanded="false" />
+            <element signature="e#12101#12274#0" expanded="false" />
+            <element signature="n#!!block;n#createNewProdLine#0" expanded="false" />
+            <element signature="e#12523#12749#0" expanded="false" />
+            <element signature="e#12560#12739#0" expanded="false" />
+            <element signature="e#12876#13114#0" expanded="false" />
+            <element signature="e#12941#13112#0" expanded="false" />
+            <element signature="e#12989#13044#0" expanded="false" />
+            <element signature="e#13050#13106#0" expanded="false" />
+            <element signature="n#!!block;n#updateFactory#0" expanded="false" />
+            <element signature="e#13250#13317#0" expanded="false" />
+            <element signature="e#13323#13605#0" expanded="false" />
+            <element signature="e#13448#13597#0" expanded="false" />
+            <element signature="e#13489#13583#0" expanded="false" />
+            <element signature="n#!!block;n#updateBranch#0" expanded="false" />
+            <element signature="e#13855#13933#0" expanded="false" />
+            <element signature="e#13939#14323#0" expanded="false" />
+            <element signature="e#14075#14315#0" expanded="false" />
+            <element signature="e#14116#14301#0" expanded="false" />
+            <element signature="n#!!block;n#updateSection#0" expanded="false" />
+            <element signature="e#14459#14526#0" expanded="false" />
+            <element signature="e#14532#14895#0" expanded="false" />
+            <element signature="e#14647#14887#0" expanded="false" />
+            <element signature="e#14688#14873#0" expanded="false" />
+            <element signature="n#!!block;n#updateProdLine#0" expanded="false" />
+            <element signature="e#15034#15109#0" expanded="false" />
+            <element signature="e#15115#15486#0" expanded="false" />
+            <element signature="e#15232#15478#0" expanded="false" />
+            <element signature="e#15273#15464#0" expanded="false" />
+            <element signature="n#!!block;n#deleteFactory#0" expanded="false" />
+            <element signature="n#!!block;n#deleteBranch#0" expanded="false" />
+            <element signature="e#16184#16660#0" expanded="false" />
+            <element signature="e#16282#16652#0" expanded="false" />
+            <element signature="e#16323#16638#0" expanded="false" />
+            <element signature="n#!!block;n#deleteSection#0" expanded="false" />
+            <element signature="e#16846#17243#0" expanded="false" />
+            <element signature="e#16946#17235#0" expanded="false" />
+            <element signature="e#16987#17221#0" expanded="false" />
+            <element signature="n#!!block;n#deleteProdLine#0" expanded="false" />
+            <element signature="e#17361#17643#0" expanded="false" />
+            <element signature="e#17463#17635#0" expanded="false" />
+            <element signature="e#17504#17621#0" expanded="false" />
+            <element signature="n#!!block;n#setActiveState#0" expanded="false" />
+            <element signature="n#!!block;n#moveGreenPanel#0" expanded="false" />
+            <element signature="n#!!block;n#removeActiveState#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="55" column="4" lean-forward="false" selection-start-line="55" selection-start-column="4" selection-end-line="94" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1438,7 +1314,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>graphical-tool:war exploded</last-edited>
+          <last-edited>hitech-smart-factory</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1498,7 +1374,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>mysql-connector-java-5.1.42-bin</last-edited>
+          <last-edited>annotations-api</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

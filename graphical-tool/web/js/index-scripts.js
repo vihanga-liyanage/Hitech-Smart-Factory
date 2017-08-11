@@ -99,6 +99,7 @@ function displayEditForm(type, id, name, location) {
 
 // Triggers when click on a factory box
 function selectFactory(id, name, element) {
+    //console.log("selectFactory: " + id + " " + name);
     if (selectedFactoryId != id) {
         // change cursor
         $("body").css("cursor", "progress");
@@ -111,34 +112,39 @@ function selectFactory(id, name, element) {
         selectedFactoryId = id;
 
         setBranches(id);
+
+        selectedBranchId = "";
+        selectedSectionId = "";
     }
 }
 
 // Get data using ajax and populate branches of a given factory
 function setBranches(factoryId) {
+    //console.log("setBranches: " + factoryId);
     // Clear old branches
     var branchesRow = document.getElementById("dynamic-branches");
     branchesRow.innerHTML = "";
 
     //get data by calling the servlet
-    $.get('BranchController', {action: "listBranches", id: factoryId},
-        function (data) {
+    jQuery.ajax({
+        url: 'BranchController?action=listBranches&id=' + factoryId,
+        success: function (data) {
             if (data != "") {
                 var branches = JSON.parse(data);
                 // populate branch boxes
                 for (var i in branches) {
                     branchesRow.innerHTML +=
                         '<div class="box-btn-wrapper">' +
-                            '<button class="box-btn branch" onclick="selectBranch(\'' + branches[i].bid +
-                            '\', \'' + branches[i].name + '\',this)">' + branches[i].name +
-                            '</button>' +
-                            '<div class="edit-delete-container">' +
-                                '<img src="images/hitech/icons/edit-icon.png" alt="Edit" class="edit-delete-img"' +
-                                    'onclick="displayEditForm(\'branch\', \'' + branches[i].bid + '\', \'' + branches[i].name
-                                    + '\', \'' + branches[i].location + '\')">' +
-                                '<img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img"' +
-                                    'onclick="deleteBranch(\'' + branches[i].bid + '\')">' +
-                            '</div>' +
+                        '<button class="box-btn branch" onclick="selectBranch(\'' + branches[i].bid +
+                        '\', \'' + branches[i].name + '\',this)">' + branches[i].name +
+                        '</button>' +
+                        '<div class="edit-delete-container">' +
+                        '<img src="images/hitech/icons/edit-icon.png" alt="Edit" class="edit-delete-img"' +
+                        'onclick="displayEditForm(\'branch\', \'' + branches[i].bid + '\', \'' + branches[i].name
+                        + '\', \'' + branches[i].location + '\')">' +
+                        '<img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img"' +
+                        'onclick="deleteBranch(\'' + branches[i].bid + '\')">' +
+                        '</div>' +
                         '</div>';
                 }
             }
@@ -150,11 +156,14 @@ function setBranches(factoryId) {
             document.getElementById("prod-lines").style.display = "none";
             removeActiveState('.branch');
             moveGreenPanel(boxBtnRowHeight);
-        });
+        },
+        async: false
+    });
 }
 
 // Triggers when click on a branch box
 function selectBranch(id, name, element) {
+    //console.log("selectBranch: " + id + " " + name);
     if (selectedBranchId != id) {
         // Set active the clicked button
         setActiveState('.branch', element);
@@ -164,33 +173,37 @@ function selectBranch(id, name, element) {
         selectedBranchId = id;
 
         setSections(id);
+
+        selectedSectionId = "";
     }
 }
 
 // Get data using ajax and populate sections of a given branch
 function setSections(branchId) {
+    //console.log("setSections: " + branchId);
     // Clear old sections
     var sectionsRow = document.getElementById("dynamic-sections");
     sectionsRow.innerHTML = "";
 
     //get data by calling the servlet
-    $.get('SectionController', {action: "listSections", id: branchId},
-        function (data) {
+    jQuery.ajax({
+        url: 'SectionController?action=listSections&id=' + branchId,
+        success: function (data) {
             if (data != "") {
                 var sections = JSON.parse(data);
                 // populate branch boxes
                 for (var i in sections) {
                     sectionsRow.innerHTML +=
                         '<div class="box-btn-wrapper">' +
-                            '<button class="box-btn section" onclick="selectSection(\'' + sections[i].sid +
-                            '\', \'' + sections[i].name + '\',this)">' + sections[i].name +
-                            '</button>' +
-                            '<div class="edit-delete-container">' +
-                                '<img src="images/hitech/icons/edit-icon.png" alt="Edit" class="edit-delete-img"' +
-                                    'onclick="displayEditForm(\'section\', \'' + sections[i].sid + '\', \'' + sections[i].name + '\')">' +
-                                '<img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img"' +
-                                    'onclick="deleteSection(\'' + sections[i].sid + '\')">' +
-                            '</div>' +
+                        '<button class="box-btn section" onclick="selectSection(\'' + sections[i].sid +
+                        '\', \'' + sections[i].name + '\',this)">' + sections[i].name +
+                        '</button>' +
+                        '<div class="edit-delete-container">' +
+                        '<img src="images/hitech/icons/edit-icon.png" alt="Edit" class="edit-delete-img"' +
+                        'onclick="displayEditForm(\'section\', \'' + sections[i].sid + '\', \'' + sections[i].name + '\')">' +
+                        '<img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img"' +
+                        'onclick="deleteSection(\'' + sections[i].sid + '\')">' +
+                        '</div>' +
                         '</div>';
                 }
             }
@@ -200,11 +213,14 @@ function setSections(branchId) {
             document.getElementById("prod-lines").style.display = "none";
             removeActiveState('.section');
             moveGreenPanel(boxBtnRowHeight * 2);
-        });
+        },
+        async: false
+    });
 }
 
 // Triggers when click on a section box
 function selectSection(id, name, element) {
+    //console.log("selectSection: " + id + " " + name);
     if (selectedSectionId != id) {
         // Set active the clicked button
         setActiveState('.section', element);
@@ -219,38 +235,43 @@ function selectSection(id, name, element) {
 
 // Get data using ajax and populate production lines of a given section
 function setProdLines(sectionId) {
+    //console.log("setProdLines: " + sectionId);
     // Clear old prod lines
     var prodLinesRow = document.getElementById("dynamic-prod-lines");
     prodLinesRow.innerHTML = "";
 
     //get data by calling the servlet
-    $.get('ProdLineController', {action: "listProdLines", id: sectionId},
-        function (data) {
+    jQuery.ajax({
+        url: 'ProdLineController?action=listProdLines&id=' + sectionId,
+        success: function (data) {
             if (data != "") {
                 var prodLines = JSON.parse(data);
                 // populate branch boxes
                 for (var i in prodLines) {
                     prodLinesRow.innerHTML +=
                         '<div class="box-btn-wrapper">' +
-                            '<button class="box-btn prod-line" onclick="selectProdLine(\'' + prodLines[i].pid +
-                            '\', \'' + prodLines[i].name + '\',this)">' + prodLines[i].name +
-                            '</button>' +
-                            '<div class="edit-delete-container">' +
-                                '<img src="images/hitech/icons/edit-icon.png" alt="Edit" class="edit-delete-img"' +
-                                    'onclick="displayEditForm(\'prod-line\', \'' + prodLines[i].pid + '\', \'' + prodLines[i].name + '\')">' +
-                                '<img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img"' +
-                                    'onclick="deleteProdLine(\'' + prodLines[i].pid + '\')">' +
-                            '</div>' +
+                        '<button class="box-btn prod-line" onclick="selectProdLine(\'' + prodLines[i].pid +
+                        '\', \'' + prodLines[i].name + '\',this)">' + prodLines[i].name +
+                        '</button>' +
+                        '<div class="edit-delete-container">' +
+                        '<img src="images/hitech/icons/edit-icon.png" alt="Edit" class="edit-delete-img"' +
+                        'onclick="displayEditForm(\'prod-line\', \'' + prodLines[i].pid + '\', \'' + prodLines[i].name + '\')">' +
+                        '<img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img"' +
+                        'onclick="deleteProdLine(\'' + prodLines[i].pid + '\')">' +
+                        '</div>' +
                         '</div>';
                 }
             }
             document.getElementById("prod-lines").style.display = "block";
 
             moveGreenPanel(boxBtnRowHeight * 3);
-        });
+        },
+        async: false
+    });
 }
 
 function selectProdLine(id, name) {
+    //console.log("setSections");
     var factory = document.getElementById("selected-factory-name").innerText;
     var branch = document.getElementById("selected-branch-name").innerText;
     var section = document.getElementById("selected-section-name").innerText;
@@ -379,8 +400,8 @@ function deleteFactory(id, name) {
         $.post('FactoryController', {action: "deleteFactory", id:id},
             function (data) {
                 if (data == "Success") {
-                    // Refresh page
-                    location.reload();
+                    // go back to home page
+                    location.href = "/hitech-smart-factory";
                 }
             });
     }

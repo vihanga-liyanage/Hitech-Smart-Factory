@@ -68,7 +68,7 @@ public class FactoryDAO {
                     .prepareStatement("DELETE FROM factory WHERE fid=?");
             // Parameters start with 1
             preparedStatement.setString(1, Integer.toString(factory.getFid()));
-            preparedStatement.executeUpdate();
+            System.out.println(preparedStatement.executeUpdate());
 
         } catch (SQLException e) {
             e.printStackTrace();

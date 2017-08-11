@@ -21,6 +21,7 @@ public class FileUtil {
     }
 
     public boolean saveTextFile (String name, String content) {
+        name = name.replaceAll(" ", "-");
         File file = new File(FILE_SERVER_BASE + name);
         file.getParentFile().mkdirs();
         try {
