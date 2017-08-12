@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="379.1250000000002" y="436.66666666666663">com.hitech.smartfactory.model.ProdLine</node>
+    <node x="-341.8749999999997" y="657.3333333333331">com.hitech.smartfactory.dao.SectionDAO</node>
+    <node x="-169.10416666666652" y="49.00000000000006">com.hitech.smartfactory.model.Factory</node>
+    <node x="-446.20833333333303" y="446.6666666666666">com.hitech.smartfactory.controller.SectionController</node>
+    <node x="44.00000000000003" y="33.66666666666663">com.hitech.smartfactory.controller.BranchController</node>
+    <node x="-165.9791666666664" y="436.6666666666666">com.hitech.smartfactory.model.Section</node>
+    <node x="125.66666666666663" y="249.9999999999999">com.hitech.smartfactory.dao.BranchDAO</node>
+    <node x="186.56250000000023" y="647.3333333333333">com.hitech.smartfactory.dao.ProdLineDAO</node>
+    <node x="101.0" y="441.6666666666667">com.hitech.smartfactory.controller.ProdLineController</node>
+    <node x="-450.97916666666674" y="35.000000000000114">com.hitech.smartfactory.controller.FactoryController</node>
+    <node x="325.22916666666663" y="9.666666666666629">com.hitech.smartfactory.model.Branch</node>
+    <node x="-346.66666666666663" y="249.6666666666668">com.hitech.smartfactory.dao.FactoryDAO</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.hitech.smartfactory.controller.SectionController" target="com.hitech.smartfactory.model.Section">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.hitech.smartfactory.controller.SectionController" target="com.hitech.smartfactory.dao.SectionDAO">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.hitech.smartfactory.dao.BranchDAO" target="com.hitech.smartfactory.model.Branch">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.hitech.smartfactory.dao.ProdLineDAO" target="com.hitech.smartfactory.model.ProdLine">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.hitech.smartfactory.controller.FactoryController" target="com.hitech.smartfactory.dao.FactoryDAO">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.hitech.smartfactory.controller.BranchController" target="com.hitech.smartfactory.model.Branch">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.hitech.smartfactory.controller.ProdLineController" target="com.hitech.smartfactory.model.ProdLine">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.hitech.smartfactory.controller.ProdLineController" target="com.hitech.smartfactory.dao.ProdLineDAO">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.hitech.smartfactory.dao.FactoryDAO" target="com.hitech.smartfactory.model.Factory">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.hitech.smartfactory.dao.SectionDAO" target="com.hitech.smartfactory.model.Section">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.hitech.smartfactory.controller.BranchController" target="com.hitech.smartfactory.dao.BranchDAO">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="com.hitech.smartfactory.controller.FactoryController" target="com.hitech.smartfactory.model.Factory">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.6000000000000001" x="276.9999999999999" y="418.33333333333326" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

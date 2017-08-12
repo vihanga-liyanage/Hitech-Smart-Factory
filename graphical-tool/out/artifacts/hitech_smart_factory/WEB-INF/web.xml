@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         id="WebApp_ID"
+         version="2.5">
+
+    <servlet>
+        <description></description>
+        <display-name>FactoryController</display-name>
+        <servlet-name>FactoryController</servlet-name>
+        <servlet-class>com.hitech.smartfactory.controller.FactoryController</servlet-class>
+    </servlet>
+    <servlet>
+        <description></description>
+        <display-name>BranchController</display-name>
+        <servlet-name>BranchController</servlet-name>
+        <servlet-class>com.hitech.smartfactory.controller.BranchController</servlet-class>
+    </servlet>
+    <servlet>
+        <description></description>
+        <display-name>SectionController</display-name>
+        <servlet-name>SectionController</servlet-name>
+        <servlet-class>com.hitech.smartfactory.controller.SectionController</servlet-class>
+    </servlet>
+    <servlet>
+        <description></description>
+        <display-name>ProdLineController</display-name>
+        <servlet-name>ProdLineController</servlet-name>
+        <servlet-class>com.hitech.smartfactory.controller.ProdLineController</servlet-class>
+    </servlet>
+    <servlet>
+        <description></description>
+        <display-name>FileController</display-name>
+        <servlet-name>FileController</servlet-name>
+        <servlet-class>com.hitech.smartfactory.controller.FileController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FactoryController</servlet-name>
+        <url-pattern>/FactoryController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BranchController</servlet-name>
+        <url-pattern>/BranchController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SectionController</servlet-name>
+        <url-pattern>/SectionController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProdLineController</servlet-name>
+        <url-pattern>/ProdLineController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FileController</servlet-name>
+        <url-pattern>/FileController</url-pattern>
+    </servlet-mapping>
+</web-app>

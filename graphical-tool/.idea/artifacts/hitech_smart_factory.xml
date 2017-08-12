@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="war" build-on-make="true" name="hitech-smart-factory">
+  <artifact type="exploded-war" build-on-make="true" name="hitech-smart-factory">
     <output-path>$PROJECT_DIR$/out/artifacts/hitech_smart_factory</output-path>
-    <root id="archive" name="hitech-smart-factory.war">
+    <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="graphical-tool" />
