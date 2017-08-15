@@ -54,7 +54,6 @@ html{
 #toolbar{
     overflow: auto;
     padding-left: 10px;
-    padding-top: 10px;
 }
 
 #toolbar img:first-child {

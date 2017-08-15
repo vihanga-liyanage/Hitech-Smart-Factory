@@ -356,32 +356,32 @@
 		<add as="Connector" template="connector" icon="images/wso2/arrow.png"/>
 
 		<!-- production line items -->
+		<hr name="Production Line Items"></hr>
 		<add as="Conveyor Belt" template="ConveyorBelt" icon="images/hitech/production-line-items/conveyor-belt-1.png"/>
 		<add as="Delivery" template="Delivery" icon="images/hitech/production-line-items/delivery-1.png"/>
 		<add as="Filling Arm" template="FillingArm" icon="images/hitech/production-line-items/filling-arm-1.png"/>
 		<add as="Robotic Arm" template="RoboticArm" icon="images/hitech/production-line-items/robotic-arm-1.png"/>
 		<add as="Working Man" template="WorkingMan" icon="images/hitech/production-line-items/working-man-1.png"/>
 		<add as="Working Man2" template="WorkingMan2" icon="images/hitech/production-line-items/working-man-1.png"/>
-		<hr></hr>
 
 		<!--temperature-and-humidity-sensors-->
+		<hr name="Temperature And Humidity Sensors"></hr>
 		<add as="BME280" template="BME280" icon="images/hitech/temperature-and-humidity-sensors/BME280.jpg"/>
 		<add as="DHT11" template="DHT11" icon="images/hitech/temperature-and-humidity-sensors/DHT11.jpg"/>
 		<add as="DS18B20" template="DS18B20" icon="images/hitech/temperature-and-humidity-sensors/DS18B20.jpg"/>
 		<add as="MLX90614" template="MLX90614" icon="images/hitech/temperature-and-humidity-sensors/MLX90614.jpg"/>
-		<hr></hr>
 
 		<!--ultrasonic-sensors-->
+		<hr name="Ultrasonic Sensors"></hr>
 		<add as="HC-SR04" template="HC-SR04" icon="images/hitech/ultrasonic-sensors/HC-SR04.jpg"/>
 		<add as="QTR-3RC" template="QTR-3RC" icon="images/hitech/ultrasonic-sensors/QTR-3RC.jpg"/>
 		<add as="SRF02" template="SRF02" icon="images/hitech/ultrasonic-sensors/SRF02.jpg"/>
-		<hr></hr>
 
 		<!--ultrasonic-sensors-->
+		<hr name="Ultrasonic Sensors"></hr>
 		<add as="HC-SR04" template="HC-SR04" icon="images/hitech/ultrasonic-sensors/HC-SR04.jpg"/>
 		<add as="QTR-3RC" template="QTR-3RC" icon="images/hitech/ultrasonic-sensors/QTR-3RC.jpg"/>
 		<add as="SRF02" template="SRF02" icon="images/hitech/ultrasonic-sensors/SRF02.jpg"/>
-		<hr></hr>
 
 	</mxDefaultToolbar>
 </mxEditor>

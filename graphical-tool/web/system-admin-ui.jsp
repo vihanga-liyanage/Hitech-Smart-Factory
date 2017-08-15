@@ -25,7 +25,7 @@
     <%--<link rel="stylesheet" href="css/wordpress.css" type="text/css" media="screen" />--%>
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 
-    <script type="text/javascript" src="js/index-scripts.js"></script>
+    <script type="text/javascript" src="js/system-admin-ui.js"></script>
 
 </head>
 <body>

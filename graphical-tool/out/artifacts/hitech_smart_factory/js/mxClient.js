@@ -13482,7 +13482,7 @@ mxToolbar.prototype.addItem = function(title, icon, funct, pressedIcon, style, f
 	{
 		if (icon != null)
 		{
-			img.setAttribute('title', title);
+			img.setAttribute('title', title+'xyz');
 		}
 		else
 		{
@@ -13753,7 +13753,7 @@ mxToolbar.prototype.addMode = function(title, icon, funct, pressedIcon, style, t
 {
 	toggle = (toggle != null) ? toggle : true;
 	var img = document.createElement((icon != null) ? 'img' : 'button');
-	
+
 	img.initialClassName = style || 'mxToolbarMode';
 	img.className = img.initialClassName;
 	img.setAttribute('src', icon);
@@ -13786,7 +13786,7 @@ mxToolbar.prototype.addMode = function(title, icon, funct, pressedIcon, style, t
 		}
 	}
 
-	this.container.appendChild(img);					
+	this.container.appendChild(img);
 
 	return img;
 };
@@ -13880,14 +13880,22 @@ mxToolbar.prototype.addBreak = function()
  * 
  * Adds a horizontal line to the container.
  */
-mxToolbar.prototype.addLine = function()
+mxToolbar.prototype.addLine = function(node)
 {
+    console.log(node);
 	var hr = document.createElement('hr');
 	
 	hr.style.marginRight = '6px';
-	hr.setAttribute('size', '1');
-	
-	this.container.appendChild(hr);
+    hr.style.marginTop = '0px';
+    hr.style.marginBottom = '10px';
+    hr.style.borderTop = '2px solid #e6e6e6';
+
+    var heading = document.createElement('div');
+    heading.style.marginTop = '10px';
+    heading.style.fontSize = '12px';
+    heading.innerText = node.getAttribute('name');
+    this.container.appendChild(heading);
+    this.container.appendChild(hr);
 };
 
 /**
@@ -80787,7 +80795,8 @@ mxDefaultPopupMenu.prototype.createConditions = function(editor, cell, evt)
  */
 function mxDefaultToolbar(container, editor)
 {
-	this.editor = editor;
+
+    this.editor = editor;
 
 	if (container != null && editor != null)
 	{
@@ -87502,7 +87511,7 @@ var mxDefaultToolbarCodec = mxCodecRegistry.register(function()
 						}
 						else if (node.nodeName == 'hr')
 						{
-							into.toolbar.addLine();
+							into.toolbar.addLine(node);
 						}
 						else if (node.nodeName == 'add')
 						{

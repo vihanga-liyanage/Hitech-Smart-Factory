@@ -23,7 +23,7 @@ public class FactoryController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("factories", dao.getAllFactories());
-        RequestDispatcher view = request.getRequestDispatcher("/main.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("/system-admin-ui.jsp");
         view.forward(request, response);
     }
 
@@ -35,7 +35,7 @@ public class FactoryController extends HttpServlet {
         if (action == null) {
             // add new factory
             dao.addFactory(factory);
-            RequestDispatcher view = request.getRequestDispatcher("/main.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("/system-admin-ui.jsp");
             request.setAttribute("factories", dao.getAllFactories());
             view.forward(request, response);
         } else if (action.equalsIgnoreCase("updateFactory")){
