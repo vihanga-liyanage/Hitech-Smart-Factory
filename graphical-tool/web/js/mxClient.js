@@ -13882,7 +13882,6 @@ mxToolbar.prototype.addBreak = function()
  */
 mxToolbar.prototype.addLine = function(node)
 {
-    console.log(node);
 	var hr = document.createElement('hr');
 	
 	hr.style.marginRight = '6px';
@@ -13893,7 +13892,15 @@ mxToolbar.prototype.addLine = function(node)
     var heading = document.createElement('div');
     heading.style.marginTop = '10px';
     heading.style.fontSize = '12px';
-    heading.innerText = node.getAttribute('name');
+
+    //setup category selection
+    var name = node.getAttribute('name');
+    var option = document.createElement('OPTION');
+    option.label = name;
+    option.value = name;
+    document.getElementById("toolbox-item-category").appendChild(option);
+
+    heading.innerText = name;
     this.container.appendChild(heading);
     this.container.appendChild(hr);
 };

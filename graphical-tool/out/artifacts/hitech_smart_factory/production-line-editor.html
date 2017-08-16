@@ -596,7 +596,6 @@
 
             window.onbeforeunload = function () {
                 //Delete any generated config folder for the client
-                clearGarbage();
                 return mxResources.get('changesLost');
             };
 
@@ -622,6 +621,7 @@
                     <tbody>
                         <tr>
                             <td id="toolbar_container" valign="top" class="col-md-3">
+                                <button class="add-toolbox-item-btn" onclick="addToolboxItem()">Add New Item</button>
                                 <div id="toolbar" >
                                     <!-- Toolbar Here -->
                                 </div>
@@ -641,6 +641,19 @@
                                     <h3>Configure Sensor</h3>
                                     Sensor ID : <span id="sensor-id"></span><br>
                                     Sensor Name : <span id="sensor-name"></span>
+                                </div>
+
+                                <!-- add new toolbox item form -->
+                                <div id="add-toolbox-item-form-container">
+                                    <img id="add-toolbox-item-form-close" src="images/hitech/icons/close.png" title="Close" onclick="closeAddToolboxItem()" >
+                                    <h3>Add New Toolbox Item</h3><br>
+                                    Name/Model: <input type="text" id="item-model-name" onkeypress="previewToolboxItemIcon(true)"> <br><br>
+                                    Category: <select id="toolbox-item-category" onchange="toolboxItemCategorySelected()"></select> <br><br>
+                                    Icon Image: <input type="file" accept="image/*" onchange="previewToolboxItemIcon(false)" id="toolbox-item-icon"><br>
+                                    <div height="80" id="toolbox-item-icon-preview" class="col-md-6"></div>
+                                    <div height="80" id="sensor-icon-preview"  class="col-md-6"></div>
+                                    <br>
+                                    <button id="save-toolbox-item-btn" onclick="saveNewToolboxItem()">Save</button>
                                 </div>
 
                                 <textarea id="xml"></textarea>
@@ -681,7 +694,7 @@
             var windowH = window.innerHeight;
             document.getElementById('graph').style.height = (windowH - 118) + "px";
             document.getElementById('xml').style.height = (windowH - 123) + "px";
-            document.getElementById('toolbar').style.height = (windowH - 81) + "px";
+            document.getElementById('toolbar').style.height = (windowH - 117) + "px";
         }
         window.onresize = autoResizeToolbarAndGraph;
         autoResizeToolbarAndGraph();
