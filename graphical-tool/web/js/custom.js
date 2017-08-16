@@ -111,7 +111,6 @@ var loadProdLine = function (editor)
     var urlBase = "http://localhost:81/hitech-smart-factory/";
     // var urlBase = "http://ec2-52-38-15-248.us-west-2.compute.amazonaws.com/hitech-smart-factory/";
     var url = urlBase + name;
-    console.log(url);
 
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
@@ -173,4 +172,139 @@ function configureSensorDetails(sender, evt, product) {
 function closeConfigSensorForm() {
     document.getElementById("action-form-background").style.display = "none";
     document.getElementById("sensor-config-form-container").style.display = "none";
+}
+
+// Adding custom toolbox items
+var addingProdLineItem = true;
+
+function toolboxItemCategorySelected() {
+    var select = document.getElementById("toolbox-item-category");
+    if (select.selectedIndex == 0) {
+        addingProdLineItem = true;
+    } else {
+        addingProdLineItem = false;
+    }
+    previewToolboxItemIcon(false);
+}
+
+function addToolboxItem(){
+    document.getElementById("action-form-background").style.display = "block";
+    document.getElementById("add-toolbox-item-form-container").style.display = "block";
+}
+
+function closeAddToolboxItem(){
+    document.getElementById('action-form-background').style.display = "none";
+    document.getElementById('add-toolbox-item-form-container').style.display = "none";
+    document.getElementById('toolbox-item-icon-preview').innerHTML = "";
+    document.getElementById('sensor-icon-preview').innerHTML = "";
+    document.getElementById('toolbox-item-icon').value = "";
+    document.getElementById('item-model-name').value = "";
+}
+
+function previewToolboxItemIcon(isKey) {
+    var toolboxPreview = document.getElementById('toolbox-item-icon-preview'); //selects the preview img
+    var sensorPreview = document.getElementById('sensor-icon-preview');
+    var input = document.getElementById('toolbox-item-icon');
+    var reader  = new FileReader();
+
+    reader.onloadend = function () {
+        var model = document.getElementById("item-model-name").value;
+        toolboxPreview.innerHTML = "";
+        toolboxPreview.appendChild(getToolboxIcon(reader.result, model));
+        var p = document.createElement('p');
+        p.innerText = "Toolbox Icon Preview";
+        toolboxPreview.appendChild(p);
+
+        if (!isKey && !addingProdLineItem) {
+            // set sensor icon preview
+            sensorPreview.innerHTML = "";
+            sensorPreview.appendChild(getSensorIcon(reader.result));
+            p = document.createElement('p');
+            p.innerText = "Sensor Icon Preview";
+            sensorPreview.appendChild(p);
+        }
+        if (addingProdLineItem)
+            sensorPreview.innerHTML = "";
+    };
+
+    if (input.files && input.files[0]) {
+        reader.readAsDataURL(input.files[0]); //reads the data as a URL
+    } else {
+        toolboxPreview.src = "";
+    }
+}
+
+function getToolboxIcon(imageSrc, name) {
+    var c = document.createElement('canvas');
+    c.width = 80;
+    c.height = 80;
+    var context = c.getContext("2d");
+
+    // set context properties
+    context.font = "9pt Verdana";
+    context.fillStyle = "white";
+    context.lineWidth = 2;
+    context.strokeStyle="#000000";
+
+    var imageObj2 = new Image();
+    imageObj2.onload = function (){
+        // Draw base image
+        context.drawImage(imageObj2, 10, 0, 60, 60);
+        var imageObj1 = new Image();
+        imageObj1.onload = function (){
+            imageObj1.style.objectFit = "cover";
+            // Draw footer
+            context.drawImage(imageObj1, 0, 60, 80, 20);
+            // Add text to footer
+            context.fillText(name, 5, 73);
+            // Add border to canvas
+            context.strokeRect(0, 0, c.width, c.height);
+        };
+        imageObj1.src = "images/hitech/toolbar-icon-footer.jpg";
+    };
+    imageObj2.src = imageSrc;
+    return c;
+}
+
+function getSensorIcon(imageSrc) {
+    var c = document.createElement('canvas');
+    c.width = 80;
+    c.height = 80;
+    var context = c.getContext("2d");
+
+    var imageObj2 = new Image();
+    imageObj2.onload = function (){
+        // Draw base image
+        context.drawImage(imageObj2, 5, 5, 70, 70);
+
+        var imageObj1 = new Image();
+        imageObj1.onload = function (){
+            imageObj1.style.objectFit = "cover";
+            // Draw footer
+            context.drawImage(imageObj1, 0, 0, 80, 80);
+            // Crop circle
+            context.globalCompositeOperation='destination-in';
+            context.beginPath();
+            context.arc(40, 40, 37, 0, 2 * Math.PI);
+            context.fill();
+        };
+        imageObj1.src = "images/hitech/sensor-icon-blue-ring.png";
+    };
+    imageObj2.src = imageSrc;
+    return c;
+}
+
+function saveNewToolboxItem() {
+    // validation
+    var input = document.getElementById('toolbox-item-icon');
+    var model = document.getElementById('item-model-name').value;
+    if (model == "") {
+        alert("Please enter a name or a model number.");
+        return;
+    }
+    if (input.files[0] == null) {
+        alert("Please select an image.");
+        return;
+    }
+
 }
