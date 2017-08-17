@@ -304,27 +304,30 @@ function getSensorIcon(imageSrc) {
 
 function saveNewToolboxItem() {
     // validation
-    var isValid = false;
+    var isValidModel, isValidInput;
     var model = document.getElementById('item-model-name');
     if (model.value == "") {
         model.focus();
         model.style.border = "1px solid #ff5959";
         model.style.boxShadow = "0 0 3px #ff0000";
-        isValid = false;
+        isValidModel = false;
     } else {
         model.style.border = "1px solid #4a4a4a";
         model.style.boxShadow = "none";
-        isValid = true;
+        isValidModel = true;
     }
     var input = document.getElementById('toolbox-item-icon');
     if (input.files[0] == null) {
         input.style.border = "1px solid #ff5959";
         input.style.boxShadow = "0 0 3px #ff0000";
-        isValid = false;
+        isValidInput = false;
     } else {
         input.style.border = "none";
         input.style.boxShadow = "none";
-        isValid = true;
+        isValidInput = true;
     }
 
+    if (isValidModel && isValidInput) {
+        
+    }
 }
