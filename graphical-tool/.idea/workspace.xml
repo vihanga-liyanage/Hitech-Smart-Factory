@@ -16,18 +16,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="mxApplication.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/mxApplication.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="43" column="33" lean-forward="false" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
-              <folding>
-                <element signature="e#269#559#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="mxClient.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/mxClient.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -48,31 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7820">
-              <caret line="460" column="29" lean-forward="false" selection-start-line="460" selection-start-column="23" selection-end-line="460" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="diagrameditor.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/config/diagrameditor.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6443">
-              <caret line="379" column="47" lean-forward="false" selection-start-line="379" selection-start-column="47" selection-end-line="379" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="69" column="4" lean-forward="false" selection-start-line="69" selection-start-column="4" selection-end-line="104" selection-end-column="57" />
+            <state relative-caret-position="1717">
+              <caret line="101" column="34" lean-forward="false" selection-start-line="101" selection-start-column="22" selection-end-line="101" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -81,8 +49,8 @@
       <file leaf-file-name="production-line-editor.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/production-line-editor.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2720">
-              <caret line="651" column="84" lean-forward="false" selection-start-line="651" selection-start-column="84" selection-end-line="651" selection-end-column="84" />
+            <state relative-caret-position="2737">
+              <caret line="652" column="101" lean-forward="false" selection-start-line="652" selection-start-column="101" selection-end-line="652" selection-end-column="101" />
               <folding>
                 <element signature="e#6373#6454#0" expanded="false" />
                 <element signature="e#8791#8866#0" expanded="false" />
@@ -94,31 +62,57 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="custom.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/js/custom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="311" column="50" lean-forward="true" selection-start-line="311" selection-start-column="50" selection-end-line="311" selection-end-column="50" />
+            <state relative-caret-position="2431">
+              <caret line="343" column="29" lean-forward="false" selection-start-line="343" selection-start-column="16" selection-end-line="343" selection-end-column="29" />
               <folding>
-                <element signature="n#!!block;n#saveProdLine#0" expanded="false" />
+                <element signature="e#402#516#0" expanded="false" />
+                <element signature="e#548#953#0" expanded="false" />
+                <element signature="e#956#1089#0" expanded="false" />
+                <element signature="e#1118#1170#0" expanded="false" />
+                <element signature="e#1173#1336#0" expanded="false" />
+                <element signature="e#1379#1681#0" expanded="false" />
+                <element signature="e#1684#1816#0" expanded="false" />
+                <element signature="e#1852#1989#0" expanded="false" />
+                <element signature="e#1992#2174#0" expanded="false" />
                 <element signature="n#!!block;n#configureSensorDetails#0" expanded="false" />
                 <element signature="n#!!block;n#closeConfigSensorForm#0" expanded="false" />
-                <element signature="n#!!block;n#toolboxItemCategorySelected#0" expanded="false" />
                 <element signature="n#!!block;n#addToolboxItem#0" expanded="false" />
                 <element signature="n#!!block;n#closeAddToolboxItem#0" expanded="false" />
+                <element signature="n#!!block;n#previewToolboxItemIcon#0" expanded="false" />
                 <element signature="n#!!block;n#getToolboxIcon#0" expanded="false" />
-                <element signature="n#!!block;n#getSensorIcon#0" expanded="false" />
+                <element signature="n#!!block;n#getCanvasIcon#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="system-admin-ui.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/system-admin-ui.jsp">
+      <file leaf-file-name="FileController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/FileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2431">
-              <caret line="143" column="66" lean-forward="false" selection-start-line="143" selection-start-column="66" selection-end-line="143" selection-end-column="66" />
+            <state relative-caret-position="544">
+              <caret line="38" column="86" lean-forward="false" selection-start-line="38" selection-start-column="86" selection-end-line="38" selection-end-column="86" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileUtil.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/util/FileUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-259">
+              <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#FileUtil#0;class#FileUtil#0" expanded="false" />
+                <element signature="method#saveFile#0;class#FileUtil#0" expanded="false" />
+                <element signature="method#setModifiedArrayNode#0;class#FileUtil#0" expanded="false" />
+                <element signature="method#setModifiedMxStylesheetNode#0;class#FileUtil#0" expanded="false" />
+                <element signature="method#setMxDefaultToolbarNode#0;class#FileUtil#0" expanded="false" />
+                <element signature="method#nodeToString#0;class#FileUtil#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,7 +131,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>create-new</find>
       <find>create-new-prod-line</find>
       <find>main</find>
       <find>box-b</find>
@@ -167,6 +160,7 @@
       <find>tool</find>
       <find>addLine</find>
       <find>toolbar</find>
+      <find>filecon</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;60&quot;</replace>
@@ -212,12 +206,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/ProdLineController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/FileController.java" />
         <option value="$PROJECT_DIR$/web/dbtest.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/util/FileUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/dao/FactoryDAO.java" />
         <option value="$PROJECT_DIR$/web/main.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/system.properties" />
         <option value="$PROJECT_DIR$/web/grafana.jsp" />
         <option value="$PROJECT_DIR$/web/js/index-scripts.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/FactoryController.java" />
@@ -225,8 +216,11 @@
         <option value="$PROJECT_DIR$/web/config/diagrameditor.xml" />
         <option value="$PROJECT_DIR$/web/js/mxClient.js" />
         <option value="$PROJECT_DIR$/web/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/system.properties" />
         <option value="$PROJECT_DIR$/web/production-line-editor.html" />
         <option value="$PROJECT_DIR$/web/js/custom.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/FileController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/util/FileUtil.java" />
       </list>
     </option>
   </component>
@@ -264,7 +258,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -312,16 +305,139 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphical-tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphical-tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="smartfactory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphical-tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphical-tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="smartfactory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphical-tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphical-tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="smartfactory" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphical-tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphical-tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphical-tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="graphical-tool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="artifacts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -892,12 +1008,13 @@
       <workItem from="1502862094709" duration="7699000" />
       <workItem from="1502892561504" duration="10335000" />
       <workItem from="1502948375768" duration="5171000" />
-      <workItem from="1502958290034" duration="45000" />
+      <workItem from="1502958290034" duration="21880000" />
+      <workItem from="1503031784404" duration="7027000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="299550000" />
+    <option name="totallyTimeSpent" value="328412000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -925,8 +1042,8 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="PsiViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47463176" sideWeight="0.46066564" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5744681" sideWeight="0.46066564" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21558245" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -951,7 +1068,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="22" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -965,19 +1082,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/ts.html" />
-    <entry file="file://$PROJECT_DIR$/web/css/wordpress.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/images/actor.gif">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/lib/js/editor/mxEditor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5505">
@@ -1019,7 +1123,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/BranchController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/util/DbUtil.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/FileController.java" />
     <entry file="file://$PROJECT_DIR$/web/dbtest.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1034,13 +1137,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/util/FileUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/sql/PreparedStatement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="41">
@@ -1052,13 +1148,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
           <caret line="57" column="39" lean-forward="false" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/system.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="10" lean-forward="false" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1112,9 +1201,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="43" column="33" lean-forward="false" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
-          <folding>
-            <element signature="e#269#559#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1133,19 +1219,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/config/diagrameditor.xml">
+    <entry file="file://$PROJECT_DIR$/web/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6443">
-          <caret line="379" column="47" lean-forward="false" selection-start-line="379" selection-start-column="47" selection-end-line="379" selection-end-column="47" />
+        <state relative-caret-position="7820">
+          <caret line="460" column="29" lean-forward="false" selection-start-line="460" selection-start-column="23" selection-end-line="460" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/test.html">
+    <entry file="file://$PROJECT_DIR$/web/config/diagrameditor.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="69" column="4" lean-forward="false" selection-start-line="69" selection-start-column="4" selection-end-line="104" selection-end-column="57" />
+        <state relative-caret-position="6001">
+          <caret line="353" column="12" lean-forward="false" selection-start-line="353" selection-start-column="12" selection-end-line="353" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/system.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1167,18 +1260,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/style.css">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/org/w3c/dom/Comment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7820">
-          <caret line="460" column="29" lean-forward="false" selection-start-line="460" selection-start-column="23" selection-end-line="460" selection-end-column="29" />
+        <state relative-caret-position="306">
+          <caret line="57" column="17" lean-forward="false" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#1645#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1717">
+          <caret line="101" column="34" lean-forward="false" selection-start-line="101" selection-start-column="22" selection-end-line="101" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/production-line-editor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2720">
-          <caret line="651" column="84" lean-forward="false" selection-start-line="651" selection-start-column="84" selection-end-line="651" selection-end-column="84" />
+        <state relative-caret-position="2737">
+          <caret line="652" column="101" lean-forward="false" selection-start-line="652" selection-start-column="101" selection-end-line="652" selection-end-column="101" />
           <folding>
             <element signature="e#6373#6454#0" expanded="false" />
             <element signature="e#8791#8866#0" expanded="false" />
@@ -1191,17 +1294,65 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="311" column="50" lean-forward="true" selection-start-line="311" selection-start-column="50" selection-end-line="311" selection-end-column="50" />
+        <state relative-caret-position="2431">
+          <caret line="343" column="29" lean-forward="false" selection-start-line="343" selection-start-column="16" selection-end-line="343" selection-end-column="29" />
           <folding>
-            <element signature="n#!!block;n#saveProdLine#0" expanded="false" />
+            <element signature="e#402#516#0" expanded="false" />
+            <element signature="e#548#953#0" expanded="false" />
+            <element signature="e#956#1089#0" expanded="false" />
+            <element signature="e#1118#1170#0" expanded="false" />
+            <element signature="e#1173#1336#0" expanded="false" />
+            <element signature="e#1379#1681#0" expanded="false" />
+            <element signature="e#1684#1816#0" expanded="false" />
+            <element signature="e#1852#1989#0" expanded="false" />
+            <element signature="e#1992#2174#0" expanded="false" />
             <element signature="n#!!block;n#configureSensorDetails#0" expanded="false" />
             <element signature="n#!!block;n#closeConfigSensorForm#0" expanded="false" />
-            <element signature="n#!!block;n#toolboxItemCategorySelected#0" expanded="false" />
             <element signature="n#!!block;n#addToolboxItem#0" expanded="false" />
             <element signature="n#!!block;n#closeAddToolboxItem#0" expanded="false" />
+            <element signature="n#!!block;n#previewToolboxItemIcon#0" expanded="false" />
             <element signature="n#!!block;n#getToolboxIcon#0" expanded="false" />
-            <element signature="n#!!block;n#getSensorIcon#0" expanded="false" />
+            <element signature="n#!!block;n#getCanvasIcon#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/controller/FileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="38" column="86" lean-forward="false" selection-start-line="38" selection-start-column="86" selection-end-line="38" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/org/w3c/dom/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5746">
+          <caret line="377" column="16" lean-forward="false" selection-start-line="377" selection-start-column="16" selection-end-line="377" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/ref/ReferenceQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/hitech/smartfactory/util/FileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-259">
+          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#FileUtil#0;class#FileUtil#0" expanded="false" />
+            <element signature="method#saveFile#0;class#FileUtil#0" expanded="false" />
+            <element signature="method#setModifiedArrayNode#0;class#FileUtil#0" expanded="false" />
+            <element signature="method#setModifiedMxStylesheetNode#0;class#FileUtil#0" expanded="false" />
+            <element signature="method#setMxDefaultToolbarNode#0;class#FileUtil#0" expanded="false" />
+            <element signature="method#nodeToString#0;class#FileUtil#0" expanded="false" />
           </folding>
         </state>
       </provider>

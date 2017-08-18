@@ -39,7 +39,7 @@
 			</Text>
 		</add>
 
-		<!-- production line items -->
+		<!--production-line-items-->
 		<add as="ConveyorBelt">
 			<Image label="" href="">
 				<mxCell vertex="1" style="conveyor-belt">
@@ -112,7 +112,6 @@
 				</mxCell>
 			</Image>
 		</add>
-
 		<!--ultrasonic-sensors-->
 		<add as="HC-SR04">
 			<Image label="" href="">
@@ -168,7 +167,7 @@
 		<mxStylesheet as="stylesheet">
 			<add as="text">
 				<add as="shape" value="rectangle"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="perimeter" value="ellipsePerimeter"/>
 				<add as="fontSize" value="25"/>
 				<add as="shadow" value="0"/>
 				<add as="strokeColor" value="none"/>
@@ -188,7 +187,7 @@
 			</add>
 			<add as="group">
 				<add as="shape" value="rectangle"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="perimeter" value="ellipsePerimeter"/>
 				<add as="fontSize" value="25"/>
 				<add as="align" value="center"/>
 				<add as="verticalAlign" value="middle"/>
@@ -235,74 +234,74 @@
 				<add as="fillColor" value="#D4D4D4"/>
 			</add>
 
-			<!-- production line items -->
+			<!--production-line-items-->
 			<add as="conveyor-belt">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="perimeter" value="ellipsePerimeter"/>
 				<add as="image" value="images/hitech/production-line-items/conveyor-belt.png"/>
 			</add>
 			<add as="delivery">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="perimeter" value="ellipsePerimeter"/>
 				<add as="image" value="images/hitech/production-line-items/delivery.png"/>
 			</add>
 			<add as="filling-arm">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="perimeter" value="ellipsePerimeter"/>
 				<add as="image" value="images/hitech/production-line-items/filling-arm.png"/>
 			</add>
 			<add as="robotic-arm">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="perimeter" value="ellipsePerimeter"/>
 				<add as="image" value="images/hitech/production-line-items/robotic-arm.png"/>
 			</add>
 			<add as="working-man">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="perimeter" value="ellipsePerimeter"/>
 				<add as="image" value="images/hitech/production-line-items/working-man.png"/>
 			</add>
 			<add as="working-man2">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="perimeter" value="ellipsePerimeter"/>
 				<add as="image" value="images/hitech/production-line-items/working-man.png"/>
 			</add>
 
 			<!--temperature-and-humidity-sensors-->
 			<add as="BME280">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="perimeter" value="ellipsePerimeter"/>
 				<add as="image" value="images/hitech/temperature-and-humidity-sensors/BME280.png"/>
 			</add>
 			<add as="DHT11">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="perimeter" value="ellipsePerimeter"/>
 				<add as="image" value="images/hitech/temperature-and-humidity-sensors/DHT11.png"/>
 			</add>
 			<add as="DS18B20">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="perimeter" value="ellipsePerimeter"/>
 				<add as="image" value="images/hitech/temperature-and-humidity-sensors/DS18B20.png"/>
 			</add>
 			<add as="MLX90614">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="perimeter" value="ellipsePerimeter"/>
 				<add as="image" value="images/hitech/temperature-and-humidity-sensors/MLX90614.png"/>
 			</add>
 
 			<!--ultrasonic-sensors-->
 			<add as="HC-SR04">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="perimeter" value="ellipsePerimeter"/>
 				<add as="image" value="images/hitech/ultrasonic-sensors/HC-SR04.png"/>
 			</add>
 			<add as="QTR-3RC">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="perimeter" value="ellipsePerimeter"/>
 				<add as="image" value="images/hitech/ultrasonic-sensors/QTR-3RC.png"/>
 			</add>
 			<add as="SRF02">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="perimeter" value="ellipsePerimeter"/>
 				<add as="image" value="images/hitech/ultrasonic-sensors/SRF02.png"/>
 			</add>
 
@@ -355,7 +354,7 @@
 
 		<add as="Connector" template="connector" icon="images/wso2/arrow.png"/>
 
-		<!-- production line items -->
+		<!--production-line-items-->
 		<hr name="Production Line Items"></hr>
 		<add as="Conveyor Belt" template="ConveyorBelt" icon="images/hitech/production-line-items/conveyor-belt-1.png"/>
 		<add as="Delivery" template="Delivery" icon="images/hitech/production-line-items/delivery-1.png"/>

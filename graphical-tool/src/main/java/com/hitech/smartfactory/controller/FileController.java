@@ -1,6 +1,5 @@
 package com.hitech.smartfactory.controller;
 
-import com.hitech.smartfactory.dao.BranchDAO;
 import com.hitech.smartfactory.util.FileUtil;
 
 import javax.servlet.ServletException;
@@ -22,11 +21,22 @@ public class FileController extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
-        if (action.equalsIgnoreCase("saveFile")) {
+        if (action.equalsIgnoreCase("saveXMLFile")) {
             String name = request.getParameter("name");
             String content = request.getParameter("xml");
             response.setContentType("text/plain");
-            if (fileUtil.saveTextFile(name, content)) {
+            if (fileUtil.saveFile(name, content)) {
+                response.getWriter().write("Success");
+            } else {
+                response.getWriter().write("Error");
+            }
+        } else if (action.equalsIgnoreCase("addToolboxItem")) {
+            String model = request.getParameter("model");
+            String category = request.getParameter("category");
+            String toolboxPreview = request.getParameter("toolboxPreview");
+            String canvasPreview = request.getParameter("canvasPreview");
+            response.setContentType("text/plain");
+            if (fileUtil.addToolboxItem(model, category, toolboxPreview, canvasPreview)) {
                 response.getWriter().write("Success");
             } else {
                 response.getWriter().write("Error");

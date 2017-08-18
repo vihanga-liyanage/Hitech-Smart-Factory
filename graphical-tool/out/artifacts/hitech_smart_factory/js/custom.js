@@ -9,6 +9,9 @@
  */
 var METADATA_LOCATION = "resources/metadata/";
 
+var BASE_URL = "http://localhost:81/hitech-smart-factory/";
+// var BASE_URL = "http://ec2-52-38-15-248.us-west-2.compute.amazonaws.com/hitech-smart-factory/";
+
 /**
  * Function: readFile
  *
@@ -108,9 +111,7 @@ var loadProdLine = function (editor)
 {
     var name = document.getElementById("prod-line-title").innerText + ".xml";
     name = name.split(" ").join("-");
-    var urlBase = "http://localhost:81/hitech-smart-factory/";
-    // var urlBase = "http://ec2-52-38-15-248.us-west-2.compute.amazonaws.com/hitech-smart-factory/";
-    var url = urlBase + name;
+    var url = BASE_URL + name;
 
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
@@ -146,10 +147,9 @@ var showSuccessMsg = function (msg)
 };
 
 // save production line configuration as a file
-function saveProdLine(xml)
-{
+function saveProdLine(xml) {
     var name = document.getElementById("prod-line-title").innerText + ".xml";
-    $.post('FileController', {action: "saveFile", name: name, xml: xml},
+    $.post('FileController', {action: "saveXMLFile", name: name, xml: xml},
         function (data) {
             if (data == "Success") {
                 showSuccessMsg("Production Line saved successfully!")
@@ -176,6 +176,8 @@ function closeConfigSensorForm() {
 
 // Adding custom toolbox items
 var addingProdLineItem = true;
+var toolboxPreviewCanvas;
+var canvasPreviewCanvas;
 
 function toolboxItemCategorySelected() {
     var select = document.getElementById("toolbox-item-category");
@@ -203,28 +205,28 @@ function closeAddToolboxItem(){
 
 function previewToolboxItemIcon(isKey) {
     var toolboxPreview = document.getElementById('toolbox-item-icon-preview'); //selects the preview img
-    var sensorPreview = document.getElementById('sensor-icon-preview');
+    var canvasPreview = document.getElementById('sensor-icon-preview');
     var input = document.getElementById('toolbox-item-icon');
     var reader  = new FileReader();
 
     reader.onloadend = function () {
         var model = document.getElementById("item-model-name").value;
         toolboxPreview.innerHTML = "";
-        toolboxPreview.appendChild(getToolboxIcon(reader.result, model));
+        toolboxPreviewCanvas = getToolboxIcon(reader.result, model);
+        toolboxPreview.appendChild(toolboxPreviewCanvas);
         var p = document.createElement('p');
         p.innerText = "Toolbox Icon Preview";
         toolboxPreview.appendChild(p);
 
-        if (!isKey && !addingProdLineItem) {
+        if (!isKey ) {
             // set sensor icon preview
-            sensorPreview.innerHTML = "";
-            sensorPreview.appendChild(getSensorIcon(reader.result));
+            canvasPreviewCanvas = getCanvasIcon(reader.result, !addingProdLineItem);
+            canvasPreview.innerHTML = "";
+            canvasPreview.appendChild(canvasPreviewCanvas);
             p = document.createElement('p');
-            p.innerText = "Sensor Icon Preview";
-            sensorPreview.appendChild(p);
+            p.innerText = "Canvas Icon Preview";
+            canvasPreview.appendChild(p);
         }
-        if (addingProdLineItem)
-            sensorPreview.innerHTML = "";
     };
 
     if (input.files && input.files[0]) {
@@ -234,11 +236,11 @@ function previewToolboxItemIcon(isKey) {
             alert("Please select a valid image");
             input.value = "";
             toolboxPreview.innerHTML = "";
-            sensorPreview.innerHTML = "";
+            canvasPreview.innerHTML = "";
         }
     } else {
         toolboxPreview.innerHTML = "";
-        sensorPreview.innerHTML = "";
+        canvasPreview.innerHTML = "";
     }
 }
 
@@ -274,7 +276,7 @@ function getToolboxIcon(imageSrc, name) {
     return c;
 }
 
-function getSensorIcon(imageSrc) {
+function getCanvasIcon(imageSrc, isSensor) {
     var c = document.createElement('canvas');
     c.width = 80;
     c.height = 80;
@@ -282,21 +284,25 @@ function getSensorIcon(imageSrc) {
 
     var imageObj2 = new Image();
     imageObj2.onload = function (){
-        // Draw base image
-        context.drawImage(imageObj2, 5, 5, 70, 70);
+        if (isSensor) {
+            // Draw base image
+            context.drawImage(imageObj2, 5, 5, 70, 70);
 
-        var imageObj1 = new Image();
-        imageObj1.onload = function (){
-            imageObj1.style.objectFit = "cover";
-            // Draw footer
-            context.drawImage(imageObj1, 0, 0, 80, 80);
-            // Crop circle
-            context.globalCompositeOperation='destination-in';
-            context.beginPath();
-            context.arc(40, 40, 37, 0, 2 * Math.PI);
-            context.fill();
-        };
-        imageObj1.src = "images/hitech/sensor-icon-blue-ring.png";
+            var imageObj1 = new Image();
+            imageObj1.onload = function () {
+                imageObj1.style.objectFit = "cover";
+                // Draw footer
+                context.drawImage(imageObj1, 0, 0, 80, 80);
+                // Crop circle
+                context.globalCompositeOperation = 'destination-in';
+                context.beginPath();
+                context.arc(40, 40, 37, 0, 2 * Math.PI);
+                context.fill();
+            };
+            imageObj1.src = "images/hitech/sensor-icon-blue-ring.png";
+        } else {
+            context.drawImage(imageObj2, 0, 0, 80, 80);
+        }
     };
     imageObj2.src = imageSrc;
     return c;
@@ -328,6 +334,22 @@ function saveNewToolboxItem() {
     }
 
     if (isValidModel && isValidInput) {
-        
+        console.log("Calling...");
+        var category = document.getElementById("toolbox-item-category");
+        $.post('FileController', {
+                action: "addToolboxItem",
+                model: model.value,
+                category: category.options[category.selectedIndex].value,
+                toolboxPreview: toolboxPreviewCanvas.toDataURL(),
+                canvasPreview: canvasPreviewCanvas.toDataURL(),
+            },
+            function (data) {
+                if (data == "Success") {
+                    showSuccessMsg("New item added successfully!")
+                } else {
+                    showErrorMsg("Oops! Something went wrong.")
+                }
+            });
+        // location.reload(true); //hard reload
     }
 }
