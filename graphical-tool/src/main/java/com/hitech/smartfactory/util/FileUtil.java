@@ -13,6 +13,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;
+import java.util.Base64;
 import java.util.Properties;
 
 /**
@@ -21,6 +22,7 @@ import java.util.Properties;
 public class FileUtil {
     private String FILE_SERVER_BASE;
     private String APPLICATION_BASE;
+    private String IMAGE_BASE = "images\\hitech\\";
 
     public FileUtil() {
         Properties prop = new Properties();
@@ -52,12 +54,15 @@ public class FileUtil {
 
     // Add new toolbox item by updating diagrameditor.xml file
     public boolean addToolboxItem(String model, String category, String toolboxPreview, String canvasPreview){
-        String filePath = APPLICATION_BASE + "/config/diagrameditor.xml";
+        String filePath = APPLICATION_BASE + "config/diagrameditor.xml";
 
         // Convert category: 'Production Line Items' -> 'production-line-items'
         String categoryFilePath = "".join("-", category.toLowerCase().split(" "));
-
+        // Convert model: 'Abc Xyz' -> 'Abc-Xyz'
         model = "".join("-", model.split(" "));
+        // Remove 'data:image/png;base64' part in image strings
+        toolboxPreview = toolboxPreview.split(",")[1];
+        canvasPreview = canvasPreview.split(",")[1];
 
         try {
             // Open file and get document element
@@ -67,9 +72,26 @@ public class FileUtil {
             Document doc = dBuilder.parse(fXmlFile);
             doc.getDocumentElement().normalize();
 
-            //todo - save images
-            String canvasImagePath = "images/hitech/production-line-items/conveyor-belt.png";
-            String toolboxImagePath = "images/hitech/production-line-items/conveyor-belt.png";
+            // Save images
+            String toolboxImagePath = IMAGE_BASE + categoryFilePath + "\\" + model + ".jpg";
+            String canvasImagePath = IMAGE_BASE + categoryFilePath + "\\" + model + ".png";
+            try {
+                // save tool box icon
+                FileOutputStream toolboxImageFile = new FileOutputStream(APPLICATION_BASE + toolboxImagePath);
+                byte[] toolboxImageByteArray = Base64.getDecoder().decode(toolboxPreview);
+                toolboxImageFile.write(toolboxImageByteArray);
+                toolboxImageFile.close();
+
+                // save canvas icon
+                FileOutputStream canvasImageFile = new FileOutputStream(APPLICATION_BASE + canvasImagePath);
+                byte[] canvasImageByteArray = Base64.getDecoder().decode(canvasPreview);
+                canvasImageFile.write(canvasImageByteArray);
+                canvasImageFile.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+            }
 
             // Inserting new content into array node and set it to doc
             doc = setModifiedArrayNode(doc, model, categoryFilePath);
@@ -80,10 +102,14 @@ public class FileUtil {
             // Inserting new content into mxStylesheet node and set it to doc
             doc = setMxDefaultToolbarNode(doc, model, categoryFilePath, toolboxImagePath);
 
-            // todo write to file
+            // todo Write to file
             String out = nodeToString(doc).replace(categoryFilePath+"-->", categoryFilePath+"-->\n\t\t");
             out = out.replace("/><add", "/>\n\t\t<add");
-            System.out.println(out);
+            FileOutputStream digrameditorXml = new FileOutputStream(filePath);
+            digrameditorXml.write(out.getBytes());
+            digrameditorXml.close();
+//            System.out.println(out);
+            return true;
 
         } catch (SAXException | IOException | ParserConfigurationException e) {
             e.printStackTrace();
@@ -193,7 +219,7 @@ public class FileUtil {
                 Node newNode = y.cloneNode(true);
                 Element newNodeElement = (Element)newNode;
                 // set <add as="HC-SR04" template="HC-SR04" icon="images/hitech/ultrasonic-sensors/HC-SR04.jpg"/>
-                newNodeElement.setAttribute("as", model);
+                newNodeElement.setAttribute("as", model.replace("-", " "));
                 newNodeElement.setAttribute("template", model);
                 newNodeElement.setAttribute("icon", toolboxImagePath);
 

@@ -345,7 +345,7 @@ function saveNewToolboxItem() {
             },
             function (data) {
                 if (data == "Success") {
-                    showSuccessMsg("New item added successfully!")
+                    location.reload(true); //hard reload
                 } else {
                     showErrorMsg("Oops! Something went wrong.")
                 }
