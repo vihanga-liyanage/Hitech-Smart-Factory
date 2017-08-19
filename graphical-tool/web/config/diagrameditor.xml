@@ -1,4 +1,4 @@
-<mxEditor defaultGroup="group" defaultEdge="connector">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><mxEditor defaultEdge="connector" defaultGroup="group">
 	<include name="config/editor-commons.xml"/>
 	<add as="onInit"><![CDATA[
 		function ()
@@ -13,131 +13,131 @@
 	</ui>
 	<Array as="templates">
 		<add as="group">
-			<Group label="" href="">
-				<mxCell vertex="1" style="group" connectable="0"/>
+			<Group href="" label="">
+				<mxCell connectable="0" style="group" vertex="1"/>
 			</Group>
 		</add>
 		<add as="connector">
-			<Connector label="" href="">
+			<Connector href="" label="">
 				<mxCell edge="1">
 					<mxGeometry as="geometry" relative="1"/>
 				</mxCell>
 			</Connector>
 		</add>
 		<add as="container">
-			<Container label="Container" href="">
-				<mxCell vertex="1" style="swimlane" connectable="0">
-					<mxGeometry as="geometry" width="500" height="500"/>
+			<Container href="" label="Container">
+				<mxCell connectable="0" style="swimlane" vertex="1">
+					<mxGeometry as="geometry" height="500" width="500"/>
 				</mxCell>
 			</Container>
 		</add>
 		<add as="text">
-			<Text label="Text Here" href="">
-				<mxCell vertex="1" style="text">	
-					<mxGeometry as="geometry" width="60" height="20"/>
+			<Text href="" label="Text Here">
+				<mxCell style="text" vertex="1">
+					<mxGeometry as="geometry" height="20" width="60"/>
 				</mxCell>
 			</Text>
 		</add>
 
-		<!-- production line items -->
+		<!--production-line-items-->
 		<add as="ConveyorBelt">
-			<Image label="" href="">
-				<mxCell vertex="1" style="conveyor-belt">
-					<mxGeometry as="geometry" width="100" height="100" type="component"/>
+			<Image href="" label="">
+				<mxCell style="conveyor-belt" vertex="1">
+					<mxGeometry as="geometry" height="100" type="component" width="100"/>
 				</mxCell>
 			</Image>
 		</add>
 		<add as="Delivery">
-			<Image label="" href="">
-				<mxCell vertex="1" style="delivery">
-					<mxGeometry as="geometry" width="100" height="100" type="component"/>
+			<Image href="" label="">
+				<mxCell style="delivery" vertex="1">
+					<mxGeometry as="geometry" height="100" type="component" width="100"/>
 				</mxCell>
 			</Image>
 		</add>
 		<add as="FillingArm">
-			<Image label="" href="">
-				<mxCell vertex="1" style="filling-arm">
-					<mxGeometry as="geometry" width="100" height="100" type="component"/>
+			<Image href="" label="">
+				<mxCell style="filling-arm" vertex="1">
+					<mxGeometry as="geometry" height="100" type="component" width="100"/>
 				</mxCell>
 			</Image>
 		</add>
 		<add as="RoboticArm">
-			<Image label="" href="">
-				<mxCell vertex="1" style="robotic-arm">
-					<mxGeometry as="geometry" width="100" height="100" type="component"/>
+			<Image href="" label="">
+				<mxCell style="robotic-arm" vertex="1">
+					<mxGeometry as="geometry" height="100" type="component" width="100"/>
 				</mxCell>
 			</Image>
 		</add>
 		<add as="WorkingMan">
-			<Image label="" href="">
-				<mxCell vertex="1" style="working-man">
-					<mxGeometry as="geometry" width="100" height="100" type="component"/>
+			<Image href="" label="">
+				<mxCell style="working-man" vertex="1">
+					<mxGeometry as="geometry" height="100" type="component" width="100"/>
 				</mxCell>
 			</Image>
 		</add>
 		<add as="WorkingMan2">
-			<Image label="" href="">
-				<mxCell vertex="1" style="working-man2">
-					<mxGeometry as="geometry" width="100" height="100" type="component"/>
+			<Image href="" label="">
+				<mxCell style="working-man2" vertex="1">
+					<mxGeometry as="geometry" height="100" type="component" width="100"/>
 				</mxCell>
 			</Image>
 		</add>
 
 		<!--temperature-and-humidity-sensors-->
 		<add as="BME280">
-			<Image label="" href="">
-				<mxCell vertex="1" style="BME280">
-					<mxGeometry as="geometry" width="80" height="80" type="sensor"/>
+			<Image href="" label="">
+				<mxCell style="BME280" vertex="1">
+					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
 				</mxCell>
 			</Image>
 		</add>
 		<add as="DHT11">
-			<Image label="" href="">
-				<mxCell vertex="1" style="DHT11">
-					<mxGeometry as="geometry" width="80" height="80" type="sensor"/>
+			<Image href="" label="">
+				<mxCell style="DHT11" vertex="1">
+					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
 				</mxCell>
 			</Image>
 		</add>
 		<add as="DS18B20">
-			<Image label="" href="">
-				<mxCell vertex="1" style="DS18B20">
-					<mxGeometry as="geometry" width="80" height="80" type="sensor"/>
+			<Image href="" label="">
+				<mxCell style="DS18B20" vertex="1">
+					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
 				</mxCell>
 			</Image>
 		</add>
 		<add as="MLX90614">
-			<Image label="" href="">
-				<mxCell vertex="1" style="MLX90614">
-					<mxGeometry as="geometry" width="80" height="80" type="sensor"/>
+			<Image href="" label="">
+				<mxCell style="MLX90614" vertex="1">
+					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
 				</mxCell>
 			</Image>
 		</add>
 
 		<!--ultrasonic-sensors-->
 		<add as="HC-SR04">
-			<Image label="" href="">
-				<mxCell vertex="1" style="HC-SR04">
-					<mxGeometry as="geometry" width="80" height="80" type="sensor"/>
+			<Image href="" label="">
+				<mxCell style="HC-SR04" vertex="1">
+					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
 				</mxCell>
 			</Image>
 		</add>
 		<add as="QTR-3RC">
-			<Image label="" href="">
-				<mxCell vertex="1" style="QTR-3RC">
-					<mxGeometry as="geometry" width="80" height="80" type="sensor"/>
+			<Image href="" label="">
+				<mxCell style="QTR-3RC" vertex="1">
+					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
 				</mxCell>
 			</Image>
 		</add>
 		<add as="SRF02">
-			<Image label="" href="">
-				<mxCell vertex="1" style="SRF02">
-					<mxGeometry as="geometry" width="80" height="80" type="sensor"/>
+			<Image href="" label="">
+				<mxCell style="SRF02" vertex="1">
+					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
 				</mxCell>
 			</Image>
 		</add>
 
 	</Array>
-	<mxGraph as="graph" alternateEdgeStyle="verticalConnector" allowLoops="1" dropEnabled="1">
+	<mxGraph allowLoops="1" alternateEdgeStyle="verticalConnector" as="graph" dropEnabled="1">
 		<add as="isAutoSizeCell"><![CDATA[
 			function(cell)
 			{
@@ -155,7 +155,7 @@
 			{
 				var label = cell.getAttribute('label');
 				var style = cell.getStyle();
-			
+
 				return '';
 			}
 		]]></add>
@@ -221,7 +221,7 @@
 				<add as="shape" value="arrow"/>
 				<add as="fillColor" value="#e89a66"/>
 				<add as="endSize" value="20"/>
-                                <add as="fontSize" value="25"/>
+				<add as="fontSize" value="25"/>
 				<add as="startArrow" value="classic"/>
 				<remove as="edgeStyle"/>
 			</add>
@@ -235,7 +235,7 @@
 				<add as="fillColor" value="#D4D4D4"/>
 			</add>
 
-			<!-- production line items -->
+			<!--production-line-items-->
 			<add as="conveyor-belt">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
@@ -318,7 +318,7 @@
 				function(cell, value)
 				{
 					var previous = null;
-					
+
 					if (value == null || isNaN(value.nodeType))
 					{
 						previous = cell.value.getAttribute('label');
@@ -337,15 +337,15 @@
 						previous = cell.value;
 						cell.value = value;
 					}
-					
+
 					return previous;
 				}
 			]]></add>
 			<root>
-				<Diagram label="My Diagram" href="http://www.jgraph.com/" id="0">
+				<Diagram href="http://www.jgraph.com/" id="0" label="My Diagram">
 					<mxCell/>
 				</Diagram>
-				<Layer label="Default Layer" id="1">
+				<Layer id="1" label="Default Layer">
 					<mxCell parent="0"/>
 				</Layer>
 			</root>
@@ -353,42 +353,42 @@
 	</mxGraph>
 	<mxDefaultToolbar as="toolbar">
 
-		<add as="Connector" template="connector" icon="images/wso2/arrow.png"/>
+		<add as="Connector" icon="images/wso2/arrow.png" template="connector"/>
 
-		<!-- production line items -->
-		<hr name="Production Line Items"></hr>
-		<add as="Conveyor Belt" template="ConveyorBelt" icon="images/hitech/production-line-items/conveyor-belt-1.png"/>
-		<add as="Delivery" template="Delivery" icon="images/hitech/production-line-items/delivery-1.png"/>
-		<add as="Filling Arm" template="FillingArm" icon="images/hitech/production-line-items/filling-arm-1.png"/>
-		<add as="Robotic Arm" template="RoboticArm" icon="images/hitech/production-line-items/robotic-arm-1.png"/>
-		<add as="Working Man" template="WorkingMan" icon="images/hitech/production-line-items/working-man-1.png"/>
-		<add as="Working Man2" template="WorkingMan2" icon="images/hitech/production-line-items/working-man-1.png"/>
-
-		<!--temperature-and-humidity-sensors-->
-		<hr name="Temperature And Humidity Sensors"></hr>
-		<add as="BME280" template="BME280" icon="images/hitech/temperature-and-humidity-sensors/BME280.jpg"/>
-		<add as="DHT11" template="DHT11" icon="images/hitech/temperature-and-humidity-sensors/DHT11.jpg"/>
-		<add as="DS18B20" template="DS18B20" icon="images/hitech/temperature-and-humidity-sensors/DS18B20.jpg"/>
-		<add as="MLX90614" template="MLX90614" icon="images/hitech/temperature-and-humidity-sensors/MLX90614.jpg"/>
-
-		<!--ultrasonic-sensors-->
-		<hr name="Ultrasonic Sensors"></hr>
-		<add as="HC-SR04" template="HC-SR04" icon="images/hitech/ultrasonic-sensors/HC-SR04.jpg"/>
-		<add as="QTR-3RC" template="QTR-3RC" icon="images/hitech/ultrasonic-sensors/QTR-3RC.jpg"/>
-		<add as="SRF02" template="SRF02" icon="images/hitech/ultrasonic-sensors/SRF02.jpg"/>
+		<!--production-line-items-->
+		<hr name="Production Line Items"/>
+		<add as="Conveyor Belt" icon="images/hitech/production-line-items/conveyor-belt-1.png" template="ConveyorBelt"/>
+		<add as="Delivery" icon="images/hitech/production-line-items/delivery-1.png" template="Delivery"/>
+		<add as="Filling Arm" icon="images/hitech/production-line-items/filling-arm-1.png" template="FillingArm"/>
+		<add as="Robotic Arm" icon="images/hitech/production-line-items/robotic-arm-1.png" template="RoboticArm"/>
+		<add as="Working Man" icon="images/hitech/production-line-items/working-man-1.png" template="WorkingMan"/>
+		<add as="Working Man2" icon="images/hitech/production-line-items/working-man-1.png" template="WorkingMan2"/>
 
 		<!--temperature-and-humidity-sensors-->
-		<hr name="Temperature And Humidity Sensors"></hr>
-		<add as="BME280" template="BME280" icon="images/hitech/temperature-and-humidity-sensors/BME280.jpg"/>
-		<add as="DHT11" template="DHT11" icon="images/hitech/temperature-and-humidity-sensors/DHT11.jpg"/>
-		<add as="DS18B20" template="DS18B20" icon="images/hitech/temperature-and-humidity-sensors/DS18B20.jpg"/>
-		<add as="MLX90614" template="MLX90614" icon="images/hitech/temperature-and-humidity-sensors/MLX90614.jpg"/>
+		<hr name="Temperature And Humidity Sensors"/>
+		<add as="BME280" icon="images/hitech/temperature-and-humidity-sensors/BME280.jpg" template="BME280"/>
+		<add as="DHT11" icon="images/hitech/temperature-and-humidity-sensors/DHT11.jpg" template="DHT11"/>
+		<add as="DS18B20" icon="images/hitech/temperature-and-humidity-sensors/DS18B20.jpg" template="DS18B20"/>
+		<add as="MLX90614" icon="images/hitech/temperature-and-humidity-sensors/MLX90614.jpg" template="MLX90614"/>
 
 		<!--ultrasonic-sensors-->
-		<hr name="Ultrasonic Sensors"></hr>
-		<add as="HC-SR04" template="HC-SR04" icon="images/hitech/ultrasonic-sensors/HC-SR04.jpg"/>
-		<add as="QTR-3RC" template="QTR-3RC" icon="images/hitech/ultrasonic-sensors/QTR-3RC.jpg"/>
-		<add as="SRF02" template="SRF02" icon="images/hitech/ultrasonic-sensors/SRF02.jpg"/>
+		<hr name="Ultrasonic Sensors"/>
+		<add as="HC-SR04" icon="images/hitech/ultrasonic-sensors/HC-SR04.jpg" template="HC-SR04"/>
+		<add as="QTR-3RC" icon="images/hitech/ultrasonic-sensors/QTR-3RC.jpg" template="QTR-3RC"/>
+		<add as="SRF02" icon="images/hitech/ultrasonic-sensors/SRF02.jpg" template="SRF02"/>
+
+		<!--temperature-and-humidity-sensors-->
+		<hr name="Temperature And Humidity Sensors"/>
+		<add as="BME280" icon="images/hitech/temperature-and-humidity-sensors/BME280.jpg" template="BME280"/>
+		<add as="DHT11" icon="images/hitech/temperature-and-humidity-sensors/DHT11.jpg" template="DHT11"/>
+		<add as="DS18B20" icon="images/hitech/temperature-and-humidity-sensors/DS18B20.jpg" template="DS18B20"/>
+		<add as="MLX90614" icon="images/hitech/temperature-and-humidity-sensors/MLX90614.jpg" template="MLX90614"/>
+
+		<!--ultrasonic-sensors-->
+		<hr name="Ultrasonic Sensors"/>
+		<add as="HC-SR04" icon="images/hitech/ultrasonic-sensors/HC-SR04.jpg" template="HC-SR04"/>
+		<add as="QTR-3RC" icon="images/hitech/ultrasonic-sensors/QTR-3RC.jpg" template="QTR-3RC"/>
+		<add as="SRF02" icon="images/hitech/ultrasonic-sensors/SRF02.jpg" template="SRF02"/>
 
 	</mxDefaultToolbar>
 </mxEditor>

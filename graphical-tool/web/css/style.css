@@ -485,3 +485,6 @@ div.tab button.active {
     border: 1px solid #8b8b8b;
     color: white;
 }
+#add-toolbox-item-form-error {
+    color: red;
+}

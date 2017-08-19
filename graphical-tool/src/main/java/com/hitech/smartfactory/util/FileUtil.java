@@ -22,7 +22,7 @@ import java.util.Properties;
 public class FileUtil {
     private String FILE_SERVER_BASE;
     private String APPLICATION_BASE;
-    private String IMAGE_BASE = "images\\hitech\\";
+    private String IMAGE_BASE = "images/hitech/";
 
     public FileUtil() {
         Properties prop = new Properties();
@@ -73,8 +73,8 @@ public class FileUtil {
             doc.getDocumentElement().normalize();
 
             // Save images
-            String toolboxImagePath = IMAGE_BASE + categoryFilePath + "\\" + model + ".jpg";
-            String canvasImagePath = IMAGE_BASE + categoryFilePath + "\\" + model + ".png";
+            String toolboxImagePath = IMAGE_BASE + categoryFilePath + "/" + model + ".jpg";
+            String canvasImagePath = IMAGE_BASE + categoryFilePath + "/" + model + ".png";
             try {
                 // save tool box icon
                 FileOutputStream toolboxImageFile = new FileOutputStream(APPLICATION_BASE + toolboxImagePath);
@@ -102,13 +102,13 @@ public class FileUtil {
             // Inserting new content into mxStylesheet node and set it to doc
             doc = setMxDefaultToolbarNode(doc, model, categoryFilePath, toolboxImagePath);
 
-            // todo Write to file
+            // Final formatting
             String out = nodeToString(doc).replace(categoryFilePath+"-->", categoryFilePath+"-->\n\t\t");
             out = out.replace("/><add", "/>\n\t\t<add");
-            FileOutputStream digrameditorXml = new FileOutputStream(filePath);
-            digrameditorXml.write(out.getBytes());
-            digrameditorXml.close();
-//            System.out.println(out);
+            // Write to file
+            FileOutputStream diagramEditorXml = new FileOutputStream(filePath);
+            diagramEditorXml.write(out.getBytes());
+            diagramEditorXml.close();
             return true;
 
         } catch (SAXException | IOException | ParserConfigurationException e) {

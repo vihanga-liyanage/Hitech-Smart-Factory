@@ -33,16 +33,46 @@
 		</add>
 		<add as="text">
 			<Text href="" label="Text Here">
-				<mxCell style="text" vertex="1">	
+				<mxCell style="text" vertex="1">
 					<mxGeometry as="geometry" height="20" width="60"/>
 				</mxCell>
 			</Text>
 		</add>
 
 		<!--production-line-items-->
-		<add as="Custom-Ass">
+		<add as="asd">
 			<Image href="" label="">
-				<mxCell style="Custom-Ass" vertex="1">
+				<mxCell style="asd" vertex="1">
+					<mxGeometry as="geometry" height="100" type="component" width="100"/>
+				</mxCell>
+			</Image>
+		</add><add as="Delivery2">
+			<Image href="" label="">
+				<mxCell style="Delivery2" vertex="1">
+					<mxGeometry as="geometry" height="100" type="component" width="100"/>
+				</mxCell>
+			</Image>
+		</add><add as="asd">
+			<Image href="" label="">
+				<mxCell style="asd" vertex="1">
+					<mxGeometry as="geometry" height="100" type="component" width="100"/>
+				</mxCell>
+			</Image>
+		</add><add as="asd">
+			<Image href="" label="">
+				<mxCell style="asd" vertex="1">
+					<mxGeometry as="geometry" height="100" type="component" width="100"/>
+				</mxCell>
+			</Image>
+		</add><add as="asd">
+			<Image href="" label="">
+				<mxCell style="asd" vertex="1">
+					<mxGeometry as="geometry" height="100" type="component" width="100"/>
+				</mxCell>
+			</Image>
+		</add><add as="Conveyor-Belt">
+			<Image href="" label="">
+				<mxCell style="Conveyor-Belt" vertex="1">
 					<mxGeometry as="geometry" height="100" type="component" width="100"/>
 				</mxCell>
 			</Image>
@@ -118,6 +148,7 @@
 				</mxCell>
 			</Image>
 		</add>
+
 		<!--ultrasonic-sensors-->
 		<add as="HC-SR04">
 			<Image href="" label="">
@@ -160,7 +191,7 @@
 			{
 				var label = cell.getAttribute('label');
 				var style = cell.getStyle();
-			
+
 				return '';
 			}
 		]]></add>
@@ -173,7 +204,7 @@
 		<mxStylesheet as="stylesheet">
 			<add as="text">
 				<add as="shape" value="rectangle"/>
-				<add as="perimeter" value="ellipsePerimeter"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="fontSize" value="25"/>
 				<add as="shadow" value="0"/>
 				<add as="strokeColor" value="none"/>
@@ -193,7 +224,7 @@
 			</add>
 			<add as="group">
 				<add as="shape" value="rectangle"/>
-				<add as="perimeter" value="ellipsePerimeter"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="fontSize" value="25"/>
 				<add as="align" value="center"/>
 				<add as="verticalAlign" value="middle"/>
@@ -226,7 +257,7 @@
 				<add as="shape" value="arrow"/>
 				<add as="fillColor" value="#e89a66"/>
 				<add as="endSize" value="20"/>
-                                <add as="fontSize" value="25"/>
+				<add as="fontSize" value="25"/>
 				<add as="startArrow" value="classic"/>
 				<remove as="edgeStyle"/>
 			</add>
@@ -241,77 +272,97 @@
 			</add>
 
 			<!--production-line-items-->
-		<add as="Custom-Ass">
+		<add as="asd">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="ellipsePerimeter"/>
-				<add as="image" value="images\hitech\production-line-items\Custom-Ass.png"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/hitech/production-line-items/asd.png"/>
+			</add><add as="Delivery2">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/hitech/production-line-items/Delivery2.png"/>
+			</add><add as="asd">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/hitech/production-line-items/asd.png"/>
+			</add><add as="asd">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/hitech/production-line-items/asd.png"/>
+			</add><add as="asd">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/hitech/production-line-items/asd.png"/>
+			</add><add as="Conveyor-Belt">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/hitech/production-line-items/Conveyor-Belt.png"/>
 			</add><add as="conveyor-belt">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="ellipsePerimeter"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/production-line-items/conveyor-belt.png"/>
 			</add>
 			<add as="delivery">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="ellipsePerimeter"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/production-line-items/delivery.png"/>
 			</add>
 			<add as="filling-arm">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="ellipsePerimeter"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/production-line-items/filling-arm.png"/>
 			</add>
 			<add as="robotic-arm">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="ellipsePerimeter"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/production-line-items/robotic-arm.png"/>
 			</add>
 			<add as="working-man">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="ellipsePerimeter"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/production-line-items/working-man.png"/>
 			</add>
 			<add as="working-man2">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="ellipsePerimeter"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/production-line-items/working-man.png"/>
 			</add>
 
 			<!--temperature-and-humidity-sensors-->
 			<add as="BME280">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="ellipsePerimeter"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/temperature-and-humidity-sensors/BME280.png"/>
 			</add>
 			<add as="DHT11">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="ellipsePerimeter"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/temperature-and-humidity-sensors/DHT11.png"/>
 			</add>
 			<add as="DS18B20">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="ellipsePerimeter"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/temperature-and-humidity-sensors/DS18B20.png"/>
 			</add>
 			<add as="MLX90614">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="ellipsePerimeter"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/temperature-and-humidity-sensors/MLX90614.png"/>
 			</add>
 
 			<!--ultrasonic-sensors-->
 			<add as="HC-SR04">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="ellipsePerimeter"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/ultrasonic-sensors/HC-SR04.png"/>
 			</add>
 			<add as="QTR-3RC">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="ellipsePerimeter"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/ultrasonic-sensors/QTR-3RC.png"/>
 			</add>
 			<add as="SRF02">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="ellipsePerimeter"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/ultrasonic-sensors/SRF02.png"/>
 			</add>
 
@@ -327,7 +378,7 @@
 				function(cell, value)
 				{
 					var previous = null;
-					
+
 					if (value == null || isNaN(value.nodeType))
 					{
 						previous = cell.value.getAttribute('label');
@@ -346,7 +397,7 @@
 						previous = cell.value;
 						cell.value = value;
 					}
-					
+
 					return previous;
 				}
 			]]></add>
@@ -366,7 +417,12 @@
 
 		<!--production-line-items-->
 		<hr name="Production Line Items"/>
-		<add as="Custom Ass" icon="images\hitech\production-line-items\Custom-Ass.jpg" template="Custom-Ass"/>
+		<add as="asd" icon="images/hitech/production-line-items/asd.jpg" template="asd"/>
+		<add as="Delivery2" icon="images/hitech/production-line-items/Delivery2.jpg" template="Delivery2"/>
+		<add as="asd" icon="images/hitech/production-line-items/asd.jpg" template="asd"/>
+		<add as="asd" icon="images/hitech/production-line-items/asd.jpg" template="asd"/>
+		<add as="asd" icon="images/hitech/production-line-items/asd.jpg" template="asd"/>
+		<add as="Conveyor Belt" icon="images/hitech/production-line-items/Conveyor-Belt.jpg" template="Conveyor-Belt"/>
 		<add as="Conveyor Belt" icon="images/hitech/production-line-items/conveyor-belt-1.png" template="ConveyorBelt"/>
 		<add as="Delivery" icon="images/hitech/production-line-items/delivery-1.png" template="Delivery"/>
 		<add as="Filling Arm" icon="images/hitech/production-line-items/filling-arm-1.png" template="FillingArm"/>

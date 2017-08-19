@@ -2,15 +2,11 @@
  * @author Vihanga Liyanage <vihangaliyanage007@gmail.com>
  */
 
-/**
- * Variable: METADATA_LOCATION
- *
- * Shows the directory location to find all meta data files such as merge and links
- */
-var METADATA_LOCATION = "resources/metadata/";
 
 var BASE_URL = "http://localhost:81/hitech-smart-factory/";
 // var BASE_URL = "http://ec2-52-38-15-248.us-west-2.compute.amazonaws.com/hitech-smart-factory/";
+
+var TOOLBOX_ITEMS = [];
 
 /**
  * Function: readFile
@@ -251,7 +247,7 @@ function getToolboxIcon(imageSrc, name) {
     var context = c.getContext("2d");
 
     // set context properties
-    context.font = "9pt Verdana";
+    context.font = "9pt Times";
     context.fillStyle = "white";
     context.lineWidth = 2;
     context.strokeStyle="#000000";
@@ -266,7 +262,7 @@ function getToolboxIcon(imageSrc, name) {
             // Draw footer
             context.drawImage(imageObj1, 0, 60, 80, 20);
             // Add text to footer
-            context.fillText(name, 5, 73);
+            context.fillText(name, 3, 73);
             // Add border to canvas
             context.strokeRect(0, 0, c.width, c.height);
         };
@@ -313,23 +309,24 @@ function saveNewToolboxItem() {
     var isValidModel, isValidInput;
     var model = document.getElementById('item-model-name');
     if (model.value == "") {
-        model.focus();
-        model.style.border = "1px solid #ff5959";
-        model.style.boxShadow = "0 0 3px #ff0000";
+        addToolboxItemSetError(model, "Please enter item name or model.");
         isValidModel = false;
     } else {
-        model.style.border = "1px solid #4a4a4a";
-        model.style.boxShadow = "none";
-        isValidModel = true;
+        if (TOOLBOX_ITEMS.indexOf(model.value) != -1){
+            addToolboxItemSetError(model, "Item name/model already exists!");
+            isValidModel = false;
+        } else {
+            addToolboxItemRemoveError(model, "Item name/model already exists!");
+            addToolboxItemRemoveError(model, "Please enter item name or model.");
+            isValidModel = true;
+        }
     }
     var input = document.getElementById('toolbox-item-icon');
     if (input.files[0] == null) {
-        input.style.border = "1px solid #ff5959";
-        input.style.boxShadow = "0 0 3px #ff0000";
+        addToolboxItemSetError(input, "Please select an image.");
         isValidInput = false;
     } else {
-        input.style.border = "none";
-        input.style.boxShadow = "none";
+        addToolboxItemRemoveError(input, "Please select an image.");
         isValidInput = true;
     }
 
@@ -350,6 +347,25 @@ function saveNewToolboxItem() {
                     showErrorMsg("Oops! Something went wrong.")
                 }
             });
-        // location.reload(true); //hard reload
     }
+}
+
+function addToolboxItemSetError(element, msg) {
+    var msgBox = document.getElementById('add-toolbox-item-form-error');
+    // msgBox.style.display = "block";
+    msgBox.innerText = msg;
+
+    element.style.border = "1px solid #ff5959";
+    element.style.boxShadow = "0 0 3px #ff0000";
+    element.style.background = "#ffcece";
+}
+
+function addToolboxItemRemoveError(element, msg) {
+    var msgBox = document.getElementById('add-toolbox-item-form-error');
+    // msgBox.style.display = "none";
+    msgBox.innerText = msgBox.innerText.replace(msg, "");
+
+    element.style.border = "1px solid #4a4a4a";
+    element.style.boxShadow = "none";
+    element.style.background = "none";
 }

@@ -13751,6 +13751,9 @@ mxToolbar.prototype.addSwitchMode = function(title, icon, funct, pressedIcon, st
  */
 mxToolbar.prototype.addMode = function(title, icon, funct, pressedIcon, style, toggle)
 {
+    // custom code --->
+    TOOLBOX_ITEMS.push(title);
+    // custom code end <---
 	toggle = (toggle != null) ? toggle : true;
 	var img = document.createElement((icon != null) ? 'img' : 'button');
 
