@@ -247,7 +247,7 @@ function getToolboxIcon(imageSrc, name) {
     var context = c.getContext("2d");
 
     // set context properties
-    context.font = "9pt Times";
+    context.font = "9pt Tahoma";
     context.fillStyle = "white";
     context.lineWidth = 2;
     context.strokeStyle="#000000";
@@ -262,7 +262,7 @@ function getToolboxIcon(imageSrc, name) {
             // Draw footer
             context.drawImage(imageObj1, 0, 60, 80, 20);
             // Add text to footer
-            context.fillText(name, 3, 73);
+            context.fillText(name, 3, 74);
             // Add border to canvas
             context.strokeRect(0, 0, c.width, c.height);
         };
@@ -352,7 +352,6 @@ function saveNewToolboxItem() {
 
 function addToolboxItemSetError(element, msg) {
     var msgBox = document.getElementById('add-toolbox-item-form-error');
-    // msgBox.style.display = "block";
     msgBox.innerText = msg;
 
     element.style.border = "1px solid #ff5959";
@@ -362,7 +361,6 @@ function addToolboxItemSetError(element, msg) {
 
 function addToolboxItemRemoveError(element, msg) {
     var msgBox = document.getElementById('add-toolbox-item-form-error');
-    // msgBox.style.display = "none";
     msgBox.innerText = msgBox.innerText.replace(msg, "");
 
     element.style.border = "1px solid #4a4a4a";

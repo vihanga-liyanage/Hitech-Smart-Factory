@@ -1,12 +1,12 @@
 package com.hitech.smartfactory.util;
 
 import org.w3c.dom.*;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
@@ -23,6 +23,8 @@ public class FileUtil {
     private String FILE_SERVER_BASE;
     private String APPLICATION_BASE;
     private String IMAGE_BASE = "images/hitech/";
+    private String EDITOR_COMPONENT_HEIGHT;
+    private String EDITOR_SENSOR_HEIGHT;
 
     public FileUtil() {
         Properties prop = new Properties();
@@ -31,6 +33,9 @@ public class FileUtil {
             prop.load(inputStream);
             FILE_SERVER_BASE = prop.getProperty("file-server-base");
             APPLICATION_BASE = prop.getProperty("app-base-path");
+            EDITOR_COMPONENT_HEIGHT = prop.getProperty("prodline-editor-component-height");
+            EDITOR_SENSOR_HEIGHT = prop.getProperty("prodline-editor-sensor-height");
+            inputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -105,6 +110,8 @@ public class FileUtil {
             // Final formatting
             String out = nodeToString(doc).replace(categoryFilePath+"-->", categoryFilePath+"-->\n\t\t");
             out = out.replace("/><add", "/>\n\t\t<add");
+            out = out.replace("</add><add", "</add>\n\t\t<add");
+
             // Write to file
             FileOutputStream diagramEditorXml = new FileOutputStream(filePath);
             diagramEditorXml.write(out.getBytes());
@@ -121,6 +128,26 @@ public class FileUtil {
     private Document setModifiedArrayNode(Document doc, String model, String categoryFilePath) {
         Node arrayNode = doc.getElementsByTagName("Array").item(0);
 
+        String arrayNodeTemplate =
+                "\t\t<add as=\"\">\n" +
+                "\t\t\t<Text href=\"\" label=\"\">\n" +
+                "\t\t\t\t<mxCell style=\"text\" vertex=\"1\">\n" +
+                "\t\t\t\t\t<mxGeometry as=\"geometry\" type=\"\" height=\"\" width=\"\"/>\n" +
+                "\t\t\t\t</mxCell>\n" +
+                "\t\t\t</Text>\n" +
+                "\t\t</add>";
+
+        // Setting type and icon height depending on the category
+        String type = "";
+        String height = "";
+        if (categoryFilePath.equals("production-line-items")) {
+            type = "component";
+            height = EDITOR_COMPONENT_HEIGHT;
+        } else {
+            type = "sensor";
+            height = EDITOR_SENSOR_HEIGHT;
+        }
+
         boolean entryPointFound = false;
         // clone array node without children
         Node newArrayNode = arrayNode.cloneNode(false);
@@ -135,14 +162,20 @@ public class FileUtil {
                 continue;
             }
             // Append modified add node to newArray node
-            if (entryPointFound && y.getNodeType() == Node.ELEMENT_NODE) {
-                Node newNode = y.cloneNode(true);
+            if (entryPointFound) {
+                Node newNode = getDomNodeFromString(arrayNodeTemplate);
                 // set <add as="ConveyorBelt">
                 ((Element)newNode).setAttribute("as", model);
-                Node mxCell = newNode.getChildNodes().item(1).getChildNodes().item(1);
                 // set <mxCell vertex="1" style="conveyor-belt">
+                Node mxCell = newNode.getChildNodes().item(1).getChildNodes().item(1);
                 ((Element)mxCell).setAttribute("style", model);
+                // set <mxGeometry as="geometry" height="100" type="component" width="100"/>
+                Element mxGeometry = (Element)mxCell.getChildNodes().item(1);
+                mxGeometry.setAttribute("height", height);
+                mxGeometry.setAttribute("width", height);
+                mxGeometry.setAttribute("type", type);
 
+                newNode = doc.importNode(newNode,true);
                 newArrayNode.appendChild(newNode);
                 entryPointFound = false;
             }
@@ -158,6 +191,12 @@ public class FileUtil {
     private Document setModifiedMxStylesheetNode(Document doc, String model, String categoryFilePath, String canvasImagePath) {
         Node mxStylesheetNode = doc.getElementsByTagName("mxStylesheet").item(0);
 
+        String mxStylesheetNodeTemplate =
+                        "\t\t\t<add as=\"\">\n" +
+                        "\t\t\t\t<add as=\"shape\" value=\"image\"/>\n" +
+                        "\t\t\t\t<add as=\"image\" value=\"\"/>\n" +
+                        "\t\t\t</add>";
+
         boolean entryPointFound = false;
         // clone mxStylesheet node without children
         Node newMxStylesheetNode = mxStylesheetNode.cloneNode(false);
@@ -172,14 +211,15 @@ public class FileUtil {
                 continue;
             }
             // Append modified add node to newMxStylesheet node
-            if (entryPointFound && y.getNodeType() == Node.ELEMENT_NODE) {
-                Node newNode = y.cloneNode(true);
+            if (entryPointFound) {
+                Node newNode = getDomNodeFromString(mxStylesheetNodeTemplate);
                 // set <add as="conveyor-belt">
                 ((Element)newNode).setAttribute("as", model);
                 // set <add as="image" value="images/hitech/production-line-items/conveyor-belt.png"/>
-                Node imageNode = newNode.getChildNodes().item(5);
+                Node imageNode = newNode.getChildNodes().item(3);
                 ((Element)imageNode).setAttribute("value", canvasImagePath);
 
+                newNode = doc.importNode(newNode,true);
                 newMxStylesheetNode.appendChild(newNode);
                 entryPointFound = false;
             }
@@ -195,6 +235,8 @@ public class FileUtil {
     private Document setMxDefaultToolbarNode(Document doc, String model, String categoryFilePath, String toolboxImagePath){
         Node mxDefaultToolbarNode = doc.getElementsByTagName("mxDefaultToolbar").item(0);
 
+        String mxStylesheetNodeTemplate = "<add as=\"\" icon=\"\" template=\"\"/>";
+
         boolean entryPointFound = false;
         // clone mxStylesheet node without children
         Node newMxDefaultToolbarNode = mxDefaultToolbarNode.cloneNode(false);
@@ -209,20 +251,21 @@ public class FileUtil {
                 continue;
             }
             // Append modified add node to newMxStylesheet node
-            if (entryPointFound && y.getNodeType() == Node.ELEMENT_NODE) {
+            if (entryPointFound) {
                 // Ignore hr tag
                 if (y.getNodeName() == "hr") {
                     newMxDefaultToolbarNode.appendChild(y.cloneNode(true));
                     continue;
                 }
 
-                Node newNode = y.cloneNode(true);
+                Node newNode = getDomNodeFromString(mxStylesheetNodeTemplate);
                 Element newNodeElement = (Element)newNode;
                 // set <add as="HC-SR04" template="HC-SR04" icon="images/hitech/ultrasonic-sensors/HC-SR04.jpg"/>
                 newNodeElement.setAttribute("as", model.replace("-", " "));
                 newNodeElement.setAttribute("template", model);
                 newNodeElement.setAttribute("icon", toolboxImagePath);
 
+                newNode = doc.importNode(newNode,true);
                 newMxDefaultToolbarNode.appendChild(newNode);
                 entryPointFound = false;
             }
@@ -246,5 +289,19 @@ public class FileUtil {
             System.out.println("nodeToString Transformer Exception");
         }
         return sw.toString();
+    }
+
+    private Node getDomNodeFromString(String xml) {
+        Node node = null;
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder;
+        try {
+            builder = factory.newDocumentBuilder();
+            Document doc = builder.parse( new InputSource( new StringReader( xml ) ) );
+            node = doc.getFirstChild();
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            e.printStackTrace();
+        }
+        return node;
     }
 }
