@@ -41,48 +41,48 @@
 
 		<!--production-line-items-->
 		<add as="Working-Man">
-			<Text href="" label="">
+			<Image href="" label="">
 				<mxCell style="Working-Man" vertex="1">
 					<mxGeometry as="geometry" height="100" type="component" width="100"/>
 				</mxCell>
-			</Text>
+			</Image>
 		</add>
 		<add as="Filling-Arm">
-			<Text href="" label="">
+			<Image href="" label="">
 				<mxCell style="Filling-Arm" vertex="1">
 					<mxGeometry as="geometry" height="100" type="component" width="100"/>
 				</mxCell>
-			</Text>
+			</Image>
 		</add>
 		<add as="Robotic-Arm">
-			<Text href="" label="">
+			<Image href="" label="">
 				<mxCell style="Robotic-Arm" vertex="1">
 					<mxGeometry as="geometry" height="100" type="component" width="100"/>
 				</mxCell>
-			</Text>
+			</Image>
 		</add>
 		<add as="Delivery">
-			<Text href="" label="">
+			<Image href="" label="">
 				<mxCell style="Delivery" vertex="1">
 					<mxGeometry as="geometry" height="100" type="component" width="100"/>
 				</mxCell>
-			</Text>
+			</Image>
 		</add>
 		<add as="Conveyor-Belt">
-			<Text href="" label="">
+			<Image href="" label="">
 				<mxCell style="Conveyor-Belt" vertex="1">
 					<mxGeometry as="geometry" height="100" type="component" width="100"/>
 				</mxCell>
-			</Text>
+			</Image>
 		</add>
 
 		<!--temperature-and-humidity-sensors-->
 		<add as="BME280">
-			<Text href="" label="">
+			<Image href="" label="">
 				<mxCell style="BME280" vertex="1">
 					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
 				</mxCell>
-			</Text>
+			</Image>
 		</add>
 		<add as="DHT11">
 			<Image href="" label="">
@@ -263,34 +263,28 @@
 			</add>
 		<add as="DHT11">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/temperature-and-humidity-sensors/DHT11.png"/>
 			</add>
 			<add as="DS18B20">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/temperature-and-humidity-sensors/DS18B20.png"/>
 			</add>
 			<add as="MLX90614">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/temperature-and-humidity-sensors/MLX90614.png"/>
 			</add>
 
 			<!--ultrasonic-sensors-->
 			<add as="HC-SR04">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/ultrasonic-sensors/HC-SR04.png"/>
 			</add>
 			<add as="QTR-3RC">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/ultrasonic-sensors/QTR-3RC.png"/>
 			</add>
 			<add as="SRF02">
 				<add as="shape" value="image"/>
-				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/ultrasonic-sensors/SRF02.png"/>
 			</add>
 

@@ -36,6 +36,7 @@ public class FileUtil {
             EDITOR_COMPONENT_HEIGHT = prop.getProperty("prodline-editor-component-height");
             EDITOR_SENSOR_HEIGHT = prop.getProperty("prodline-editor-sensor-height");
             inputStream.close();
+            System.out.println(this.getClass().getName() + ": Properties loaded successfully");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -50,6 +51,7 @@ public class FileUtil {
             FileWriter writer = new FileWriter(file);
             writer.write(content);
             writer.close();
+            System.out.println(this.getClass().getName() + ": File \'" + FILE_SERVER_BASE + name + "\' written successfully");
             return true;
         } catch (IOException e) {
             e.printStackTrace();
@@ -92,8 +94,6 @@ public class FileUtil {
                 byte[] canvasImageByteArray = Base64.getDecoder().decode(canvasPreview);
                 canvasImageFile.write(canvasImageByteArray);
                 canvasImageFile.close();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
             } catch (IOException ioe) {
                 ioe.printStackTrace();
             }
@@ -116,6 +116,7 @@ public class FileUtil {
             FileOutputStream diagramEditorXml = new FileOutputStream(filePath);
             diagramEditorXml.write(out.getBytes());
             diagramEditorXml.close();
+            System.out.println(this.getClass().getName() + ": Toolbox item added successfully");
             return true;
 
         } catch (SAXException | IOException | ParserConfigurationException e) {
@@ -130,11 +131,11 @@ public class FileUtil {
 
         String arrayNodeTemplate =
                 "\t\t<add as=\"\">\n" +
-                "\t\t\t<Text href=\"\" label=\"\">\n" +
+                "\t\t\t<Image href=\"\" label=\"\">\n" +
                 "\t\t\t\t<mxCell style=\"text\" vertex=\"1\">\n" +
                 "\t\t\t\t\t<mxGeometry as=\"geometry\" type=\"\" height=\"\" width=\"\"/>\n" +
                 "\t\t\t\t</mxCell>\n" +
-                "\t\t\t</Text>\n" +
+                "\t\t\t</Image>\n" +
                 "\t\t</add>";
 
         // Setting type and icon height depending on the category
