@@ -13751,9 +13751,6 @@ mxToolbar.prototype.addSwitchMode = function(title, icon, funct, pressedIcon, st
  */
 mxToolbar.prototype.addMode = function(title, icon, funct, pressedIcon, style, toggle)
 {
-    // custom code --->
-    TOOLBOX_ITEMS.push(title);
-    // custom code end <---
 	toggle = (toggle != null) ? toggle : true;
 	var img = document.createElement((icon != null) ? 'img' : 'button');
 
@@ -13895,13 +13892,6 @@ mxToolbar.prototype.addLine = function(node)
     var heading = document.createElement('div');
     heading.style.marginTop = '10px';
     heading.style.fontSize = '12px';
-
-    //setup category selection
-    var name = node.getAttribute('name');
-    var option = document.createElement('OPTION');
-    option.label = name;
-    option.value = name;
-    document.getElementById("toolbox-item-category").appendChild(option);
 
     heading.innerText = name;
     this.container.appendChild(heading);

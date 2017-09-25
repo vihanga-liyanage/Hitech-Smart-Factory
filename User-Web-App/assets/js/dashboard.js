@@ -1,3 +1,7 @@
+/**
+ * @author Vihanga Liyanage <vihangaliyanage007@gmail.com>
+ */
+
 // should come from the DSS
 var data = {
     usertype: "factory",
@@ -37,12 +41,65 @@ var data = {
     ]
 };
 
+var editor;
+
+// var BASE_URL = "http://localhost:81/hitech-smart-factory/";
+var BASE_URL = "http://ec2-52-38-15-248.us-west-2.compute.amazonaws.com/hitech-smart-factory/";
+
+/**
+ * Function: isNumeric
+ *
+ * Return true if n is a number
+ *
+ * Parameters:
+ *
+ * n - String to check
+ *
+ * Return: {boolean}
+ */
+var isNumeric = function(n)
+{
+    return !isNaN(parseFloat(n)) && isFinite(n);
+};
+
+var loadProdLine = function (editor)
+{
+    $('#graph-msg').text('Loading...');
+    var name = document.getElementById("prod-line-title").innerText + ".xml";
+    name = name.split(" ").join("-");
+    var url = BASE_URL + name;
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                var doc = mxUtils.parseXml(this.responseText);
+                var dec = new mxCodec(doc);
+                dec.decode(doc.documentElement, editor.graph.getModel());
+                editor.graph.container.focus();
+                $('#graph-msg').text('');
+            }
+            else {
+                $('#graph-msg').text('No data file found');
+            }
+        }
+    };
+    xhr.open("GET", url);
+    xhr.send();
+
+};
+
 function prodLineSelected(element, path) {
     $('#company-data .active').removeClass('active');
     $(element).parent().toggleClass('active');
 
-    path = path.split(' ').join('-') + '.xml';
-    $('#canvas').text('Loading production line... ' + path);
+    path = path.split(' ').join('-');
+    $('#prod-line-title').text(path);
+    loadProdLine(editor);
+}
+
+function setEditorVar(e) {
+    editor = e;
 }
 
 $(document).ready(function () {

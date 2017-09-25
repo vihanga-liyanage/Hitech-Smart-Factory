@@ -28,6 +28,9 @@ app.use(bodyParser.urlencoded({
 // routes ======================================================================
 app.use(express.static(path.join(__dirname, '/views')));
 app.use('/assets', express.static(path.join(__dirname, '/assets')));
+app.use('/config', express.static(path.join(__dirname, '/assets/config')));
+app.use('/resources', express.static(path.join(__dirname, '/resources')));
+app.use('/images', express.static(path.join(__dirname, '/images')));
 
 // error handlers
 // Catch unauthorised errors

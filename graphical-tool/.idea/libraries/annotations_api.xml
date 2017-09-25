@@ -24,7 +24,6 @@
       <root url="jar:///opt/tomcat8/lib/tomcat-websocket.jar!/" />
       <root url="jar:///opt/tomcat8/lib/websocket-api.jar!/" />
     </CLASSES>
-    <JAVADOC />
     <SOURCES />
   </library>
 </component>
