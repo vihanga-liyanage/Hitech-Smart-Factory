@@ -68,7 +68,7 @@
         <!-- User Info -->
         <div class="user-info">
             <div class="image">
-                <img src="images/user.png" width="48" height="48" alt="User" />
+                <img src="/assets/images/user.png" width="48" height="48" alt="User" />
             </div>
             <div class="info-container">
                 <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
@@ -88,46 +88,6 @@
                     </a>
                 </li>
                 <li id="company-data">
-                    <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">trending_down</i>
-                        <span>Multi Level Menu</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="javascript:void(0);">
-                                <span>Menu Item</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">
-                                <span>Menu Item - 2</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" class="menu-toggle">
-                                <span>Level - 2</span>
-                            </a>
-                            <ul class="ml-menu">
-                                <li>
-                                    <a href="javascript:void(0);">
-                                        <span>Menu Item</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="menu-toggle">
-                                        <span>Level - 3</span>
-                                    </a>
-                                    <ul class="ml-menu">
-                                        <li>
-                                            <a href="javascript:void(0);">
-                                                <span>Level - 4</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
                 </li>
 
             </ul>
@@ -136,7 +96,7 @@
         <!-- Footer -->
         <div class="legal">
             <div class="copyright">
-                &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                &copy; 2017 - 2018 <a href="javascript:void(0);">Hitech Smart Factory</a>.
             </div>
             <div class="version">
                 <b>Version: </b> 1.0.5
@@ -292,8 +252,18 @@
 
 <section class="content">
     <div class="container-fluid">
-        <div class="block-header">
-            <h2>DASHBOARD</h2>
+
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>Select Production line</h2>
+                    </div>
+                    <div class="body" id="canvas">
+
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -301,6 +271,9 @@
 
 <!-- Jquery Core Js -->
 <script src="/assets/plugins/jquery/jquery.min.js"></script>
+
+<!-- custom JS special for dashboard -->
+<script src="/assets/js/dashboard.js"></script>
 
 <!-- Bootstrap Core Js -->
 <script src="/assets/plugins/bootstrap/js/bootstrap.js"></script>
@@ -313,10 +286,8 @@
 <script src="/assets/js/pages/index.js"></script>
 
 <!-- Demo Js -->
-<script src="/assets/js/demo.js"></script>
+<!--<script src="/assets/js/demo.js"></script>-->
 
-<!-- custom JS special for dashboard -->
-<script src="/assets/js/dashboard.js"></script>
 
 </body>
 
