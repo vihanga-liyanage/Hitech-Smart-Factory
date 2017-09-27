@@ -8070,7 +8070,7 @@ html{
 #selectActions, #mainActions, #zoomActions {
   display:none;
   width:100%;
-  padding-left:54px;
+  text-align: right;
   font-family: monospace;
 }
 
@@ -8083,8 +8083,7 @@ html{
 }
 #prod-line-title {
   width: 70%;
-  float: right;
-  text-align: center;
+  float: left;
   color: #f9f4cc;
   font-family: monospace;
 }
@@ -8105,7 +8104,7 @@ html{
 
 #graph_container {
   padding: 5px;
-  border: 7px solid #e7e6e6;
+  /*border: 7px solid #e7e6e6;*/
 }
 
 #graph {

@@ -633,47 +633,56 @@
     <!-- #END# Right Sidebar -->
 </section>
 
-<section class="content">
+<section class="content custom-margin">
     <div class="container-fluid">
+        <div id="page-wrapper">
+            <div class="block-header">
 
-        <div id="page">
-            <div id="header">
-                <div id="prod-line-title"></div>
-                <div id="selectActions">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+                        <!--style="box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); padding: 0">-->
+                        <div class="card">
+                            <!-- content -->
+                            <div id="header" class="header">
+                                <div id="prod-line-title"></div>
+                                <div id="selectActions">
+                                </div>
+                                <div id="mainActions">
+                                </div>
+                                <div id="zoomActions">
+                                </div>
+                            </div>
+                            <!--<div class="body">-->
+                            <div id="toolbar_container" valign="top" style="display: none;">
+                                <div id="toolbar">
+                                    <!-- Toolbar Here -->
+                                </div>
+                            </div>
+                            <div id="graph_container" class="body" valign="top" class="col-md-12">
+                                <div id="graph-msg" style="padding: 0 10px; font-style: italic;">Select a production line to view...</div>
+                                <div id="graph" tabindex="-1">
+                                    <!-- Graph Here -->
+                                    <center id="splash" style="padding-top:530px;">
+                                        <img src="images/loading.gif">
+                                    </center>
+                                </div>
+
+                                <textarea id="xml"></textarea>
+                                <input id="source" type="checkbox"/>
+                            </div>
+                            <!--</div>-->
+                            <!-- content end -->
+
+                        </div>
+                    </div>
                 </div>
-                <div id="mainActions">
-                </div>
-                <div id="zoomActions">
-                </div>
+
             </div>
-
-            <div id="toolbar_container" valign="top" style="display: none;">
-                <div id="toolbar">
-                    <!-- Toolbar Here -->
-                </div>
-            </div>
-            <div id="graph_container" valign="top" class="col-md-12">
-                <div id="graph-msg"></div>
-                <div id="graph" tabindex="-1">
-                    <!-- Graph Here -->
-                    <center id="splash" style="padding-top:530px;">
-                        <img src="images/loading.gif">
-                    </center>
-                </div>
-
-                <textarea id="xml"></textarea>
-                <input id="source" type="checkbox"/>
-
-            </div>
-
         </div>
-
-        <div id="action-form-background">
-            <!--This is used to disable the background-->
-        </div>
-
     </div>
 </section>
+
+
 
 <!-- Jquery Core Js -->
 <script src="/assets/plugins/jquery/jquery.min.js"></script>
@@ -691,8 +700,19 @@
 <script src="/assets/js/admin.js"></script>
 <script src="/assets/js/pages/index.js"></script>
 
-<!-- Demo Js -->
-<!--<script src="/assets/js/demo.js"></script>-->
+<script type="text/javascript">
+
+    // set toolbar and graph area height
+    function autoResizeToolbarAndGraph() {
+        var windowH = window.innerHeight;
+        document.getElementById('graph').style.height = (windowH - 200) + "px";
+//        document.getElementById('xml').style.height = (windowH - 123) + "px";
+//        document.getElementById('toolbar').style.height = (windowH - 117) + "px";
+    }
+    window.onresize = autoResizeToolbarAndGraph;
+    autoResizeToolbarAndGraph();
+
+</script>
 
 
 </body>
