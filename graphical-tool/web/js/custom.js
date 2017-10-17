@@ -105,6 +105,7 @@ var clearLinks = function (editor)
  */
 var loadProdLine = function (editor)
 {
+    $('#prod-line-message').text('Loading...');
     var name = document.getElementById("prod-line-title").innerText + ".xml";
     name = name.split(" ").join("-");
     var url = BASE_URL + name;
@@ -119,13 +120,16 @@ var loadProdLine = function (editor)
                 editor.graph.container.focus();
 
                 document.getElementById("save-prod-line-btn").innerText = "Update Production Line";
+                $('#prod-line-message').text('');
             }
             else {
                 console.log("No data file found");
+                $('#prod-line-message').text('Drag and drop components to start modeling...');
             }
         }
     };
     xhr.open("GET", url);
+    // xhr.setRequestHeader('Access-Control-Allow-Headers', '*');
     xhr.send();
 
 };

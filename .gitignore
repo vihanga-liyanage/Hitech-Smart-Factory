@@ -32,3 +32,11 @@ node_modules
 npm-debug.log
 bower_components
 access.log
+
+# idea folders
+graphical-tool/.idea
+TestEEProject/.idea
+User-Web-App/.idea
+
+# out folder
+graphical-tool/out
