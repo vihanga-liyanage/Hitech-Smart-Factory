@@ -181,11 +181,7 @@ var canvasPreviewCanvas;
 
 function toolboxItemCategorySelected() {
     var select = document.getElementById("toolbox-item-category");
-    if (select.selectedIndex == 0) {
-        addingProdLineItem = true;
-    } else {
-        addingProdLineItem = false;
-    }
+    addingProdLineItem = select.selectedIndex == 0;
     previewToolboxItemIcon(false);
 }
 
@@ -326,11 +322,12 @@ function saveNewToolboxItem() {
         }
     }
     var input = document.getElementById('toolbox-item-icon');
+    var inputText = document.getElementById('toolbox-item-icon-text');
     if (input.files[0] == null) {
-        addToolboxItemSetError(input, "Please select an image.");
+        addToolboxItemSetError(inputText, "Please select an image.");
         isValidInput = false;
     } else {
-        addToolboxItemRemoveError(input, "Please select an image.");
+        addToolboxItemRemoveError(inputText, "Please select an image.");
         isValidInput = true;
     }
 
@@ -358,16 +355,13 @@ function addToolboxItemSetError(element, msg) {
     var msgBox = document.getElementById('add-toolbox-item-form-error');
     msgBox.innerText = msg;
 
-    element.style.border = "1px solid #ff5959";
-    element.style.boxShadow = "0 0 3px #ff0000";
-    element.style.background = "#ffcece";
+    element.style.borderBottom = "2px solid #ff5959";
 }
 
 function addToolboxItemRemoveError(element, msg) {
     var msgBox = document.getElementById('add-toolbox-item-form-error');
     msgBox.innerText = msgBox.innerText.replace(msg, "");
 
-    element.style.border = "1px solid #4a4a4a";
-    element.style.boxShadow = "none";
-    element.style.background = "none";
+    element.style.borderBottom = "2px solid #73a0c5";
+
 }

@@ -20,10 +20,15 @@
 
         <script src="js/js-yaml.min.js"></script>
 
+        <link rel="stylesheet" href="css/wordpress.css" type="text/css" media="screen" />
+
         <!--Bootstrap-->
         <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="screen" />
 
-        <link rel="stylesheet" href="css/wordpress.css" type="text/css" media="screen" />
+        <!--Material design-->
+        <link rel="stylesheet" href="css/materialize.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
         <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 
         <script type="text/javascript">
@@ -54,6 +59,8 @@
         <script type="text/javascript" src="js/custom.js"></script>
         <script type="text/javascript" src="js/mxClient.js"></script>
         <script type="text/javascript" src="js/mxApplication.js"></script>
+
+        <script src="js/materialize.min.js"></script>
 
         <script type="text/javascript">
 
@@ -621,7 +628,9 @@
                     <tbody>
                         <tr>
                             <td id="toolbar_container" valign="top" class="col-md-3">
-                                <button class="add-toolbox-item-btn" onclick="addToolboxItem()">Add New Item</button>
+                                <a id="add-toolbox-item-btn" class="waves-effect waves-light btn" onclick="addToolboxItem()">
+                                    <i class="material-icons prefix">add_circle_outline</i>Add New Item
+                                </a>
                                 <div id="toolbar" >
                                     <!-- Toolbar Here -->
                                 </div>
@@ -646,21 +655,41 @@
                                 <!-- add new toolbox item form -->
                                 <div id="add-toolbox-item-form-container">
                                     <img id="add-toolbox-item-form-close" src="images/hitech/icons/close.png" title="Close" onclick="closeAddToolboxItem()" >
-                                    <h3>Add New Toolbox Item</h3><br>
+                                    <h3 style="font-size: 20px">Add New Toolbox Item</h3><br>
                                     <p id="add-toolbox-item-form-error"></p>
-                                    Name/Model: <input type="text" id="item-model-name" onkeypress="previewToolboxItemIcon(true)"> <br><br>
-                                    Category: <select id="toolbox-item-category" onchange="toolboxItemCategorySelected()"></select> <br><br>
-                                    Icon Image: <input type="file" accept="image/*" onchange="previewToolboxItemIcon(false)" id="toolbox-item-icon"><br>
-                                    <div height="80" id="toolbox-item-icon-preview" class="col-md-6"></div>
-                                    <div height="80" id="sensor-icon-preview"  class="col-md-6"></div>
+                                    <div class="input-field">
+                                        <input id="item-model-name" type="text" class="validate" placeholder="Ex: BME280"
+                                               onkeypress="previewToolboxItemIcon(true)">
+                                        <label for="item-model-name">Name/Model</label>
+                                    </div>
+                                    <label>Category</label>
+                                    <div class="input-field" style="margin-top: 0">
+                                        <select id="toolbox-item-category" class="browser-default" onchange="toolboxItemCategorySelected()">
+                                        </select>
+                                    </div>
+                                    <div class="file-field input-field">
+                                        <div class="btn" style="height: 2rem; line-height: 2rem; background-color: #73a0c5;">
+                                            <span>Icon</span>
+                                            <input type="file" accept="image/*" onchange="previewToolboxItemIcon(false)" id="toolbox-item-icon" style="height: 2rem;">
+                                        </div>
+                                        <div class="file-path-wrapper">
+                                            <input class="file-path validate" id="toolbox-item-icon-text" type="text" placeholder="Select icon" style="height: 2rem;">
+                                        </div>
+                                    </div>
+
+                                    <div id="toolbox-item-icon-preview" class="col-md-6"></div>
+                                    <div id="sensor-icon-preview"  class="col-md-6"></div>
                                     <br>
-                                    <button id="save-toolbox-item-btn" onclick="saveNewToolboxItem()">Save</button>
+                                    <button id="save-toolbox-item-btn" class="waves-effect waves-light btn" onclick="saveNewToolboxItem()">Save</button>
                                 </div>
 
                                 <textarea id="xml"></textarea>
-                                <input id="source" type="checkbox"/> View source
 
-                                <button id="save-prod-line-btn">Save Production Line</button>
+                                <div style="margin-top: 10px;">
+                                    <input id="source" class="filled-in" type="checkbox"/>
+                                    <label for="source" style="padding-left: 30px;">View source</label>
+                                    <button id="save-prod-line-btn" class="waves-effect waves-light btn">Save Production Line</button>
+                                </div>
 
                                 <div style="position: fixed; top: 82px; right: 15px; ">
                                     <div id="successMsg" class="alert-box success">Successful Alert !!!</div>
@@ -693,23 +722,12 @@
         // set toolbar and graph area height
         function autoResizeToolbarAndGraph() {
             var windowH = window.innerHeight;
-            document.getElementById('graph').style.height = (windowH - 118) + "px";
-            document.getElementById('xml').style.height = (windowH - 123) + "px";
+            document.getElementById('graph').style.height = (windowH - 135) + "px";
+            document.getElementById('xml').style.height = (windowH - 140) + "px";
             document.getElementById('toolbar').style.height = (windowH - 117) + "px";
         }
         window.onresize = autoResizeToolbarAndGraph;
         autoResizeToolbarAndGraph();
-
-        //  Add toolbar separators
-        function addToolbarSeparators() {
-            return document.getElementById('toolbar').innerHTML;
-        }
-        document.onload = function () {
-//            console.log("onload " + addToolbarSeparators());
-        }
-        $(document).ready(function () {
-//            console.log("ready " + addToolbarSeparators());
-        });
 
     </script>
 </html>

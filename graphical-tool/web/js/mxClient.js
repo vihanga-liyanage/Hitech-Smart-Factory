@@ -13897,11 +13897,11 @@ mxToolbar.prototype.addLine = function(node)
     heading.style.fontSize = '12px';
 
     //setup category selection
+    var element = $("#toolbox-item-category");
     var name = node.getAttribute('name');
-    var option = document.createElement('OPTION');
-    option.label = name;
-    option.value = name;
-    document.getElementById("toolbox-item-category").appendChild(option);
+    var html = '<option value="' + name + '">' + name + '</option>';
+    element.append(html);
+    element.material_select();
 
     heading.innerText = name;
     this.container.appendChild(heading);
