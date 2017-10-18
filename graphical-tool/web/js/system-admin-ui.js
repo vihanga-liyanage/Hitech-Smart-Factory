@@ -6,6 +6,7 @@ var selectedFactoryId;
 var selectedBranchId;
 var selectedSectionId;
 var boxBtnRowHeight = 147;
+var localStorageKeys = [];
 
 function displayAddForm(id) {
     document.getElementById(id).style.display = "block";
@@ -244,12 +245,30 @@ function setProdLines(sectionId) {
 }
 
 function selectProdLine(id, name) {
-    //console.log("setSections");
     var factory = document.getElementById("selected-factory-name").innerText;
     var branch = document.getElementById("selected-branch-name").innerText;
     var section = document.getElementById("selected-section-name").innerText;
-    var params = "?id=" + id + "&name=" + name + "&factory=" + factory + "&branch=" + branch + "&section=" + section;
+
+    var key = getRandomString();
+    localStorageKeys.push(key);
+    var prodLineName = factory + "/" + branch + "/" + section + "/" + name;
+    var prodLinePath = selectedFactoryId + "/" + selectedBranchId + "/" + selectedSectionId + "/" + id;
+    var data = {
+        prodLineName: prodLineName,
+        prodLinePath: prodLinePath
+    };
+    localStorage.setItem(key, JSON.stringify(data));
+
+    var params = "?key=" + key;
     window.open("production-line-editor.html" + params, "_blank");
+}
+
+function getRandomString() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for (var i = 0; i < 10; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    return text;
 }
 
 function createNewBranch() {
@@ -442,3 +461,10 @@ function removeActiveState(type) {
     $(type).removeClass('active-up');
     $(type).removeClass('active-down');
 }
+
+$(window).on("beforeunload", function() {
+    console.log("Clearing local storage...");
+    localStorageKeys.forEach(function (key) {
+        localStorage.removeItem(key);
+    })
+});
