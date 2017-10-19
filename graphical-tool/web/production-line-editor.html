@@ -124,36 +124,44 @@
                 this.images.push(img);
 
                 // Configure sensor details button
+                var img = mxUtils.createImage('images/gear-16.png');
+                img.setAttribute('title', 'Configure');
+                img.style.position = 'absolute';
+                img.style.cursor = 'pointer';
+                img.style.width = '16px';
+                img.style.height = '16px';
+                img.style.left = (state.x + state.width - 56) + 'px';
+                img.style.top = (state.y - 16) + 'px';
+
+                mxEvent.addGestureListeners(img,
+                    mxUtils.bind(this, function (evt) {
+                        // Disables dragging the image
+                        mxEvent.consume(evt);
+                    })
+                );
+
                 if (state.cell.geometry.type == "sensor") {
-                    var img = mxUtils.createImage('images/gear-16.png');
-                    img.setAttribute('title', 'Configure');
-                    img.style.position = 'absolute';
-                    img.style.cursor = 'pointer';
-                    img.style.width = '16px';
-                    img.style.height = '16px';
-                    img.style.left = (state.x + state.width - 56) + 'px';
-                    img.style.top = (state.y - 16) + 'px';
-
-                    mxEvent.addGestureListeners(img,
-                        mxUtils.bind(this, function (evt) {
-                            // Disables dragging the image
-                            mxEvent.consume(evt);
-                        })
-                    );
-
                     mxEvent.addListener(img, 'click',
                         mxUtils.bind(this, function (evt) {
                             var product = state.cell.style;
                             configureSensorDetails(state, evt, product);
-
                             mxEvent.consume(evt);
                             this.destroy();
                         })
                     );
-
-                    state.view.graph.container.appendChild(img);
-                    this.images.push(img);
+                } else {
+                    mxEvent.addListener(img, 'click',
+                        mxUtils.bind(this, function (evt) {
+                            var product = state.cell.style;
+                            configureMachineDetails(state, evt, product);
+                            mxEvent.consume(evt);
+                            this.destroy();
+                        })
+                    );
                 }
+
+                state.view.graph.container.appendChild(img);
+                this.images.push(img);
             }
 
             mxIconSet.prototype.destroy = function ()
@@ -647,20 +655,30 @@
                                     </center>
                                 </div>
 
-                                <!-- config sensor form -->
-                                <div id="sensor-config-form-container">
-                                    <img id="config-sensor-close" src="images/hitech/icons/close.png" title="Close" onclick="closeConfigSensorForm()" >
-                                    <h3 style="font-size: 20px">Sensor Properties</h3>
+                                <!-- sensor settings form -->
+                                <div id="sensor-config-form-container" class="floating-form">
+                                    <img class="red-close-x" src="images/hitech/icons/close.png" title="Close" onclick="closeConfigSensorForm()" >
+                                    <h3>Sensor Properties</h3>
                                     <div style="margin-bottom: -5px;">Sensor Name : <span id="sensor-name"></span></div>
                                     <small>Double click on the sensor to edit sensor name</small>
                                     <div style="margin-top: 5px;">Sensor ID : <span id="sensor-id"></span></div>
-                                    <div style="margin-top: 5px;">Sensor Tage : <span id="sensor-tag"></span></div>
+                                    <div style="margin-top: 5px;">Sensor Tag : <span id="sensor-tag"></span></div>
+                                </div>
+
+                                <!-- machine settings form -->
+                                <div id="machine-config-form-container" class="floating-form">
+                                    <img class="red-close-x" src="images/hitech/icons/close.png" title="Close" onclick="closeConfigMachineForm()" >
+                                    <h3>Machine Properties</h3>
+                                    <div style="margin-bottom: -5px;">Machine Name : <span id="machine-name"></span></div>
+                                    <small>Double click on the machine to edit machine name</small>
+                                    <div style="margin-top: 5px;">Machine ID : <span id="machine-id"></span></div>
+                                    <div style="margin-top: 5px;">Machine Tag : <span id="machine-tag"></span></div>
                                 </div>
 
                                 <!-- add new toolbox item form -->
-                                <div id="add-toolbox-item-form-container">
-                                    <img id="add-toolbox-item-form-close" src="images/hitech/icons/close.png" title="Close" onclick="closeAddToolboxItem()" >
-                                    <h3 style="font-size: 20px">Add New Toolbox Item</h3><br>
+                                <div id="add-toolbox-item-form-container" class="floating-form">
+                                    <img class="red-close-x" src="images/hitech/icons/close.png" title="Close" onclick="closeAddToolboxItem()" >
+                                    <h3>Add New Toolbox Item</h3><br>
                                     <p id="add-toolbox-item-form-error"></p>
                                     <div class="input-field">
                                         <input id="item-model-name" type="text" class="validate" placeholder="Ex: BME280"
@@ -690,7 +708,7 @@
 
                                 <textarea id="xml"></textarea>
 
-                                <div style="margin-top: 10px;">
+                                <div style="padding-top: 8px; border-top: 2px solid #e7e6e6;">
                                     <input id="source" class="filled-in" type="checkbox"/>
                                     <label for="source" style="padding-left: 30px;">View source</label>
                                     <button id="save-prod-line-btn" class="waves-effect waves-light btn">Save Production Line</button>

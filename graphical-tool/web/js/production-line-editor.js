@@ -207,6 +207,22 @@ function closeConfigSensorForm() {
     document.getElementById("sensor-config-form-container").style.display = "none";
 }
 
+function configureMachineDetails(sender, evt, product) {
+    // setting item tag
+    sender.cell.tag = PROD_LINE_PATH + "/" + sender.cell.id;
+
+    document.getElementById("action-form-background").style.display = "block";
+    document.getElementById("machine-config-form-container").style.display = "block";
+    document.getElementById("machine-id").innerHTML = sender.cell.id;
+    document.getElementById("machine-name").innerHTML = sender.text.value;
+    document.getElementById("machine-tag").innerHTML = sender.cell.tag;
+}
+
+function closeConfigMachineForm() {
+    document.getElementById("action-form-background").style.display = "none";
+    document.getElementById("machine-config-form-container").style.display = "none";
+}
+
 // Adding custom toolbox items
 var addingProdLineItem = true;
 var toolboxPreviewCanvas;
