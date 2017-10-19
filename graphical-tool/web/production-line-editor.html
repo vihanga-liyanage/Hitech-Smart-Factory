@@ -154,7 +154,7 @@
                     state.view.graph.container.appendChild(img);
                     this.images.push(img);
                 }
-            };
+            }
 
             mxIconSet.prototype.destroy = function ()
             {
@@ -374,7 +374,7 @@
                         if (sourceType == "sensor" && targetType == "component") {
                             edgeCell.setStyle("strokeColor=blue;dashed=1");
                         } else if (sourceType == "component" && targetType == "component") {
-                            edgeCell.setStyle("strokeColor=black;strokeWidth=10");
+                            edgeCell.setStyle("strokeColor=black;strokeWidth=8");
                         } else {
                             editor.graph.removeCells([edgeCell]);
                             showErrorMsg("Cannot link two sensor modules together!");
@@ -450,6 +450,9 @@
 
                 // Trigger save production line action on button click
                 $("#save-prod-line-btn").click(function () {
+                    //set all tags
+                    setTags(editor);
+
                     var enc = new mxCodec();
                     var node = enc.encode(editor.graph.getModel());
                     var xml = mxUtils.getPrettyXml(node);
@@ -647,9 +650,11 @@
                                 <!-- config sensor form -->
                                 <div id="sensor-config-form-container">
                                     <img id="config-sensor-close" src="images/hitech/icons/close.png" title="Close" onclick="closeConfigSensorForm()" >
-                                    <h3>Configure Sensor</h3>
-                                    Sensor ID : <span id="sensor-id"></span><br>
-                                    Sensor Name : <span id="sensor-name"></span>
+                                    <h3 style="font-size: 20px">Sensor Properties</h3>
+                                    <div style="margin-bottom: -5px;">Sensor Name : <span id="sensor-name"></span></div>
+                                    <small>Double click on the sensor to edit sensor name</small>
+                                    <div style="margin-top: 5px;">Sensor ID : <span id="sensor-id"></span></div>
+                                    <div style="margin-top: 5px;">Sensor Tage : <span id="sensor-tag"></span></div>
                                 </div>
 
                                 <!-- add new toolbox item form -->

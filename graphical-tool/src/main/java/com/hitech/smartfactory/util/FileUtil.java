@@ -132,7 +132,7 @@ public class FileUtil {
         String arrayNodeTemplate =
                 "\t\t<add as=\"\">\n" +
                 "\t\t\t<Image href=\"\" label=\"\">\n" +
-                "\t\t\t\t<mxCell style=\"text\" vertex=\"1\">\n" +
+                "\t\t\t\t<mxCell style=\"text\" vertex=\"1\" tag=\"\">\n" +
                 "\t\t\t\t\t<mxGeometry as=\"geometry\" type=\"\" height=\"\" width=\"\"/>\n" +
                 "\t\t\t\t</mxCell>\n" +
                 "\t\t\t</Image>\n" +
@@ -165,10 +165,15 @@ public class FileUtil {
             // Append modified add node to newArray node
             if (entryPointFound) {
                 Node newNode = getDomNodeFromString(arrayNodeTemplate);
-                // set <add as="ConveyorBelt">
+                // set <add as="Conveyor-Belt">
                 ((Element)newNode).setAttribute("as", model);
+
+                Node imageCell = newNode.getChildNodes().item(1);
+                // set <Image href="" label="Working Man">
+                ((Element)imageCell).setAttribute("label", model.replace("-", " "));
+
                 // set <mxCell vertex="1" style="conveyor-belt">
-                Node mxCell = newNode.getChildNodes().item(1).getChildNodes().item(1);
+                Node mxCell = imageCell.getChildNodes().item(1);
                 ((Element)mxCell).setAttribute("style", model);
                 // set <mxGeometry as="geometry" height="100" type="component" width="100"/>
                 Element mxGeometry = (Element)mxCell.getChildNodes().item(1);

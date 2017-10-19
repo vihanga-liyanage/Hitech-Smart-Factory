@@ -147,6 +147,37 @@ var showSuccessMsg = function (msg)
     $( "div.success" ).fadeIn( 300 ).delay( 2000 ).fadeOut( 400 );
 };
 
+// set component tags
+function setTags(editor) {
+    var cells = editor.graph.model.cells;
+    var images = [], connectors = [];
+    // divide cells into images and connectors while deleting garbage cells
+    for (var i in cells) {
+        if (cells[i].edge) {
+            if (cells[i].target === null && cells[i].source === null) {
+                // remove connector cells
+                editor.graph.model.remove(cells[i]);
+            } else {
+                connectors.push(cells[i]);
+            }
+        } else if (cells[i].vertex)
+            images.push(cells[i]);
+    }
+    images.forEach(function (image) {
+        if (image.geometry.type === "sensor") {
+            for (var c in connectors) {
+                if (connectors[c].source.id === image.id) {
+                    image.tag = PROD_LINE_PATH + "/" + connectors[c].target.id + "/" + image.id;
+                    break;
+                }
+            }
+        } else {
+            image.tag = PROD_LINE_PATH + "/" + image.id;
+        }
+
+    });
+}
+
 // save production line configuration as a file
 function saveProdLine(xml) {
     var name = PROD_LINE_PATH + ".xml";
@@ -161,13 +192,14 @@ function saveProdLine(xml) {
 }
 
 function configureSensorDetails(sender, evt, product) {
+    // setting item tag
+    sender.cell.tag = PROD_LINE_PATH + "/" + sender.cell.edges["0"].target.id + "/" + sender.cell.id;
+
     document.getElementById("action-form-background").style.display = "block";
     document.getElementById("sensor-config-form-container").style.display = "block";
     document.getElementById("sensor-id").innerHTML = sender.cell.id;
-    document.getElementById("sensor-name").innerHTML = sender.cell.style;
-    console.log(sender);
-    console.log(evt);
-    console.log(product);
+    document.getElementById("sensor-name").innerHTML = sender.text.value;
+    document.getElementById("sensor-tag").innerHTML = sender.cell.tag;
 }
 
 function closeConfigSensorForm() {

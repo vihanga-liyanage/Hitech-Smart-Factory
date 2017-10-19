@@ -41,36 +41,36 @@
 
 		<!--production-line-items-->
 		<add as="Working-Man">
-			<Image href="" label="">
-				<mxCell style="Working-Man" vertex="1">
+			<Image href="" label="Working Man">
+				<mxCell style="Working-Man" vertex="1" tag="">
 					<mxGeometry as="geometry" height="100" type="component" width="100"/>
 				</mxCell>
 			</Image>
 		</add>
 		<add as="Filling-Arm">
-			<Image href="" label="">
-				<mxCell style="Filling-Arm" vertex="1">
+			<Image href="" label="Filling Arm">
+				<mxCell style="Filling-Arm" vertex="1" tag="">
 					<mxGeometry as="geometry" height="100" type="component" width="100"/>
 				</mxCell>
 			</Image>
 		</add>
 		<add as="Robotic-Arm">
-			<Image href="" label="">
-				<mxCell style="Robotic-Arm" vertex="1">
+			<Image href="" label="Robotic Arm">
+				<mxCell style="Robotic-Arm" vertex="1" tag="">
 					<mxGeometry as="geometry" height="100" type="component" width="100"/>
 				</mxCell>
 			</Image>
 		</add>
 		<add as="Delivery">
-			<Image href="" label="">
-				<mxCell style="Delivery" vertex="1">
+			<Image href="" label="Delivery">
+				<mxCell style="Delivery" vertex="1" tag="">
 					<mxGeometry as="geometry" height="100" type="component" width="100"/>
 				</mxCell>
 			</Image>
 		</add>
 		<add as="Conveyor-Belt">
-			<Image href="" label="">
-				<mxCell style="Conveyor-Belt" vertex="1">
+			<Image href="" label="Conveyor Belt">
+				<mxCell style="Conveyor-Belt" vertex="1" tag="">
 					<mxGeometry as="geometry" height="100" type="component" width="100"/>
 				</mxCell>
 			</Image>
@@ -78,29 +78,29 @@
 
 		<!--temperature-and-humidity-sensors-->
 		<add as="BME280">
-			<Image href="" label="">
-				<mxCell style="BME280" vertex="1">
+			<Image href="" label="BME280">
+				<mxCell style="BME280" vertex="1" tag="">
 					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
 				</mxCell>
 			</Image>
 		</add>
 		<add as="DHT11">
-			<Image href="" label="">
-				<mxCell style="DHT11" vertex="1">
+			<Image href="" label="DHT11">
+				<mxCell style="DHT11" vertex="1" tag="">
 					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
 				</mxCell>
 			</Image>
 		</add>
 		<add as="DS18B20">
-			<Image href="" label="">
-				<mxCell style="DS18B20" vertex="1">
+			<Image href="" label="DS18B20">
+				<mxCell style="DS18B20" vertex="1" tag="">
 					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
 				</mxCell>
 			</Image>
 		</add>
 		<add as="MLX90614">
-			<Image href="" label="">
-				<mxCell style="MLX90614" vertex="1">
+			<Image href="" label="MLX90614">
+				<mxCell style="MLX90614" vertex="1" tag="">
 					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
 				</mxCell>
 			</Image>
@@ -108,22 +108,22 @@
 
 		<!--ultrasonic-sensors-->
 		<add as="HC-SR04">
-			<Image href="" label="">
-				<mxCell style="HC-SR04" vertex="1">
+			<Image href="" label="HC SR04">
+				<mxCell style="HC-SR04" vertex="1" tag="">
 					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
 				</mxCell>
 			</Image>
 		</add>
 		<add as="QTR-3RC">
-			<Image href="" label="">
-				<mxCell style="QTR-3RC" vertex="1">
+			<Image href="" label="QTR 3RC">
+				<mxCell style="QTR-3RC" vertex="1" tag="">
 					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
 				</mxCell>
 			</Image>
 		</add>
 		<add as="SRF02">
-			<Image href="" label="">
-				<mxCell style="SRF02" vertex="1">
+			<Image href="" label="SRF02">
+				<mxCell style="SRF02" vertex="1" tag="">
 					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
 				</mxCell>
 			</Image>
@@ -171,13 +171,11 @@
 			<add as="defaultVertex" extend="text">
 				<add as="shape" value="rectangle"/>
 				<add as="align" value="center"/>
-				<add as="verticalAlign" value="middle"/>
-				<add as="fontSize" value="25"/>
-				<add as="labelBackgroundColor" value="white"/>
+				<add as="verticalAlign" value="bottom"/>
+				<add as="fontSize" value="13"/>
+				<add as="labelBackgroundColor" value="#48B0CC"/>
+				<add as="labelPadding" value="10px" />
 				<add as="shadow" value="1"/>
-				<add as="strokeColor" value="#C3D9FF"/>
-				<add as="fillColor" value="#C3D9FF"/>
-				<add as="gradientColor" value="white"/>
 				<add as="perimeter" value="ellipsePerimeter"/>
 			</add>
 			<add as="group">
