@@ -8056,6 +8056,13 @@ html{
   background-color: #73a0c5;
 }
 
+#welcome-line {
+  float: right;
+  color: white;
+  line-height: 65px;
+  margin-right: 10px;
+}
+
 #headerimg {
   color: wheat;
   font-size: 25px;

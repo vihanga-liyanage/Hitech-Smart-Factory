@@ -13,6 +13,7 @@ var DSS_BASE_URL = "http://35.192.12.87:9763/services/";
 function loadData() {
     //Retrieve user info from session
     var userObj = JSON.parse(localStorage.getItem("userObj"));
+    $('#username').text(userObj.username);
 
     // Setup URL prefix based on user type
     var data = {};
@@ -86,7 +87,7 @@ function buildDataJSON(data) {
         out.branches = newBranches;
 
     } else if (userObj.usertype === 'b') {
-
+        
     } else if (userObj.usertype === 's') {
 
     } else if (userObj.usertype === 'p') {
@@ -115,7 +116,7 @@ function resolveProdline(prodlines) {
     prodlines.forEach(function (p) {
         var temp = {
             id: p.pid,
-            name: p.name
+            name: p.Name
         };
         out.push(temp);
     });
@@ -125,11 +126,14 @@ function resolveProdline(prodlines) {
 function setupMenu(data) {
     var menuHTML = "";
 
+    var factoryID = data.factoryID;
     var factoryName = data.factory;
+
     // set company name in header
     $('#company-name').text("- " + factoryName);
 
     data.branches.forEach(function (branch) {
+        var bid = branch.id;
         var branchName = branch.name;
         menuHTML += '<a href="javascript:void(0);" class="menu-toggle">\n' +
                         '<i class="material-icons">domain</i>\n' +
@@ -139,16 +143,20 @@ function setupMenu(data) {
         // setup sections of the branch
         menuHTML += '<ul class="ml-menu">';
         branch.sections.forEach(function (section) {
+            var sid = section.id;
             var sectionName = section.name;
             menuHTML += '<li><a href="javascript:void(0);" class="menu-toggle">\n' +
+                            '<img src="../images/hitech/icons/section.png"/></div>' +
                             '<span>' + sectionName + '</span>\n' +
                         '</a>';
 
             // setup prod lines of the section
             menuHTML += '<ul class="ml-menu">';
             section.prod_lines.forEach(function (prodLine) {
+                var prodlineFullID = factoryID + '/' + bid + '/' + sid + '/' + prodLine.id + '.xml';
                 var prodLinePath = factoryName + '/' + branchName + '/' + sectionName + '/' + prodLine.name;
-                menuHTML += '<li><a onclick="prodLineSelected(this, \'' + prodLinePath + '\');">\n' +
+                menuHTML += '<li><a onclick="prodLineSelected(this, \'' + prodLinePath + '\', \'' + prodlineFullID + '\');">\n' +
+                                '<img src="../images/hitech/icons/prodline.png"/></div>' +
                                 '<span>' + prodLine.name + '</span>\n' +
                             '</a>';
             });
@@ -204,12 +212,10 @@ function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
-function loadProdLine(editor) {
+function loadProdLine(editor, idPath) {
     $('#graph-msg').text('Loading...');
-    var name = document.getElementById("prod-line-title").innerText + ".xml";
-    name = name.split(" ").join("-");
-    var url = PROD_LINE_BASE_URL + name;
-
+    var url = PROD_LINE_BASE_URL + idPath;
+    console.log(url);
     var defaultGraph = '' +
         '<mxGraphModel>' +
             '<root>' +
@@ -246,13 +252,12 @@ function loadProdLine(editor) {
 
 }
 
-function prodLineSelected(element, path) {
+function prodLineSelected(element, namePath, idPath) {
     $('#company-data .active').removeClass('active');
     $(element).parent().toggleClass('active');
 
-    path = path.split(' ').join('-');
-    $('#prod-line-title').text(path);
-    loadProdLine(editor);
+    $('#prod-line-title').text(namePath);
+    loadProdLine(editor, idPath);
 }
 
 function setEditorVar(e) {

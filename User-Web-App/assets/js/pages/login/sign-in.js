@@ -46,6 +46,7 @@ function getUserDetails(username) {
             var userObj = {};
             if (response.UserDetails.User) {
                 var user = response.UserDetails.User[0];
+                userObj.username = username;
                 userObj.uid = user.userid;
                 userObj.usertype = user.userType;
                 userObj.fid = user.fid;
