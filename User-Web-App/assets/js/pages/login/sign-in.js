@@ -18,13 +18,57 @@ var loginForm = $("#sign_in");
 $('#loginButton').click(function (e) {
     if (loginForm.valid()) {
         e.preventDefault();
-        var loginData = loginForm.serialize();
+        var username = $("#username").val();
         // ajaxSend(loginData,"userLogin");
         // By pass login
-        window.location.replace("dashboard.html");
+
+        // todo if(loginSuccess) {
+        getUserDetails(username);
     }
 });
 
+function getUserDetails(username) {
+    $.ajax({
+        type: "POST",
+        // todo use a config file for url
+        url: "http://35.192.12.87:9763/services/getBasicUserDetails/get_basic_user_details",
+        headers: {
+            "Content-Type":"application/json"
+        },
+        data: JSON.stringify({
+            _postget_basic_user_details: {
+                username: username
+            }
+        }),
+        dataType: "json",
+        success: function (response) {
+            // console.log(response);
+            var userObj = {};
+            if (response.UserDetails.User) {
+                var user = response.UserDetails.User[0];
+                userObj.uid = user.userid;
+                userObj.usertype = user.userType;
+                userObj.fid = user.fid;
+                userObj.factoryName = user.FactoryNames.FactoryName["0"].Name;
+
+                if (typeof(Storage) !== "undefined") {
+                    localStorage.setItem("userObj", JSON.stringify(userObj));
+                    window.location.replace("dashboard.html");
+                } else {
+                    alert("Error!");
+                    console.log("Sorry! No Web Storage support..");
+                }
+
+            } else {
+                alert("Error!")
+            }
+        },
+        error: function (xhr, status, error) {
+            console.log(xhr);
+            console.log(status, error);
+        }
+    });
+}
 
 function ajaxSend(params, action) {
     $.ajax({

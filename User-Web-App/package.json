@@ -15,7 +15,8 @@
     "express-session": "^1.15.5",
     "gulp-cssnano": "^2.1.2",
     "gulp-if": "^2.0.2",
-    "morgan": "^1.8.2"
+    "morgan": "^1.8.2",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "browser-sync": "^2.17.5",
