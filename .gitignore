@@ -40,3 +40,6 @@ User-Web-App/.idea
 
 # out folder
 graphical-tool/out
+
+# node package lock
+User-Web-App/package-lock.json
