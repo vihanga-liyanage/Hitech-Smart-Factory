@@ -68,15 +68,16 @@ function loadData() {
 }
 
 function buildDataJSON(data) {
-    console.log(data);
     var out = {};
     var userObj = JSON.parse(localStorage.getItem("userObj"));
     out.factoryID = userObj.fid;
     out.factory = userObj.factoryName;
 
+    var branches;
+    var newBranches;
     if (userObj.usertype === 'f') {
-        var branches = data.Factories.Factory["0"].Branches.Branch;
-        var newBranches = [];
+        branches = data.Factories.Factory["0"].Branches.Branch;
+        newBranches = [];
         branches.forEach(function (b) {
             var temp = {
                 id: b.bid,
@@ -85,11 +86,10 @@ function buildDataJSON(data) {
             };
             newBranches.push(temp);
         });
-        out.branches = newBranches;
 
     } else if (userObj.usertype === 'b') {
-        var branches = data.Branches.Branch;
-        var newBranches = [];
+        branches = data.Branches.Branch;
+        newBranches = [];
         branches.forEach(function (b) {
             var temp = {
                 id: b.bid,
@@ -98,50 +98,104 @@ function buildDataJSON(data) {
             };
             newBranches.push(temp);
         });
-        out.branches = newBranches;
+
     } else if (userObj.usertype === 's') {
         var sections = data.Sections.Section;
-        var newBranches = [];
+        newBranches = [];
         sections.forEach(function (s) {
-            var temp = {
-                id: s.bid,
-                name: s.BranchNames.BranchName["0"].Name,
-                sections: [{
-                    id: s.sid,
-                    name: s.SectionNames.SectionName["0"].Name,
-                    prod_lines: resolveProdline(s.Productionlines.Productionline)
-                }]
-            };
-            newBranches.push(temp);
+            var done = false;
+            newBranches.forEach(function (b) {
+                // Search if the branch is added earlier, if yes, merge.
+                if (!done && (b.id == s.bid)) {
+                    var temp = {
+                        id: s.sid,
+                        name: s.SectionNames.SectionName["0"].Name,
+                        prod_lines: resolveProdline(s.Productionlines.Productionline)
+                    };
+                    b.sections.push(temp);
+                    done = true;
+                }
+            });
+            // If this is a section of a new branch,
+            if (!done) {
+                var temp = {
+                    id: s.bid,
+                    name: s.BranchNames.BranchName["0"].Name,
+                    sections: [{
+                        id: s.sid,
+                        name: s.SectionNames.SectionName["0"].Name,
+                        prod_lines: resolveProdline(s.Productionlines.Productionline)
+                    }]
+                };
+                newBranches.push(temp);
+            }
         });
-        out.branches = newBranches;
+
     } else if (userObj.usertype === 'p') {
-        var Productionlines = data.Productionlines.Productionline;
-        var newBranches = [];
-        Productionlines.forEach(function (p) {
-            var temp = {
-                id: p.bid,
-                name: p.BranchNames.BranchName["0"].Name,
-                sections: [
-                    {
-                        id: p.sid,
-                        name: p.SectionNames.SectionName["0"].Name,
-                        prod_lines: [
-                            {
+        var productionLines = data.Productionlines.Productionline;
+        newBranches = [];
+        productionLines.forEach(function (p) {
+            var branchDone = false;
+            newBranches.forEach(function (b) {
+                // matching branch found
+                if (!branchDone && (b.id == p.bid)) {
+                    var sectionDone = false;
+                    b.sections.forEach(function (bs) {
+                        // matching section found
+                        if (!sectionDone && (bs.id == p.sid)) {
+                            var temp = {
                                 id: p.pid,
                                 name: p.ProductionlineNames.ProductionlineName["0"].Name,
-                            }
-                        ]
+                            };
+                            bs.prod_lines.push(temp);
+                            sectionDone = true;
+                            branchDone = true;
+                        }
+                    });
+
+                    //It's a new section
+                    if (!sectionDone) {
+                        var temp = {
+                            id: p.sid,
+                            name: p.SectionNames.SectionName["0"].Name,
+                            prod_lines: [
+                                {
+                                    id: p.pid,
+                                    name: p.ProductionlineNames.ProductionlineName["0"].Name,
+                                }
+                            ]
+                        };
+                        b.sections.push(temp);
+                        branchDone = true;
                     }
-                ]
-            };
-            newBranches.push(temp);
+                }
+            });
+
+            // If this is a prodline of a new section of a new branch,
+            if (!branchDone) {
+                var temp = {
+                    id: p.bid,
+                    name: p.BranchNames.BranchName["0"].Name,
+                    sections: [
+                        {
+                            id: p.sid,
+                            name: p.SectionNames.SectionName["0"].Name,
+                            prod_lines: [
+                                {
+                                    id: p.pid,
+                                    name: p.ProductionlineNames.ProductionlineName["0"].Name,
+                                }
+                            ]
+                        }
+                    ]
+                };
+                newBranches.push(temp);
+            }
         });
-        out.branches = newBranches;
     }
 
+    out.branches = newBranches;
     setupMenu(out);
-    console.log(out);
 }
 
 function resolveSection(sections) {
@@ -228,11 +282,6 @@ function loadOtherScripts() {
     script.src = "/assets/plugins/jquery-slimscroll/jquery.slimscroll.js";
     document.getElementsByTagName('head')[0].appendChild(script);
 
-    // Waves Effect Plugin Js
-    script = document.createElement('script');
-    script.src = "/assets/plugins/node-waves/waves.js";
-    document.getElementsByTagName('head')[0].appendChild(script);
-
     // Custom Js
     script = document.createElement('script');
     script.src = "/assets/js/admin.js";
@@ -241,7 +290,6 @@ function loadOtherScripts() {
     script.src = "/assets/js/pages/index.js";
     document.getElementsByTagName('head')[0].appendChild(script);
 }
-
 
 /**
  * Function: isNumeric

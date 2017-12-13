@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><mxEditor defaultEdge="connector" defaultGroup="group">
+	<include name="config/editor-commons.xml"/>
+	<add as="onInit"><![CDATA[
+		function ()
+		{
+			onInit(this);
+		}
+	]]></add>
+	<ui>
+		<add as="graph" element="graph"/>
+		<add as="status" element="status"/>
+		<add as="toolbar" element="toolbar"/>
+	</ui>
+	<Array as="templates">
+		<add as="group">
+			<Group href="" label="">
+				<mxCell connectable="0" style="group" vertex="1"/>
+			</Group>
+		</add>
+		<add as="connector">
+			<Connector href="" label="">
+				<mxCell edge="1">
+					<mxGeometry as="geometry" relative="1"/>
+				</mxCell>
+			</Connector>
+		</add>
+		<add as="container">
+			<Container href="" label="Container">
+				<mxCell connectable="0" style="swimlane" vertex="1">
+					<mxGeometry as="geometry" height="500" width="500"/>
+				</mxCell>
+			</Container>
+		</add>
+		<add as="text">
+			<Text href="" label="Text Here">
+				<mxCell style="text" vertex="1">
+					<mxGeometry as="geometry" height="20" width="60"/>
+				</mxCell>
+			</Text>
+		</add>
+
+		<!--production-line-items-->
+		<add as="Working-Man">
+			<Image href="" label="Working Man">
+				<mxCell style="Working-Man" vertex="1" tag="">
+					<mxGeometry as="geometry" height="100" type="component" width="100"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="Filling-Arm">
+			<Image href="" label="Filling Arm">
+				<mxCell style="Filling-Arm" vertex="1" tag="">
+					<mxGeometry as="geometry" height="100" type="component" width="100"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="Robotic-Arm">
+			<Image href="" label="Robotic Arm">
+				<mxCell style="Robotic-Arm" vertex="1" tag="">
+					<mxGeometry as="geometry" height="100" type="component" width="100"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="Delivery">
+			<Image href="" label="Delivery">
+				<mxCell style="Delivery" vertex="1" tag="">
+					<mxGeometry as="geometry" height="100" type="component" width="100"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="Conveyor-Belt">
+			<Image href="" label="Conveyor Belt">
+				<mxCell style="Conveyor-Belt" vertex="1" tag="">
+					<mxGeometry as="geometry" height="100" type="component" width="100"/>
+				</mxCell>
+			</Image>
+		</add>
+
+		<!--temperature-and-humidity-sensors-->
+		<add as="BME280">
+			<Image href="" label="BME280">
+				<mxCell style="BME280" vertex="1" tag="">
+					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="DHT11">
+			<Image href="" label="DHT11">
+				<mxCell style="DHT11" vertex="1" tag="">
+					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="DS18B20">
+			<Image href="" label="DS18B20">
+				<mxCell style="DS18B20" vertex="1" tag="">
+					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="MLX90614">
+			<Image href="" label="MLX90614">
+				<mxCell style="MLX90614" vertex="1" tag="">
+					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
+				</mxCell>
+			</Image>
+		</add>
+
+		<!--ultrasonic-sensors-->
+		<add as="HC-SR04">
+			<Image href="" label="HC SR04">
+				<mxCell style="HC-SR04" vertex="1" tag="">
+					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="QTR-3RC">
+			<Image href="" label="QTR 3RC">
+				<mxCell style="QTR-3RC" vertex="1" tag="">
+					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
+				</mxCell>
+			</Image>
+		</add>
+		<add as="SRF02">
+			<Image href="" label="SRF02">
+				<mxCell style="SRF02" vertex="1" tag="">
+					<mxGeometry as="geometry" height="80" type="sensor" width="80"/>
+				</mxCell>
+			</Image>
+		</add>
+
+	</Array>
+	<mxGraph allowLoops="1" alternateEdgeStyle="verticalConnector" as="graph" dropEnabled="1">
+		<add as="isAutoSizeCell"><![CDATA[
+			function(cell)
+			{
+				return mxUtils.isNode(this.model.getValue(cell), 'text');
+			}
+		]]></add>
+		<add as="isSwimlane"><![CDATA[
+			function (cell)
+			{
+				return mxUtils.isNode(this.model.getValue(cell), 'container');
+			}
+		]]></add>
+		<add as="getTooltipForCell"><![CDATA[
+			function(cell)
+			{
+				var label = cell.getAttribute('label');
+				var style = cell.getStyle();
+
+				return '';
+			}
+		]]></add>
+		<add as="convertValueToString"><![CDATA[
+			function(cell)
+			{
+				return cell.getAttribute('label');
+			}
+		]]></add>
+		<mxStylesheet as="stylesheet">
+			<add as="text">
+				<add as="shape" value="rectangle"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="fontSize" value="25"/>
+				<add as="shadow" value="0"/>
+				<add as="strokeColor" value="none"/>
+				<add as="fillColor" value="white"/>
+				<add as="gradientColor" value="none"/>
+			</add>
+			<add as="defaultVertex" extend="text">
+				<add as="shape" value="rectangle"/>
+				<add as="align" value="center"/>
+				<add as="verticalAlign" value="bottom"/>
+				<add as="fontSize" value="13"/>
+				<add as="labelBackgroundColor" value="#48B0CC"/>
+				<add as="labelPadding" value="10px" />
+				<add as="shadow" value="1"/>
+				<add as="perimeter" value="ellipsePerimeter"/>
+			</add>
+			<add as="group">
+				<add as="shape" value="rectangle"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="fontSize" value="25"/>
+				<add as="align" value="center"/>
+				<add as="verticalAlign" value="middle"/>
+				<add as="strokeColor" value="gray"/>
+				<add as="dashed" value="0"/>
+			</add>
+			<add as="defaultEdge">
+				<add as="shape" value="connector"/>
+				<add as="fontSize" value="25"/>
+				<add as="align" value="center"/>
+				<add as="verticalAlign" value="middle"/>
+				<add as="rounded" value="1"/>
+				<add as="labelBackgroundColor" value="white"/>
+				<add as="strokeColor" value="#4580e8"/>
+				<add as="strokeWidth" value="3"/>
+				<!--<add as="edgeStyle" value="orthogonalEdgeStyle"/>-->
+				<add as="endArrow" value="classic"/>
+				<!--<add as="startArrow" value="classic"/>-->
+				<!--<add as="dashed" value="1"/>-->
+			</add>
+			<add as="verticalConnector">
+				<add as="elbow" value="vertical"/>
+			</add>
+			<add as="straightConnector">
+				<add as="shape" value="connector"/>
+				<add as="endArrow" value="classic"/>
+				<add as="edgeStyle">null</add>
+			</add>
+			<add as="arrowConnector">
+				<add as="shape" value="arrow"/>
+				<add as="fillColor" value="#e89a66"/>
+				<add as="endSize" value="20"/>
+				<add as="fontSize" value="25"/>
+				<add as="startArrow" value="classic"/>
+				<remove as="edgeStyle"/>
+			</add>
+			<add as="swimlane">
+				<add as="shape" value="swimlane"/>
+				<add as="shadow" value="0"/>
+				<add as="startSize" value="23"/>
+				<add as="align" value="center"/>
+				<add as="verticalAlign" value="top"/>
+				<add as="strokeColor" value="#EEEEEE"/>
+				<add as="fillColor" value="#D4D4D4"/>
+			</add>
+
+			<!--production-line-items-->
+			<add as="Working-Man">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/hitech/production-line-items/Working-Man.png"/>
+			</add>
+			<add as="Filling-Arm">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/hitech/production-line-items/Filling-Arm.png"/>
+			</add>
+			<add as="Robotic-Arm">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/hitech/production-line-items/Robotic-Arm.png"/>
+			</add>
+			<add as="Delivery">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/hitech/production-line-items/Delivery.png"/>
+			</add>
+			<add as="Conveyor-Belt">
+				<add as="shape" value="image"/>
+				<add as="perimeter" value="rectanglePerimeter"/>
+				<add as="image" value="images/hitech/production-line-items/Conveyor-Belt.png"/>
+			</add>
+
+			<!--temperature-and-humidity-sensors-->
+			<add as="BME280">
+				<add as="shape" value="image"/>
+				<add as="image" value="images/hitech/temperature-and-humidity-sensors/BME280.png"/>
+			</add>
+			<add as="DHT11">
+				<add as="shape" value="image"/>
+				<add as="image" value="images/hitech/temperature-and-humidity-sensors/DHT11.png"/>
+			</add>
+			<add as="DS18B20">
+				<add as="shape" value="image"/>
+				<add as="image" value="images/hitech/temperature-and-humidity-sensors/DS18B20.png"/>
+			</add>
+			<add as="MLX90614">
+				<add as="shape" value="image"/>
+				<add as="image" value="images/hitech/temperature-and-humidity-sensors/MLX90614.png"/>
+			</add>
+
+			<!--ultrasonic-sensors-->
+			<add as="HC-SR04">
+				<add as="shape" value="image"/>
+				<add as="image" value="images/hitech/ultrasonic-sensors/HC-SR04.png"/>
+			</add>
+			<add as="QTR-3RC">
+				<add as="shape" value="image"/>
+				<add as="image" value="images/hitech/ultrasonic-sensors/QTR-3RC.png"/>
+			</add>
+			<add as="SRF02">
+				<add as="shape" value="image"/>
+				<add as="image" value="images/hitech/ultrasonic-sensors/SRF02.png"/>
+			</add>
+
+			<add as="two_way_arrow">
+				<add as="shape" value="arrow"/>
+				<add as="startArrow" value="classic"/>
+				<remove as="edgeStyle"/>
+			</add>
+
+		</mxStylesheet>
+		<mxGraphModel as="model">
+			<add as="valueForCellChanged"><![CDATA[
+				function(cell, value)
+				{
+					var previous = null;
+
+					if (value == null || isNaN(value.nodeType))
+					{
+						previous = cell.value.getAttribute('label');
+
+						if (value == null)
+						{
+							cell.value.removeAttribute('label');
+						}
+						else
+						{
+							cell.setAttribute('label', value);
+						}
+					}
+					else
+					{
+						previous = cell.value;
+						cell.value = value;
+					}
+
+					return previous;
+				}
+			]]></add>
+			<root>
+				<Diagram href="http://www.jgraph.com/" id="0" label="My Diagram">
+					<mxCell/>
+				</Diagram>
+				<Layer id="1" label="Default Layer">
+					<mxCell parent="0"/>
+				</Layer>
+			</root>
+		</mxGraphModel>
+	</mxGraph>
+	<mxDefaultToolbar as="toolbar">
+
+		<add as="Connector" icon="images/wso2/arrow.png" template="connector"/>
+
+		<!--production-line-items-->
+		<hr name="Production Line Items"/>
+		<add as="Working Man" icon="images/hitech/production-line-items/Working-Man.jpg" template="Working-Man"/>
+		<add as="Filling Arm" icon="images/hitech/production-line-items/Filling-Arm.jpg" template="Filling-Arm"/>
+		<add as="Robotic Arm" icon="images/hitech/production-line-items/Robotic-Arm.jpg" template="Robotic-Arm"/>
+		<add as="Delivery" icon="images/hitech/production-line-items/Delivery.jpg" template="Delivery"/>
+		<add as="Conveyor Belt" icon="images/hitech/production-line-items/Conveyor-Belt.jpg" template="Conveyor-Belt"/>
+
+		<!--temperature-and-humidity-sensors-->
+		<hr name="Temperature And Humidity Sensors"/>
+		<add as="BME280" icon="images/hitech/temperature-and-humidity-sensors/BME280.jpg" template="BME280"/>
+		<add as="DHT11" icon="images/hitech/temperature-and-humidity-sensors/DHT11.jpg" template="DHT11"/>
+		<add as="DS18B20" icon="images/hitech/temperature-and-humidity-sensors/DS18B20.jpg" template="DS18B20"/>
+		<add as="MLX90614" icon="images/hitech/temperature-and-humidity-sensors/MLX90614.jpg" template="MLX90614"/>
+
+		<!--ultrasonic-sensors-->
+		<hr name="Ultrasonic Sensors"/>
+		<add as="HC-SR04" icon="images/hitech/ultrasonic-sensors/HC-SR04.jpg" template="HC-SR04"/>
+		<add as="QTR-3RC" icon="images/hitech/ultrasonic-sensors/QTR-3RC.jpg" template="QTR-3RC"/>
+		<add as="SRF02" icon="images/hitech/ultrasonic-sensors/SRF02.jpg" template="SRF02"/>
+
+	</mxDefaultToolbar>
+</mxEditor>
