@@ -5,7 +5,8 @@
 var editor;
 
 // var PROD_LINE_BASE_URL = "http://localhost:81/hitech-smart-factory/";
-var PROD_LINE_BASE_URL = "http://ec2-52-38-15-248.us-west-2.compute.amazonaws.com/hitech-smart-factory/";
+// var PROD_LINE_BASE_URL = "http://ec2-52-38-15-248.us-west-2.compute.amazonaws.com/hitech-smart-factory/";
+var PROD_LINE_BASE_URL = "http://35.192.12.87/hitech-smart-factory/";
 
 //todo read urls from a file
 var DSS_BASE_URL = "http://35.192.12.87:9763/services/";
