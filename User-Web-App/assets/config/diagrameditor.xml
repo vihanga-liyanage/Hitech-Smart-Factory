@@ -228,38 +228,38 @@
 			</add>
 
 			<!--production-line-items-->
-			<add as="Working-Man">
+		<add as="Working-Man">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/production-line-items/Working-Man.png"/>
 			</add>
-			<add as="Filling-Arm">
+		<add as="Filling-Arm">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/production-line-items/Filling-Arm.png"/>
 			</add>
-			<add as="Robotic-Arm">
+		<add as="Robotic-Arm">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/production-line-items/Robotic-Arm.png"/>
 			</add>
-			<add as="Delivery">
+		<add as="Delivery">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/production-line-items/Delivery.png"/>
 			</add>
-			<add as="Conveyor-Belt">
+		<add as="Conveyor-Belt">
 				<add as="shape" value="image"/>
 				<add as="perimeter" value="rectanglePerimeter"/>
 				<add as="image" value="images/hitech/production-line-items/Conveyor-Belt.png"/>
 			</add>
 
 			<!--temperature-and-humidity-sensors-->
-			<add as="BME280">
+		<add as="BME280">
 				<add as="shape" value="image"/>
 				<add as="image" value="images/hitech/temperature-and-humidity-sensors/BME280.png"/>
 			</add>
-			<add as="DHT11">
+		<add as="DHT11">
 				<add as="shape" value="image"/>
 				<add as="image" value="images/hitech/temperature-and-humidity-sensors/DHT11.png"/>
 			</add>
