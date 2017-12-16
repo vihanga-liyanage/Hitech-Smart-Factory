@@ -71,6 +71,74 @@ function displayEditForm(type, id, name, location) {
     $(form).children('input[type=submit]').attr('onclick', methodName);
 }
 
+function setFactory(factoryId) {
+    // Clear old factories
+    var factoryRow = document.getElementById("dynamic-factories");
+    factoryRow.innerHTML = "";
+
+    var url = "";
+    if (factoryId != 'all') {
+        url = 'FactoryController?action=listFactories&id=' + factoryId;
+    } else {
+        url = 'FactoryController?action=listFactories';
+    }
+
+    //get data by calling the servlet
+    jQuery.ajax({
+        url: url,
+        success: function (data) {
+            if (data != "") {
+                var factories = JSON.parse(data);
+                // populate branch boxes
+                for (var i in factories) {
+                    if (factoryId == 'all') {
+                        factoryRow.innerHTML +=
+                            '<div class="box-btn-wrapper">' +
+                                '<button class="box-btn factory" onclick="selectFactory(\'' + factories[i].fid +
+                                '\', \'' + factories[i].name + '\',this)">' + factories[i].name +
+                                '</button>' +
+                                '<div class="edit-delete-container">' +
+                                    '<img src="images/hitech/icons/edit-icon.png" alt="Edit" title="Edit"  class="edit-delete-img"' +
+                                    'onclick="displayEditForm(\'factory\', \'' + factories[i].fid + '\', \'' + factories[i].name
+                                    + '\')">' +
+                                    '<img src="images/hitech/icons/delete-icon.png" alt="Delete" title="Delete"  class="edit-delete-img"' +
+                                    'onclick="deleteFactory(\'' + factories[i].fid + '\')">' +
+                                '</div>' +
+                            '</div>';
+                    } else {
+                        factoryRow.innerHTML +=
+                            '<div class="box-btn-wrapper">' +
+                                '<button class="box-btn factory" onclick="selectFactory(\'' + factories[i].fid +
+                                '\', \'' + factories[i].name + '\',this)">' + factories[i].name +
+                                '</button>' +
+                                '<div class="edit-delete-container">' +
+                                    '<img src="images/hitech/icons/edit-icon.png" alt="Edit" title="Edit"  class="edit-delete-img"' +
+                                    'onclick="displayEditForm(\'factory\', \'' + factories[i].fid + '\', \'' + factories[i].name
+                                    + '\')">' +
+                                '</div>' +
+                            '</div>';
+                    }
+
+                }
+                if (factoryId == 'all') {
+                    document.getElementById("factory-add-btn-wrapper").innerHTML =
+                        '<button class="box-btn factory" title="Create New Factory" onclick="displayAddForm(\'create-new-factory\')">' +
+                            '<img src="images/hitech/icons/plus-50x50.png" style="opacity: 0.7;height: 70px;"/>' +
+                        '</button>';
+                }
+            }
+            $("body").css("cursor", "default");
+            document.getElementById("factories").style.display = "block";
+
+            // Hide below rows
+            document.getElementById("branches").style.display = "none";
+            document.getElementById("sections").style.display = "none";
+            document.getElementById("prod-lines").style.display = "none";
+        },
+        async: false
+    });
+}
+
 // Triggers when click on a factory box
 function selectFactory(id, name, element) {
     //console.log("selectFactory: " + id + " " + name);
@@ -393,7 +461,7 @@ function deleteFactory(id, name) {
             function (data) {
                 if (data == "Success") {
                     // go back to home page
-                    location.href = "/hitech-smart-factory";
+                    location.href = "/hitech-smart-factory/FactoryController";
                 }
             });
     }
@@ -467,4 +535,17 @@ $(window).on("beforeunload", function() {
     localStorageKeys.forEach(function (key) {
         localStorage.removeItem(key);
     })
+});
+
+$(document).ready(function () {
+    var userObj = JSON.parse(localStorage.getItem("userObj"));
+    if (userObj != null && userObj.usertype === 'a') {
+        setFactory(userObj.fid);
+    } else if (userObj != null && userObj.usertype === 'x') {
+        setFactory('all');
+    } else {
+        localStorage.setItem("userObj", null);
+        alert("You're not authorized to be here!")
+        window.location.replace("/hitech-smart-factory");
+    }
 });

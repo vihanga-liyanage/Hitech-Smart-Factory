@@ -22,4 +22,12 @@ public class Factory {
     public void setFid(int fid) {
         this.fid = fid;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "\"fid\":" + fid +
+                ", \"name\":\"" + name + '\"' +
+                '}';
+    }
 }

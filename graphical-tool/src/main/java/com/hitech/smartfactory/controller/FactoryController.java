@@ -1,6 +1,7 @@
 package com.hitech.smartfactory.controller;
 
 import com.hitech.smartfactory.dao.FactoryDAO;
+import com.hitech.smartfactory.model.Branch;
 import com.hitech.smartfactory.model.Factory;
 
 import javax.servlet.RequestDispatcher;
@@ -9,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by Vihanga Liyanage on 7/19/2017.
@@ -22,9 +25,42 @@ public class FactoryController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("factories", dao.getAllFactories());
-        RequestDispatcher view = request.getRequestDispatcher("/system-admin-ui.jsp");
-        view.forward(request, response);
+//        String fid = request.getParameter("fid");
+//        if (fid != null && !Objects.equals(fid, "s")) {
+//            request.setAttribute("factories", dao.getFactoryById(Integer.parseInt(fid)));
+//        } else {
+//            request.setAttribute("factories", dao.getAllFactories());
+//        }
+
+        String action = request.getParameter("action");
+        if (action != null && action.equalsIgnoreCase("listFactories")) {
+            if (request.getParameter("id") != null) {
+                int fid = Integer.parseInt(request.getParameter("id"));
+                Factory factory = dao.getFactoryById(fid);
+
+                String out = "[" + factory.toString() + "]";
+
+                response.setContentType("text/plain");
+                response.getWriter().write(out);
+            } else {
+                List<Factory> factories = dao.getAllFactories();
+
+                String out = "";
+                if (factories.size() > 0) {
+                    out = "[";
+                    for (Factory factory : factories) {
+                        out += factory.toString() + ", ";
+                    }
+                    out = (out.substring(0, out.length() - 2)) + "]";
+                }
+                response.setContentType("text/plain");
+                response.getWriter().write(out);
+            }
+
+        } else {
+            RequestDispatcher view = request.getRequestDispatcher("/system-admin-ui.jsp");
+            view.forward(request, response);
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

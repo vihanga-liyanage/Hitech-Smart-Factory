@@ -43,25 +43,8 @@
 
         <div id="factories" class="box-btn-row">
             <p>Existing Factories</p>
-            <div id="dynamic-factories">
-                <c:forEach items="${factories}" var="factory">
-                    <div class="box-btn-wrapper">
-                        <button class="box-btn factory" name="<c:out value="${factory.getFid()}" />"
-                                onclick="selectFactory('<c:out value="${factory.getFid()}" />', '<c:out value="${factory.getName()}" />', this)">
-                            <c:out value="${factory.getName()}" />
-                        </button>
-                        <div class="edit-delete-container">
-                            <img src="images/hitech/icons/edit-icon.png" alt="Edit" title="Edit"  class="edit-delete-img"
-                                 onclick="displayEditForm('factory', '<c:out value="${factory.getFid()}" />', '<c:out value="${factory.getName()}" />')">
-                            <img src="images/hitech/icons/delete-icon.png" alt="Delete" title="Delete"  class="edit-delete-img"
-                                onclick="deleteFactory('<c:out value="${factory.getFid()}" />', '<c:out value="${factory.getName()}" />')">
-                        </div>
-                    </div>
-                </c:forEach>
-            </div>
-            <div class="box-btn-wrapper"><button class="box-btn factory" title="Create New Factory" onclick="displayAddForm('create-new-factory')">
-                <img src="images/hitech/icons/plus-50x50.png" style="opacity: 0.7;height: 70px;"/>
-            </button></div>
+            <div id="dynamic-factories"></div>
+            <div class="box-btn-wrapper" id="factory-add-btn-wrapper"></div>
         </div>
 
         <div id="branches" class="box-btn-row">

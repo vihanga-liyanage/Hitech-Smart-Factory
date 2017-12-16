@@ -30,6 +30,23 @@ public class FactoryDAO {
         }
     }
 
+    public Factory getFactoryById(int fid) {
+        Factory factory = new Factory();
+
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("select * from factory where fid=" + fid);
+            while (rs.next()) {
+                factory.setFid(rs.getInt("fid"));
+                factory.setName(rs.getString("name"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return factory;
+    }
+
     public List<Factory> getAllFactories() {
         List<Factory> factories = new ArrayList<Factory>();
         try {
