@@ -51,15 +51,15 @@
                             <c:out value="${factory.getName()}" />
                         </button>
                         <div class="edit-delete-container">
-                            <img src="images/hitech/icons/edit-icon.png" alt="Edit" class="edit-delete-img"
+                            <img src="images/hitech/icons/edit-icon.png" alt="Edit" title="Edit"  class="edit-delete-img"
                                  onclick="displayEditForm('factory', '<c:out value="${factory.getFid()}" />', '<c:out value="${factory.getName()}" />')">
-                            <img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img"
+                            <img src="images/hitech/icons/delete-icon.png" alt="Delete" title="Delete"  class="edit-delete-img"
                                 onclick="deleteFactory('<c:out value="${factory.getFid()}" />', '<c:out value="${factory.getName()}" />')">
                         </div>
                     </div>
                 </c:forEach>
             </div>
-            <div class="box-btn-wrapper"><button class="box-btn factory" onclick="displayAddForm('create-new-factory')">
+            <div class="box-btn-wrapper"><button class="box-btn factory" title="Create New Factory" onclick="displayAddForm('create-new-factory')">
                 <img src="images/hitech/icons/plus-50x50.png" style="opacity: 0.7;height: 70px;"/>
             </button></div>
         </div>
@@ -67,7 +67,7 @@
         <div id="branches" class="box-btn-row">
             <p>Branches of <text id="selected-factory-name"></text></p>
             <div id="dynamic-branches"></div>
-            <div class="box-btn-wrapper"><button class="box-btn branch" onclick="displayAddForm('create-new-branch')">
+            <div class="box-btn-wrapper"><button class="box-btn branch" title="Create New Branch" onclick="displayAddForm('create-new-branch')">
                 <img src="images/hitech/icons/plus-50x50.png" style="opacity: 0.7;height: 70px;"/>
             </button></div>
         </div>
@@ -75,7 +75,7 @@
         <div id="sections" class="box-btn-row">
             <p>Sections of <text id="selected-branch-name"></text></p>
             <div id="dynamic-sections"></div>
-            <div class="box-btn-wrapper"><button class="box-btn section" onclick="displayAddForm('create-new-section')">
+            <div class="box-btn-wrapper"><button class="box-btn section" title="Create New Section" onclick="displayAddForm('create-new-section')">
                 <img src="images/hitech/icons/plus-50x50.png" style="opacity: 0.7;height: 70px;"/>
             </button></div>
         </div>
@@ -83,7 +83,7 @@
         <div id="prod-lines" class="box-btn-row">
             <p>Production Lines of <text id="selected-section-name"></text></p>
             <div id="dynamic-prod-lines"></div>
-            <div class="box-btn-wrapper"><button class="box-btn prod-line" onclick="displayAddForm('create-new-prod-line')">
+            <div class="box-btn-wrapper"><button class="box-btn prod-line" title="Create New Production Line" onclick="displayAddForm('create-new-prod-line')">
                 <img src="images/hitech/icons/plus-50x50.png" style="opacity: 0.7;height: 70px;"/>
             </button></div>
         </div>

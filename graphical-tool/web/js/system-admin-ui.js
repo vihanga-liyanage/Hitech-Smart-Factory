@@ -113,10 +113,10 @@ function setBranches(factoryId) {
                         '\', \'' + branches[i].name + '\',this)">' + branches[i].name +
                         '</button>' +
                         '<div class="edit-delete-container">' +
-                        '<img src="images/hitech/icons/edit-icon.png" alt="Edit" class="edit-delete-img"' +
+                        '<img src="images/hitech/icons/edit-icon.png" alt="Edit" title="Edit"  class="edit-delete-img"' +
                         'onclick="displayEditForm(\'branch\', \'' + branches[i].bid + '\', \'' + branches[i].name
                         + '\', \'' + branches[i].location + '\')">' +
-                        '<img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img"' +
+                        '<img src="images/hitech/icons/delete-icon.png" alt="Delete" title="Delete"  class="edit-delete-img"' +
                         'onclick="deleteBranch(\'' + branches[i].bid + '\')">' +
                         '</div>' +
                         '</div>';
@@ -173,9 +173,9 @@ function setSections(branchId) {
                         '\', \'' + sections[i].name + '\',this)">' + sections[i].name +
                         '</button>' +
                         '<div class="edit-delete-container">' +
-                        '<img src="images/hitech/icons/edit-icon.png" alt="Edit" class="edit-delete-img"' +
+                        '<img src="images/hitech/icons/edit-icon.png" alt="Edit" title="Edit"  class="edit-delete-img"' +
                         'onclick="displayEditForm(\'section\', \'' + sections[i].sid + '\', \'' + sections[i].name + '\')">' +
-                        '<img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img"' +
+                        '<img src="images/hitech/icons/delete-icon.png" alt="Delete" title="Delete"  class="edit-delete-img"' +
                         'onclick="deleteSection(\'' + sections[i].sid + '\')">' +
                         '</div>' +
                         '</div>';
@@ -228,9 +228,9 @@ function setProdLines(sectionId) {
                         '\', \'' + prodLines[i].name + '\',this)">' + prodLines[i].name +
                         '</button>' +
                         '<div class="edit-delete-container">' +
-                        '<img src="images/hitech/icons/edit-icon.png" alt="Edit" class="edit-delete-img"' +
+                        '<img src="images/hitech/icons/edit-icon.png" alt="Edit" title="Edit"  class="edit-delete-img"' +
                         'onclick="displayEditForm(\'prod-line\', \'' + prodLines[i].pid + '\', \'' + prodLines[i].name + '\')">' +
-                        '<img src="images/hitech/icons/delete-icon.png" alt="Delete" class="edit-delete-img"' +
+                        '<img src="images/hitech/icons/delete-icon.png" alt="Delete" title="Delete"  class="edit-delete-img"' +
                         'onclick="deleteProdLine(\'' + prodLines[i].pid + '\')">' +
                         '</div>' +
                         '</div>';
@@ -446,10 +446,10 @@ function deleteProdLine(id) {
 }
 
 function setActiveState(type, element) {
-    $(type).removeClass('active-up');
-    $(type).addClass('active-down');
-    $(element).addClass('active-up');
-    $(element).removeClass('active-down');
+    $(type).parent().removeClass('active-up');
+    $(type).parent().addClass('active-down');
+    $(element).parent().addClass('active-up');
+    $(element).parent().removeClass('active-down');
 }
 
 function moveGreenPanel(top) {
@@ -458,8 +458,8 @@ function moveGreenPanel(top) {
 }
 
 function removeActiveState(type) {
-    $(type).removeClass('active-up');
-    $(type).removeClass('active-down');
+    $(type).parent().removeClass('active-up');
+    $(type).parent().removeClass('active-down');
 }
 
 $(window).on("beforeunload", function() {
