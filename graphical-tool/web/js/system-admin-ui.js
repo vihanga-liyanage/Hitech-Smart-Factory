@@ -563,6 +563,20 @@ function deleteProdLine(id) {
     }
 }
 
+function deleteUser() {
+    var r = confirm("Please confirm user deletion.");
+    var uid = 8;
+    var type = 's';
+    if (r == true) {
+        $.post('UserController', {action: "deleteUser", uid: uid, type: type},
+            function (data) {
+                if (data == "Success") {
+                    console.log("User deleted");
+                }
+            });
+    }
+}
+
 function setActiveState(type, element) {
     $(type).parent().removeClass('active-up');
     $(type).parent().addClass('active-down');
@@ -593,7 +607,7 @@ $(document).ready(function () {
         setFactory(userObj.fid);
 
     //    todo remove
-        updateUser();
+        deleteUser();
 
     } else if (userObj != null && userObj.usertype === 'x') {
         setFactory('all');

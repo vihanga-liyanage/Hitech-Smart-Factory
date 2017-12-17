@@ -80,12 +80,14 @@ public class UserController extends HttpServlet {
             dao.updateUser(oldUser, user);
             response.setContentType("text/plain");
             response.getWriter().write("Success");
-//        } else if (action.equalsIgnoreCase("deleteBranch")){
-//            // delete user
-//            user.setBid(Integer.parseInt(request.getParameter("id")));
-//            dao.deleteBranch(user);
-//            response.setContentType("text/plain");
-//            response.getWriter().write("Success");
+
+        } else if (action.equalsIgnoreCase("deleteUser")){
+            // delete user
+            user.setUid(Integer.parseInt(request.getParameter("uid")));
+            user.setType(request.getParameter("type"));
+            dao.deleteUser(user);
+            response.setContentType("text/plain");
+            response.getWriter().write("Success");
         }
     }
 }

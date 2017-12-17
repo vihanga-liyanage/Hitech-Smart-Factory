@@ -62,32 +62,7 @@ public class UserDAO {
             //See if associate table update is required
             if (!Objects.equals(oldUser.getType(), newUser.getType())) {
                 // Remove old record
-                switch (oldUser.getType()) {
-                    case "b": {
-                        PreparedStatement preparedStatement2 = connection
-                                .prepareStatement("DELETE FROM user_branch WHERE uid=?");
-                        // Parameters start with 1
-                        preparedStatement2.setString(1, Integer.toString(oldUser.getUid()));
-                        preparedStatement2.executeUpdate();
-                        break;
-                    }
-                    case "s": {
-                        PreparedStatement preparedStatement2 = connection
-                                .prepareStatement("DELETE FROM user_section WHERE uid=?");
-                        // Parameters start with 1
-                        preparedStatement2.setString(1, Integer.toString(oldUser.getUid()));
-                        preparedStatement2.executeUpdate();
-                        break;
-                    }
-                    case "p": {
-                        PreparedStatement preparedStatement2 = connection
-                                .prepareStatement("DELETE FROM user_prodline WHERE uid=?");
-                        // Parameters start with 1
-                        preparedStatement2.setString(1, Integer.toString(oldUser.getUid()));
-                        preparedStatement2.executeUpdate();
-                        break;
-                    }
-                }
+                deleteAssociateUserRecords(oldUser);
 
                 // insert new record
                 insertAssociateUserRecords(newUser);
@@ -98,18 +73,21 @@ public class UserDAO {
         }
     }
 
-//    public void deleteUser(User user) {
-//        try {
-//            PreparedStatement preparedStatement = connection
-//                    .prepareStatement("DELETE FROM branch WHERE bid=?");
-//            // Parameters start with 1
-//            preparedStatement.setString(1, Integer.toString(user.getBid()));
-//            preparedStatement.executeUpdate();
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
+    public void deleteUser(User user) {
+        try {
+            // should delete associate records first due to foreign key constraints
+            deleteAssociateUserRecords(user);
+
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement("DELETE FROM user WHERE uid=?");
+            // Parameters start with 1
+            preparedStatement.setString(1, Integer.toString(user.getUid()));
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     private void insertAssociateUserRecords(User user) {
         try {
@@ -141,6 +119,39 @@ public class UserDAO {
                     preparedStatement2.setString(2, Integer.toString(user.getBranch()));
                     preparedStatement2.setString(3, Integer.toString(user.getSection()));
                     preparedStatement2.setString(4, Integer.toString(user.getProdline()));
+                    preparedStatement2.executeUpdate();
+                    break;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void deleteAssociateUserRecords(User user) {
+        try {
+            switch (user.getType()) {
+                case "b": {
+                    PreparedStatement preparedStatement2 = connection
+                            .prepareStatement("DELETE FROM user_branch WHERE uid=?");
+                    // Parameters start with 1
+                    preparedStatement2.setString(1, Integer.toString(user.getUid()));
+                    preparedStatement2.executeUpdate();
+                    break;
+                }
+                case "s": {
+                    PreparedStatement preparedStatement2 = connection
+                            .prepareStatement("DELETE FROM user_section WHERE uid=?");
+                    // Parameters start with 1
+                    preparedStatement2.setString(1, Integer.toString(user.getUid()));
+                    preparedStatement2.executeUpdate();
+                    break;
+                }
+                case "p": {
+                    PreparedStatement preparedStatement2 = connection
+                            .prepareStatement("DELETE FROM user_prodline WHERE uid=?");
+                    // Parameters start with 1
+                    preparedStatement2.setString(1, Integer.toString(user.getUid()));
                     preparedStatement2.executeUpdate();
                     break;
                 }
