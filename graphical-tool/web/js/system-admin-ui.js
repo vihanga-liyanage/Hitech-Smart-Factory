@@ -359,9 +359,9 @@ function createNewUser() {
     var username = "test-1";
     var type = "b";
     var factory = 3;
-    var branch = 2;
-    var section = 0;
-    var prodline = 0;
+    var branch = JSON.stringify(['2', '4']);
+    var section = JSON.stringify([]);
+    var prodline = JSON.stringify([]);
 
     console.log("Creating new user " + name + " " + username + " " + type + " " + factory);
     $.post('UserController',
@@ -607,7 +607,7 @@ $(document).ready(function () {
         setFactory(userObj.fid);
 
     //    todo remove
-        deleteUser();
+    //     createNewUser();
 
     } else if (userObj != null && userObj.usertype === 'x') {
         setFactory('all');

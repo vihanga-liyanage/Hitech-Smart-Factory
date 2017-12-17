@@ -2,13 +2,13 @@ package com.hitech.smartfactory.controller;
 
 import com.hitech.smartfactory.dao.UserDAO;
 import com.hitech.smartfactory.model.User;
+import jdk.nashorn.internal.parser.JSONParser;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Created by Vihanga Liyanage on 12/17/2017.
@@ -50,9 +50,10 @@ public class UserController extends HttpServlet {
             user.setUsername(request.getParameter("username"));
             user.setType(request.getParameter("type"));
             user.setFactory(Integer.parseInt(request.getParameter("factory")));
-            user.setBranch(Integer.parseInt(request.getParameter("branch")));
-            user.setSection(Integer.parseInt(request.getParameter("section")));
-            user.setProdline(Integer.parseInt(request.getParameter("prodline")));
+
+            user.setBranches(getIntArrayFromString(request.getParameter("branch")));
+            user.setSections(getIntArrayFromString(request.getParameter("section")));
+            user.setProdlines(getIntArrayFromString(request.getParameter("prodline")));
 
             dao.addUser(user);
             response.setContentType("text/plain");
@@ -64,9 +65,9 @@ public class UserController extends HttpServlet {
             user.setUsername(request.getParameter("username"));
             user.setType(request.getParameter("newType"));
             user.setFactory(Integer.parseInt(request.getParameter("factory")));
-            user.setBranch(Integer.parseInt(request.getParameter("newBranch")));
-            user.setSection(Integer.parseInt(request.getParameter("newSection")));
-            user.setProdline(Integer.parseInt(request.getParameter("newProdline")));
+//            user.setBranches(request.getParameter("branch").toCharArray());
+//            user.setSections(request.getParameter("section").toCharArray());
+//            user.setProdlines(request.getParameter("prodline").toCharArray());
 
             User oldUser = new User();
             oldUser.setUid(Integer.parseInt(request.getParameter("uid")));
@@ -74,10 +75,10 @@ public class UserController extends HttpServlet {
             oldUser.setUsername(request.getParameter("username"));
             oldUser.setType(request.getParameter("oldType"));
             oldUser.setFactory(Integer.parseInt(request.getParameter("factory")));
-            oldUser.setBranch(Integer.parseInt(request.getParameter("oldBranch")));
-            oldUser.setSection(Integer.parseInt(request.getParameter("oldSection")));
-            oldUser.setProdline(Integer.parseInt(request.getParameter("oldProdline")));
-            dao.updateUser(oldUser, user);
+//            oldUser.setBranches(request.getParameter("branch").toCharArray());
+//            oldUser.setSections(request.getParameter("section").toCharArray());
+//            oldUser.setProdlines(request.getParameter("prodline").toCharArray());
+////            dao.updateUser(oldUser, user);
             response.setContentType("text/plain");
             response.getWriter().write("Success");
 
@@ -89,5 +90,20 @@ public class UserController extends HttpServlet {
             response.setContentType("text/plain");
             response.getWriter().write("Success");
         }
+    }
+
+    private int[] getIntArrayFromString(String s) {
+        s = s.replaceAll("\"", "");
+        s = s.substring(1, s.length() - 1);
+        String[] s2 = s.split(",");
+
+        int[] out = new int[s2.length];
+        if (!s.equals("")) {
+            for (int i = 0; i < s2.length; i++) {
+                out[i] = Integer.parseInt(s2[i]);
+            }
+        }
+
+        return out;
     }
 }

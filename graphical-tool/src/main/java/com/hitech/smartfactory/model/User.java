@@ -9,14 +9,14 @@ public class User {
     private String username;
     private String type;
     private int factory;
-    private int branch;
-    private int section;
-    private int prodline;
+    private int[] branches;
+    private int[] sections;
+    private int[] prodlines;
 
     public User() {
-        branch = 0;
-        section = 0;
-        prodline = 0;
+        branches = null;
+        sections = null;
+        prodlines = null;
     }
 
     public void setUid(int uid) {
@@ -39,16 +39,16 @@ public class User {
         this.factory = factory;
     }
 
-    public void setBranch(int branch) {
-        this.branch = branch;
+    public void setBranches(int[] branches) {
+        this.branches = branches;
     }
 
-    public void setSection(int section) {
-        this.section = section;
+    public void setSections(int[] sections) {
+        this.sections = sections;
     }
 
-    public void setProdline(int prodline) {
-        this.prodline = prodline;
+    public void setProdlines(int[] prodlines) {
+        this.prodlines = prodlines;
     }
 
     public int getUid() {
@@ -71,17 +71,16 @@ public class User {
         return factory;
     }
 
-    public int getBranch() {
-
-        return branch;
+    public int[] getBranches() {
+        return branches;
     }
 
-    public int getSection() {
-        return section;
+    public int[] getSections() {
+        return sections;
     }
 
-    public int getProdline() {
-        return prodline;
+    public int[] getProdlines() {
+        return prodlines;
     }
 
     @Override

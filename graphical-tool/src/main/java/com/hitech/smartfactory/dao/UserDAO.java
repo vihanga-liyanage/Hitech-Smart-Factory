@@ -93,33 +93,36 @@ public class UserDAO {
         try {
             switch (user.getType()) {
                 case "b": {
-                    PreparedStatement preparedStatement2 = connection
-                            .prepareStatement("INSERT INTO user_branch(uid, bid) VALUES (?, ?)");
-                    // Parameters start with 1
-                    preparedStatement2.setString(1, Integer.toString(user.getUid()));
-                    preparedStatement2.setString(2, Integer.toString(user.getBranch()));
-                    preparedStatement2.executeUpdate();
+                    for (int b:user.getBranches()) {
+                        PreparedStatement preparedStatement2 = connection
+                                .prepareStatement("INSERT INTO user_branch(uid, bid) VALUES (?, ?)");
+                        // Parameters start with 1
+                        preparedStatement2.setString(1, Integer.toString(user.getUid()));
+                        preparedStatement2.setString(2, Integer.toString(b));
+                        preparedStatement2.executeUpdate();
+                    }
                     break;
                 }
                 case "s": {
-                    PreparedStatement preparedStatement2 = connection
-                            .prepareStatement("INSERT INTO user_section(uid, bid, sid) VALUES (?, ?, ?)");
-                    // Parameters start with 1
-                    preparedStatement2.setString(1, Integer.toString(user.getUid()));
-                    preparedStatement2.setString(2, Integer.toString(user.getBranch()));
-                    preparedStatement2.setString(3, Integer.toString(user.getSection()));
-                    preparedStatement2.executeUpdate();
+                    for (int s:user.getBranches()) {
+                        PreparedStatement preparedStatement2 = connection
+                                .prepareStatement("INSERT INTO user_section(uid, sid) VALUES (?, ?)");
+                        // Parameters start with 1
+                        preparedStatement2.setString(1, Integer.toString(user.getUid()));
+                        preparedStatement2.setString(2, Integer.toString(s));
+                        preparedStatement2.executeUpdate();
+                    }
                     break;
                 }
                 case "p": {
-                    PreparedStatement preparedStatement2 = connection
-                            .prepareStatement("INSERT INTO user_prodline(uid, bid, sid, pid) VALUES (?, ?, ?, ?)");
-                    // Parameters start with 1
-                    preparedStatement2.setString(1, Integer.toString(user.getUid()));
-                    preparedStatement2.setString(2, Integer.toString(user.getBranch()));
-                    preparedStatement2.setString(3, Integer.toString(user.getSection()));
-                    preparedStatement2.setString(4, Integer.toString(user.getProdline()));
-                    preparedStatement2.executeUpdate();
+                    for (int p:user.getBranches()) {
+                        PreparedStatement preparedStatement2 = connection
+                                .prepareStatement("INSERT INTO user_prodline(uid, pid) VALUES (?, ?)");
+                        // Parameters start with 1
+                        preparedStatement2.setString(1, Integer.toString(user.getUid()));
+                        preparedStatement2.setString(2, Integer.toString(p));
+                        preparedStatement2.executeUpdate();
+                    }
                     break;
                 }
             }
