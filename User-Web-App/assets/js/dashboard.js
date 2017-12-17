@@ -103,13 +103,14 @@ function buildDataJSON(data) {
         var sections = data.Sections.Section;
         newBranches = [];
         sections.forEach(function (s) {
+            var sectionDetails = s.SectionDetails.SectionDetail["0"];
             var done = false;
             newBranches.forEach(function (b) {
                 // Search if the branch is added earlier, if yes, merge.
-                if (!done && (b.id == s.bid)) {
+                if (!done && (b.id == sectionDetails.bid)) {
                     var temp = {
-                        id: s.sid,
-                        name: s.SectionNames.SectionName["0"].Name,
+                        id: sectionDetails.sid,
+                        name: sectionDetails.sectionName,
                         prod_lines: resolveProdline(s.Productionlines.Productionline)
                     };
                     b.sections.push(temp);
@@ -119,11 +120,11 @@ function buildDataJSON(data) {
             // If this is a section of a new branch,
             if (!done) {
                 var temp = {
-                    id: s.bid,
-                    name: s.BranchNames.BranchName["0"].Name,
+                    id: sectionDetails.bid,
+                    name: sectionDetails.branchName,
                     sections: [{
-                        id: s.sid,
-                        name: s.SectionNames.SectionName["0"].Name,
+                        id: sectionDetails.sid,
+                        name: sectionDetails.sectionName,
                         prod_lines: resolveProdline(s.Productionlines.Productionline)
                     }]
                 };
@@ -135,6 +136,7 @@ function buildDataJSON(data) {
         var productionLines = data.Productionlines.Productionline;
         newBranches = [];
         productionLines.forEach(function (p) {
+            var p = p.ProdlineDetails.ProdlineDetail["0"];
             var branchDone = false;
             newBranches.forEach(function (b) {
                 // matching branch found
@@ -145,7 +147,7 @@ function buildDataJSON(data) {
                         if (!sectionDone && (bs.id == p.sid)) {
                             var temp = {
                                 id: p.pid,
-                                name: p.ProductionlineNames.ProductionlineName["0"].Name,
+                                name: p.prodlineName,
                             };
                             bs.prod_lines.push(temp);
                             sectionDone = true;
@@ -157,11 +159,11 @@ function buildDataJSON(data) {
                     if (!sectionDone) {
                         var temp = {
                             id: p.sid,
-                            name: p.SectionNames.SectionName["0"].Name,
+                            name: p.sectionName,
                             prod_lines: [
                                 {
                                     id: p.pid,
-                                    name: p.ProductionlineNames.ProductionlineName["0"].Name,
+                                    name: p.prodlineName,
                                 }
                             ]
                         };
@@ -175,15 +177,15 @@ function buildDataJSON(data) {
             if (!branchDone) {
                 var temp = {
                     id: p.bid,
-                    name: p.BranchNames.BranchName["0"].Name,
+                    name: p.branchName,
                     sections: [
                         {
                             id: p.sid,
-                            name: p.SectionNames.SectionName["0"].Name,
+                            name: p.sectionName,
                             prod_lines: [
                                 {
                                     id: p.pid,
-                                    name: p.ProductionlineNames.ProductionlineName["0"].Name,
+                                    name: p.prodlineName,
                                 }
                             ]
                         }
