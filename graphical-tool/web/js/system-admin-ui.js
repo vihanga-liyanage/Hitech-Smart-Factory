@@ -353,6 +353,27 @@ function createNewBranch() {
         });
 }
 
+function createNewUser() {
+    console.log("createNewUser");
+    var name = "Test 1";
+    var username = "test-1";
+    var type = "b";
+    var factory = 3;
+    var branch = 2;
+    var section = 0;
+    var prodline = 0;
+
+    console.log("Creating new user " + name + " " + username + " " + type + " " + factory);
+    $.post('UserController',
+        {action: "addUser", name: name, username: username, type: type, factory: factory,
+            branch: branch, section: section, prodline: prodline},
+        function (data) {
+            if (data == "Success") {
+                console.log("Success");
+            }
+        });
+}
+
 function createNewSection() {
     var sectionName = document.getElementById("section-name").value;
     $.post('SectionController', {action: "addSection", name: sectionName, branch: selectedBranchId},
@@ -419,6 +440,35 @@ function updateBranch(id, name, location) {
                 }
             });
     }
+}
+
+function updateUser() {
+    console.log("updateUser");
+    var uid = 8;
+    var newName = "Test 2";
+    var newType = "s";
+    var newBranch = 2;
+    var newSection = 2;
+    var newProdline = 0;
+
+    var oldName = "Test 1";
+    var username = "test-1";
+    var factory = 3;
+    var oldType = "b";
+    var oldBranch = 2;
+    var oldSection = 0;
+    var oldProdline = 0;
+
+    console.log("Updating user: " + username);
+    $.post('UserController',
+        {action: "updateUser", uid: uid, oldName: oldName, username: username, oldType: oldType,
+            factory: factory, oldBranch: oldBranch, oldSection: oldSection, oldProdline: oldProdline,
+            newName: newName, newType: newType, newBranch: newBranch, newSection: newSection, newProdline: newProdline},
+        function (data) {
+            if (data == "Success") {
+                console.log("Success");
+            }
+        });
 }
 
 function updateSection(id, name) {
@@ -541,6 +591,10 @@ $(document).ready(function () {
     var userObj = JSON.parse(localStorage.getItem("userObj"));
     if (userObj != null && userObj.usertype === 'a') {
         setFactory(userObj.fid);
+
+    //    todo remove
+        updateUser();
+
     } else if (userObj != null && userObj.usertype === 'x') {
         setFactory('all');
     } else {

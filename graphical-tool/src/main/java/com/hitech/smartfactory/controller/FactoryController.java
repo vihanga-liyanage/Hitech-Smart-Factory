@@ -25,12 +25,6 @@ public class FactoryController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String fid = request.getParameter("fid");
-//        if (fid != null && !Objects.equals(fid, "s")) {
-//            request.setAttribute("factories", dao.getFactoryById(Integer.parseInt(fid)));
-//        } else {
-//            request.setAttribute("factories", dao.getAllFactories());
-//        }
 
         String action = request.getParameter("action");
         if (action != null && action.equalsIgnoreCase("listFactories")) {
