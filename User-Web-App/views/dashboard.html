@@ -444,7 +444,9 @@
                 Hitech Smart Factory <span id="company-name"></span>
             </a>
         </div>
-        <div id="welcome-line">Welcome <span id="username" style="font-weight: bolder;"></span></div>
+        <div style="float:right; padding:15px; margin: 7px;">
+            <button class="btn btn-block" onclick="signout()">Sign out</button>
+        </div>
     </div>
 </nav>
 <!-- #Top Bar -->
@@ -457,9 +459,8 @@
                 <img src="/images/user.png" width="48" height="48" alt="User"/>
             </div>
             <div class="info-container">
-                <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-                <div class="email">john.doe@example.com</div>
-
+                <div class="email">Welcome,</div>
+                <div class="name" id="username" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
             </div>
         </div>
         <!-- #User Info -->

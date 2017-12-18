@@ -42,6 +42,7 @@ function hideAddForm(id) {
 }
 
 function displayEditForm(type, id, name, location) {
+    console.log(type, id, name, location);
     var formId = "update-" + type;
     var form = document.getElementById(formId);
     form.style.display = "block";

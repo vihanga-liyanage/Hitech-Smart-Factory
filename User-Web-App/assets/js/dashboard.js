@@ -14,7 +14,7 @@ var DSS_BASE_URL = "http://35.192.12.87:9763/services/";
 function loadData() {
     //Retrieve user info from session
     var userObj = JSON.parse(localStorage.getItem("userObj"));
-    $('#username').text(userObj.username);
+    $('#username').text(userObj.name);
 
     // Setup URL prefix based on user type
     var data = {};
@@ -360,8 +360,19 @@ function setEditorVar(e) {
     editor = e;
 }
 
+function signout() {
+    localStorage.setItem("userObj", null);
+    window.location.replace("/");
+}
+
 // Initiating menu items
 $(document).ready(function () {
+    window.onbeforeunload = null;
+    var userObj = JSON.parse(localStorage.getItem("userObj"));
+    if (!userObj) {
+        alert("Watch where you're going buddy!");
+        window.location.replace("/");
+    }
     loadData();
 });
 

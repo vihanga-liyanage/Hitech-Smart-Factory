@@ -48,6 +48,7 @@ function getUserDetails(username) {
                 var user = response.UserDetails.User[0];
                 userObj.username = username;
                 userObj.uid = user.userid;
+                userObj.name = user.name;
                 userObj.usertype = user.userType;
                 userObj.fid = user.fid;
                 userObj.factoryName = user.FactoryNames.FactoryName["0"].Name;
