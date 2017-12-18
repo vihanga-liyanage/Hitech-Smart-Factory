@@ -560,8 +560,8 @@ function deleteProdLine(id) {
 
 function deleteUser() {
     var r = confirm("Please confirm user deletion.");
-    var uid = 8;
-    var type = 's';
+    var uid = 22;
+    var type = 'b';
     if (r == true) {
         $.post('UserController', {action: "deleteUser", uid: uid, type: type},
             function (data) {
@@ -607,7 +607,7 @@ $(document).ready(function () {
         setFactory(userObj.fid);
 
     //    todo remove
-        updateUser();
+        deleteUser();
 
     } else if (userObj != null && userObj.usertype === 'x') {
         setFactory('all');
