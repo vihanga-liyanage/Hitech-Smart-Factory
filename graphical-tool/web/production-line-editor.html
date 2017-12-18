@@ -640,7 +640,8 @@
                         <tr>
                             <td id="toolbar_container" valign="top" class="col-md-3">
                                 <a id="add-toolbox-item-btn" class="waves-effect waves-light btn" onclick="addToolboxItem()">
-                                    <i class="material-icons prefix">add_circle_outline</i>Add New Item
+                                    <i class="material-icons prefix" style="font-size: 11px;">add_circle_outline</i>
+                                    <span>Add New Item</span>
                                 </a>
                                 <div id="toolbar" >
                                     <!-- Toolbar Here -->
@@ -680,25 +681,24 @@
                                     <img class="red-close-x" src="images/hitech/icons/close.png" title="Close" onclick="closeAddToolboxItem()" >
                                     <h3>Add New Toolbox Item</h3><br>
                                     <p id="add-toolbox-item-form-error"></p>
-                                    <div class="input-field">
-                                        <input id="item-model-name" type="text" class="validate" placeholder="Ex: BME280"
-                                               onkeypress="previewToolboxItemIcon(true)">
-                                        <label for="item-model-name">Name/Model</label>
-                                    </div>
+
+                                    <label for="item-model-name">Name/Model</label>
+                                    <input id="item-model-name" type="text" class="validate" placeholder="Ex: BME280"
+                                               onkeypress="previewToolboxItemIcon(true)" style="border: 1px solid;margin-bottom: 10px;">
+                                    <br>
                                     <label>Category</label>
-                                    <div class="input-field" style="margin-top: 0">
-                                        <select id="toolbox-item-category" class="browser-default" onchange="toolboxItemCategorySelected()">
-                                        </select>
+                                    <select id="toolbox-item-category" class="browser-default" onchange="toolboxItemCategorySelected()">
+                                    </select>
+                                    <br>
+                                    <label>Icon</label>
+                                    <input type="file" accept="image/*" onchange="previewToolboxItemIcon(false)" id="toolbox-item-icon"
+                                           style="height: 2rem;margin-bottom: 10px;">
+
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" id="toolbox-item-icon-text" type="text" placeholder="Select icon" 
+                                               style="height: 2rem; display: none;">
                                     </div>
-                                    <div class="file-field input-field">
-                                        <div class="btn" style="height: 2rem; line-height: 2rem; background-color: #73a0c5;">
-                                            <span>Icon</span>
-                                            <input type="file" accept="image/*" onchange="previewToolboxItemIcon(false)" id="toolbox-item-icon" style="height: 2rem;">
-                                        </div>
-                                        <div class="file-path-wrapper">
-                                            <input class="file-path validate" id="toolbox-item-icon-text" type="text" placeholder="Select icon" style="height: 2rem;">
-                                        </div>
-                                    </div>
+
 
                                     <div id="toolbox-item-icon-preview" class="col-md-6"></div>
                                     <div id="sensor-icon-preview"  class="col-md-6"></div>

@@ -464,16 +464,18 @@ div.tab button.active {
     border: 1px solid #4a4a4a;
     padding: 2px;
     margin-top: 2px;
+    margin-bottom: 10px;
 }
 #toolbox-item-icon {
     width: 100%;
 }
 #add-toolbox-item-btn {
-    font-size: 0.9em;
+    font-size: 15px;
     height: 25px;
     line-height: 25px;
     padding: 0 7px;
     background-color: #73a0c5;
+    color: white;
 }
 #toolbox-item-icon-preview, #sensor-icon-preview{
     font-size: 12px;

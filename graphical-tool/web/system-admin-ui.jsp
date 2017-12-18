@@ -39,6 +39,11 @@
 
     <div id="main-panel" class="col-md-12">
 
+        <%-- variables --%>
+        <div id="selected-factory-name" style="display: none;"></div>
+        <div id="selected-branch-name" style="display: none;"></div>
+        <div id="selected-section-name" style="display: none;"></div>
+
         <div id="green-panel"></div>
 
         <div id="factories" class="box-btn-row">
@@ -50,7 +55,7 @@
         <div id="branches" class="box-btn-row">
             <p>Branches of <text id="selected-factory-name"></text></p>
             <div id="dynamic-branches"></div>
-            <div class="box-btn-wrapper"><button class="box-btn branches" title="Create New Branch" onclick="displayAddForm('create-new-branches')">
+            <div class="box-btn-wrapper"><button class="box-btn branch" title="Create New Branch" onclick="displayAddForm('create-new-branches')">
                 <img src="images/hitech/icons/plus-50x50.png" style="opacity: 0.7;height: 70px;"/>
             </button></div>
         </div>
@@ -58,7 +63,7 @@
         <div id="sections" class="box-btn-row">
             <p>Sections of <text id="selected-branches-name"></text></p>
             <div id="dynamic-sections"></div>
-            <div class="box-btn-wrapper"><button class="box-btn sections" title="Create New Section" onclick="displayAddForm('create-new-sections')">
+            <div class="box-btn-wrapper"><button class="box-btn section" title="Create New Section" onclick="displayAddForm('create-new-sections')">
                 <img src="images/hitech/icons/plus-50x50.png" style="opacity: 0.7;height: 70px;"/>
             </button></div>
         </div>
