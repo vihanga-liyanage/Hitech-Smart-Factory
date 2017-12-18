@@ -43,6 +43,7 @@ public class UserDAO {
                     throw new SQLException("Creating user failed, no ID obtained.");
                 }
             }
+            System.out.println("Create new user complete: " + user.getName());
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -50,6 +51,8 @@ public class UserDAO {
     }
 
     public void updateUser(User oldUser, User newUser) {
+        System.out.println(oldUser);
+        System.out.println(newUser);
         try {
             PreparedStatement preparedStatement1 = connection
                     .prepareStatement("UPDATE user SET name=?, type=? WHERE uid=?");
@@ -59,15 +62,13 @@ public class UserDAO {
             preparedStatement1.setString(3, Integer.toString(newUser.getUid()));
             preparedStatement1.executeUpdate();
 
-            //See if associate table update is required
-            if (!Objects.equals(oldUser.getType(), newUser.getType())) {
-                // Remove old record
-                deleteAssociateUserRecords(oldUser);
+            // Remove old record
+            deleteAssociateUserRecords(oldUser);
 
-                // insert new record
-                insertAssociateUserRecords(newUser);
+            // insert new record
+            insertAssociateUserRecords(newUser);
 
-            }
+            System.out.println("Update user complete: " + oldUser.getName() + " -> " + newUser.getName());
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -104,7 +105,7 @@ public class UserDAO {
                     break;
                 }
                 case "s": {
-                    for (int s:user.getBranches()) {
+                    for (int s:user.getSections()) {
                         PreparedStatement preparedStatement2 = connection
                                 .prepareStatement("INSERT INTO user_section(uid, sid) VALUES (?, ?)");
                         // Parameters start with 1
@@ -115,7 +116,7 @@ public class UserDAO {
                     break;
                 }
                 case "p": {
-                    for (int p:user.getBranches()) {
+                    for (int p:user.getProdlines()) {
                         PreparedStatement preparedStatement2 = connection
                                 .prepareStatement("INSERT INTO user_prodline(uid, pid) VALUES (?, ?)");
                         // Parameters start with 1
@@ -132,6 +133,7 @@ public class UserDAO {
     }
 
     private void deleteAssociateUserRecords(User user) {
+        System.out.println("deleteAssociateUserRecords");
         try {
             switch (user.getType()) {
                 case "b": {
@@ -139,6 +141,7 @@ public class UserDAO {
                             .prepareStatement("DELETE FROM user_branch WHERE uid=?");
                     // Parameters start with 1
                     preparedStatement2.setString(1, Integer.toString(user.getUid()));
+                    System.out.println(preparedStatement2.toString());
                     preparedStatement2.executeUpdate();
                     break;
                 }
@@ -147,6 +150,7 @@ public class UserDAO {
                             .prepareStatement("DELETE FROM user_section WHERE uid=?");
                     // Parameters start with 1
                     preparedStatement2.setString(1, Integer.toString(user.getUid()));
+                    System.out.println(preparedStatement2.toString());
                     preparedStatement2.executeUpdate();
                     break;
                 }
@@ -155,6 +159,7 @@ public class UserDAO {
                             .prepareStatement("DELETE FROM user_prodline WHERE uid=?");
                     // Parameters start with 1
                     preparedStatement2.setString(1, Integer.toString(user.getUid()));
+                    System.out.println(preparedStatement2.toString());
                     preparedStatement2.executeUpdate();
                     break;
                 }

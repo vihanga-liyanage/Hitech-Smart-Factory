@@ -62,23 +62,16 @@ public class UserController extends HttpServlet {
             // update user
             user.setUid(Integer.parseInt(request.getParameter("uid")));
             user.setName(request.getParameter("newName"));
-            user.setUsername(request.getParameter("username"));
             user.setType(request.getParameter("newType"));
-            user.setFactory(Integer.parseInt(request.getParameter("factory")));
-//            user.setBranches(request.getParameter("branch").toCharArray());
-//            user.setSections(request.getParameter("section").toCharArray());
-//            user.setProdlines(request.getParameter("prodline").toCharArray());
+            user.setBranches(getIntArrayFromString(request.getParameter("newBranches")));
+            user.setSections(getIntArrayFromString(request.getParameter("newSections")));
+            user.setProdlines(getIntArrayFromString(request.getParameter("newProdlines")));
 
             User oldUser = new User();
             oldUser.setUid(Integer.parseInt(request.getParameter("uid")));
             oldUser.setName(request.getParameter("oldName"));
-            oldUser.setUsername(request.getParameter("username"));
             oldUser.setType(request.getParameter("oldType"));
-            oldUser.setFactory(Integer.parseInt(request.getParameter("factory")));
-//            oldUser.setBranches(request.getParameter("branch").toCharArray());
-//            oldUser.setSections(request.getParameter("section").toCharArray());
-//            oldUser.setProdlines(request.getParameter("prodline").toCharArray());
-////            dao.updateUser(oldUser, user);
+            dao.updateUser(oldUser, user);
             response.setContentType("text/plain");
             response.getWriter().write("Success");
 

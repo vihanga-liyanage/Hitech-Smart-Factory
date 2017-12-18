@@ -360,14 +360,14 @@ function createNewUser() {
     var username = "test-1";
     var type = "b";
     var factory = 3;
-    var branch = JSON.stringify(['2', '4']);
-    var section = JSON.stringify([]);
-    var prodline = JSON.stringify([]);
+    var branches = JSON.stringify(['2', '4']);
+    var sections = JSON.stringify([]);
+    var prodlines = JSON.stringify([]);
 
     console.log("Creating new user " + name + " " + username + " " + type + " " + factory);
     $.post('UserController',
         {action: "addUser", name: name, username: username, type: type, factory: factory,
-            branch: branch, section: section, prodline: prodline},
+            branches: branches, sections: sections, prodlines: prodlines},
         function (data) {
             if (data == "Success") {
                 console.log("Success");
@@ -445,26 +445,20 @@ function updateBranch(id, name, location) {
 
 function updateUser() {
     console.log("updateUser");
-    var uid = 8;
-    var newName = "Test 2";
-    var newType = "s";
-    var newBranch = 2;
-    var newSection = 2;
-    var newProdline = 0;
+    var uid = 21;
+    var oldName = "Test 3";
+    var oldType = "s";
 
-    var oldName = "Test 1";
-    var username = "test-1";
-    var factory = 3;
-    var oldType = "b";
-    var oldBranch = 2;
-    var oldSection = 0;
-    var oldProdline = 0;
+    var newName = "Test 4";
+    var newType = "p";
+    var newBranches = JSON.stringify([]);
+    var newSections = JSON.stringify([]);
+    var newProdlines = JSON.stringify(['2', '5']);
 
-    console.log("Updating user: " + username);
+    console.log("Updating user: " + oldName);
     $.post('UserController',
-        {action: "updateUser", uid: uid, oldName: oldName, username: username, oldType: oldType,
-            factory: factory, oldBranch: oldBranch, oldSection: oldSection, oldProdline: oldProdline,
-            newName: newName, newType: newType, newBranch: newBranch, newSection: newSection, newProdline: newProdline},
+        {action: "updateUser", uid: uid, oldName: oldName, oldType: oldType,
+            newName: newName, newType: newType, newBranches: newBranches, newSections: newSections, newProdlines: newProdlines},
         function (data) {
             if (data == "Success") {
                 console.log("Success");
@@ -613,7 +607,7 @@ $(document).ready(function () {
         setFactory(userObj.fid);
 
     //    todo remove
-    //     createNewUser();
+        updateUser();
 
     } else if (userObj != null && userObj.usertype === 'x') {
         setFactory('all');

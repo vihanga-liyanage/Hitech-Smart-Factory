@@ -1,5 +1,7 @@
 package com.hitech.smartfactory.model;
 
+import java.util.Arrays;
+
 /**
  * Created by Vihanga Liyanage on 12/16/2017.
  */
@@ -91,6 +93,9 @@ public class User {
                 ", \"username\":\"" + username + '\"' +
                 ", \"type\":\"" + type + '\"' +
                 ", \"factory\":" + factory +
+                ", \"branches\":" + Arrays.toString(branches) +
+                ", \"sections\":" + Arrays.toString(sections) +
+                ", \"prodlines\":" + Arrays.toString(prodlines) +
                 '}';
     }
 }
