@@ -595,6 +595,11 @@ function removeActiveState(type) {
     $(type).parent().removeClass('active-down');
 }
 
+function signout() {
+    localStorage.setItem("userObj", null);
+    window.location.replace("/hitech-smart-factory");
+}
+
 $(window).on("beforeunload", function() {
     console.log("Clearing local storage...");
     localStorageKeys.forEach(function (key) {

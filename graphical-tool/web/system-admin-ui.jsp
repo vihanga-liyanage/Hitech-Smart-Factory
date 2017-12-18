@@ -32,17 +32,15 @@
 <div id="wrapper">
     <div id="header">
         <div id="headerimg">
-            Hitech Smart Factory
+            <span>Hitech Smart Factory</span>
+            <div style="float:right; color: black; position: absolute; top: 6px; right: 6px;">
+                <button class="btn btn-block" onclick="signout()">Sign out</button>
+            </div>
         </div>
-        <div id="button-panel"></div>
+        <div id="button-panel" style="text-align: center;">Welcome to Admin Dashboard!</div>
     </div>
 
     <div id="main-panel" class="col-md-12">
-
-        <%-- variables --%>
-        <%--<div id="selected-factory-name" style="display: none;"></div>--%>
-        <%--<div id="selected-branch-name" style="display: none;"></div>--%>
-        <%--<div id="selected-section-name" style="display: none;"></div>--%>
 
         <div id="green-panel"></div>
 
