@@ -354,6 +354,18 @@ function createNewBranch() {
         });
 }
 
+function setUsers(factoryId) {
+
+    //get data by calling the servlet
+    jQuery.ajax({
+        url: 'UserController?action=listAllUsers&id=' + factoryId,
+        success: function (data) {
+            console.log(JSON.parse(data));
+        },
+        async: false
+    });
+}
+
 function createNewUser() {
     console.log("createNewUser");
     var name = "Test 1";
@@ -607,7 +619,7 @@ $(document).ready(function () {
         setFactory(userObj.fid);
 
     //    todo remove
-        deleteUser();
+        setUsers(1);
 
     } else if (userObj != null && userObj.usertype === 'x') {
         setFactory('all');

@@ -1,9 +1,12 @@
 package com.hitech.smartfactory.dao;
 
+import com.hitech.smartfactory.model.Branch;
 import com.hitech.smartfactory.model.User;
 import com.hitech.smartfactory.util.DbUtil;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -14,6 +17,72 @@ public class UserDAO {
 
     public UserDAO() {
         this.connection = DbUtil.getConnection();
+    }
+
+    public List<User> getAllUsersByFactory(int fid) {
+        List<User> users = new ArrayList<>();
+        try {
+            Statement statement1 = connection.createStatement();
+            ResultSet rs = statement1.executeQuery("SELECT * FROM user WHERE factory=" + fid);
+            while (rs.next()) {
+                User user = new User();
+                user.setUid(rs.getInt("uid"));
+                user.setName(rs.getString("name"));
+                user.setUsername(rs.getString("username"));
+                user.setType(rs.getString("type"));
+                user.setFactory(rs.getInt("factory"));
+
+                if (Objects.equals(user.getType(), "b")) {
+                    Statement statement2 = connection.createStatement();
+                    ResultSet rs1 = statement2.executeQuery("SELECT * FROM user_branch WHERE uid=" + user.getUid());
+                    // add all branches to list since cannot append to array directly
+                    List<Integer> temp = new ArrayList<>();
+                    while (rs1.next()) {
+                        temp.add(rs1.getInt("bid"));
+                    }
+                    int[] branches = new int[temp.size()];
+                    for (int i=0; i < branches.length; i++)
+                    {
+                        branches[i] = temp.get(i).intValue();
+                    }
+                    user.setBranches(branches);
+                } else if (Objects.equals(user.getType(), "s")) {
+                    Statement statement2 = connection.createStatement();
+                    ResultSet rs1 = statement2.executeQuery("SELECT * FROM user_section WHERE uid=" + user.getUid());
+                    // add all sections to list since cannot append to array directly
+                    List<Integer> temp = new ArrayList<>();
+                    while (rs1.next()) {
+                        temp.add(rs1.getInt("sid"));
+                    }
+                    int[] sections = new int[temp.size()];
+                    for (int i=0; i < sections.length; i++)
+                    {
+                        sections[i] = temp.get(i).intValue();
+                    }
+                    user.setSections(sections);
+                } else if (Objects.equals(user.getType(), "p")) {
+                    Statement statement2 = connection.createStatement();
+                    ResultSet rs1 = statement2.executeQuery("SELECT * FROM user_prodline WHERE uid=" + user.getUid());
+                    // add all prodlines to list since cannot append to array directly
+                    List<Integer> temp = new ArrayList<>();
+                    while (rs1.next()) {
+                        temp.add(rs1.getInt("pid"));
+                    }
+                    int[] prodlines = new int[temp.size()];
+                    for (int i=0; i < prodlines.length; i++)
+                    {
+                        prodlines[i] = temp.get(i).intValue();
+                    }
+                    user.setProdlines(prodlines);
+                }
+
+                users.add(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return users;
     }
 
     public void addUser(User user) {
