@@ -33,6 +33,9 @@
     <div id="header">
         <div id="headerimg">
             <span>Hitech Smart Factory</span>
+            <div style="float:right; color: black; position: absolute; top: 6px; right: 86px;">
+                <button class="btn btn-block" onclick="switchToUserManager()">Manage Users</button>
+            </div>
             <div style="float:right; color: black; position: absolute; top: 6px; right: 6px;">
                 <button class="btn btn-block" onclick="signout()">Sign out</button>
             </div>

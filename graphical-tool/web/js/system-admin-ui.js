@@ -354,39 +354,6 @@ function createNewBranch() {
         });
 }
 
-function setUsers(factoryId) {
-
-    //get data by calling the servlet
-    jQuery.ajax({
-        url: 'UserController?action=listAllUsers&id=' + factoryId,
-        success: function (data) {
-            console.log(JSON.parse(data));
-        },
-        async: false
-    });
-}
-
-function createNewUser() {
-    console.log("createNewUser");
-    var name = "Test 1";
-    var username = "test-1";
-    var type = "b";
-    var factory = 3;
-    var branches = JSON.stringify(['2', '4']);
-    var sections = JSON.stringify([]);
-    var prodlines = JSON.stringify([]);
-
-    console.log("Creating new user " + name + " " + username + " " + type + " " + factory);
-    $.post('UserController',
-        {action: "addUser", name: name, username: username, type: type, factory: factory,
-            branches: branches, sections: sections, prodlines: prodlines},
-        function (data) {
-            if (data == "Success") {
-                console.log("Success");
-            }
-        });
-}
-
 function createNewSection() {
     var sectionName = document.getElementById("section-name").value;
     $.post('SectionController', {action: "addSection", name: sectionName, branch: selectedBranchId},
@@ -453,29 +420,6 @@ function updateBranch(id, name, location) {
                 }
             });
     }
-}
-
-function updateUser() {
-    console.log("updateUser");
-    var uid = 21;
-    var oldName = "Test 3";
-    var oldType = "s";
-
-    var newName = "Test 4";
-    var newType = "p";
-    var newBranches = JSON.stringify([]);
-    var newSections = JSON.stringify([]);
-    var newProdlines = JSON.stringify(['2', '5']);
-
-    console.log("Updating user: " + oldName);
-    $.post('UserController',
-        {action: "updateUser", uid: uid, oldName: oldName, oldType: oldType,
-            newName: newName, newType: newType, newBranches: newBranches, newSections: newSections, newProdlines: newProdlines},
-        function (data) {
-            if (data == "Success") {
-                console.log("Success");
-            }
-        });
 }
 
 function updateSection(id, name) {
@@ -570,20 +514,6 @@ function deleteProdLine(id) {
     }
 }
 
-function deleteUser() {
-    var r = confirm("Please confirm user deletion.");
-    var uid = 22;
-    var type = 'b';
-    if (r == true) {
-        $.post('UserController', {action: "deleteUser", uid: uid, type: type},
-            function (data) {
-                if (data == "Success") {
-                    console.log("User deleted");
-                }
-            });
-    }
-}
-
 function setActiveState(type, element) {
     $(type).parent().removeClass('active-up');
     $(type).parent().addClass('active-down');
@@ -606,6 +536,10 @@ function signout() {
     window.location.replace("/hitech-smart-factory");
 }
 
+function switchToUserManager() {
+    window.location.href = "/hitech-smart-factory/UserController";
+}
+
 $(window).on("beforeunload", function() {
     console.log("Clearing local storage...");
     localStorageKeys.forEach(function (key) {
@@ -617,10 +551,6 @@ $(document).ready(function () {
     var userObj = JSON.parse(localStorage.getItem("userObj"));
     if (userObj != null && userObj.usertype === 'a') {
         setFactory(userObj.fid);
-
-    //    todo remove
-        setUsers(1);
-
     } else if (userObj != null && userObj.usertype === 'x') {
         setFactory('all');
     } else {

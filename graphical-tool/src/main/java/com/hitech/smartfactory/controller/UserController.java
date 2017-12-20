@@ -4,6 +4,7 @@ import com.hitech.smartfactory.dao.UserDAO;
 import com.hitech.smartfactory.model.User;
 import jdk.nashorn.internal.parser.JSONParser;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +25,7 @@ public class UserController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
-        if (action.equalsIgnoreCase("listAllUsers")) {
+        if (action != null && action.equalsIgnoreCase("listAllUsers")) {
             int fid = Integer.parseInt(request.getParameter("id"));
             List<User> users = dao.getAllUsersByFactory(fid);
 
@@ -38,6 +39,9 @@ public class UserController extends HttpServlet {
             }
             response.setContentType("text/plain");
             response.getWriter().write(out);
+        } else {
+            RequestDispatcher view = request.getRequestDispatcher("/admin-user-manager.jsp");
+            view.forward(request, response);
         }
     }
 

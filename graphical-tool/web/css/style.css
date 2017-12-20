@@ -491,11 +491,36 @@ div.tab button.active {
 }
 #save-prod-line-btn {
     background-color: #73a0c5;
-    padding: 0px 10px;
+    padding: 0 10px;
     height: 30px;
     line-height: 23px;
     margin-left: 15px;
 }
 #add-toolbox-item-form-error {
     color: red;
+}
+
+/* Styles for admin-user-manager */
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #acceea;
+}
+
+.content-disable {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+label {
+    font-weight: 100;
+    margin-left: 3px;
+    margin-bottom: 0;
+}
+.branch-check {
+    margin-left: 50px !important;
+}
+.section-check {
+    margin-left: 100px !important;
+}
+.prodline-check {
+    margin-left: 150px !important;
 }

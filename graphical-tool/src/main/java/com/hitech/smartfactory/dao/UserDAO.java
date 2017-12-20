@@ -41,8 +41,7 @@ public class UserDAO {
                         temp.add(rs1.getInt("bid"));
                     }
                     int[] branches = new int[temp.size()];
-                    for (int i=0; i < branches.length; i++)
-                    {
+                    for (int i = 0; i < branches.length; i++) {
                         branches[i] = temp.get(i).intValue();
                     }
                     user.setBranches(branches);
@@ -55,8 +54,7 @@ public class UserDAO {
                         temp.add(rs1.getInt("sid"));
                     }
                     int[] sections = new int[temp.size()];
-                    for (int i=0; i < sections.length; i++)
-                    {
+                    for (int i = 0; i < sections.length; i++) {
                         sections[i] = temp.get(i).intValue();
                     }
                     user.setSections(sections);
@@ -69,14 +67,16 @@ public class UserDAO {
                         temp.add(rs1.getInt("pid"));
                     }
                     int[] prodlines = new int[temp.size()];
-                    for (int i=0; i < prodlines.length; i++)
-                    {
+                    for (int i = 0; i < prodlines.length; i++) {
                         prodlines[i] = temp.get(i).intValue();
                     }
                     user.setProdlines(prodlines);
                 }
 
-                users.add(user);
+                // Omit super admin
+                if (!Objects.equals(user.getType(), "x")) {
+                    users.add(user);
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
