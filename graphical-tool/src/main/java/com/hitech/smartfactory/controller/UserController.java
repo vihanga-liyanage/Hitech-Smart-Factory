@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Enumeration;
 import java.util.List;
 
 /**
@@ -74,7 +75,6 @@ public class UserController extends HttpServlet {
 
             User oldUser = new User();
             oldUser.setUid(Integer.parseInt(request.getParameter("uid")));
-            oldUser.setName(request.getParameter("oldName"));
             oldUser.setType(request.getParameter("oldType"));
             dao.updateUser(oldUser, user);
             response.setContentType("text/plain");

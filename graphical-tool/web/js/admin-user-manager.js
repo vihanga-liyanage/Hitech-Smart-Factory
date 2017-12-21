@@ -132,7 +132,11 @@ function addUserRow(table, user) {
     var actionCell = document.createElement("td");
 
     var idTextNode = document.createTextNode(user.uid);
-    var nameTextNode = document.createTextNode(user.name);
+    if (user.type == 'a') {
+        var nameTextNode = document.createTextNode(user.name + " (Admin)");
+    } else {
+        var nameTextNode = document.createTextNode(user.name);
+    }
     var usernameTextNode = document.createTextNode(user.username);
     var editAction = document.createElement("a");
     editAction.setAttribute('onclick',"editUser()");
@@ -178,24 +182,15 @@ function createNewUser() {
         });
 }
 
-function updateUser() {
-    var uid = 21;
-    var oldName = "Test 3";
-    var oldType = "s";
-
-    var newName = "Test 4";
-    var newType = "p";
-    var newBranches = JSON.stringify([]);
-    var newSections = JSON.stringify([]);
-    var newProdlines = JSON.stringify(['2', '5']);
-
-    console.log("Updating user: " + oldName);
+function updateUser(oldUser, newUser) {
+    console.log(oldUser, newUser);
     $.post('UserController',
-        {action: "updateUser", uid: uid, oldName: oldName, oldType: oldType,
-            newName: newName, newType: newType, newBranches: newBranches, newSections: newSections, newProdlines: newProdlines},
+        {action: "updateUser", uid: oldUser.id, oldType: oldUser.type, newName: newUser.name, newType: newUser.type,
+            newBranches: JSON.stringify(newUser.branches), newSections: JSON.stringify(newUser.sections),
+            newProdlines: JSON.stringify(newUser.prodlines)},
         function (data) {
             if (data == "Success") {
-                console.log("Success");
+                location.reload();
             }
         });
 }
@@ -235,7 +230,9 @@ function setUserPermissions(id) {
             CHECKED_BRANCHES = []; CHECKED_SECTIONS = []; CHECKED_PRODLINES = [];
 
             // check relevant checkboxes
-            if (user.type == 'b') {
+            if (user.type == 'f') {
+                $('#factory-' + user.factory + "-check").click();
+            } else if (user.type == 'b') {
                 user.branches.forEach(function (b) {
                     $('#branch-' + b + "-check").click();
                 });
@@ -251,6 +248,14 @@ function setUserPermissions(id) {
 
             // set title
             $('#permission-grid-header').text("Permissions of " + user.name);
+
+            //special case - admin user
+            if (user.type == 'a') {
+                $('#permission-grid-wrapper').find('input, button').prop("disabled", true);
+                $('#permission-grid-header').text("Please select a user to view permissions");
+            } else {
+                $('#permission-grid-wrapper').find('button').prop("disabled", false);
+            }
 
             // set selected user
             SELECTED_USER = user;
@@ -425,44 +430,61 @@ function setPermissionCheckBoxesEvent() {
             $('#' + checkDivID).find('input[type=checkbox]').prop('checked', false);
         }
 
-        console.log(CHECKED_BRANCHES, CHECKED_SECTIONS, CHECKED_PRODLINES);
+        // console.log(CHECKED_BRANCHES, CHECKED_SECTIONS, CHECKED_PRODLINES);
     });
 }
 
 function updatePermissionsBtnClick() {
-    var checkedBokes = $('#permission-grid-wrapper').find('input[type=checkbox]:checked');
-    var type = "";
-    var temp = "";
-    for (var i=0; i<checkedBokes.length; i++) {
-        temp += $(checkedBokes[i])['0'].id;
-    }
-    //determine user type
-    if (temp.indexOf("factory") >= 0) {
-        type = "f";
-    } else if (temp.indexOf("branch") >= 0) {
-        type = "b";
-    } else if (temp.indexOf("section") >= 0) {
-        type = "s";
-    } else if (temp.indexOf("prodline") >= 0) {
-        type = "p";
-    }
-
-    //construct branch, section or prodline id array
-    var idArray = [];
-    for (i=0; i<checkedBokes.length; i++) {
-        var id = $(checkedBokes[i])['0'].id;
-        console.log(id);
-        if (id.indexOf(type) >= 0) {
-            idArray.push(id.split("-")[1]);
-        }
-    }
-    console.log(idArray);
     if (SELECTED_USER == null) {
         alert("Please select a user to update permissions");
     } else {
         var r = confirm("Please confirm permission update for " + SELECTED_USER.name);
         if (r == true) {
-            console.log("updated")
+            var checkedBoxes = $('#permission-grid-wrapper').find('input[type=checkbox]:checked');
+            var newType = "";
+            var temp = "";
+            for (var i=0; i<checkedBoxes.length; i++) {
+                temp += $(checkedBoxes[i])['0'].id;
+            }
+            //determine new user type (if no permissions selected, type considers as prodline
+            if (temp.indexOf("factory") >= 0) {
+                newType = "f";
+            } else if (temp.indexOf("branch") >= 0) {
+                newType = "b";
+            } else if (temp.indexOf("section") >= 0) {
+                newType = "s";
+            } else {
+                newType = "p";
+            }
+
+            //construct branch, section or prodline id array
+            var idArray = [];
+            for (i=0; i<checkedBoxes.length; i++) {
+                var id = $(checkedBoxes[i])['0'].id;
+                if (id.indexOf(newType) >= 0) {
+                    idArray.push(parseInt(id.split("-")[1]));
+                }
+            }
+
+            var oldUser = {
+                id: SELECTED_USER.uid,
+                type: SELECTED_USER.type
+            };
+            var newUser = {
+                name: SELECTED_USER.name,
+                type: newType,
+                branches: [],
+                sections: [],
+                prodlines: []
+            };
+            if (newType == 'b') {
+                newUser.branches = idArray;
+            } else if (newType == 's') {
+                newUser.sections = idArray;
+            } else if (newType == 'p') {
+                newUser.prodlines = idArray;
+            }
+            updateUser(oldUser, newUser);
         }
     }
 }

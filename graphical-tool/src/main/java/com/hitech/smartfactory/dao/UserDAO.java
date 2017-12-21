@@ -120,8 +120,7 @@ public class UserDAO {
     }
 
     public void updateUser(User oldUser, User newUser) {
-        System.out.println(oldUser);
-        System.out.println(newUser);
+
         try {
             PreparedStatement preparedStatement1 = connection
                     .prepareStatement("UPDATE user SET name=?, type=? WHERE uid=?");
@@ -137,7 +136,7 @@ public class UserDAO {
             // insert new record
             insertAssociateUserRecords(newUser);
 
-            System.out.println("Update user complete: " + oldUser.getName() + " -> " + newUser.getName());
+            System.out.println("Update user complete: " + newUser.getName());
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -202,7 +201,6 @@ public class UserDAO {
     }
 
     private void deleteAssociateUserRecords(User user) {
-        System.out.println("deleteAssociateUserRecords");
         try {
             switch (user.getType()) {
                 case "b": {
