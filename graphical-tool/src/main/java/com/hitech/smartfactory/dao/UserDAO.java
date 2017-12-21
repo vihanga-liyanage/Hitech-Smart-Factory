@@ -208,7 +208,6 @@ public class UserDAO {
                             .prepareStatement("DELETE FROM user_branch WHERE uid=?");
                     // Parameters start with 1
                     preparedStatement2.setString(1, Integer.toString(user.getUid()));
-                    System.out.println(preparedStatement2.toString());
                     preparedStatement2.executeUpdate();
                     break;
                 }
@@ -217,7 +216,6 @@ public class UserDAO {
                             .prepareStatement("DELETE FROM user_section WHERE uid=?");
                     // Parameters start with 1
                     preparedStatement2.setString(1, Integer.toString(user.getUid()));
-                    System.out.println(preparedStatement2.toString());
                     preparedStatement2.executeUpdate();
                     break;
                 }
@@ -226,7 +224,6 @@ public class UserDAO {
                             .prepareStatement("DELETE FROM user_prodline WHERE uid=?");
                     // Parameters start with 1
                     preparedStatement2.setString(1, Integer.toString(user.getUid()));
-                    System.out.println(preparedStatement2.toString());
                     preparedStatement2.executeUpdate();
                     break;
                 }

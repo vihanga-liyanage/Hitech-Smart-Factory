@@ -63,5 +63,18 @@
 
 </div>
 
+<div id="action-form-background">
+    <!--This is used to disable the background-->
+</div>
+
+<form id="update-user" class="action-form" method="post">
+    <h4 style="text-align: center;">Update User</h4>
+    Name:
+    <input type="text" id="update-user-name" class="input-box" name="name">
+    <br><br>
+    <input type="submit" class="submit-btn" value="Update" onclick="updateUserName();return false;">
+    <input type="button" class="submit-btn" value="Cancel" onclick="hideForm('update-user')">
+</form>
+
 </body>
 </html>

@@ -111,6 +111,12 @@ function setUsers(uid, factoryId) {
                 USERS = JSON.parse(data);
                 var userTable = $('#user-table');
                 USERS.forEach(function (u) {
+                    if (u.branches == null)
+                        u.branches = [];
+                    if (u.sections == null)
+                        u.sections = [];
+                    if (u.prodlines == null)
+                        u.prodlines = [];
                     addUserRow(userTable, u)
                 });
 
@@ -132,23 +138,24 @@ function addUserRow(table, user) {
     var actionCell = document.createElement("td");
 
     var idTextNode = document.createTextNode(user.uid);
-    if (user.type == 'a') {
-        var nameTextNode = document.createTextNode(user.name + " (Admin)");
-    } else {
-        var nameTextNode = document.createTextNode(user.name);
-    }
+    var nameTextNode = document.createTextNode(user.name);
     var usernameTextNode = document.createTextNode(user.username);
     var editAction = document.createElement("a");
-    editAction.setAttribute('onclick',"editUser()");
+    editAction.setAttribute('onclick',"showEditUser(this)");
     editAction.setAttribute('style', 'cursor: pointer; margin-right:8px;');
     editAction.innerHTML = "Edit";
     var deleteAction = document.createElement("a");
-    deleteAction.setAttribute('onclick',"deleteUser()");
+    deleteAction.setAttribute('onclick',"showDeleteUser()");
     deleteAction.setAttribute('style', 'cursor: pointer;');
     deleteAction.innerHTML = "Delete";
 
     idCell.appendChild(idTextNode);
     nameCell.appendChild(nameTextNode);
+    if (user.type == 'a') {
+        var temp = document.createElement("b");
+        temp.appendChild(document.createTextNode(" (Admin)"));
+        nameCell.appendChild(temp);
+    }
     usernameCell.appendChild(usernameTextNode);
     actionCell.appendChild(editAction);
     actionCell.appendChild(deleteAction);
@@ -182,6 +189,39 @@ function createNewUser() {
         });
 }
 
+function showEditUser(element) {
+    var uid = $(element).parent().parent()["0"].childNodes["0"].innerText;
+    var name = $(element).parent().parent()["0"].childNodes["1"].innerText;
+
+    $("#update-user-name").val(name);
+
+    $("#action-form-background").show();
+    $("#update-user").show();
+
+    for (var i=0; i<USERS.length; i++) {
+        if (USERS[i].uid == uid) {
+            SELECTED_USER = USERS[i];
+            break;
+        }
+    }
+    console.log(SELECTED_USER);
+}
+
+function updateUserName() {
+    var newName = $("#update-user-name").val();
+    if (newName == "") {
+        alert("User name cannot be empty!");
+    } else {
+        var oldUser = {
+            id: SELECTED_USER.uid,
+            type: SELECTED_USER.type
+        };
+        var newUser = SELECTED_USER;
+        newUser.name = newName;
+        updateUser(oldUser, newUser);
+    }
+}
+
 function updateUser(oldUser, newUser) {
     console.log(oldUser, newUser);
     $.post('UserController',
@@ -207,6 +247,13 @@ function deleteUser() {
                 }
             });
     }
+}
+
+function hideForm(id) {
+    $('#' + id).hide();
+    // Erase data in input fields
+    $("#" + id + " :input[type='text']").value = "";
+    $('#action-form-background').hide();
 }
 
 function signout() {
