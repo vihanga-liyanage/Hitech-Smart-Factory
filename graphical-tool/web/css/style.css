@@ -524,3 +524,6 @@ label {
 .prodline-check {
     margin-left: 150px !important;
 }
+.btn-default {
+    background-color: #dcdcdc;
+}

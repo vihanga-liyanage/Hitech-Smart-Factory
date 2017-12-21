@@ -30,10 +30,10 @@
         <div id="headerimg">
             <span>Hitech Smart Factory</span>
             <div style="float:right; color: black; position: absolute; top: 6px; right: 86px;">
-                <button class="btn btn-block" onclick="switchToAdminDashboard()">Admin Dashboard</button>
+                <button class="btn btn-default" onclick="switchToAdminDashboard()">Admin Dashboard</button>
             </div>
             <div style="float:right; color: black; position: absolute; top: 6px; right: 6px;">
-                <button class="btn btn-block" onclick="signout()">Sign out</button>
+                <button class="btn btn-default" onclick="signout()">Sign out</button>
             </div>
         </div>
         <div id="button-panel" style="text-align: center;">Welcome to User Management!</div>
@@ -41,7 +41,7 @@
 
     <div id="main-panel" class="col-md-12">
         <div id="user-table-wrapper" class="col-lg-7" style=" border-right: 7px solid #e7e6e6; height: 100%;">
-            <table id="user-table" class="table table-hover table-bordered table-sm" style="margin-top: 10px; font-size: 15px;">
+            <table id="user-table" class="table table-hover table-bordered table-sm" style="margin-top: 15px; font-size: 15px;">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -53,6 +53,11 @@
             </table>
         </div>
         <div id="permission-grid-wrapper" class="col-lg-5" style="padding: 10px;">
+            <div id="permission-grid-header" style="font-weight: 600;margin-bottom: 5px;">Select user to view permissions</div>
+            <button id="update-permissions-btn" class="btn btn-default" onclick="updatePermissionsBtnClick()"
+                    style="position: absolute; top: 10px; right: 10px;">
+                Update Permissions
+            </button>
         </div>
     </div>
 

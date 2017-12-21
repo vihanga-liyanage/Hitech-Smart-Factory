@@ -47,6 +47,46 @@ var data = {
                                     }
                                 ]
                             }
+                        },
+                        {
+                            "BranchName": "Other Branch",
+                            "bid": 2,
+                            "Sections": {
+                                "Section": [
+                                    {
+                                        "SectionName": "Cleaning Section",
+                                        "sid": 2,
+                                        "Productionlines": {
+                                            "Productionline": [
+                                                {
+                                                    "Name": "Test",
+                                                    "pid": 2
+                                                },
+                                                {
+                                                    "Name": "Saw-1",
+                                                    "pid": 4
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "SectionName": "Molding Section",
+                                        "sid": 3,
+                                        "Productionlines": {
+                                            "Productionline": [
+                                                {
+                                                    "Name": "Prod-1",
+                                                    "pid": 5
+                                                },
+                                                {
+                                                    "Name": "Mold-2",
+                                                    "pid": 6
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
                         }
                     ]
                 }
@@ -57,8 +97,10 @@ var data = {
 
 // todo edit delete actions, permissions changing, add new user
 var USERS;
+var SELECTED_USER = null;
+var CHECKED_BRANCHES = [], CHECKED_SECTIONS = [], CHECKED_PRODLINES = [];
 
-function setUsers(factoryId) {
+function setUsers(uid, factoryId) {
 
     //get data by calling the servlet
     jQuery.ajax({
@@ -72,7 +114,7 @@ function setUsers(factoryId) {
                     addUserRow(userTable, u)
                 });
 
-                buildDataJSON();
+                buildDataJSON(uid);
             }
         },
         async: false
@@ -137,7 +179,6 @@ function createNewUser() {
 }
 
 function updateUser() {
-    console.log("updateUser");
     var uid = 21;
     var oldName = "Test 3";
     var oldType = "s";
@@ -188,48 +229,78 @@ function setUserPermissions(id) {
         if (user.uid == id) {
             // uncheck all
             $('#permission-grid-wrapper').find('input[type=checkbox]:checked').removeAttr('checked');
+            $('#permission-grid-wrapper').find('input[type=checkbox]').prop("disabled", false);
 
+            //clear out checked variables
+            CHECKED_BRANCHES = []; CHECKED_SECTIONS = []; CHECKED_PRODLINES = [];
+
+            // check relevant checkboxes
             if (user.type == 'b') {
                 user.branches.forEach(function (b) {
-                    $('#branch-' + b).prop( "checked", true );
+                    $('#branch-' + b + "-check").click();
                 });
             } else if (user.type == 's') {
                 user.sections.forEach(function (s) {
-                    $('#section-' + s).prop( "checked", true );
+                    $('#section-' + s + "-check").click();
                 });
             }else if (user.type == 'p') {
                 user.prodlines.forEach(function (p) {
-                    $('#prodline-' + p).prop( "checked", true );
+                    $('#prodline-' + p + "-check").click();
                 });
             }
+
+            // set title
+            $('#permission-grid-header').text("Permissions of " + user.name);
+
+            // set selected user
+            SELECTED_USER = user;
             break;
         }
     }
 }
 
-function buildDataJSON() {
-    // todo call DSS to get data
+function buildDataJSON(uid) {
 
-    var out = {};
-    var userObj = JSON.parse(localStorage.getItem("userObj"));
-    out.factoryID = userObj.fid;
-    out.factory = userObj.factoryName;
+    $.ajax({
+        type: "POST",
+        // todo use a config file for url
+        url: "http://35.202.158.138:9763/services/getDashboardDetailsOfFactoryUser/get_dashboard_details_of_factory_user",
+        headers: {
+            "Content-Type":"application/json"
+        },
+        data: JSON.stringify({
+            _postget_dashboard_details_of_factory_user: {
+                uid: uid
+            }
+        }),
+        dataType: "json",
+        success: function (response) {
+            var out = {};
+            var userObj = JSON.parse(localStorage.getItem("userObj"));
+            out.factoryID = userObj.fid;
+            out.factory = userObj.factoryName;
 
-    var branches;
-    var newBranches;
-    branches = data.Factories.Factory["0"].Branches.Branch;
-    newBranches = [];
-    branches.forEach(function (b) {
-        var temp = {
-            id: b.bid,
-            name: b.BranchName,
-            sections: resolveSection(b.Sections.Section)
-        };
-        newBranches.push(temp);
+            var branches;
+            var newBranches;
+            branches = response.Factories.Factory["0"].Branches.Branch;
+            newBranches = [];
+            branches.forEach(function (b) {
+                var temp = {
+                    id: b.bid,
+                    name: b.BranchName,
+                    sections: resolveSection(b.Sections.Section)
+                };
+                newBranches.push(temp);
+            });
+
+            out.branches = newBranches;
+            setupFactoryMenu(out);
+        },
+        error: function (xhr, status, error) {
+            console.log(xhr);
+            console.log(status, error);
+        }
     });
-
-    out.branches = newBranches;
-    setupFactoryMenu(out);
 }
 
 function resolveSection(sections) {
@@ -262,30 +333,43 @@ function setupFactoryMenu(data) {
 
     // set factory
     addCheckbox(container, 'factory', data.factoryID, data.factory);
+    var factoryDiv = document.createElement('div');
+    factoryDiv.id = 'factory-' + data.factoryID + '-div';
 
     data.branches.forEach(function (branch) {
-        addCheckbox(container, 'branch', branch.id, branch.name);
+        addCheckbox(factoryDiv, 'branch', branch.id, branch.name);
+        var branchDiv = document.createElement('div');
+        branchDiv.id = 'branch-' + branch.id + '-div';
+        branchDiv.className = "sections";
 
         // setup sections of the branch
         branch.sections.forEach(function (section) {
-            addCheckbox(container, 'section', section.id, section.name);
+            addCheckbox(branchDiv, 'section', section.id, section.name);
+            var sectionDiv = document.createElement('div');
+            sectionDiv.id = 'section-' + section.id + '-div';
+            sectionDiv.className = "prodlines";
 
             section.prod_lines.forEach(function (prodLine) {
-                addCheckbox(container, 'prodline', prodLine.id, prodLine.name);
+                addCheckbox(sectionDiv, 'prodline', prodLine.id, prodLine.name);
             });
+            branchDiv.appendChild(sectionDiv);
         });
+        factoryDiv.appendChild(branchDiv);
     });
+    container.appendChild(factoryDiv);
+
+    setPermissionCheckBoxesEvent();
 }
 
 function addCheckbox(container, type, id, name) {
     var checkbox = document.createElement('input');
     checkbox.type = "checkbox";
     checkbox.value = id;
-    checkbox.id = type + "-" + id;
+    checkbox.id = type + "-" + id + "-check";
     checkbox.className = type + "-check";
 
     var label = document.createElement('label');
-    label.htmlFor = type + "-" + id;
+    label.htmlFor = type + "-" + id + "-check";
     label.appendChild(document.createTextNode(name));
 
     var br = document.createElement('br');
@@ -295,7 +379,117 @@ function addCheckbox(container, type, id, name) {
     container.appendChild(br);
 }
 
+function setPermissionCheckBoxesEvent() {
+    // permission checkbox check event
+    $("input:checkbox").on('click', function () {
+        var checkID = $(this)["0"].id;
+        var checkDivID = checkID.substring(0, checkID.length - 5) + 'div';
+        var type = checkID.split('-')[0];
+
+        // update variables, disable checkboxes as necessary
+        if ($(this).prop("checked")) {
+            if (type == 'factory') {
+                $('#' + checkDivID + ' :input').prop("disabled", true);
+                $('#' + checkDivID).find('input[type=checkbox]').prop('checked', true);
+                CHECKED_BRANCHES = [];
+                CHECKED_SECTIONS = [];
+                CHECKED_PRODLINES = [];
+            } else if (type == 'branch') {
+                $('.sections :input').prop("disabled", true);
+                CHECKED_BRANCHES.push(checkDivID);
+                CHECKED_SECTIONS = [];
+                CHECKED_PRODLINES = [];
+                checkChildren(CHECKED_BRANCHES);
+            } else if (type == 'section') {
+                $('.prodlines :input').prop("disabled", true);
+                CHECKED_SECTIONS.push(checkDivID);
+                CHECKED_PRODLINES = [];
+                checkChildren(CHECKED_SECTIONS);
+            } else if (type == 'prodline') {
+                CHECKED_PRODLINES.push(checkDivID);
+            }
+        } else {
+            if (type == 'factory') {
+                $('#' + checkDivID + ' :input').prop("disabled", false);
+            } else if (type == 'branch') {
+                CHECKED_BRANCHES.splice(CHECKED_BRANCHES.indexOf(checkDivID), 1);
+                if (CHECKED_BRANCHES.length == 0)
+                    $('.sections :input').prop("disabled", false);
+            } else if (type == 'section') {
+                CHECKED_SECTIONS.splice(CHECKED_SECTIONS.indexOf(checkDivID), 1);
+                if (CHECKED_SECTIONS.length == 0)
+                    $('.prodlines :input').prop("disabled", false);
+            } else if (type == 'prodline') {
+                CHECKED_PRODLINES.splice(CHECKED_PRODLINES.indexOf(checkID), 1);
+            }
+            $('#' + checkDivID).find('input[type=checkbox]').prop('checked', false);
+        }
+
+        console.log(CHECKED_BRANCHES, CHECKED_SECTIONS, CHECKED_PRODLINES);
+    });
+}
+
+function updatePermissionsBtnClick() {
+    var checkedBokes = $('#permission-grid-wrapper').find('input[type=checkbox]:checked');
+    var type = "";
+    var temp = "";
+    for (var i=0; i<checkedBokes.length; i++) {
+        temp += $(checkedBokes[i])['0'].id;
+    }
+    //determine user type
+    if (temp.indexOf("factory") >= 0) {
+        type = "f";
+    } else if (temp.indexOf("branch") >= 0) {
+        type = "b";
+    } else if (temp.indexOf("section") >= 0) {
+        type = "s";
+    } else if (temp.indexOf("prodline") >= 0) {
+        type = "p";
+    }
+
+    //construct branch, section or prodline id array
+    var idArray = [];
+    for (i=0; i<checkedBokes.length; i++) {
+        var id = $(checkedBokes[i])['0'].id;
+        console.log(id);
+        if (id.indexOf(type) >= 0) {
+            idArray.push(id.split("-")[1]);
+        }
+    }
+    console.log(idArray);
+    if (SELECTED_USER == null) {
+        alert("Please select a user to update permissions");
+    } else {
+        var r = confirm("Please confirm permission update for " + SELECTED_USER.name);
+        if (r == true) {
+            console.log("updated")
+        }
+    }
+}
+
+function checkChildren(parent) {
+    $('#permission-grid-wrapper').find('input[type=checkbox]:checked').removeAttr('checked');
+
+    parent.forEach(function (checkDivID) {
+        var checkID = checkDivID.substring(0, checkDivID.length - 3) + 'check';
+        $('#' + checkID).prop('checked', true);
+        $('#' + checkDivID).find('input[type=checkbox]').prop('checked', true);
+    });
+}
+
 $(document).ready(function () {
+    // Authenticate user
+    var userObj = JSON.parse(localStorage.getItem("userObj"));
+    if (userObj != null && userObj.usertype === 'a') {
+        setUsers(userObj.uid, userObj.fid);
+    } else if (userObj != null && userObj.usertype === 'x') {
+        // setFactory('all');
+    } else {
+        localStorage.setItem("userObj", null);
+        alert("You're not authorized to be here!");
+        window.location.replace("/hitech-smart-factory");
+    }
+
     // user table row select event
     var selectedRow;
     $("#user-table").delegate("tr", "click", function(){
@@ -309,16 +503,5 @@ $(document).ready(function () {
         setUserPermissions(id);
     });
 
-    // Authenticate user
-    var userObj = JSON.parse(localStorage.getItem("userObj"));
-    if (userObj != null && userObj.usertype === 'a') {
-        setUsers(userObj.fid);
-    } else if (userObj != null && userObj.usertype === 'x') {
-        // setFactory('all');
-    } else {
-        localStorage.setItem("userObj", null);
-        alert("You're not authorized to be here!")
-        window.location.replace("/hitech-smart-factory");
-    }
 });
 

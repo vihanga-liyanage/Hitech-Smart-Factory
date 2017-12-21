@@ -31,10 +31,50 @@ $('#loginButton').click(function (e) {
 });
 
 function getUserDetails(username) {
+
+    // todo remove temp
+    // var temp = {
+    //     "UserDetails": {
+    //         "User": [
+    //             {
+    //                 "userid": 1,
+    //                 "userType": "a",
+    //                 "fid": 1,
+    //                 "FactoryNames": {
+    //                     "FactoryName": [
+    //                         {
+    //                             "Name": "Bata Shoe Factory"
+    //                         }
+    //                     ]
+    //                 }
+    //             }
+    //         ]
+    //     }
+    // };
+    // var userObj = {};
+    // var user = temp.UserDetails.User[0];
+    // if (user.userType == "a" || user.userType == "x") {
+    //     userObj.username = username;
+    //     userObj.uid = user.userid;
+    //     userObj.usertype = user.userType;
+    //     userObj.fid = user.fid;
+    //     userObj.factoryName = user.FactoryNames.FactoryName["0"].Name;
+    //
+    //     if (typeof(Storage) !== "undefined") {
+    //         localStorage.setItem("userObj", JSON.stringify(userObj));
+    //         window.location.replace("/hitech-smart-factory/FactoryController");
+    //     } else {
+    //         alert("Error!");
+    //         console.log("Sorry! No Web Storage support..");
+    //     }
+    // } else {
+    //     alert("You don't have permission to access admin panel!")
+    // }
+
     $.ajax({
         type: "POST",
         // todo use a config file for url
-        url: "http://35.192.12.87:9763/services/getBasicUserDetails/get_basic_user_details",
+        url: "http://35.202.158.138:9763/services/getBasicUserDetails/get_basic_user_details",
         headers: {
             "Content-Type":"application/json"
         },
@@ -47,6 +87,7 @@ function getUserDetails(username) {
         success: function (response) {
             console.log(response);
             var userObj = {};
+
             if (response.UserDetails.User) {
                 var user = response.UserDetails.User[0];
                 if (user.userType == "a" || user.userType == "x") {
