@@ -359,14 +359,15 @@ function buildDataJSON(uid) {
             var newBranches;
             branches = response.Factories.Factory["0"].Branches.Branch;
             newBranches = [];
-            branches.forEach(function (b) {
-                var temp = {
-                    id: b.bid,
-                    name: b.BranchName,
-                    sections: resolveSection(b.Sections.Section)
-                };
-                newBranches.push(temp);
-            });
+            if (branches != null)
+                branches.forEach(function (b) {
+                    var temp = {
+                        id: b.bid,
+                        name: b.BranchName,
+                        sections: resolveSection(b.Sections.Section)
+                    };
+                    newBranches.push(temp);
+                });
 
             out.branches = newBranches;
             setupFactoryMenu(out);
@@ -379,27 +380,30 @@ function buildDataJSON(uid) {
 }
 
 function resolveSection(sections) {
+    console.log(sections);
     var out = [];
-    sections.forEach(function (s) {
-        var temp = {
-            id: s.sid,
-            name: s.SectionName,
-            prod_lines: resolveProdline(s.Productionlines.Productionline)
-        };
-        out.push(temp);
-    });
+    if (sections != null)
+        sections.forEach(function (s) {
+            var temp = {
+                id: s.sid,
+                name: s.SectionName,
+                prod_lines: resolveProdline(s.Productionlines.Productionline)
+            };
+            out.push(temp);
+        });
     return out;
 }
 
 function resolveProdline(prodlines) {
     var out = [];
-    prodlines.forEach(function (p) {
-        var temp = {
-            id: p.pid,
-            name: p.Name
-        };
-        out.push(temp);
-    });
+    if (prodlines != null)
+        prodlines.forEach(function (p) {
+            var temp = {
+                id: p.pid,
+                name: p.Name
+            };
+            out.push(temp);
+        });
     return out;
 }
 
