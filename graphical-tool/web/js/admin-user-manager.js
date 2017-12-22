@@ -97,6 +97,7 @@ var data = {
 
 // todo edit delete actions, permissions changing, add new user
 var USERS;
+var LOGGED_IN_USER;
 var SELECTED_USER = null;
 var CHECKED_BRANCHES = [], CHECKED_SECTIONS = [], CHECKED_PRODLINES = [];
 
@@ -145,7 +146,7 @@ function addUserRow(table, user) {
     editAction.setAttribute('style', 'cursor: pointer; margin-right:8px;');
     editAction.innerHTML = "Edit";
     var deleteAction = document.createElement("a");
-    deleteAction.setAttribute('onclick',"showDeleteUser()");
+    deleteAction.setAttribute('onclick',"showDeleteUser(this)");
     deleteAction.setAttribute('style', 'cursor: pointer;');
     deleteAction.innerHTML = "Delete";
 
@@ -168,25 +169,36 @@ function addUserRow(table, user) {
     tbody.appendChild(row);
 }
 
+function showAddUser() {
+    $("#action-form-background").show();
+    $("#add-user").show();
+    $("#add-user-name").focus();
+}
+
 function createNewUser() {
     console.log("createNewUser");
-    var name = "Test 1";
-    var username = "test-1";
-    var type = "b";
-    var factory = 3;
-    var branches = JSON.stringify(['2', '4']);
-    var sections = JSON.stringify([]);
-    var prodlines = JSON.stringify([]);
+    var name = $("#add-user-name").val();
+    var username = $("#add-username").val();
+    if (name == "" || username == "") {
+        alert("Name and username of the user cannot be empty!");
+    } else {
+        var type = "p";
+        var factory = LOGGED_IN_USER.fid;
+        var branches = [];
+        var sections = [];
+        var prodlines = [];
 
-    console.log("Creating new user " + name + " " + username + " " + type + " " + factory);
-    $.post('UserController',
-        {action: "addUser", name: name, username: username, type: type, factory: factory,
-            branches: branches, sections: sections, prodlines: prodlines},
-        function (data) {
-            if (data == "Success") {
-                console.log("Success");
-            }
-        });
+        $.post('UserController',
+            {action: "addUser", name: name, username: username, type: type, factory: factory,
+                branches: JSON.stringify(branches), sections: JSON.stringify(sections), prodlines: JSON.stringify(prodlines)},
+            function (data) {
+                if (data == "Success") {
+                    $("#add-user-name").val("");
+                    $("#add-username").val("");
+                    location.reload();
+                }
+            });
+    }
 }
 
 function showEditUser(element) {
@@ -197,6 +209,7 @@ function showEditUser(element) {
 
     $("#action-form-background").show();
     $("#update-user").show();
+    $('#update-user-name').focus();
 
     for (var i=0; i<USERS.length; i++) {
         if (USERS[i].uid == uid) {
@@ -235,18 +248,28 @@ function updateUser(oldUser, newUser) {
         });
 }
 
-function deleteUser() {
-    var r = confirm("Please confirm user deletion.");
-    var uid = 22;
-    var type = 'b';
+function showDeleteUser(element) {
+    var uid = $(element).parent().parent()["0"].childNodes["0"].innerText;
+    var name = $(element).parent().parent()["0"].childNodes["1"].innerText;
+    var r = confirm("Please confirm deletion of user " + name);
     if (r == true) {
-        $.post('UserController', {action: "deleteUser", uid: uid, type: type},
-            function (data) {
-                if (data == "Success") {
-                    console.log("User deleted");
-                }
-            });
+        for (var i=0; i<USERS.length; i++) {
+            if (USERS[i].uid == uid) {
+                var type = USERS[i].type;
+                deleteUser(uid, type);
+                break;
+            }
+        }
     }
+}
+
+function deleteUser(uid, type) {
+    $.post('UserController', {action: "deleteUser", uid: uid, type: type},
+        function (data) {
+            if (data == "Success") {
+                location.reload();
+            }
+        });
 }
 
 function hideForm(id) {
@@ -328,9 +351,8 @@ function buildDataJSON(uid) {
         dataType: "json",
         success: function (response) {
             var out = {};
-            var userObj = JSON.parse(localStorage.getItem("userObj"));
-            out.factoryID = userObj.fid;
-            out.factory = userObj.factoryName;
+            out.factoryID = LOGGED_IN_USER.fid;
+            out.factory = LOGGED_IN_USER.factoryName;
 
             var branches;
             var newBranches;
@@ -550,6 +572,7 @@ $(document).ready(function () {
     // Authenticate user
     var userObj = JSON.parse(localStorage.getItem("userObj"));
     if (userObj != null && userObj.usertype === 'a') {
+        LOGGED_IN_USER = userObj;
         setUsers(userObj.uid, userObj.fid);
     } else if (userObj != null && userObj.usertype === 'x') {
         // setFactory('all');

@@ -40,8 +40,12 @@
     </div>
 
     <div id="main-panel" class="col-md-12">
-        <div id="user-table-wrapper" class="col-lg-7" style=" border-right: 7px solid #e7e6e6; height: 100%;">
-            <table id="user-table" class="table table-hover table-bordered table-sm" style="margin-top: 15px; font-size: 15px;">
+        <div id="user-table-wrapper" class="col-lg-7" style="padding: 10px; border-right: 7px solid #e7e6e6; height: 100%">
+            <button id="add-user-btn" class="btn btn-default" onclick="showAddUser()"
+                    style="margin-bottom: 10px;">
+                Add New User
+            </button>
+            <table id="user-table" class="table table-hover table-bordered table-sm" style="font-size: 15px;">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -54,7 +58,7 @@
         </div>
         <div id="permission-grid-wrapper" class="col-lg-5" style="padding: 10px;">
             <div id="permission-grid-header" style="font-weight: 600;margin-bottom: 5px;">Select user to view permissions</div>
-            <button id="update-permissions-btn" class="btn btn-default" onclick="updatePermissionsBtnClick()"
+            <button id="update-permissions-btn" class="btn btn-default" onclick="updatePermissionsBtnClick();return false;"
                     style="position: absolute; top: 10px; right: 10px;">
                 Update Permissions
             </button>
@@ -73,7 +77,19 @@
     <input type="text" id="update-user-name" class="input-box" name="name">
     <br><br>
     <input type="submit" class="submit-btn" value="Update" onclick="updateUserName();return false;">
-    <input type="button" class="submit-btn" value="Cancel" onclick="hideForm('update-user')">
+    <input type="button" class="submit-btn" value="Cancel" onclick="hideForm('update-user');return false;">
+</form>
+
+<form id="add-user" class="action-form" method="post">
+    <h4 style="text-align: center;">Add New User</h4>
+    Name:
+    <input type="text" id="add-user-name" class="input-box" name="name">
+    <br><br>
+    Username:
+    <input type="text" id="add-username" class="input-box" name="username">
+    <br><br>
+    <input type="submit" class="submit-btn" value="Add" onclick="createNewUser();return false;">
+    <input type="button" class="submit-btn" value="Cancel" onclick="hideForm('add-user');return false;">
 </form>
 
 </body>

@@ -153,12 +153,14 @@ public class UserDAO {
             preparedStatement.setString(1, Integer.toString(user.getUid()));
             preparedStatement.executeUpdate();
 
+            System.out.println("Delete user complete: " + user.getUid());
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     private void insertAssociateUserRecords(User user) {
+        System.out.println(user);
         try {
             switch (user.getType()) {
                 case "b": {
@@ -201,6 +203,7 @@ public class UserDAO {
     }
 
     private void deleteAssociateUserRecords(User user) {
+        System.out.println(user);
         try {
             switch (user.getType()) {
                 case "b": {

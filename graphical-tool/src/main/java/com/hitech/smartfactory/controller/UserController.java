@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by Vihanga Liyanage on 12/17/2017.
@@ -57,9 +58,9 @@ public class UserController extends HttpServlet {
             user.setType(request.getParameter("type"));
             user.setFactory(Integer.parseInt(request.getParameter("factory")));
 
-            user.setBranches(getIntArrayFromString(request.getParameter("branch")));
-            user.setSections(getIntArrayFromString(request.getParameter("section")));
-            user.setProdlines(getIntArrayFromString(request.getParameter("prodline")));
+            user.setBranches(getIntArrayFromString(request.getParameter("branches")));
+            user.setSections(getIntArrayFromString(request.getParameter("sections")));
+            user.setProdlines(getIntArrayFromString(request.getParameter("prodlines")));
 
             dao.addUser(user);
             response.setContentType("text/plain");
@@ -93,15 +94,20 @@ public class UserController extends HttpServlet {
     private int[] getIntArrayFromString(String s) {
         s = s.replaceAll("\"", "");
         s = s.substring(1, s.length() - 1);
-        String[] s2 = s.split(",");
 
-        int[] out = new int[s2.length];
-        if (!s.equals("")) {
-            for (int i = 0; i < s2.length; i++) {
-                out[i] = Integer.parseInt(s2[i]);
+        if (Objects.equals(s, "")) {
+            return new int[0];
+        } else {
+            String[] s2 = s.split(",");
+
+            int[] out = new int[s2.length];
+            if (!s.equals("")) {
+                for (int i = 0; i < s2.length; i++) {
+                    out[i] = Integer.parseInt(s2[i]);
+                }
             }
+            System.out.println(out);
+            return out;
         }
-
-        return out;
     }
 }
