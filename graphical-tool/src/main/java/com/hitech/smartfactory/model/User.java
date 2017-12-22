@@ -11,6 +11,7 @@ public class User {
     private String username;
     private String type;
     private int factory;
+    private String factoryName;
     private int[] branches;
     private int[] sections;
     private int[] prodlines;
@@ -19,6 +20,15 @@ public class User {
         branches = null;
         sections = null;
         prodlines = null;
+        factoryName = "";
+    }
+
+    public String getFactoryName() {
+        return factoryName;
+    }
+
+    public void setFactoryName(String factoryName) {
+        this.factoryName = factoryName;
     }
 
     public void setUid(int uid) {
@@ -93,6 +103,7 @@ public class User {
                 ", \"username\":\"" + username + '\"' +
                 ", \"type\":\"" + type + '\"' +
                 ", \"factory\":" + factory +
+                ", \"factoryName\":\"" + factoryName + '\"' +
                 ", \"branches\":" + Arrays.toString(branches) +
                 ", \"sections\":" + Arrays.toString(sections) +
                 ", \"prodlines\":" + Arrays.toString(prodlines) +

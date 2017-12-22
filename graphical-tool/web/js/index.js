@@ -71,6 +71,11 @@ function getUserDetails(username) {
     //     alert("You don't have permission to access admin panel!")
     // }
 
+    console.log(JSON.stringify({
+        _postget_basic_user_details: {
+            username: username
+        }
+    }));
     $.ajax({
         type: "POST",
         // todo use a config file for url

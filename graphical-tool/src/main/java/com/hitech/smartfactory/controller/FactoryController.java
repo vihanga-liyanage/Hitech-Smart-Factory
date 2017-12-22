@@ -52,7 +52,7 @@ public class FactoryController extends HttpServlet {
             }
 
         } else {
-            RequestDispatcher view = request.getRequestDispatcher("/system-admin-ui.jsp");
+            RequestDispatcher view = request.getRequestDispatcher("/admin-dashboard.jsp");
             view.forward(request, response);
         }
     }

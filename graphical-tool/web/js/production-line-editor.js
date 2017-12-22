@@ -2,9 +2,8 @@
  * @author Vihanga Liyanage <vihangaliyanage007@gmail.com>
  */
 
-var BASE_URL = "http://localhost:81/hitech-smart-factory/";
-// var BASE_URL = "http://ec2-52-38-15-248.us-west-2.compute.amazonaws.com/hitech-smart-factory/";
-// var BASE_URL = "http://35.192.12.87/hitech-smart-factory/";
+// var BASE_URL = "http://localhost:81/hitech-smart-factory/";
+var BASE_URL = "http://35.202.158.138/hitech-smart-factory/";
 
 var TOOLBOX_ITEMS = [];
 

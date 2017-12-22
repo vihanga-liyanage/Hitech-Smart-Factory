@@ -85,6 +85,30 @@ public class UserDAO {
         return users;
     }
 
+    public List<User> getAllAdminUsers() {
+        List<User> users = new ArrayList<>();
+        try {
+            Statement statement1 = connection.createStatement();
+            String query = "SELECT uid, u.name, username, type, factory, f.name as factoryName FROM user u INNER JOIN factory f WHERE u.type=\"a\" AND u.factory=f.fid";
+            ResultSet rs = statement1.executeQuery(query);
+            while (rs.next()) {
+                User user = new User();
+                user.setUid(rs.getInt("uid"));
+                user.setName(rs.getString("name"));
+                user.setUsername(rs.getString("username"));
+                user.setType(rs.getString("type"));
+                user.setFactory(rs.getInt("factory"));
+                user.setFactoryName(rs.getString("factoryName"));
+
+                users.add(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return users;
+    }
+
     public void addUser(User user) {
         try {
             // Insert user record

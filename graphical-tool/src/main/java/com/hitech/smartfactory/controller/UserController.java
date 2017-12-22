@@ -29,20 +29,20 @@ public class UserController extends HttpServlet {
         String action = request.getParameter("action");
         if (action != null && action.equalsIgnoreCase("listAllUsers")) {
             int fid = Integer.parseInt(request.getParameter("id"));
-            List<User> users = dao.getAllUsersByFactory(fid);
+            String out = buildUserString(dao.getAllUsersByFactory(fid));
 
-            String out = "";
-            if (users.size() > 0) {
-                out = "[";
-                for (User user : users) {
-                    out += user.toString() + ", ";
-                }
-                out = (out.substring(0, out.length() - 2)) + "]";
-            }
             response.setContentType("text/plain");
             response.getWriter().write(out);
-        } else {
+        } else if (action != null && action.equalsIgnoreCase("listAllAdminUsers")) {
+            String out = buildUserString(dao.getAllAdminUsers());
+
+            response.setContentType("text/plain");
+            response.getWriter().write(out);
+        } else if (action != null && action.equalsIgnoreCase("getAdminUserManager")) {
             RequestDispatcher view = request.getRequestDispatcher("/admin-user-manager.jsp");
+            view.forward(request, response);
+        } else if (action != null && action.equalsIgnoreCase("getUserManager")) {
+            RequestDispatcher view = request.getRequestDispatcher("/user-manager.jsp");
             view.forward(request, response);
         }
     }
@@ -109,5 +109,17 @@ public class UserController extends HttpServlet {
             System.out.println(out);
             return out;
         }
+    }
+
+    private String buildUserString(List<User> users) {
+        String out = "";
+        if (users.size() > 0) {
+            out = "[";
+            for (User user : users) {
+                out += user.toString() + ", ";
+            }
+            out = (out.substring(0, out.length() - 2)) + "]";
+        }
+        return out;
     }
 }

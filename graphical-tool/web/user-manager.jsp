@@ -1,4 +1,3 @@
-
 <%--
   User: Vihanga Liyanage
   Date: 12/16/2017
@@ -22,7 +21,7 @@
 
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 
-    <script type="text/javascript" src="js/admin-user-manager.js"></script>
+    <script type="text/javascript" src="js/user-manager.js"></script>
 
 </head>
 <body>
@@ -37,27 +36,32 @@
                 <button class="btn btn-default" onclick="signout()">Sign out</button>
             </div>
         </div>
-        <div id="button-panel" style="text-align: center;">Welcome to Admin User Management!</div>
+        <div id="button-panel" style="text-align: center;">Welcome to User Management!</div>
     </div>
 
     <div id="main-panel" class="col-md-12">
-        <div style="padding: 15px;">
+        <div id="user-table-wrapper" class="col-lg-7" style="padding: 10px; border-right: 7px solid #e7e6e6; height: 100%">
             <button id="add-user-btn" class="btn btn-default" onclick="showAddUser()"
-                    style="margin-bottom: 10px; float: right;">
+                    style="margin-bottom: 10px;">
                 Add New User
             </button>
-            <h4>Admin users of all factories</h4>
             <table id="user-table" class="table table-hover table-bordered table-sm" style="font-size: 15px;">
                 <thead>
                 <tr>
                     <th>Name</th>
                     <th>Username</th>
-                    <th>Factory</th>
                     <th>Action</th>
                 </tr>
                 </thead>
                 <tbody></tbody>
             </table>
+        </div>
+        <div id="permission-grid-wrapper" class="col-lg-5" style="padding: 10px;">
+            <div id="permission-grid-header" style="font-weight: 600;margin-bottom: 5px;">Select user to view permissions</div>
+            <button id="update-permissions-btn" class="btn btn-default" onclick="updatePermissionsBtnClick();return false;"
+                    style="position: absolute; top: 10px; right: 10px;">
+                Update Permissions
+            </button>
         </div>
     </div>
 
@@ -84,10 +88,8 @@
     Username:
     <input type="text" id="add-username" class="input-box" name="username">
     <br><br>
-    Factory:
-    <select name="add-user-factory" id="add-user-factory-select" class="input-box">
-        <option value="0">- Select Factory -</option>
-    </select>
+    Admin User:
+    <input type="checkbox" id="add-user-admin-check" class="input-box" name="admin">
     <br><br>
     <input type="submit" class="submit-btn" value="Add" onclick="createNewUser();return false;">
     <input type="button" class="submit-btn" value="Cancel" onclick="hideForm('add-user');return false;">
