@@ -31,7 +31,7 @@ function getUserDetails(username) {
     $.ajax({
         type: "POST",
         // todo use a config file for url
-        url: "http://35.192.12.87:9763/services/getBasicUserDetails/get_basic_user_details",
+        url: "http://35.202.158.138:9763/services/getBasicUserDetails/get_basic_user_details",
         headers: {
             "Content-Type":"application/json"
         },
