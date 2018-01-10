@@ -1,3 +1,4 @@
+
 $(function () {
     $('#sign_in').validate({
         highlight: function (input) {
@@ -30,8 +31,7 @@ $('#loginButton').click(function (e) {
 function getUserDetails(username) {
     $.ajax({
         type: "POST",
-        // todo use a config file for url
-        url: "http://35.202.158.138:9763/services/getBasicUserDetails/get_basic_user_details",
+        url: GCP + ":9763/services/getBasicUserDetails/get_basic_user_details",
         headers: {
             "Content-Type":"application/json"
         },
@@ -70,6 +70,21 @@ function getUserDetails(username) {
             console.log(status, error);
         }
     });
+    // var userObj = {};
+    // userObj.username = username;
+    // userObj.uid = 1;
+    // userObj.name = 'Poornima Karunarathna';
+    // userObj.usertype = 'b';
+    // userObj.fid = 3;
+    // userObj.factoryName = "Bata Shoe Factory";
+    //
+    // if (typeof(Storage) !== "undefined") {
+    //     localStorage.setItem("userObj", JSON.stringify(userObj));
+    //     window.location.replace("dashboard.html");
+    // } else {
+    //     alert("Error!");
+    //     console.log("Sorry! No Web Storage support..");
+    // }
 }
 
 function ajaxSend(params, action) {

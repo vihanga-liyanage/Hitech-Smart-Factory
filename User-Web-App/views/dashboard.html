@@ -132,14 +132,8 @@
             var graphNode = editor.graph.container;
             var sourceInput = document.getElementById('source');
 
-            //Variables for cell merging
-            var currentCell = null;
-            var highlighter = new mxCellHighlight(editor.graph, '#ff2d25', 3, 1);
-            var cellMerge = {
-                isMergeable: false,
-                source: null,
-                target: null
-            };
+            // variables to keep graphical components in order
+            var usedTags = [];
 
             // </editor-fold>
 
@@ -151,13 +145,64 @@
                     mouseDowned: false,
                     mouseDown: function (sender, me) {
                         this.mouseDowned = true;
-                        //if starting to drag a vertex, store it in currentCell
-                        currentCell = me.getCell();
 
                         // Hides icons on mouse down
                         if (this.currentState != null) {
                             this.dragLeave(me.getEvent(), this.currentState);
                             this.currentState = null;
+                        }
+
+                        // Loading dashboards on mouse click
+                        if (me.sourceState && !me.sourceState.cell.edge) {
+                            var cell = me.sourceState.cell;
+                            var tag = cell.tag;
+                            var urlTag = tag.split("/").join("-");
+                            // adding the module if not added already
+                            if (usedTags.indexOf(urlTag) == -1) {
+                                // set position using clicked position
+                                var posX = 380 + me.graphX;
+                                var posY = 150 + me.graphY;
+
+                                var container = document.createElement('div');
+                                container.className = "draggable";
+                                container.style = "padding: 2px 2px 0px 2px; background: #6b6b6b; position: absolute; left: " +
+                                    posX + "px; top: " + posY + "px; width:350px";
+
+                                var nameText = document.createElement('p');
+                                nameText.innerText = cell.value.attributes[1].textContent;
+                                nameText.style = "color: white; margin: 0; font-size: 12px;";
+
+                                var iframe = document.createElement('iframe');
+                                iframe.src = "http://35.196.127.106:3000/dashboard-solo/db/" + urlTag + "?orgId=1&panelId=1";
+                                iframe.style = "width: 100%; height: 100%;";
+
+                                var closeBtn = document.createElement('img');
+                                closeBtn.src = "/images/hitech/icons/close.png";
+                                closeBtn.style = "width: 14px; position: absolute; top: 1px; right: 2px; cursor: pointer;";
+                                closeBtn.onclick = function () {
+                                    document.body.removeChild(container);
+                                    // remove the tag from the array
+                                    var removingTag = $(this).parent()["0"].children["0"].innerHTML;
+                                    var removingIndex = usedTags.indexOf(removingTag);
+                                    usedTags.splice(removingIndex, 1);
+                                };
+
+                                var tagHolder = document.createElement('p');
+                                tagHolder.innerText = urlTag;
+                                tagHolder.style = "display: none;";
+
+                                container.appendChild(tagHolder);
+                                container.appendChild(nameText);
+                                container.appendChild(closeBtn);
+                                container.appendChild(iframe);
+                                document.body.appendChild(container);
+
+                                // make the container draggable
+                                $('.draggable').draggable();
+
+                                // add tag to and array to prevent opening over and over
+                                usedTags.push(urlTag);
+                            }
                         }
                     },
                     mouseMove: function (sender, me) {
@@ -165,9 +210,9 @@
                         if (this.currentState != null && (me.getState() == this.currentState ||
                                 me.getState() == null)) {
                             var tol = iconTolerance;
-                            var tmp = new mxRectangle(me.getGraphX() - tol, me.getGraphY() - tol, 2 * tol, 2 * tol);
+                            var tmp1 = new mxRectangle(me.getGraphX() - tol, me.getGraphY() - tol, 2 * tol, 2 * tol);
 
-                            if (mxUtils.intersects(tmp, this.currentState)) {
+                            if (mxUtils.intersects(tmp1, this.currentState)) {
                                 return;
                             }
                         }
@@ -192,8 +237,6 @@
                         }
                     },
                     mouseUp: function (sender, me) {
-                        //If a vertex was dragged, now it's dropped, hence null the currentCell
-                        currentCell = null;
                         this.mouseDowned = false;
                     },
                     dragOver: function (evt, cell) {
@@ -688,8 +731,10 @@
 
 <!-- Jquery Core Js -->
 <script src="/assets/plugins/jquery/jquery.min.js"></script>
+<script src="/assets/plugins/jquery/jquery-ui-1.9.2.min.js"></script>
 
 <!-- custom JS special for dashboard -->
+<script src="/assets/js/helpers.js"></script>
 <script src="/assets/js/dashboard.js"></script>
 
 <!--Waves Effect Plugin Js-->

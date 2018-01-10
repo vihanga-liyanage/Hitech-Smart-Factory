@@ -4,12 +4,40 @@
 
 var editor;
 
-// var PROD_LINE_BASE_URL = "http://localhost:81/hitech-smart-factory/";
-// var PROD_LINE_BASE_URL = "http://ec2-52-38-15-248.us-west-2.compute.amazonaws.com/hitech-smart-factory/";
-var PROD_LINE_BASE_URL = "http://35.202.158.138/hitech-smart-factory/";
+var tempData = {
+    "Branches": {
+        "Branch": [
+            {
+                "bid": 8,
+                "BranchNames": {
+                    "BranchName": [
+                        {
+                            "Name": "Main Branch"
+                        }
+                    ]
+                },
+                "Sections": {
+                    "Section": [
+                        {
+                            "SectionName": "Sawing Section",
+                            "sid": 6,
+                            "Productionlines": {
+                                "Productionline": [
+                                    {
+                                        "Name": "Sawing Line 1",
+                                        "pid": 8
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+};
 
-//todo read urls from a file
-var DSS_BASE_URL = "http://35.202.158.138:9763/services/";
+var DSS_BASE_URL = GCP + ":9763/services/";
 
 function loadData() {
     //Retrieve user info from session
@@ -65,6 +93,7 @@ function loadData() {
             console.log(status, error);
         }
     });
+    // buildDataJSON(tempData);
 }
 
 function buildDataJSON(data) {
@@ -205,7 +234,6 @@ function buildDataJSON(data) {
 }
 
 function resolveSection(sections) {
-    console.log(sections);
     var out = [];
     if (sections != null)
         sections.forEach(function (s) {
