@@ -55,6 +55,7 @@ public class UserController extends HttpServlet {
             // add new user
             user.setName(request.getParameter("name"));
             user.setUsername(request.getParameter("username"));
+            user.setPassword(request.getParameter("password"));
             user.setType(request.getParameter("type"));
             user.setFactory(Integer.parseInt(request.getParameter("factory")));
 

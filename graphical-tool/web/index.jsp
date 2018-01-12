@@ -86,6 +86,8 @@
 <script src="js/jquery-ui.min.js"></script>
 
 <%-- Custom JS --%>
+<script type="text/javascript" src="js/helper.js"></script>
+<script type="text/javascript" src="js/SHA256.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 
 <!-- Bootstrap Core Js -->

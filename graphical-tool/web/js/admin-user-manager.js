@@ -13,7 +13,7 @@ function setUsers() {
     jQuery.ajax({
         url: 'UserController?action=listAllAdminUsers',
         success: function (data) {
-            console.log(JSON.parse(data));
+            // console.log(JSON.parse(data));
             if (data != "") {
                 USERS = JSON.parse(data);
                 var userTable = $('#user-table');
@@ -100,10 +100,11 @@ function showAddUser() {
 function createNewUser() {
     console.log("createNewUser");
     var name = $("#add-user-name").val();
-    var username = $("#add-username").val();
+    var username = $("#add-user-username").val();
+    var password = $("#add-user-password").val();
     var factory = $("#add-user-factory-select option:selected").val();
-    if (name == "" || username == "") {
-        alert("Name and username of the user cannot be empty!");
+    if (name == "" || username == "" || password == "") {
+        alert("Fields cannot be empty!");
     } else if (factory == 0) {
         alert("Please select a factory!");
     } else {
@@ -113,7 +114,7 @@ function createNewUser() {
         var prodlines = [];
 
         $.post('UserController',
-            {action: "addUser", name: name, username: username, type: type, factory: factory,
+            {action: "addUser", name: name, username: username, password: password, type: type, factory: factory,
                 branches: JSON.stringify(branches), sections: JSON.stringify(sections), prodlines: JSON.stringify(prodlines)},
             function (data) {
                 if (data == "Success") {
@@ -139,7 +140,7 @@ function showEditUser(element) {
     $("#update-user").show();
     $('#update-user-name').focus();
 
-    console.log(SELECTED_USER);
+    // console.log(SELECTED_USER);
 }
 
 function updateUserName() {
@@ -158,7 +159,7 @@ function updateUserName() {
 }
 
 function updateUser(oldUser, newUser) {
-    console.log(oldUser, newUser);
+    // console.log(oldUser, newUser);
     $.post('UserController',
         {action: "updateUser", uid: oldUser.id, oldType: oldUser.type, newName: newUser.name, newType: newUser.type,
             newBranches: JSON.stringify(newUser.branches), newSections: JSON.stringify(newUser.sections),

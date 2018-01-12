@@ -82,7 +82,10 @@
     <input type="text" id="add-user-name" class="input-box" name="name">
     <br><br>
     Username:
-    <input type="text" id="add-username" class="input-box" name="username">
+    <input type="text" id="add-user-username" class="input-box" name="username">
+    <br><br>
+    Password:
+    <input type="password" id="add-user-password" class="input-box" name="password">
     <br><br>
     Factory:
     <select name="add-user-factory" id="add-user-factory-select" class="input-box">

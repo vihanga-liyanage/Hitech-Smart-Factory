@@ -21,6 +21,7 @@
 
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 
+    <script type="text/javascript" src="js/helper.js"></script>
     <script type="text/javascript" src="js/user-manager.js"></script>
 
 </head>
@@ -86,7 +87,10 @@
     <input type="text" id="add-user-name" class="input-box" name="name">
     <br><br>
     Username:
-    <input type="text" id="add-username" class="input-box" name="username">
+    <input type="text" id="add-user-username" class="input-box" name="username">
+    <br><br>
+    Password:
+    <input type="password" id="add-user-password" class="input-box" name="password">
     <br><br>
     Admin User:
     <input type="checkbox" id="add-user-admin-check" class="input-box" name="admin">

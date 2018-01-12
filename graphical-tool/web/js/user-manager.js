@@ -95,7 +95,6 @@ var data = {
     }
 };
 
-// todo edit delete actions, permissions changing, add new user
 var USERS;
 var LOGGED_IN_USER;
 var SELECTED_USER = null;
@@ -107,7 +106,7 @@ function setUsers(uid, factoryId) {
     jQuery.ajax({
         url: 'UserController?action=listAllUsers&id=' + factoryId,
         success: function (data) {
-            console.log(JSON.parse(data));
+            // console.log(JSON.parse(data));
             if (data != "") {
                 USERS = JSON.parse(data);
                 var userTable = $('#user-table');
@@ -178,9 +177,10 @@ function showAddUser() {
 function createNewUser() {
     console.log("createNewUser");
     var name = $("#add-user-name").val();
-    var username = $("#add-username").val();
-    if (name == "" || username == "") {
-        alert("Name and username of the user cannot be empty!");
+    var username = $("#add-user-username").val();
+    var password = $("#add-user-password").val();
+    if (name == "" || username == "" || password == "") {
+        alert("Fields cannot be empty!");
     } else {
         var type = "p";
         // if adding a new admin user
@@ -192,7 +192,7 @@ function createNewUser() {
         var prodlines = [];
 
         $.post('UserController',
-            {action: "addUser", name: name, username: username, type: type, factory: factory,
+            {action: "addUser", name: name, username: username, password: password, type: type, factory: factory,
                 branches: JSON.stringify(branches), sections: JSON.stringify(sections), prodlines: JSON.stringify(prodlines)},
             function (data) {
                 if (data == "Success") {
@@ -218,7 +218,7 @@ function showEditUser(element) {
             break;
         }
     }
-    console.log(SELECTED_USER);
+    // console.log(SELECTED_USER);
 }
 
 function updateUserName() {
@@ -237,7 +237,7 @@ function updateUserName() {
 }
 
 function updateUser(oldUser, newUser) {
-    console.log(oldUser, newUser);
+    // console.log(oldUser, newUser);
     $.post('UserController',
         {action: "updateUser", uid: oldUser.id, oldType: oldUser.type, newName: newUser.name, newType: newUser.type,
             newBranches: JSON.stringify(newUser.branches), newSections: JSON.stringify(newUser.sections),
@@ -339,8 +339,7 @@ function buildDataJSON(uid) {
 
     $.ajax({
         type: "POST",
-        // todo use a config file for url
-        url: "http://35.202.158.138:9763/services/getDashboardDetailsOfFactoryUser/get_dashboard_details_of_factory_user",
+        url: GCP + ":9763/services/getDashboardDetailsOfFactoryUser/get_dashboard_details_of_factory_user",
         headers: {
             "Content-Type":"application/json"
         },
@@ -380,7 +379,7 @@ function buildDataJSON(uid) {
 }
 
 function resolveSection(sections) {
-    console.log(sections);
+    // console.log(sections);
     var out = [];
     if (sections != null)
         sections.forEach(function (s) {

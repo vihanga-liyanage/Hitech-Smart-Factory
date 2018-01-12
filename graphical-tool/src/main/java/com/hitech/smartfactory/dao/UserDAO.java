@@ -4,10 +4,15 @@ import com.hitech.smartfactory.model.Branch;
 import com.hitech.smartfactory.model.User;
 import com.hitech.smartfactory.util.DbUtil;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
+import static java.awt.SystemColor.text;
 
 /**
  * Created by Vihanga Liyanage on 12/16/2017.
@@ -113,12 +118,22 @@ public class UserDAO {
         try {
             // Insert user record
             PreparedStatement preparedStatement1 = connection.prepareStatement(
-                    "INSERT INTO user(name, username, type, factory) VALUES (?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+                    "INSERT INTO user(name, username, password, type, factory) VALUES (?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
             // Parameters start with 1
             preparedStatement1.setString(1, user.getName());
             preparedStatement1.setString(2, user.getUsername());
-            preparedStatement1.setString(3, user.getType());
-            preparedStatement1.setString(4, Integer.toString(user.getFactory()));
+
+            // generating password hash
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] hash = digest.digest(user.getPassword().getBytes(StandardCharsets.UTF_8));
+            StringBuilder sb = new StringBuilder();
+            for (byte aHash : hash) {
+                sb.append(Integer.toString((aHash & 0xff) + 0x100, 16).substring(1));
+            }
+
+            preparedStatement1.setString(3, sb.toString());
+            preparedStatement1.setString(4, user.getType());
+            preparedStatement1.setString(5, Integer.toString(user.getFactory()));
 
             // Getting inserted uid
             int affectedRows = preparedStatement1.executeUpdate();
@@ -138,7 +153,7 @@ public class UserDAO {
             }
             System.out.println("Create new user complete: " + user.getName());
 
-        } catch (SQLException e) {
+        } catch (SQLException | NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
     }

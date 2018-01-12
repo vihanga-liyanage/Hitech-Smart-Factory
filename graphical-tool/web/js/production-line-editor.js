@@ -2,9 +2,6 @@
  * @author Vihanga Liyanage <vihangaliyanage007@gmail.com>
  */
 
-// var BASE_URL = "http://localhost:81/hitech-smart-factory/";
-var BASE_URL = "http://35.202.158.138/hitech-smart-factory/";
-
 var TOOLBOX_ITEMS = [];
 
 var PROD_LINE_PATH = "";
@@ -106,10 +103,10 @@ var clearLinks = function (editor)
  */
 var loadProdLine = function (editor)
 {
-    console.log(PROD_LINE_PATH);
+    // console.log(PROD_LINE_PATH);
 
     $('#prod-line-message').text('Loading...');
-    var url = BASE_URL + PROD_LINE_PATH + ".xml";
+    var url = FILE_SERVER_URL + PROD_LINE_PATH + ".xml";
 
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
@@ -381,7 +378,6 @@ function saveNewToolboxItem() {
     }
 
     if (isValidModel && isValidInput) {
-        console.log("Calling...");
         var category = document.getElementById("toolbox-item-category");
         $.post('FileController', {
                 action: "addToolboxItem",
