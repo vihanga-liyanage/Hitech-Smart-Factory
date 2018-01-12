@@ -20,11 +20,33 @@ $('#loginButton').click(function (e) {
     if (loginForm.valid()) {
         e.preventDefault();
         var username = $("#username").val();
-        // ajaxSend(loginData,"userLogin");
-        // By pass login
 
-        // todo if(loginSuccess) {
-        getUserDetails(username);
+        // request password from DSS and match
+        $.ajax({
+            type: "POST",
+            url: GCP + ":9763/services/getPassword/get_password",
+            headers: {
+                "Content-Type":"application/json"
+            },
+            data: JSON.stringify({
+                _postget_password: {
+                    username: username
+                }
+            }),
+            dataType: "json",
+            success: function (response) {
+                var hash = response.passwords.password["0"].password;
+                if (hash == SHA256($("#password").val())) {
+                    getUserDetails(username);
+                } else {
+                    alert("Incorrect username/ password combination!");
+                }
+            },
+            error: function (xhr, status, error) {
+                console.log(xhr);
+                console.log(status, error);
+            }
+        });
     }
 });
 
@@ -85,32 +107,4 @@ function getUserDetails(username) {
     //     alert("Error!");
     //     console.log("Sorry! No Web Storage support..");
     // }
-}
-
-function ajaxSend(params, action) {
-    $.ajax({
-        type: "POST",
-        url: "http://localhost:3000/login",
-        data: params + "&action=" + action,
-        dataType: "json",
-        success: function (response) {
-            switch (action) {
-                case "userLogin":
-                    if (response.success == true) {
-                        document.getElementById("sign_in").reset();
-                        window.location.replace(response.path);
-                    } else {
-                        $("#respond").hide().html('<div class="alert bg-red" >' + response.msg + '</div>').slideDown("slow");
-                    }
-                    break;
-            }
-
-        },
-        error: function (xhr, status, error) {
-            console.log(xhr);
-            console.log(status, error);
-        }
-
-    });
-
 }
