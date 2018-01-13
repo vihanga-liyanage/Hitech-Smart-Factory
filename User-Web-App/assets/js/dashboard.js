@@ -86,6 +86,7 @@ function loadData() {
             "Content-Type":"application/json"
         },
         success: function (response) {
+            console.log(response);
             buildDataJSON(response);
         },
         error: function (xhr, status, error) {
@@ -344,6 +345,13 @@ function isNumeric(n) {
 }
 
 function loadProdLine(editor, idPath) {
+    // Remove all graph components
+    var components = $('.draggable');
+    for (var i=0; i<components.length; i++) {
+        document.body.removeChild(components[i]);
+    }
+    USED_TAGS = [];
+
     $('#graph-msg').text('Loading...');
     var url = PROD_LINE_BASE_URL + idPath;
     console.log(url);

@@ -58,12 +58,13 @@
 
     <script type="text/javascript">
 
+        // variable to keep graphical components in order
+        var USED_TAGS = [];
+
         // <editor-fold defaultstate="collapsed" desc="Defines a new class for all icons">//
         function mxIconSet(state) {
             this.images = [];
             var graph = state.view.graph;
-
-
         }
 
         mxIconSet.prototype.destroy = function () {
@@ -132,9 +133,6 @@
             var graphNode = editor.graph.container;
             var sourceInput = document.getElementById('source');
 
-            // variables to keep graphical components in order
-            var usedTags = [];
-
             // </editor-fold>
 
             // <editor-fold defaultstate="collapsed" desc="Mouse listeners added here">
@@ -158,7 +156,7 @@
                             var tag = cell.tag;
                             var urlTag = tag.split("/").join("-");
                             // adding the module if not added already
-                            if (usedTags.indexOf(urlTag) == -1) {
+                            if (USED_TAGS.indexOf(urlTag) == -1) {
                                 // set position using clicked position
                                 var posX = 380 + me.graphX;
                                 var posY = 150 + me.graphY;
@@ -170,7 +168,7 @@
 
                                 var nameText = document.createElement('p');
                                 nameText.innerText = cell.value.attributes[1].textContent;
-                                nameText.style = "color: white; margin: 0; font-size: 12px;";
+                                nameText.style = "color: white; margin: 0; font-size: 12px; text-align: center;";
 
                                 var iframe = document.createElement('iframe');
                                 iframe.src = "http://35.196.127.106:3000/dashboard-solo/db/" + urlTag + "?orgId=1&panelId=1";
@@ -183,8 +181,8 @@
                                     document.body.removeChild(container);
                                     // remove the tag from the array
                                     var removingTag = $(this).parent()["0"].children["0"].innerHTML;
-                                    var removingIndex = usedTags.indexOf(removingTag);
-                                    usedTags.splice(removingIndex, 1);
+                                    var removingIndex = USED_TAGS.indexOf(removingTag);
+                                    USED_TAGS.splice(removingIndex, 1);
                                 };
 
                                 var tagHolder = document.createElement('p');
@@ -201,7 +199,7 @@
                                 $('.draggable').draggable();
 
                                 // add tag to and array to prevent opening over and over
-                                usedTags.push(urlTag);
+                                USED_TAGS.push(urlTag);
                             }
                         }
                     },

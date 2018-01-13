@@ -18,6 +18,8 @@ var loginForm = $("#sign_in");
 
 $('#loginButton').click(function (e) {
     if (loginForm.valid()) {
+        $('#loginButton').text("Loading...");
+        $('#loginButton').prop("disabled",true);
         e.preventDefault();
         var username = $("#username").val();
 
@@ -40,6 +42,8 @@ $('#loginButton').click(function (e) {
                     getUserDetails(username);
                 } else {
                     alert("Incorrect username/ password combination!");
+                    $('#loginButton').text("SIGN IN");
+                    $('#loginButton').prop("disabled",false);
                 }
             },
             error: function (xhr, status, error) {
@@ -64,7 +68,7 @@ function getUserDetails(username) {
         }),
         dataType: "json",
         success: function (response) {
-            // console.log(response);
+            console.log(response);
             var userObj = {};
             if (response.UserDetails.User) {
                 var user = response.UserDetails.User[0];
