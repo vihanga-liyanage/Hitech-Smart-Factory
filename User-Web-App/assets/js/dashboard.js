@@ -408,6 +408,10 @@ function signout() {
     window.location.replace("/");
 }
 
+function openReport() {
+    window.open('http://35.196.127.106/report/', '_blank');
+}
+
 // Initiating menu items
 $(document).ready(function () {
     window.onbeforeunload = null;
